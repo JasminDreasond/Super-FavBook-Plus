@@ -1,3 +1,5 @@
+<h1>Description</h1>
+
 Transform your bookmark in a library of content!
 Use to organize your inspiration or favourite content using only the bookmark of your Google Chrome.
 
@@ -32,3 +34,15 @@ This extension does not possess advertising and no information or data will be c
 
 
 All softwares is powered by a Website API | This extension is not affiliated or endorsed
+
+<hr/>
+
+<h1>Demo Images</h1>
+
+<center>
+<img src="https://github.com/JackieApkon/Super-FavBook-Plus/blob/master/PRINTS/21v33v13v1.PNG?raw=true" alt="yay"/>
+
+<img src="https://github.com/JackieApkon/Super-FavBook-Plus/blob/master/PRINTS/v322442v2.PNG?raw=true" alt="yay"/>
+
+<img src="https://github.com/JackieApkon/Super-FavBook-Plus/blob/master/PRINTS/v3v2v2v342v3.PNG?raw=true" alt="yay"/>
+</center>
