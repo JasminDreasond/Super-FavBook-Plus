@@ -1,0 +1,469 @@
+/* Base */
+
+body{
+overflow-y: scroll;
+background-color: #000;
+}
+
+a{transition: color 0.15s;}
+
+label{
+margin: 0;
+}
+
+html,body{
+margin:0; 
+padding:0; 
+height:96%; 
+width:100%;
+}
+
+
+#refreshfolderlist{
+margin-right: 5px;
+font-size: 10pt;
+}
+
+#refreshfolderlist:hover{
+color: #666;
+cursor: pointer;
+}
+
+.modal .modal-dialog .modal-content{
+border: 0px solid transparent;
+border-radius: 0px;
+}
+
+.modal .modal-dialog .modal-content .modal-header h4{
+font-weight: bold !important;
+}
+
+.titletop{
+font-family: Tahoma, Geneva, sans-serif;
+font-weight: bold;
+}
+
+.titletop img{
+max-height: 26px;
+margin-right: 135px;
+}
+
+.titletop span{
+display: inline;
+position: absolute;
+margin-top: -25px;
+margin-left: 35px;
+}
+
+.navbar-inverse{
+margin-bottom: 0px;
+}
+
+.wait:not(#loading){
+pointer-events: none;
+opacity: 0.4;
+}
+
+
+#container{
+min-height: 100%;
+min-width:100%;
+margin-top: 51px;
+}
+
+.imagemodeps .navbar, .modal-open .navbar{
+padding-right: 16px !important;
+}
+
+a:hover{
+text-decoration: none;
+}
+
+
+
+
+
+.clickdevart{
+text-align: center;
+border-radius: 3px;
+padding: 5px 25px;
+z-index: 999999999;
+cursor: pointer;
+}
+
+.clickdevart2{
+text-align: center;
+border: 0px solid transparent;
+border-radius: 3px;
+padding: 10px 25px;
+z-index: 999999999;
+cursor: pointer;
+font-weight: bold;
+font-size: 10pt;
+}
+
+
+
+
+::-webkit-scrollbar {
+width: 16px;
+}
+ 
+::-webkit-scrollbar-thumb {
+margin: 5px !important;
+}
+
+::-webkit-scrollbar-thumb:active {
+border-radius: 5px;
+}
+
+
+
+
+
+
+/* Scroll Up */
+
+#scrollup{
+transition: opacity 0.35s, z-index 0.35s;
+opacity: 0;
+z-index: -1;
+cursor: pointer;
+
+}
+#scrollup:before{
+transition: background-color 0.12s;
+border-radius: 50%;
+padding: 15px 12px;
+padding-right: 14px;
+}
+#scrollup:before, #scrollup{
+font-size: 25pt;
+position: fixed;
+bottom: 40px;
+right: 25px;
+}
+
+#scrollup[class*="affix"]:not(.affix-top){
+opacity: 1;
+z-index: 1 !important;
+}
+
+.modal-open #scrollup:before[class*="affix"]:not(.affix-top), .hidescroll #scrollup:before[class*="affix"]:not(.affix-top){
+//margin-right: 116px !important;
+}
+
+
+
+
+
+
+
+/* Home */
+
+#homepx{
+text-align: center;
+}
+
+#homepx .title{
+font-size: 35pt;
+margin: 5px;
+font-weight: bold;
+}
+
+#homepx #devmasc{
+margin-top: 25px;
+}
+
+#homepx .credits{
+margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+/* Loads por segundo */
+
+#loadnumber{
+width: 35px;
+margin: 11px 0px;
+}
+
+#loadnmbde{
+display: inline;
+padding-right: 5px;
+}
+
+#moreclickbase{
+margin: 40px auto;
+}
+
+#moreclickbase div{
+display: inline;
+margin: 0px 10px;
+padding: 7px 35px !important;
+}
+
+
+
+
+
+
+
+/* Pesquisar */
+
+#search{
+border-radius: 3px;
+border: 1px solid rgba(38, 38, 38, 0.7);
+padding: 3px;
+margin: 11px 0px;
+width: 300px;
+}
+
+
+
+/* Loading */
+
+#loading{
+text-align: center;
+padding: 25px;
+font-size: 15pt;
+line-height: 1.1;
+position: fixed;
+background-color: rgba(240, 255, 234, 0.9);
+border-radius: 20px;
+
+position: fixed;
+width: 500px;
+height: 138px;
+top: 50%;
+left: 50%;
+margin-top: -100px;
+margin-left: -250px;
+
+z-index: 10;
+}
+
+#loadingtext{
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+@keyframes loading {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+
+#loading .glyphicon{
+animation-name: loading;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+}
+
+
+
+
+
+/* Pop Template */
+
+#imgpreview, #importfavfolder{
+font-weight: bold;
+text-align: center;
+font-size: 15pt;
+line-height: 1.1;
+position: fixed;
+
+position: fixed;
+width: 100%;
+height: 100%;
+
+margin-top: -50px;
+text-align: center;
+
+background-color: rgba(0,0,0, 0.9);
+z-index: 999999999999999999999999999999999999;
+}
+
+
+
+
+
+
+/* Importar Favoritos */
+
+.importclick{
+padding: 4px 2px !important;
+width: 120px !important;
+margin: 11px 35px;
+}
+
+#importfavfolder #conteudo{
+text-align: center;
+margin: 0 auto;
+margin: 15% 0px;
+background: #D4DFD0;
+width: 80%;
+padding: 25px;
+border-radius: 8px;
+font-size: 13pt;
+font-weight: normal;
+}
+
+#importfavfolder #conteudo input{
+width: 250px;
+}
+
+#importfavfolder #conteudo select{
+width: 150px;
+}
+
+#daautodetectsf, .daautodetectsf{
+margin: 15px;
+width: 800px !important;
+text-align: center;
+}
+
+#dasubmovsf, #dasubclosesf{
+margin: 35px 15px 0px 15px;
+width: 150px !important;
+}
+
+#resultimportpx{
+margin-top: 10px;
+font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+.anticlick{
+pointer-events: none;
+overflow-y: hidden !important;
+}
+
+
+
+
+
+
+
+/* Folder List */
+
+[id^="iconopensubfolderpx"]:not(.subfolderctpxcf){
+opacity: 0.5;
+}
+
+[id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"]:before, [id^="iconopensubfolderpx"]:before{
+margin-right: 2px;
+}
+
+[id^="foldersubfolderpx"]{
+display: none;
+}
+
+[id^="iconopensubfolderpx"]:hover:before{
+cursor: pointer;
+}
+
+.homefolder a:before{
+margin-right: 5px;
+}
+
+#openpagefav{
+font-size: 8pt;
+}
+
+#defaultfolder{
+margin-left: -30px;
+}
+
+#folders ul[class="open"]{
+display: block !important;
+}
+
+#folders ul{
+list-style: none;
+margin-left: -15px;
+}
+
+
+#folders{
+width: 19%;
+position: fixed;
+overflow: scroll;
+height: 100%;
+padding-bottom: 35px !important;
+}
+
+#folderlist li{
+margin: 2px;
+min-width: 120px;
+}
+
+#folders a{
+cursor: pointer;
+margin: 3px;
+}
+
+#folders .active{
+font-weight: bold;
+}
+
+#folders .title{
+text-align: center;
+margin-top: 15px;
+font-weight: bold;
+font-size: 9pt;
+}
+
+.imagemodeps #folders{
+width: 18.8%;
+}
+
+
+
+
+
+/* Images */
+
+#images{
+text-align: center;
+width: 80%;
+display: inline-block;
+margin-left: 19%;
+}
+
+
+
+#imagelist{
+text-align: center;
+}
+
+
+
+.hideurl{
+display: none;
+}
+
+
+
+
+
+
+
+#removefavclick{
+opacity: 0;
+position: relative;
+z-index: 15;
+padding: 3px;
+}
