@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Devian Plus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" href="../appicons/devianplus.png">
+<script src="../js/jquery/jquery-3.1.0.js" type="text/javascript"></script>
+<script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
+<script src="../js/jquery/jquery.contextmenu.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery.contextmenu.css">
+<link rel="stylesheet" type="text/css" href="../css/globalapp.css">
+<link rel="stylesheet" type="text/css" href="../css/apps/devianplus.css">
+</head>
+
+<body>
+
+<div id="modalcollection">
+
+<div id="foldercreatesc" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Folder Created!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please, check your bookmark now.</p>
+		<p>Folder Home Name: DevianPlus - FavPage</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+<div id="loading">
+<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext">Loading</div>
+<div class="ldmessagepx">Please, wait a moment...</div>
+</div>
+
+
+
+<div id="imgpreview" class="anticlick" style="display: none;">
+
+<div id="clickclosepagepxk" class="glyphicon glyphicon-remove" title="Close"></div>
+
+<div id="imginvertclick" class="glyphicon glyphicon-transfer" title="Reflect"></div>
+<div id="backchangecolor" class="glyphicon glyphicon-adjust" title="Change Color"></div>
+<div id="nextimageclickpx" class="glyphicon glyphicon-arrow-right" title="Next"></div>
+<div id="previousimageclickpx" class="glyphicon glyphicon-arrow-left" title="Previous"></div>
+
+<div id="conteudo"><center>
+<img src=""/>
+</center></div>
+
+</div>
+
+
+
+
+<div id="importfavfolder" class="anticlick" style="display: none;">
+
+<center><div id="conteudo">
+
+Import a favourite or gallery page to your Google Chrome
+
+<br/>
+
+<input type="text" id="daautodetectsf" placeholder="http://example.deviantart.com/favourites/"/>
+<br/>
+
+http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtypesf"><option value="gallery">gallery</option><option value="favourites">favourites</option></select> / <input type="text" id="favfoldersf"/>
+
+<br/>
+
+<div id="resultimportpx"></div>
+
+<input type="submit" id="dasubmovsf" class="clickdevart" value="Send" /> <input type="submit" id="dasubclosesf" class="clickdevart" value="Close" />
+
+</div></center>
+
+</div>
+
+
+
+<div id="container" class="wait">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand titletop"><img src="../appicons/devianplus.png" alt="logo"><span>Devian Plus</span></a>
+</div>
+<ul class="nav navbar-nav">
+<li><input type="text" id="search" class="form-group" placeholder="Search images in the folder" /></li>
+<li><a id="loadnmbde">Loads per page:</a> <input type="number" id="loadnumber" min="10" max="99" class="form-group" /></li>
+<li><input id="openimportbtx" class="clickdevart2 importclick" value="Import Pages" /></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a id="itemnumber"></a></li>
+<li><a id="openpagefav"></a></li>
+</ul>
+</div>
+</nav>
+
+<div id="folders">
+
+<p class="title">
+<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" title="Refresh"></span> COLLECTIONS CHROME
+<br/>
+<span id="openpagefav"></span>
+</p>
+
+
+<ul id="defaultfolder"><ul id="folderlist"></ul></ul>
+</div>
+
+
+<div id="images">
+<div id="imagelist"></div>
+<div id="moreclickbase"></div>
+</div>
+
+</div>
+
+<script src="../js/apps/devianplus.js" type="text/javascript"></script>
+</body>
+
+</html>

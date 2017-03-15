@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>SoundBook Plus</title>
+<meta charset="UTF-8">
+<link rel="icon" href="../appicons/soundbookplus.png">
+<script src="../js/jquery/jquery-3.1.0.js" type="text/javascript"></script>
+<script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/globalapp.css">
+<link rel="stylesheet" type="text/css" href="../css/apps/soundbookplus.css">
+</head>
+
+<body>
+
+<div id="modalcollection">
+
+<div id="foldercreatesc" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Folder Created!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please, check your bookmark now.</p>
+		<p>Folder Home Name: SoundBook Plus - Music List</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+<div id="loading">
+<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext">Loading</div>
+<div class="ldmessagepx">Please, wait a moment...</div>
+</div>
+
+
+
+<div id="importfavfolder" class="anticlick" style="display: none;">
+
+<center><div id="conteudo">
+
+Import a playlist or album page to your Google Chrome
+
+<br/>
+
+<span id="soundcloudimport" class="hide">
+<input type="text" id="daautodetectsf" placeholder="https://soundcloud.com/example/sets/example"/>
+<br/>
+
+https://soundcloud.com/ <input type="text" id="danamesf"/> / <select id="favtypesf"><option value="sets">sets</option><option value="albums">albums</option></select> / <input type="text" id="favfoldersf"/>
+</span>
+
+<span id="youtubeimport">
+<input type="text" id="daautodetectsf2" class="daautodetectsf" placeholder="https://www.youtube.com/playlist?list=Example"/>
+<br/>
+
+https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
+</span>
+
+<br/>
+
+<div id="resultimportpx"></div>
+
+<input type="submit" id="dasubmovsf" class="clickdevart" value="Send" />
+<select id="importtype" class="hide" disabled>
+<option value="soundcloud">SoundCloud</option>
+<option value="Youtube" selected>Youtube</option>
+</select>
+<input type="submit" id="dasubclosesf" class="clickdevart" value="Close" />
+
+</div></center>
+
+</div>
+
+
+
+
+<div class="soundcloudbase">
+<iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jackiedreasond/jackie-dreasond-theme"></iframe>
+<div id="youtubeplayer"></div>
+<div id="youtubeplaylist"></div>
+</div>
+
+
+
+
+
+
+<div id="container" class="wait">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand titletop"><img src="../appicons/soundbookplus.png" alt="logo"><span>SoundBook Plus</span></a>
+</div>
+<ul class="nav navbar-nav">
+<li><input type="text" id="search" class="form-group" placeholder="Search musics in the folder" /></li>
+<li><select id="appquality" class="form-control">
+<option value="small">Small</option>
+<option value="medium">Medium</option>
+<option value="large">Large</option>
+<option value="hd720">HD 720</option>
+<option value="hd1080">HD 1080</option>
+<option value="highres">Highres</option>
+</select></li>
+<li><a data-toggle="tooltip" data-placement="bottom" title="Notifications"><label><span class="glyphicon glyphicon-bell"></span> <input id="soundbooknoti" type="checkbox" /></label></a></li>
+<li><input id="openimportbtx" class="clickdevart2 importclick" value="Import Pages" /></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a id="itemnumber"></a></li>
+<li><a id="openpagefav"></a></li>
+</ul>
+</div>
+</nav>
+
+<div id="folders">
+
+<p class="title">
+<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" title="Refresh"></span> COLLECTIONS CHROME
+<br/>
+<span id="openpagefav"></span>
+</p>
+
+
+<ul id="defaultfolder"><ul id="folderlist"></ul></ul>
+</div>
+
+
+<div id="images">
+<div id="selectionoptions2">
+<div class="glyphicon glyphicon-remove clickoptionsmusic2" id="removefavclick2" folderid="5222"></div>
+<div class="glyphicon glyphicon-console clickoptionsmusic2" id="renamefavclick2" folderid="5222"></div>
+<div class="glyphicon glyphicon-time clickoptionsmusic2" id="timefavclick2" folderid="5222"></div>
+<label class="clickoptionsmusic2" id="selectmultimusic2">Select all - <input type="checkbox"></label>
+</div>
+<div id="imagelist"></div>
+<div id="moreclickbase"></div>
+</div>
+
+<div id="separatorpfx"></div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<div class="container-fluid"><center class="itemsmusic">
+
+
+<span class="options optionsox" id="options">
+<a id="linkopen" target="_blank"><span class="glyphicon glyphicon-link" title="Open Link"></span></a>
+<span id="enablerepeatmusic" class="glyphicon glyphicon-repeat" title="Repeat"></span>
+<span id="enablerandommusic" class="glyphicon glyphicon-random" title="Random"></span>
+<span id="previousimageclickpx" class="glyphicon glyphicon-step-backward stopclick" title="Previous"></span>
+<span id="playpause" class="glyphicon glyphicon-stop stopclick" title="Play"></span>
+<span id="nextimageclickpx" class="glyphicon glyphicon-step-forward stopclick" title="Next"></span>
+</span>
+
+<span class="dropdown optionsox">
+<a class="dropdown-toggle volumeclick glyphicon glyphicon-volume-off" data-toggle="dropdown" id="volumeico" title="Volume">
+<span class="caret"></span></a>
+<ul class="dropdown-menu" id="soundspace">
+<li><input type="range" id="sound" max="100" /></li>
+</ul>
+</span>
+
+<span id="musictimep3">00:00</span>
+
+<br class="cortedps"/>
+
+<span id="musictimep1">00:00</span>
+
+<span class="musicbar">
+<div class="progress">
+<div class="progress-bar" id="musicbargp" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+</div>
+</div>
+<input type="range" id="musicbar" max="100" value="0" disabled />
+</span>
+
+<span id="musictimep2">00:00</span>
+
+<span id="infoimpmusic">
+<img src="/images/noimg.png" id="musicthumbnail" alt="thumbnail"/>
+<br class="cortedps"/>
+<table id="tableinfomusic">
+
+<thead>
+<tr><td id="infomuser">Unknown</td></tr>
+</thead>
+
+<tbody>
+<tr><td id="infomtitle">None</td></tr>
+</tbody>
+
+</table>
+</span>
+
+</div>
+</nav>
+
+</center></div>
+
+
+<script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+<script src="../js/apps/soundbookplus.js" type="text/javascript"></script>
+</body>
+
+</html>

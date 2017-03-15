@@ -1,0 +1,25 @@
+{  
+"name":"Super FavBook Plus",
+"short_name":"SFBP",
+"description":"Your new super bookmark",
+"version":"1.5",
+"manifest_version":2,
+"content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js; object-src 'self'",
+"background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "appicons/logo.png",
+         "38": "appicons/logo.png"
+      }
+   },
+   "permissions": ["idle", "webRequest", "webRequestBlocking", "bookmarks", "notifications", "storage", "contextMenus", "https://*.soundcloud.com/*", "http://sta.sh/*", "http://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "http://*.deviantart.com/*", "https://derpibooru.org/*", "https://fanfiction.com.br/*", "https://www.fanfiction.net/", "http://www.fimfiction.net/", "https://www.youtube.com/", "http://www.youtube.com/"],
+   "icons": {
+      "128": "appicons/logo.png",
+      "16": "appicons/logo.png",
+      "48": "appicons/logo.png"
+   }
+   
+}
+
