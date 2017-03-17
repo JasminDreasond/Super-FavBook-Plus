@@ -1,0 +1,896 @@
+/* Sound Cloud */
+
+#creditslivepx{
+display: none;
+}
+
+#sc-widget{
+height: 120px;
+}
+
+.soundcloudbase{
+background-color: #F5F5F5;
+position: fixed;
+bottom: 0;
+width: 100%;
+border-top: 1px solid #FF6500;
+z-index: -1 !important;
+opacity: 0;
+}
+
+#moreclickbase{display: none;}
+
+/* Base */
+
+.titletop:hover{
+cursor: pointer;
+}
+
+html,body{
+background: #F2F2F2;
+}
+
+.modal .modal-dialog .modal-content{
+background: #F2F2F2;
+
+}
+
+.modal .modal-dialog .modal-content *{
+border-color: transparent;
+}
+
+.modal .modal-dialog .modal-content button{
+border-color: #ffa366;
+}
+
+.modal .modal-dialog .modal-content .modal-header{
+background-color: #333;
+border-color: #FF6500;
+color: #CCC;
+}
+
+.modal .close{
+color: #FFF;
+}
+
+
+.titletop img{
+margin-right: 165px;
+}
+
+.navbar-inverse{
+background-color: #333;
+border-color: #242927;
+}
+
+.navbar-inverse a{
+color: #CCC !important;
+}
+
+.navbar-inverse a:hover{
+color: #e6e6e6 !important;
+}
+
+#container{
+background: #F2F2F2;
+margin-top: 53px;
+}
+
+#separatorpfx{
+padding-top: 56px;
+}
+
+.clickdevart{
+text-align: center;
+background-color: #FF5500;
+border: 0px solid #ffa366;
+border-radius: 3px;
+padding: 5px 25px;
+color: #FFF;
+z-index: 999999999;
+cursor: pointer;
+}
+
+.clickdevart:hover{
+background-color: #ce4400;
+color: #FFF !important;
+}
+
+.clickdevart:active{
+background-color: #ad3900;
+color: #FFF !important;
+}
+
+.clickdevart2{
+text-align: center;
+border: 0px solid transparent;
+background-color: #FF5500;
+border-radius: 3px;
+padding: 10px 25px;
+color: #FFF;
+z-index: 999999999;
+cursor: pointer;
+font-weight: bold;
+font-size: 10pt;
+}
+
+.clickdevart2:hover{
+background-color: #ce4400;
+}
+
+.clickdevart2:active{
+background-color: #ad3900;
+}
+
+.clickdevart2:focus, .clickdevart:focus{outline: none;}
+
+
+:not(#search):not(#appquality):not(#appquality):not(.selectpxnyya):not(#exportimportcolors)::selection {
+background-color: transparent !important;
+}
+
+#search::selection, #appquality::selection, .selectpxnyya::selection{
+background-color: #FF5500 !important;
+color: #FFF;
+}
+ 
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 2px rgba(53,0,0,0.0); 
+background-color: #333;
+}
+ 
+::-webkit-scrollbar-thumb {
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
+background-color: rgba(255, 101, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1);
+background-color: rgba(255, 101, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+background-color: rgba(255, 101, 0, 0.4);
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
+}
+
+
+#folders::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 2px rgba(53,0,0,0.0); 
+background-color: transparent !important;
+}
+
+
+
+
+/* Scroll Up */
+
+#scrollup, #scrollup:before{
+bottom: 70px !important;
+}
+
+#scrollup:before{
+background-color: #333;
+}
+#scrollup:before, #scrollup{
+color: #FFF;
+}
+
+#scrollup:hover:before{
+background-color: #1a1a1a !important;
+}
+#scrollup:active:before{
+background-color: #0d0d0d !important;
+}
+
+
+
+
+
+
+/* Home */
+
+#homepx .title{
+margin: 15px;
+}
+
+#homepx #devmasc{
+width: 300px;
+}
+
+
+
+
+
+
+
+/* Repetidor de Load */
+
+#loadnumber{
+margin-top: 13px;
+width: 45px;
+display: none;
+}
+
+#loadnmbde{
+margin-top: 13px;
+display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Audio Player */
+
+#appquality{
+padding: 5px;
+margin-top: 9px;
+}
+
+#options{
+text-align: center;
+margin-top: 15px;
+}
+
+#search{
+margin-right: 16px;
+}
+
+.volumeclick:before, .volumeclick .caret{
+color: #333 !important;
+}
+
+.volumeclick:hover, .open .volumeclick{
+background-color: #D7D7D7 !important;
+}
+
+.volumeclick:before{color: #333 !important; transition: color 0.15s;}
+
+.volumeclick{
+padding: 19px 10px;
+}
+
+#enablerandommusic:before{
+margin: 0px 10px;
+}
+
+.randomenabled:before{
+color: #FF6500 !important;
+}
+
+.randomenabled:hover{
+color: #333 !important;
+}
+
+.randomenabled:active{
+color: #FFF !important;
+}
+
+#options span, .volumeclick{
+margin: 0px 5px;
+cursor: pointer;
+font-size: 14pt;
+}
+
+#options span:before{
+color: #333;
+transition: color 0.15s;
+}
+
+#options span:hover:before{
+color: #666;
+}
+
+#options span:active:before{
+color: #969494;
+}
+
+
+
+
+
+.navbar-fixed-bottom{
+background-color: #EDEDED;
+border-color: #CECECE;
+}
+
+.navbar-fixed-bottom a{
+color: #CCC !important;
+}
+
+.navbar-fixed-bottom a:hover{
+color: #e6e6e6 !important;
+}
+
+.navbar-fixed-bottom .container-fluid{
+padding-left: 50px;
+padding-right: 50px;
+}
+
+
+.navbar-fixed-bottom .navbar-nav{
+width: 100%;
+}
+
+
+
+
+
+.limitpagepx, .limitpagepx:before{
+color: #f2a01d !important;
+}
+
+.limitpagepx:hover, .limitpagepx:before:hover{
+color: #c18017 !important;
+}
+
+.limitpagepx:active, .limitpagepx:before:active{
+color: #915f0f !important;
+}
+
+.volloading:before{
+color: #FF6500 !important;
+}
+
+#soundspace{
+left: -159px;
+bottom: 38px;
+}
+
+#soundspace li input{
+width: 200px;
+}
+
+input[type=range] {
+-webkit-appearance: none;
+margin: 8px 15px;
+width: 100%;
+}
+
+input[type=range]:focus {
+outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+width: 100%;
+height: 8px;
+cursor: default;
+background: #FF6500;
+border-radius: 1.3px;
+border: 0.2px solid #ccddff;
+transition: background-color 100ms linear;
+}
+
+input[type=range]::-webkit-slider-thumb {
+border: 1px solid #000000;
+height: 21px;
+width: 13px;
+border-radius: 3px;
+background: #ffffff;
+cursor: default;
+-webkit-appearance: none;
+margin-top: -8px;
+cursor: pointer;
+}
+
+input[type=range]:hover::-webkit-slider-thumb{
+border-color: transparent;
+background-color: #a84200;
+transition: background-color 100ms linear;
+}
+
+input[type=range]:active::-webkit-slider-runnable-track {
+background: #4d3300;
+transition: background-color 100ms linear;
+}
+
+input[type=range]:disabled::-webkit-slider-runnable-track {
+background: #000;
+transition: background-color 100ms linear;
+}
+input[type=range]:disabled::-webkit-slider-thumb {
+background: transparent;
+border-color: transparent;
+transition: background-color 100ms linear;
+}
+
+
+
+
+
+
+
+/* Music Bar */
+
+.itemsmusic{
+
+}
+
+.musicbar .progress, .musicbar #musicbar{
+width: 42%;
+display: inline-block;
+}
+
+.musicbar{
+bottom: 2px;
+transition: margin 0.10s, top 0.10s;
+position: relative;
+}
+
+.musicbar .progress{
+height: 3px;
+transition: height 0.10s, top 0.10s, margin-top 0.10s;
+top: 14.1px;
+border-radius: 0px;
+background-color: #CCC;
+position: relative;
+}
+
+.musicbar .progress-bar{
+background-color: #FF6500;
+}
+
+#musicbar::-webkit-slider-runnable-track{
+height: 8px;
+border: 0px solid transparent;
+background-color: transparent;
+}
+
+#musicbar{
+-webkit-appearance: none;
+margin: 0px;
+position: relative;
+height: 8px;
+background-color: transparent;
+margin-left: -42%;
+bottom: 3px;
+right: 4px;
+}
+
+.musicbar:hover .progress, .musicbar:active .progress{
+height: 8px;
+top: 17px;
+margin-top: -5px;
+}
+
+#musicbar::-webkit-slider-thumb{
+border-radius: 35px;
+height:16px;
+width: 16px;
+margin-top: -4px;
+border-color: rgba(0,0,0,0.5);
+}
+
+#musicbar:hover::-webkit-slider-thumb{
+border-color: rgba(0,0,0,0.6);
+background-color: #FFF;
+}
+
+#musicbar:active::-webkit-slider-thumb{
+border-color: rgba(0,0,0,1);
+background-color: #FFF;
+}
+
+#musicbar:disabled::-webkit-slider-thumb {
+background-color: #FFF;
+border-color: rgba(0,0,0,0.2);
+}
+
+.stopclick{
+pointer-events: none;
+}
+
+#musicbargp{transition: width 0s;}
+
+
+#musictimep1, #musictimep2, #musictimep3{
+display: inline-block;
+font-size: 9pt;
+color: #666;
+bottom: 4px;
+position: relative;
+}
+
+#musictimep1{
+color: #e67300;
+margin-right: 2px;
+margin-bottom: 1px;
+}
+
+#musictimep3{
+position: absolute;
+top: 5px;
+left: 50%;
+margin: 0px auto;
+display: none;
+font-weight: bold;
+}
+
+
+
+
+#musicthumbnail{
+height: 40px;
+width: 40px;
+bottom: 5px;
+position: relative;
+margin-left: 16px;
+}
+
+#tableinfomusic{
+display: inline-block;
+margin-left: 4px;
+top: 9px;
+position: relative;
+font-size: 9pt;
+min-width: 250px;
+max-width: 250px;
+width: 250px;
+}
+
+#infomuser{
+font-size: 8.5pt;
+color: #808080;
+}
+
+/* Importar Favoritos */
+
+.importclick{
+margin-left: 15px;
+margin-right: 0px;
+margin-top: 13px;
+}
+
+#importfavfolder #conteudo{
+background-color: #e8e8e8;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Folder List */
+
+.homefolder a{
+color: #333 !important;
+}
+
+.homefolder a:hover{
+color: #000 !important;
+}
+
+
+[id^="iconopensubfolderpx"]:hover:before{
+color: #000;
+}
+
+[id^="iconopensubfolderpx"]:active:before{
+color: #222;
+}
+
+.musicplayfolder > .foldername{color: #e67300 !important;}
+.submusicplayfolder > .foldername{color: #b35900 !important;}
+.musicplayfolder > .foldername:hover{color: #000 !important;}
+.submusicplayfolder > .foldername:hover{color: #000 !important;}
+.musicplayfolder > .foldername:active{color: #000 !important;}
+.submusicplayfolder > .foldername:active{color: #000 !important;}
+
+
+
+.musicplayfolder > .foldericon{color: #e67300;}
+.submusicplayfolder > .foldericon{color: #b35900;}
+
+
+
+
+
+#folders{
+background-color: #c4c4c4;
+padding-bottom: 95px !important;
+}
+
+#folders a{
+color: #43564e;
+}
+
+#folders a:hover{
+color: #000;
+}
+
+#folders a:active{
+color: #000;
+}
+
+
+
+
+
+
+/* Music List */
+
+
+#imagelist div[id^="objfavit"] #openmusic{
+padding: 5px 20px;
+}
+
+#imagelist div[id^="objfavit"]{
+border-bottom: 1px solid rgba(51, 51, 51, 0.35);
+cursor: pointer;
+}
+
+#imagelist div[id^="objfavit"]:hover{
+color: #939393;
+}
+
+#imagelist div[id^="objfavit"]:active{
+color: #c4c4c4;
+}
+
+#imagelist div[id^="objfavit"]:first-child{
+border-top: 1px solid rgba(51, 51, 51, 0.35);
+}
+
+#imagelist{
+margin: 45px 25px;
+}
+
+#openmusic{
+font-weight: normal;
+font-style: normal;
+}
+
+#openmusic span:before{
+margin-right: 5px;
+}
+
+#openmusic .title{
+margin: 6px;
+display: inline;
+}
+
+
+.clickoptionsmusic, .clickoptionsmusic2{
+opacity: 0;
+position: relative;
+z-index: 15;
+padding: 3px;
+margin-left: -25px;
+top: 4px;
+float: left;
+border: 1px solid #bfbfbf;
+border-radius: 5px;
+background: linear-gradient(-90deg, rgba(230, 230, 230, 0.8), rgba(204, 204, 204, 0.8));
+z-index: 1 !important;
+}
+
+
+
+
+
+#removefavclick{
+left: 36px;
+}
+
+#renamefavclick{
+left: 65px;
+}
+
+#timefavclick{
+left: 95px;
+}
+
+#selectmultimusic{
+right: 15px;
+float: right;
+top: 2px;
+padding: 2px 5px 0px 6px;
+}
+
+
+
+#selectionoptions2{
+
+}
+
+.clickoptionsmusic2{
+opacity: 1 !important;
+border: 0px solid #bfbfbf;
+border-radius: 5px;
+background: #DDD;
+position: fixed;
+top: 60px;
+margin-left: 17.50%;
+float: left;
+z-index: 35 !important;
+}
+
+.clickoptionsmusic2:hover{
+background: #CCC;
+}
+
+.clickoptionsmusic2:active{
+background: #AAA;
+}
+
+#selectmultimusic2{
+right: 15px;
+float: right;
+top: 60px;
+padding: 2px 5px 0px 6px;
+}
+
+#removefavclick2{
+left: 36px;
+}
+
+#renamefavclick2{
+left: 65px;
+}
+
+#timefavclick2{
+left: 95px;
+}
+
+
+
+
+.checkedmusicsel{
+opacity: 1 !important;
+}
+
+.checkedmusicalname{
+background-color: #e6e6e6 !important;;
+}
+
+div[id^="objfavit"]:hover .clickoptionsmusic{
+opacity: 1 !important;
+}
+
+.clickoptionsmusic:hover{
+background: linear-gradient(rgba(230, 230, 230, 0.8), rgba(140, 140, 140, 0.8));
+}
+
+.clickoptionsmusic:active{
+background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8));
+color: #FFF;
+}
+
+
+
+
+
+.artmark{
+background-color: #baccb3 !important;
+}
+
+
+#soundbooknoti{
+margin-left: 5px;
+}
+
+
+
+.errormusic{
+color: #cc0000;
+font-weight: bold;
+}
+
+.cortedps{display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#copytextdapkl{
+background-color: #F2F2F2;
+border: 1px solid #52695C;
+outline: 1px solid transparent;
+width: 400px;
+position: fixed;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+z-index: 10000;
+text-align: center;
+padding: 10px 10px 15px 10px;
+transition: opacity 0.25s;
+}
+
+
+#copytextdapkl p{
+font-weight: bold;
+}
+
+#copytextdapkl input[type="text"]{
+text-align: center;
+width: 50px;
+}
+
+#copytextdapkl input[type="submit"]{
+text-align: center;
+border: 0px solid transparent;
+background-color: #FF5500;
+border-radius: 3px;
+padding: 5px 25px;
+color: #FFF;
+z-index: 999999999;
+cursor: pointer;
+font-weight: bold;
+font-size: 10pt;
+margin: 6px;
+}
+
+#copytextdapkl input[type="submit"]:hover{
+background-color: #ce4400;
+}
+
+#copytextdapkl input[type="submit"]:active{
+background-color: #ad3900;
+}
+
+#copytextdapkl input[type="submit"]:focus{outline: none;}
+
+.SELECTEDSETTIME p{
+font-weight: bold;
+}
+
+.SELECTEDSETTIME .clickoptionsmusic{
+opacity: 1 !important;
+}
+
+.copyremovemusic{height: 125px;}
+.copyrenamemusic{height: 120px;}
+.copyrenamemusic2{height: 146px;}
+.copytimemusic{height: 186px;}
+
+.copyrenamemusic input[type="text"]{width: 350px !important;}
+
+
+
+
+
+
+/* Live */
+
+#liveconfig label{
+font-weight: normal;
+padding: 7px;
+}
+
+.liveoptionsp{
+margin: 25px;
+}
+
+#exportimportcolors{
+width: 250px;
+max-width: 250px;
+min-width: 250px;
+}
+
+input[type="color"]:hover{
+background-color: #ccc;
+}

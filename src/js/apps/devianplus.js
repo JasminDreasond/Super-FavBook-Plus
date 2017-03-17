@@ -9,6 +9,7 @@ else if(data == false){$("#loading").addClass("hide"); $("#container").removeCla
 var pagesforsec = 24
 var pagesforsecresult = 0
 var pagesforsecpgnbx
+var detectpageopenx2 = false
 
 // Gerador de copia
 
@@ -294,10 +295,26 @@ else{nextimagestpx(typeclick, detectautonext);}
 
 $("#nextimageclickpx").click(function(){nextimagestpx("next");});
 $("#previousimageclickpx").click(function(){nextimagestpx("previous");});
+shortcut.add("RIGHT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){nextimagestpx("next");}
+}});
+shortcut.add("LEFT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){nextimagestpx("previous");}
+}});
+
+
+shortcut.add("UP",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){$("#imgpreview").scrollTop($("#imgpreview").scrollTop()-25);}
+}});
+
+shortcut.add("DOWN",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){$("#imgpreview").scrollTop($("#imgpreview").scrollTop()+25);}
+}});
 
 
 function closeimagest(){
 detectpageopenx = false
+detectpageopenx2 = false
 
 $("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
 document.title = "Devian Plus"
@@ -308,8 +325,13 @@ $("#imgpreview img").attr("src", "");
 });
 }
 
+shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){closeimagest();}
+}});
+
 function openimagest(datype, clickdata, thishere){
 
+detectpageopenx2 = true
 document.title = clickdata.title+" - Devian Plus"
 
 $("#imgpreview #conteudo, #clickclosepagepxk").off("click");

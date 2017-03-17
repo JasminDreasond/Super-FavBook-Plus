@@ -1,0 +1,145 @@
+/* New Screen */
+
+@media screen and (max-width: 1345px) {
+.musicbar .progress, .musicbar #musicbar{width: 38%;}
+#musicbar{margin-left: -39%;}
+}
+
+@media screen and (max-width: 1275px) {
+.musicbar .progress, .musicbar #musicbar{width: 33%;}
+#musicbar{margin-left: -33%;}
+}
+
+@media screen and (max-width: 1250px) {
+.navbar-fixed-bottom .container-fluid{padding-left: 10px;padding-right: 10px;}
+}
+
+@media screen and (max-width: 1246px) {
+#container{margin-top: 103px;}
+#selectmultimusic2, .clickoptionsmusic2{top: 111px !important;}
+}
+
+@media screen and (max-width: 1150px) {
+.musicbar .progress, .musicbar #musicbar{width: 32%;}
+#musicbar{margin-left: -32%;}
+}
+
+@media screen and (max-width: 1085px) {
+.musicbar .progress, .musicbar #musicbar{width: 25%;}
+#musicbar{margin-left: -25%;}
+}
+
+@media screen and (max-width: 1135px) {
+#openpagefav, #itemnumber{display: none;}
+#container{margin-top: 53px;}
+#selectmultimusic2, .clickoptionsmusic2{top: 60px !important;}
+}
+
+@media screen and (max-width: 1000px) {
+.navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
+.musicbar .progress, .musicbar #musicbar{width: 20%;}
+#musicbar{margin-left: -20%;}
+.importclick, #importfavfolder{display: none;}
+}
+
+
+@media screen and (max-width: 920px) {
+#infoimpmusic{display: block;}
+#scrollup, #scrollup:before{bottom: 115px !important;}
+.musicbar .progress, .musicbar #musicbar{width: 45%;}
+#musicbar{margin-left: -45%;}
+}
+
+
+@media screen and (max-width: 767px) {
+.navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
+#folders, #images, #search{display: none;}
+#appquality, .navbar-fixed-top li label, .navbar-header{position: absolute;}
+body{overflow: hidden;}
+.cortedps{display: block;}
+.musicbar .progress, .musicbar #musicbar{width: 80%;}
+#musicbar{margin-left: -80%;}
+
+
+.tooltip{display:none !important;}
+
+#musictimep3{
+top: 45px;
+}
+
+
+#appquality{
+width: 110px;
+top: -9px;
+right: 15px;
+z-index: 1;
+}
+
+.navbar-fixed-top li label{
+right: 145px;
+top: 8px;
+}
+
+.navbar-header{
+top: -2px;
+z-index: 1;
+}
+
+
+#infoimpmusic{
+width: 300px;
+height: 100px;
+width: 100%;
+position: fixed; 
+margin:0 auto;
+top: 150px;
+display: block;
+}
+
+#musicthumbnail{
+height: 150px;
+width: 150px;
+margin: 0px;
+}
+
+#tableinfomusic{
+margin: 0px;
+text-align: center !important;
+display: inline;
+}
+
+#infomuser{
+font-size: 11pt;
+}
+
+#infomtitle{
+font-size: 13pt;
+}
+
+@media screen and (max-height: 550px) {
+#infoimpmusic{top: 130px;}	
+}
+
+@media screen and (max-height: 500px) {
+#infoimpmusic{top: 95px;}	
+}
+
+@media screen and (max-height: 435px) {
+#infoimpmusic{top: 100px;}	
+}
+
+@media screen and (max-height: 420px) {
+#infoimpmusic{top: 90px;}	
+}
+
+}
+
+@media screen and (max-width: 450px) {
+.musicbar .progress, .musicbar #musicbar{width: 75%;}
+#musicbar{margin-left: -75%;}
+}
+
+@media screen and (max-width: 425px) {
+.musicbar .progress, .musicbar #musicbar{width: 75%;}
+#musicbar{margin-left: -75%;}
+}

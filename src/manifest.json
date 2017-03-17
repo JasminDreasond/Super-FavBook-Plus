@@ -2,7 +2,7 @@
 "name":"Super FavBook Plus",
 "short_name":"SFBP",
 "description":"Your new super bookmark",
-"version":"1.5",
+"version":"1.6",
 "manifest_version":2,
 "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js; object-src 'self'",
 "background": {
@@ -15,11 +15,45 @@
       }
    },
    "permissions": ["idle", "webRequest", "webRequestBlocking", "bookmarks", "notifications", "storage", "contextMenus", "https://*.soundcloud.com/*", "http://sta.sh/*", "http://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "http://*.deviantart.com/*", "https://derpibooru.org/*", "https://fanfiction.com.br/*", "https://www.fanfiction.net/", "http://www.fimfiction.net/", "https://www.youtube.com/", "http://www.youtube.com/"],
+
    "icons": {
       "128": "appicons/logo.png",
       "16": "appicons/logo.png",
       "48": "appicons/logo.png"
-   }
+   },
+   
+   
+        "commands": {
+          "play": {
+            "suggested_key": {
+              "default": "MediaPlayPause"
+            },
+            "description": "Play/Pause",
+            "global": true
+          },
+          "next": {
+            "suggested_key": {
+              "default": "MediaNextTrack"
+            },
+            "description": "Next Music",
+            "global": true
+          },
+          "prev": {
+            "suggested_key": {
+              "default": "MediaPrevTrack"
+            },
+            "description": "Prev Music",
+            "global": true
+          },
+          "stop": {
+            "suggested_key": {
+              "default": "MediaStop"
+            },
+            "description": "Stop",
+            "global": true
+          }
+        }
+
    
 }
 

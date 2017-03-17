@@ -1,0 +1,27 @@
+body{
+overflow: hidden !important;
+}
+
+.navbar-fixed-bottom{
+border-color: transparent;
+height: 61px;
+}
+
+.musicbar .progress, .musicbar #musicbar{width: 30%;}
+#musicbar{margin-left: -30%;}
+
+#images , #folders, #separatorpfx, .navbar-fixed-top{display: none;} 
+
+#soundspace{
+left: -159px;
+bottom: 0px;
+}
+
+#creditslivepx{
+display: none;
+position: absolute;
+top: 42px;
+left: 25px;
+font-size: 9pt;
+z-index: 15;
+}
