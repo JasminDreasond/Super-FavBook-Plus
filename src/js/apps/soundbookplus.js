@@ -1,4 +1,5 @@
 var firstloadpx = true
+var loadfoldeertime = false;
 
 var widgetIframe = document.getElementById('sc-widget');
 var widget;
@@ -142,8 +143,8 @@ playlistpxct = playlistpx;
 pageclicknumberpmaxdss = pageclicknumberpmax;
 }}
 $("#reloadfolderlive").click(function(){
+loadfoldeertime = true;
 livereload();
-setTimeout(function(){livereload();},100);
 });
 }
 
@@ -1507,7 +1508,28 @@ loadingset(true);
 
 if(data[0] == undefined){generatormenupx();}
 
-if(artcountpx == maxitem-1){if(folderpxsepx == false){folderpxse = true}}
+
+
+
+
+
+
+
+// LAST LOAD
+if(artcountpx == maxitem-1){if(folderpxsepx == false){folderpxse = true}
+
+if(loadfoldeertime == true){setTimeout(function(){livereload();},100);}
+loadfoldeertime = false;
+
+}
+
+
+
+
+
+
+
+
 if(start == true){if((maxitem == 0) || (folderpxse == true)){finalcomplete = true; endimageload();}}
 if(data[artcountpx] == undefined){loadingset(false); return;}
 urlpage = data[artcountpx].url;

@@ -2,7 +2,7 @@
 "name":"Super FavBook Plus",
 "short_name":"SFBP",
 "description":"Your new super bookmark",
-"version":"1.6",
+"version":"1.6.1",
 "manifest_version":2,
 "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js; object-src 'self'",
 "background": {
