@@ -8,7 +8,7 @@ Use to organize your inspiration or favourite content using only the bookmark of
 Supported sites:
 
 <hr/>
-Devin Plus
+Devian Plus
 
 - Deviantart
 - Derpibooru
