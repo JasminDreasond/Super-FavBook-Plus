@@ -2,15 +2,17 @@
 <html>
 
 <head>
-<title>FanFic Bookin</title>
+<title langchrome="appfanficbookin"></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" href="../appicons/fanficbookinplus.png">
 <script src="../js/jquery/jquery-3.1.0.js" type="text/javascript"></script>
 <script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
+<script src="../js/language.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
-<link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus.css">
+<link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/default.css">
+<link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/size.css">
 </head>
 
 <body>
@@ -22,14 +24,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">New Folder Created!</h4>
+        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
       </div>
       <div class="modal-body">
-        <p>Please, check your bookmark now.</p>
-		<p>Folder Home Name: FanFic Bookin - Fic List</p>
+        <p langchrome="gapp_checkfolder"></p>
+		<p><span langchrome="gapp_folderhomenm"></span>: <span langchrome="app_fb_folder"></span></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
       </div>
     </div>
 
@@ -41,13 +43,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">ERROR</h4>
+        <h4 class="modal-title" langchrome="error"></h4>
       </div>
       <div class="modal-body">
-        <p>URL ERROR!</p>
+        <p langchrome="app_fb_urlerror"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
       </div>
     </div>
 
@@ -58,18 +60,18 @@
 
 
 <div id="loading">
-<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext">Loading</div>
-<div class="ldmessagepx">Please, wait a moment...</div>
+<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
+<div class="ldmessagepx" langchrome="gapp_loading"></div>
 </div>
 
 
 
 <div id="imgpreview" class="anticlick" style="display: none;">
 
-<div id="clickclosepagepxk" class="glyphicon glyphicon-remove" title="Close"></div>
+<div id="clickclosepagepxk" class="glyphicon glyphicon-remove" langchrome="" langchrome2="close" newtitle_lang="true"></div>
 
-<div id="nextimageclickpx" class="glyphicon glyphicon-arrow-right" title="Next"></div>
-<div id="previousimageclickpx" class="glyphicon glyphicon-arrow-left" title="Previous"></div>
+<div id="nextimageclickpx" class="glyphicon glyphicon-arrow-right" langchrome="" langchrome2="next" newtitle_lang="true"></div>
+<div id="previousimageclickpx" class="glyphicon glyphicon-arrow-left" langchrome="" langchrome2="previous" newtitle_lang="true"></div>
 
 <div id="conteudo" class="container"><center>
 
@@ -84,10 +86,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
 <div class="navbar-header">
-<a class="navbar-brand titletop"><img src="../appicons/fanficbookinplus.png" alt="logo"><span>FanFic Bookin</span></a>
+<a class="navbar-brand titletop"><img src="../appicons/fanficbookinplus.png" alt="logo"><span langchrome="appfanficbookin"></span></a>
 </div>
 <ul class="nav navbar-nav">
-<li><input type="text" id="search" class="form-group" placeholder="Search images in the folder" /></li>
+<li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_fb_search" tsplaceholder="true" /></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li><a id="itemnumber"></a></li>
@@ -99,7 +101,7 @@
 <div id="folders">
 
 <p class="title">
-<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" title="Refresh"></span> COLLECTIONS CHROME
+<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
 <br/>
 <span id="openpagefav"></span>
 </p>

@@ -1,6 +1,14 @@
 $("body").append($("<div>", {id: "scrollup", class: "glyphicon glyphicon-arrow-up"}).click(
 function(){ $("html, body").animate({ scrollTop: 0 }, "slow");}).affix({offset:{top: 575}}))
 
+
+
+$("#loadnmbde")
+.attr("data-original-title", chrome.i18n.getMessage("gapp_loadperpage"))
+.attr('data-placement', 'bottom')
+.tooltip();
+
+
 function loadingset(data){
 if(data == true){$("#loading").removeClass("hide"); $("#container").addClass("wait");}
 else if(data == false){$("#loading").addClass("hide"); $("#container").removeClass("wait");}
@@ -79,30 +87,39 @@ var numbercountitems = 0
 
 
 function itemcountsystemfolder(){
-if(numbercountitems == 0){$("#itemnumber").text("Nothing in the folder");}
-if(numbercountitems == 1){$("#itemnumber").text(numbercountitems+" Item in the folder");}
-else{$("#itemnumber").text(numbercountitems+" Items in the folder");}
+if(numbercountitems > 99){numbercountitemsview = "99+"}
+else{numbercountitemsview = numbercountitems}
+if(numbercountitems == 0){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_nothingfolder")}).text(numbercountitemsview).tooltip());
+}
+if(numbercountitems == 1){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemfolder")}).text(numbercountitemsview).tooltip());
+}
+else{
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemsfolder")}).text(numbercountitemsview).tooltip());
+}
 }
 
 
+// Homepage
 
 function generatormenupx(){
 $("#imagelist").empty();
 
 $("#imagelist").append($("<div>", {id: "homepx"}).append(
 
-$("<h1>", {class: "title"}).text("Welcome"),
+$("<h1>", {class: "title"}).text(chrome.i18n.getMessage("welcome")),
 
-$("<p>", {class: "info"}).text("This is your Chrome Favourites Page"),
-$("<p>", {class: "info"}).text("Send your favourite art to the folder \"DevianPlus - FavPage\""),
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("gapp_welcome_text")),
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_dp_welcome_text")+' "'+chrome.i18n.getMessage("app_dp_folder")+'"'),
 $("<img>", {id: "devmasc", alt: "devmasc", src: "http://orig11.deviantart.net/9365/f/2009/291/8/3/f_e_l_l_a___deviantart_tour_4_by_greatlp.png"}),
 
-$("<p>", {class: "credits"}).text("Art made by ").append($("<a>", {href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank"}).text("thekidKaos"))
+$("<p>", {class: "credits"}).text(chrome.i18n.getMessage("gapp_artcredits")+" ").append($("<a>", {href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank"}).text("thekidKaos"))
 
 
 ))
 
-$("#itemnumber").text("This is the Home Page");
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-home folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderhome")}).text(0).tooltip());
 
 loadingset(false);
 }
@@ -317,7 +334,7 @@ detectpageopenx = false
 detectpageopenx2 = false
 
 $("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
-document.title = "Devian Plus"
+document.title = chrome.i18n.getMessage("appdevianplus");
 
 $("body").css("overflow", "").removeClass("imagemodeps");
 $("#imgpreview").addClass("anticlick").fadeOut(function(){
@@ -332,7 +349,7 @@ if(detectpageopenx2 == true){closeimagest();}
 function openimagest(datype, clickdata, thishere){
 
 detectpageopenx2 = true
-document.title = clickdata.title+" - Devian Plus"
+document.title = clickdata.title+" - "+chrome.i18n.getMessage("appdevianplus");
 
 $("#imgpreview #conteudo, #clickclosepagepxk").off("click");
 $("#imgpreview img").off("click").attr("src", "");
@@ -379,11 +396,11 @@ var cancelload = false
 
 if(start == true){
 
-$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text("Home").click(function(){
+$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text(chrome.i18n.getMessage("home")).click(function(){
 openfolder(startid, this, "homepage");
 })));
 
-$("#openpagefav").text("FOLDER ID: "+startid);
+$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip());
 	
 }
 
@@ -427,25 +444,25 @@ var customrightclickprofile = customrightclicknope
 else if(thumbdata.rightclicktype == "derpibooru"){
 // Image
 var customrightclickimg = {
-  title: 'Open Image',
+  title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [
   
-{label:'Page', icon:'https://derpicdn.net/favicon.ico' , action:function() {window.open(thumbdata.url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'https://derpicdn.net/favicon.ico' , action:function() {window.open(thumbdata.url, "_blank")}}
   
 ]}
 
 //Profile
 var customrightclickprofile = {
-  title: 'Open Profile',
+  title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:'Custom Icons - Credits', icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:'Page', icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}}
   
 ]}
 }
@@ -454,50 +471,50 @@ else if(thumbdata.rightclicktype == "deviantart"){
 
 // Image
 var customrightclickimg = {
-  title: 'Open Image',
+  title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [ 
 
-{label:'Custom Icons - Credits', icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:'Page', icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.url, "_blank")}},
+{label:chrome.i18n.getMessage("page"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.url, "_blank")}},
 
 null, 
 
-{label:'Get Thumb Code', icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
-copycodestpx("Thumb Code:",":thumb"+thumbdata.artid+":");
+{label:chrome.i18n.getMessage("app_dp_getthumbcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+copycodestpx(chrome.i18n.getMessage("app_dp_getthumbcode"),":thumb"+thumbdata.artid+":");
 }}
   
 ]}
 
 //Profile
 var customrightclickprofile = {
-  title: 'Open Profile',
+  title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:'Custom Icons - Credits', icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:'Profile', icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}},
-{label:'Gallery', icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , action:function() {window.open(thumbdata.author_url+"/gallery/", "_blank")} },
-{label:'Prints', icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , action:function() {window.open(thumbdata.author_url+"/prints/", "_blank")} },
-{label:'Favourites', icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , action:function() {window.open(thumbdata.author_url+"/favourites/", "_blank")} },
-{label:'Journal', icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , action:function() {window.open(thumbdata.author_url+"/journal/", "_blank")} },
+{label:chrome.i18n.getMessage("profile"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}},
+{label:chrome.i18n.getMessage("gallery"), icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , action:function() {window.open(thumbdata.author_url+"/gallery/", "_blank")} },
+{label:chrome.i18n.getMessage("prints"), icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , action:function() {window.open(thumbdata.author_url+"/prints/", "_blank")} },
+{label:chrome.i18n.getMessage("favourites"), icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , action:function() {window.open(thumbdata.author_url+"/favourites/", "_blank")} },
+{label:chrome.i18n.getMessage("journal"), icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , action:function() {window.open(thumbdata.author_url+"/journal/", "_blank")} },
 
 null,
 
-{label:'Get Icon Code', icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
-copycodestpx("Icon Code:",":icon"+thumbdata.author_name.toLowerCase()+":");
+{label:chrome.i18n.getMessage("app_dp_geticoncode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+copycodestpx(chrome.i18n.getMessage("app_dp_geticoncode"),":icon"+thumbdata.author_name.toLowerCase()+":");
 }},
 
-{label:'Get Dev Code', icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
-copycodestpx("Dev Code:",":dev"+thumbdata.author_name.toLowerCase()+":");
+{label:chrome.i18n.getMessage("app_dp_getdevcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+copycodestpx(chrome.i18n.getMessage("app_dp_getdevcode"),":dev"+thumbdata.author_name.toLowerCase()+":");
 }}
   
 ]}
@@ -508,10 +525,10 @@ copycodestpx("Dev Code:",":dev"+thumbdata.author_name.toLowerCase()+":");
 
 $("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
 $("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
-$("<img>", {title: thumbdata.type, src: thumbdata.img, height: thumbdata.height}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
+$("<img>", {src: thumbdata.img, height: thumbdata.height}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
 .contextPopup(customrightclickimg).contextmenu(function(){addrightclickclass(this);}),
 $("<p>", {class: "title"}).append($("<a>", {href: thumbdata.url, target: "_blank"}).text(thumbdata.title), $("<input>", {type: "checkbox", id: "markseck"}).click(function(){markthisobjectart(this);})),
-$("<p>", {class: "author"}).text("by ").append($("<a>", {href: thumbdata.author_url, target: "_blank"}).text(thumbdata.author_name)
+$("<p>", {class: "author"}).text(chrome.i18n.getMessage("app_dp_by")+" ").append($("<a>", {href: thumbdata.author_url, target: "_blank"}).text(thumbdata.author_name)
 .contextPopup(customrightclickprofile).contextmenu(function(){addrightclickclass(this);})
 ),
 $("<p>", {class: "provider"}).append($("<a>", {href: thumbdata.provider, target: "_blank"}).text(thumbdata.provider)),
@@ -626,12 +643,12 @@ if((start == true) || (start == "homepage")){generatormenupx();}
 
 else if(start == "folder"){if(createdmore == false){if(moreitem == true){$("#moreclickbase").append(
 
-$("<div>", {id: "moreclick", class: "clickdevart"}).text("More").click(function(){
+$("<div>", {id: "moreclick", class: "clickdevart"}).text(chrome.i18n.getMessage("more")).click(function(){
 pagesforsecpg = pagesforsecpg+pagesforsecpgnbx
 loopcreatordv();
 }),
 
-$("<div>", {id: "moreclick2", class: "clickdevart"}).text("All (Max: 200)").click(function(){
+$("<div>", {id: "moreclick2", class: "clickdevart"}).text(chrome.i18n.getMessage("all")+" ("+chrome.i18n.getMessage("max")+": 200)").click(function(){
 pagesforsecpg = pagesforsecpg+200
 loopcreatordv();
 })
@@ -792,8 +809,8 @@ generatorimages(foldercfg[0].children, folder.length, true, foldercfg[0].id, "fo
 
 // Start System
 
-function searchfolder(){chrome.bookmarks.search({"title": "DevianPlus - FavPage"}, function(favdata){
-if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": "DevianPlus - FavPage"}, function(){
+function searchfolder(){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_dp_folder")}, function(favdata){
+if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_dp_folder")}, function(){
 $("#foldercreatesc").modal();
 searchfolder();
 })}
@@ -829,14 +846,14 @@ function updatepagesforsec(){
 $.ajax({cache: false, url: "https://www.deviantart.com/settings/browsing"})
 .done(function(data){
 loadingset(false);
-$("#openimportbtx").val("Import Pages");
+$("#openimportbtx").val(chrome.i18n.getMessage("gapp_importpages"));
 var getconfigop = $(data).find(".browse-limit .spacemenus").val();
 if(getconfigop == null){pagesforsec = 24}
 else{pagesforsec = Number(getconfigop)}
 openrecpagespx();
 }).fail(function(){
 loadingset(false);
-$("#openimportbtx").val("ERROR");
+$("#openimportbtx").val(chrome.i18n.getMessage("error"));
 })
 }
 
@@ -850,7 +867,7 @@ urlfinaldev = data.urlfinaldev
 }
 
 if(data.intro == "start"){
-$("#openimportbtx").val("Loading...");
+$("#openimportbtx").val(chrome.i18n.getMessage("loading")+"...");
 loadingset(true);
 }
 
@@ -885,7 +902,7 @@ var finddefaultpage = ".folderview-art .torpedo-container .thumb";
 chrome.bookmarks.search({"title": gettitlepage}, function(detectfolderfavpx){
 
 if(detectfolderfavpx[0] == undefined){
-chrome.bookmarks.search({"title": "DevianPlus - FavPage"}, function(favdata){
+chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_dp_folder")}, function(favdata){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": gettitlepage}, function(newfavpxsd){
 $(data).find(finddefaultpage).each(function(){
 var itemselectart = this
@@ -909,9 +926,9 @@ if($(data).find(".pagination .pages .next a").attr("class") == "away"){
 pagesforsecresult = pagesforsecresult+pagesforsec
 recpagespxerk({"intro" :"next"});
 }
-else{loadingset(false); pagesforsecresult = 0; recpagespxerk({"intro" :"again"}); $("#resultimportpx").text("Your new folder was created with success!");}
+else{loadingset(false); pagesforsecresult = 0; recpagespxerk({"intro" :"again"}); $("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimcomplete"));}
 })
-.fail(function(){$("#resultimportpx").text("Error in the URL was detected!"); loadingset(false); recpagespxerk({"intro" :"again"});})
+.fail(function(){$("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimerror")); loadingset(false); recpagespxerk({"intro" :"again"});})
 
 
 }}

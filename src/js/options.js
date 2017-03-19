@@ -3,7 +3,7 @@ chrome.windows.create({url: "apps/devianplus.html", type: "popup", state: "maxim
 return false;
 })
 
-$("#devianplus img").tooltip(); 
+$("#devianplus img").attr("title", chrome.i18n.getMessage("appdevianplus")).tooltip(); 
 
 $("#soundplus").click(function(){
 chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "maximized"})
@@ -12,14 +12,14 @@ chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "ma
 return false;
 })
 
-$("#soundplus img").tooltip(); 
+$("#soundplus img").attr("title", chrome.i18n.getMessage("appsoundbookplus")).tooltip(); 
 
 $("#fanficbookinplus").click(function(){window.open("apps/fanficbookinplus.html", "soundbookplusfp");}).on("contextmenu",function(){
 chrome.windows.create({url: "apps/fanficbookinplus.html", type: "popup", state: "maximized"});
 return false;
 })
 
-$("#fanficbookinplus img").tooltip(); 
+$("#fanficbookinplus img").attr("title", chrome.i18n.getMessage("appfanficbookin")).tooltip(); 
 
 // Facebook
 
@@ -64,3 +64,12 @@ else if($(this).attr("api") == "soundcloud"){
 chrome.storage.local.set({api_soundcloud: $(this).prop("checked")})
 }
 });
+
+
+
+
+$("#translatorcredits").attr("href", chrome.i18n.getMessage("translator_page"));
+
+if((chrome.i18n.getMessage("translator_text") == "") || (chrome.i18n.getMessage("translator_text") == null) || (chrome.i18n.getMessage("translator_text") == undefined)){
+$("#translatorspace").remove();
+}

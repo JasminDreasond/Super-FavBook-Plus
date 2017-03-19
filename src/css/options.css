@@ -3,7 +3,9 @@ background-color: #f4f4f4
 
 }
 
-
+.text_space{
+white-space:pre-wrap;
+}
 
 
 .disableapi{

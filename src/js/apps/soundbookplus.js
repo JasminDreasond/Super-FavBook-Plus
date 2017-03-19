@@ -40,6 +40,9 @@ else if(data == false){$("#loading").addClass("hide"); $("#container").removeCla
 }
 
 $('[data-toggle="tooltip"]').tooltip();
+$('#addnotificationspx')
+.attr("data-original-title", chrome.i18n.getMessage("notifications"))
+.tooltip();
 
 var livemodet = false;
 
@@ -150,9 +153,17 @@ livereload();
 
 
 function itemcountsystemfolder(){
-if(numbercountitems == 0){$("#itemnumber").text("Nothing in the folder");}
-if(numbercountitems == 1){$("#itemnumber").text(numbercountitems+" Item in the folder");}
-else{$("#itemnumber").text(numbercountitems+" Items in the folder");}
+if(numbercountitems > 99){numbercountitemsview = "99+"}
+else{numbercountitemsview = numbercountitems}
+if(numbercountitems == 0){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_nothingfolder")}).text(numbercountitemsview).tooltip());
+}
+if(numbercountitems == 1){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemfolder")}).text(numbercountitemsview).tooltip());
+}
+else{
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemsfolder")}).text(numbercountitemsview).tooltip());
+}
 }
 
 
@@ -179,7 +190,7 @@ $("#infomuser").text(datamusic.username);
 $("#infomtitle").text(datamusic.title);
 $("#linkopen").attr("href", datamusic.url);
 
-document.title = newtitlepagemusic+" - SoundBook Plus"
+document.title = newtitlepagemusic+" - "+chrome.i18n.getMessage("appsoundbookplus");
 }
 
 
@@ -353,18 +364,14 @@ $("#imagelist").empty();
 
 $("#imagelist").append($("<div>", {id: "homepx"}).append(
 
-$("<h1>", {class: "title"}).text("Welcome"),
+$("<h1>", {class: "title"}).text(chrome.i18n.getMessage("welcome")),
 
-$("<p>", {class: "info"}).text("This is your Chrome Favourites Page"),
-$("<p>", {class: "info"}).text("Send your favourite Music to the folder \"SoundBook Plus - Music List\"")
-//$("<img>", {id: "devmasc", alt: "devmasc", src: "http://img07.deviantart.net/c016/i/2011/228/9/3/soundcloud_logo_stock_by_halfingr-d46unxu.png"}),
-
-//$("<p>", {class: "credits"}).text("Art made by ").append($("<a>", {href: "http://halfingr.deviantart.com/art/SoundCloud-Logo-Stock-253373106", target: "_blank"}).text("Halfingr"))
-
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("gapp_welcome_text")),
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_sp_welcome_text")+' "'+chrome.i18n.getMessage("app_sp_folder")+'"')
 
 ))
 
-$("#itemnumber").text("This is the Home Page");
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-home folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderhome")}).text(0).tooltip());
 
 loadingset(false);
 }
@@ -739,15 +746,15 @@ $(".NEWNAMESYSTEMP").addClass("SELECTEDSETTIME").removeClass("NEWNAMESYSTEMP");
 
 
 if(count == null){count = ""}
-else if(count > 1){count = " "+count+" items"}
+else if(count > 1){count = " "+count+" "+chrome.i18n.getMessage("app_sp_items")}
 else{count = ""}
 
 $("body").append($("<div>", {id: "copytextdapkl", style: "display: none;", class: "copyremovemusic"}).append(
 
-$("<p>").text("Confirm your action:"),
-$("<p>").text("Remove"+count),
+$("<p>").text(chrome.i18n.getMessage("app_sp_confirmaction")),
+$("<p>").text(chrome.i18n.getMessage("remove")+count),
 
-$("<input>", {type: "submit", value: "Confirm"}).click(function(){
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("confirm")}).click(function(){
 
 removeimagepxkePX(thishere);
 
@@ -756,7 +763,7 @@ $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");
 
 }),
 
-$("<input>", {type: "submit", value: "Cancel"}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("cancel")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -801,11 +808,11 @@ $(".NEWNAMESYSTEMP").addClass("SELECTEDSETTIME").removeClass("NEWNAMESYSTEMP");
 
 $("body").append($("<div>", {id: "copytextdapkl", style: "display: none;", class: "copyrenamemusic"}).append(
 
-$("<p>").text("Change File Name:"),
+$("<p>").text(chrome.i18n.getMessage("app_sp_changefilename")),
 $("<input>", {type: "text", id: "newtitlefolderinsert", class: "selectpxnyya"}).val(itemnamesetkx),
 $("<br>"),
 
-$("<input>", {type: "submit", value: "Save"}).click(function(){
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("save")}).click(function(){
 
 $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME");
 renameimagepxkePX($("#newtitlefolderinsert").val(), itemnamesetbase, thishere);
@@ -815,7 +822,7 @@ $("#copytextdapkl").remove();
 
 }),
 
-$("<input>", {type: "submit", value: "Close"}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -908,12 +915,12 @@ $(".NEWNAMESYSTEMP").addClass("SELECTEDSETTIME").removeClass("NEWNAMESYSTEMP");
 
 $("body").append($("<div>", {id: "copytextdapkl", style: "display: none;", class: "copyrenamemusic copyrenamemusic2"}).append(
 
-$("<p>").text("Replace File Name:"),
-$("<input>", {type: "text", id: "newtitlefolderinsert", placeholder: "Replace", class: "selectpxnyya"}).val(""),
-$("<input>", {type: "text", id: "newtitlefolderinsert2", placeholder: "to", class: "selectpxnyya"}).val(""),
+$("<p>").text(chrome.i18n.getMessage("app_sp_replacefilename")),
+$("<input>", {type: "text", id: "newtitlefolderinsert", placeholder: chrome.i18n.getMessage("replace"), class: "selectpxnyya"}).val(""),
+$("<input>", {type: "text", id: "newtitlefolderinsert2", placeholder: chrome.i18n.getMessage("app_sp_to"), class: "selectpxnyya"}).val(""),
 $("<br>"),
 
-$("<input>", {type: "submit", value: "Save"}).click(function(){
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("save")}).click(function(){
 
 $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME");
 renameimagepxkePX2($("#newtitlefolderinsert").val(), itemnamesetbase, thishere, $("#newtitlefolderinsert2").val());
@@ -923,7 +930,7 @@ $("#copytextdapkl").remove();
 
 }),
 
-$("<input>", {type: "submit", value: "Close"}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -966,10 +973,10 @@ $(".NEWNAMESYSTEMP").addClass("SELECTEDSETTIME").removeClass("NEWNAMESYSTEMP");
 
 $("body").append($("<div>", {id: "copytextdapkl", style: "display: none;", class: "copytimemusic"}).append(
 
-$("<p>").text("Set Custom Time:"),
+$("<p>").text(chrome.i18n.getMessage("app_sp_setcustomtime")),
 
 $("<div>", {class: "starts"}).append(
-$("<span>").text("Start: "),
+$("<span>").text(chrome.i18n.getMessage("start")+": "),
 $("<input>", {type: "number", value: "0", id: "hourst", max: 99, min: 0, title: "Hour", class: "selectpxnyya"}).change(function(){
 if(($(this).val() > 99) || ($(this).val() < 0)){$(this).val(0)}
 }), 
@@ -983,7 +990,7 @@ if(($(this).val() > 59) || ($(this).val() < 0)){$(this).val(0)}
 $("<br>"),
 
 $("<div>", {class: "ends"}).append(
-$("<span>").text("End: "),
+$("<span>").text(chrome.i18n.getMessage("end")+": "),
 $("<input>", {type: "number", value: "0", id: "hourfn", max: 99, min: 0, title: "Hour", class: "selectpxnyya"}).change(function(){
 if(($(this).val() > 99) || ($(this).val() < 0)){$(this).val(0)}
 }), 
@@ -996,7 +1003,7 @@ if(($(this).val() > 59) || ($(this).val() < 0)){$(this).val(0)}
 
 $("<br>"),
 
-$("<input>", {type: "submit", value: "Save"}).click(function(){
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("save")}).click(function(){
 
 $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME");
 
@@ -1008,12 +1015,12 @@ $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");
 
 
 
-$("<input>", {type: "submit", value: "Close"}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");}),
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");}),
 
 
 
 
-$("<input>", {type: "submit", value: "Reset"}).click(function(){
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("reset")}).click(function(){
 
 $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME");
 
@@ -1199,7 +1206,7 @@ if((datype == "nextst") || (datype == "repeatload")){$("#"+playlistpxct[pageclic
 else{$("#"+$(thishere).attr("folderidxp")+" #openmusic span").addClass("glyphicon glyphicon-play");}
 
 $("#volumeico").addClass("volloading");
-document.title = "SoundBook Plus"
+document.title = chrome.i18n.getMessage("appsoundbookplus");
 playertype = playlistpxct[pageclicknumberpdss].playertype;
 
 $("[id^='subfolderpx']").removeClass("musicplayfolder").removeClass("submusicplayfolder");
@@ -1251,7 +1258,7 @@ type: "basic",
 iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
 title: playlistpxct[pageclicknumberpdss].title,
 message: playlistpxct[pageclicknumberpdss].url,
-contextMessage: "SoundBook Plus"
+contextMessage: chrome.i18n.getMessage("appsoundbookplus")
 })
 }
 
@@ -1305,7 +1312,7 @@ type: "basic",
 iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
 title: "ERROR URL",
 message: errorid.title,
-contextMessage: "SoundBook Plus"
+contextMessage: chrome.i18n.getMessage("appsoundbookplus")
 })
 }
 
@@ -1420,11 +1427,11 @@ var cancelload = false
 
 if(start == true){
 
-$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text("Home").click(function(){
+$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text(chrome.i18n.getMessage("home")).click(function(){
 openfolder(startid, this, "homepage");
 })));
 
-$("#openpagefav").text("FOLDER ID: "+startid);
+$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip());
 
 	
 }
@@ -1599,12 +1606,12 @@ if((start == true) || (start == "homepage")){generatormenupx();}
 
 else if(start == "folder"){if(createdmore == false){if(moreitem == true){$("#moreclickbase").append(
 
-$("<div>", {id: "moreclick", class: "clickdevart"}).text("More").click(function(){
+$("<div>", {id: "moreclick", class: "clickdevart"}).text(chrome.i18n.getMessage("more")).click(function(){
 pagesforsecpg = pagesforsecpg+pagesforsecpgnbx
 loopcreatordv();
 }),
 
-$("<div>", {id: "moreclick2", class: "clickdevart"}).text("All").click(function(){
+$("<div>", {id: "moreclick2", class: "clickdevart"}).text(chrome.i18n.getMessage("all")).click(function(){
 pagesforsecpg = pagesforsecpg+999999999
 loopcreatordv();
 })
@@ -1804,8 +1811,8 @@ $("#sound").trigger("change");
 
 // Start System
 
-function searchfolder(detectagain){chrome.bookmarks.search({"title": "SoundBook Plus - Music List"}, function(favdata){
-if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": "SoundBook Plus - Music List"}, function(){
+function searchfolder(detectagain){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
+if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_sp_folder")}, function(){
 $("#foldercreatesc").modal();
 searchfolder(detectagain);
 })}
@@ -1890,7 +1897,7 @@ if(typeimportclickp == "youtube"){
 function actionyoutubeplaylist(dataplaylist, devname){
 youtubeplaylist.pauseVideo();
 if(dataplaylist == "error"){
-$("#resultimportpx").text("Error in the URL was detected!"); loadingset(false); recpagespxerk({"intro" :"again"});
+$("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimerror")); loadingset(false); recpagespxerk({"intro" :"again"});
 }
 else if(dataplaylist == "ready"){youtubeplaylist.cuePlaylist({
 list:devname,
@@ -1902,16 +1909,16 @@ else{if(repeatavxvideo == false){
 // GERADOR
 repeatavxvideo = true 
 
-var gettitlepage = prompt("Folder Name:", "");
+var gettitlepage = prompt(chrome.i18n.getMessage("app_sp_foldername")+":", "");
 
 
-chrome.bookmarks.search({"title": "SoundBook Plus - Music List"}, function(favdata){
+chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": gettitlepage}, function(newfavpxsd){
 
 createnewplaylistid = newfavpxsd.id
 var countpxsk = 1
 for(var prop in youtubeplaylist.getPlaylist()) {
-if(countpxsk == Number(youtubeplaylist.getPlaylist().length)){loadingset(false); recpagespxerk({"intro" :"again"}); $("#resultimportpx").text("Your new folder was created with success!");}
+if(countpxsk == Number(youtubeplaylist.getPlaylist().length)){loadingset(false); recpagespxerk({"intro" :"again"}); $("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimcomplete"));}
 if(youtubeplaylist.getPlaylist().hasOwnProperty(prop)){
 
 countpxsk = countpxsk+1

@@ -15,7 +15,7 @@ types: ["main_frame"]
 
 chrome.contextMenus.create({	
     id: "opencheckapi",	
-    title: "Check API Status",
+    title: chrome.i18n.getMessage("checkapi_title"),
     contexts:["browser_action"], 
     onclick: function(){chrome.windows.create({url: "apps/checkapi.html", type: "popup", state: "maximized"})}
 });
@@ -27,21 +27,21 @@ chrome.contextMenus.create({
 
 chrome.contextMenus.create({	
     id: "opendevianplus",	
-    title: "Devian Plus",
+    title: chrome.i18n.getMessage("appdevianplus"),
     contexts:["browser_action"], 
     onclick: function(){chrome.windows.create({url: "apps/devianplus.html", type: "popup", state: "maximized"})}
 });
 
 chrome.contextMenus.create({	
     id: "opendsoundbookplus",	
-    title: "SoundBook Plus",
+    title: chrome.i18n.getMessage("appsoundbookplus"),
     contexts:["browser_action"], 
     onclick: function(){chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "maximized"})}
 });
 
 chrome.contextMenus.create({	
     id: "openfanficbookin",	
-    title: "FanFic Bookin",
+    title: chrome.i18n.getMessage("appfanficbookin"),
     contexts:["browser_action"], 
     onclick: function(){chrome.windows.create({url: "apps/fanficbookinplus.html", type: "popup", state: "maximized"})}
 });

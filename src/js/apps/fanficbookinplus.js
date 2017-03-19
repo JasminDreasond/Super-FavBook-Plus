@@ -30,9 +30,17 @@ var numbercountitems = 0
 
 
 function itemcountsystemfolder(){
-if(numbercountitems == 0){$("#itemnumber").text("Nothing in the folder");}
-if(numbercountitems == 1){$("#itemnumber").text(numbercountitems+" Item in the folder");}
-else{$("#itemnumber").text(numbercountitems+" Items in the folder");}
+if(numbercountitems > 99){numbercountitemsview = "99+"}
+else{numbercountitemsview = numbercountitems}
+if(numbercountitems == 0){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_nothingfolder")}).text(numbercountitemsview).tooltip());
+}
+if(numbercountitems == 1){
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemfolder")}).text(numbercountitemsview).tooltip());
+}
+else{
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-open folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": numbercountitems+" "+chrome.i18n.getMessage("gapp_itemsfolder")}).text(numbercountitemsview).tooltip());
+}
 }
 
 
@@ -57,25 +65,21 @@ function submitcapst(thishere){window.open($("#capselect option:selected").attr(
 
 
 
-
+// Homepage
 
 function generatormenupx(){
 $("#imagelist").empty();
 
 $("#imagelist").append($("<div>", {id: "homepx"}).append(
 
-$("<h1>", {class: "title"}).text("Welcome"),
+$("<h1>", {class: "title"}).text(chrome.i18n.getMessage("welcome")),
 
-$("<p>", {class: "info"}).text("This is your Chrome Favourites Page"),
-$("<p>", {class: "info"}).text("Send your favourite Fic to the folder \"FanFic Bookin - Fic List\"")
-//$("<img>", {id: "devmasc", alt: "devmasc", src: "http://orig11.deviantart.net/9365/f/2009/291/8/3/f_e_l_l_a___deviantart_tour_4_by_greatlp.png"}),
-
-//$("<p>", {class: "credits"}).text("Art made by ").append($("<a>", {href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank"}).text("thekidKaos"))
-
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("gapp_welcome_text")),
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_fb_welcome_text")+' "'+chrome.i18n.getMessage("app_fb_folder")+'"')
 
 ))
 
-$("#itemnumber").text("This is the Home Page");
+$("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-home folderitems"}), $("<span>", {class: "badge", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderhome")}).text(0).tooltip());
 
 loadingset(false);
 }
@@ -279,7 +283,7 @@ function closeimagest(){
 detectpageopenx = false
 
 $("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
-document.title = "FanFic Bookin"
+document.title = chrome.i18n.getMessage("appfanficbookin");
 
 $("body").css("overflow", "").removeClass("imagemodeps");
 $("#imgpreview").addClass("anticlick").fadeOut();
@@ -287,7 +291,7 @@ $("#imgpreview").addClass("anticlick").fadeOut();
 
 function openimagest(datype, clickdata, thishere){
 
-document.title = $(thishere).text()+" - FanFic Bookin"
+document.title = $(thishere).text()+" - "+chrome.i18n.getMessage("appfanficbookin");
 
 $("#clickclosepagepxk, #capsubmit").off("click");
 $("#capselect").off("change");
@@ -322,12 +326,12 @@ $("#imgpreview #conteudo").append($("<a>", {href: this.url, target: "_blank", cl
 // Autor
 $(fanfic).find("#left_part .tooltip_userinfo").each(function(){
 $(this).attr('href',"https://fanfiction.com.br"+$(this).attr('href'));
-$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text("Escrito por "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
+$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text(chrome.i18n.getMessage("by")+" "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
 })
 
 $("#imgpreview #conteudo").append($("<div>", {id: "ficoptions"}).append(
 $("<select>", {id: "capselect", folderid: idfolderclick}).change(function(){selectcapst(this);}),
-$("<input>", {id: "capsubmit", type: "submit", value: "Enter", folderid: idfolderclick}).click(function(){submitcapst(this);})
+$("<input>", {id: "capsubmit", type: "submit", value: chrome.i18n.getMessage("enter"), folderid: idfolderclick}).click(function(){submitcapst(this);})
 ))
 
 // Capa
@@ -352,13 +356,13 @@ $("#imgpreview #conteudo").append($("<a>", {href: this.url, target: "_blank", cl
 
 $("#imgpreview #conteudo").append($("<div>", {id: "ficoptions"}).append(
 $("<select>", {id: "capselect", folderid: idfolderclick}).change(function(){selectcapst(this);}),
-$("<input>", {id: "capsubmit", type: "submit", value: "Enter", folderid: idfolderclick}).click(function(){submitcapst(this);})
+$("<input>", {id: "capsubmit", type: "submit", value: chrome.i18n.getMessage("enter"), folderid: idfolderclick}).click(function(){submitcapst(this);})
 ))
 
 // Autor
 $(fanfic).find("#profile_top .xcontrast_txt[href^='/u/']").each(function(){
 $(this).attr('href',"https://www.fanfiction.net"+$(this).attr('href'));
-$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text("By "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
+$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text(chrome.i18n.getMessage("by")+" "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
 })
 
 var geturlcap = this.url.split("?_=")[0]
@@ -387,12 +391,12 @@ $("#imgpreview #conteudo").append($("<a>", {href: this.url, target: "_blank", cl
 // Autor
 $(fanfic).find(".title .author a").each(function(){
 $(this).attr('href',"http://www.fimfiction.net"+$(this).attr('href'));
-$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text("By "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
+$("#imgpreview #conteudo").append($("<div>", {class: "autor"}).append($("<span>").text(chrome.i18n.getMessage("by")+" "), $("<a>", {href: $(this).attr("href"), target: "_blank"}).text($(this).text())));
 })
 
 $("#imgpreview #conteudo").append($("<div>", {id: "ficoptions"}).append(
 $("<select>", {id: "capselect", folderid: idfolderclick}).change(function(){selectcapst(this);}),
-$("<input>", {id: "capsubmit", type: "submit", value: "Enter", folderid: idfolderclick}).click(function(){submitcapst(this);})
+$("<input>", {id: "capsubmit", type: "submit", value: chrome.i18n.getMessage("enter"), folderid: idfolderclick}).click(function(){submitcapst(this);})
 ))
 
 // Capa
@@ -454,11 +458,11 @@ var cancelload = false
 
 if(start == true){
 
-$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text("Home").click(function(){
+$("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {class: "glyphicon glyphicon-home active"}).text(chrome.i18n.getMessage("home")).click(function(){
 openfolder(startid, this, "homepage");
 })));
 
-$("#openpagefav").text("FOLDER ID: "+startid);
+$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip());
 	
 }
 
@@ -576,12 +580,12 @@ if((start == true) || (start == "homepage")){generatormenupx();}
 
 else if(start == "folder"){if(createdmore == false){if(moreitem == true){$("#moreclickbase").append(
 
-$("<div>", {id: "moreclick", class: "clickdevart"}).text("More").click(function(){
+$("<div>", {id: "moreclick", class: "clickdevart"}).text(chrome.i18n.getMessage("more")).click(function(){
 pagesforsecpg = pagesforsecpg+50
 loopcreatordv();
 }),
 
-$("<div>", {id: "moreclick2", class: "clickdevart"}).text("All").click(function(){
+$("<div>", {id: "moreclick2", class: "clickdevart"}).text(chrome.i18n.getMessage("all")).click(function(){
 pagesforsecpg = pagesforsecpg+999999999
 loopcreatordv();
 })
@@ -660,8 +664,8 @@ generatorimages(foldercfg[0].children, folder.length, true, foldercfg[0].id, "fo
 
 // Start System
 
-function searchfolder(detectagain){chrome.bookmarks.search({"title": "FanFic Bookin - Fic List"}, function(favdata){
-if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": "FanFic Bookin - Fic List"}, function(){
+function searchfolder(detectagain){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_fb_folder")}, function(favdata){
+if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_fb_folder")}, function(){
 $("#foldercreatesc").modal();
 searchfolder(detectagain);
 })}

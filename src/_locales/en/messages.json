@@ -1,0 +1,219 @@
+{
+
+// Translator \\
+
+"translator_text": {"message": ""},
+"translator_name": {"message": "Jackie Dreasond"},
+"translator_page": {"message": "https://github.com/JackieApkon"},
+
+
+// Apps \\
+
+"appName": {"message": "Super FavBook Plus"},
+"appDesc": {"message": "Your new super bookmark"},
+
+"appdevianplus": {"message": "Devian Plus"},
+"appsoundbookplus": {"message": "SoundBook Plus"},
+"appfanficbookin": {"message": "FanFic Bookin"},
+
+
+
+// Options \\
+
+"options_title": {"message": "Welcome!"},
+"options_text1": {"message": "Please, choose a Software to use"},
+"options_text2": {"message": "Disable API"},
+"options_text3": {"message": "Share this extension with your friends"},
+"options_checkapi": {"message": "Check API Status"},
+"options_privacy": {"message": "Privacy Policy"},
+"options_privacy_text": {"message": "By using this product, you agree that you'll allow storing files in your browser to save all of your progress. \nThis extension does not possess advertising and no information or data will be collected during use. \n\nAll softwares is powered by a Website API | This extension is not affiliated or endorsed"},
+"options_credit": {"message": "made by"},
+
+
+
+// Check API \\
+
+"checkapi_title": {"message": "Check API Status"},
+
+"checkapi_main": {"message": "API Status"},
+"checkapi_main2": {"message": "Status Services"},
+"checkapi_scapi": {"message": "SoundCloud API"},
+"checkapi_ytapi": {"message": "Youtube API"},
+"checkapi_daapi": {"message": "Deviantart API"},
+"checkapi_dbapi": {"message": "Derpibooru API"},
+
+"checkapi_service": {"message": "Service"},
+"checkapi_status": {"message": "Status"},
+
+
+
+
+
+// Message \\
+
+"close": {"message": "Close"},
+"save": {"message": "Save"},
+"send": {"message": "Send"},
+"error": {"message": "Error"},
+"loading": {"message": "Loading"},
+"option": {"message": "Option"},
+"value": {"message": "Value"},
+"credits": {"message": "Credits"},
+"options": {"message": "Options"},
+"progressbar": {"message": "Progress Bar"},
+"restoredefault": {"message": "Restore Default"},
+"confirm": {"message": "Confirm"},
+"show": {"message": "Show"},
+"selectall": {"message": "Select All"},
+"unknown": {"message": "Unknown"},
+"none": {"message": "None"},
+"next": {"message": "Next"},
+"previous": {"message": "Previous"},
+"refresh": {"message": "Refresh"},
+"reload": {"message": "Reload"},
+"changecolor": {"message": "Change Color"},
+"reflect": {"message": "Reflect"},
+"openlink": {"message": "Open URL"},
+"repeat": {"message": "Repeat"},
+"random": {"message": "Random"},
+"play": {"message": "Play"},
+"volume": {"message": "Volume"},
+"notifications": {"message": "Notifications"},
+"welcome": {"message": "Welcome"},
+"start": {"message": "Start"},
+"end": {"message": "End"},
+"remove": {"message": "Remove"},
+"reset": {"message": "Reset"},
+"cancel": {"message": "Cancel"},
+"replace": {"message": "Replace"},
+"home": {"message": "Home"},
+"more": {"message": "More"},
+"all": {"message": "All"},
+"max": {"message": "Max"},
+"profile": {"message": "Profile"},
+"gallery": {"message": "Gallery"},
+"prints": {"message": "Prints"},
+"favourites": {"message": "Favourites"},
+"journal": {"message": "Journal"},
+"page": {"message": "Page"},
+"by": {"message": "By"},
+"enter": {"message": "Enter"},
+
+
+
+
+// Global App \\
+
+"gapp_newfolder": {"message": "New Folder Created!"},
+"gapp_checkfolder": {"message": "Please, check your bookmark now."},
+"gapp_folderhomenm": {"message": "Folder Home Name"},
+"gapp_loading": {"message": "Please, wait a moment..."},
+"gapp_collections": {"message": "COLLECTIONS CHROME"},
+"gapp_loadperpage": {"message": "Loads per page"},
+"gapp_importpages": {"message": "Import Pages"},
+"gapp_livemode": {"message": "Live Mode"},
+"gapp_closelive": {"message": "Close Live Mode"},
+"gapp_nothingfolder": {"message": "Nothing in the folder"},
+"gapp_itemfolder": {"message": "Item in the folder"},
+"gapp_itemsfolder": {"message": "Items in the folder"},
+"gapp_folderhome": {"message": "This is the Home Page"},
+"gapp_folderid": {"message": "Folder ID"},
+"gapp_welcome_text": {"message": "This is your Chrome Favourites Page"},
+"gapp_artcredits": {"message": "Art made by"},
+"gapp_folderimerror": {"message": "Error in the URL was detected!"},
+"gapp_folderimcomplete": {"message": "Your new folder was created with success!"},
+
+
+
+
+
+// Fanfic Bookin \\
+
+"app_fb_folder": {"message": "FanFic Bookin - Fic List"},
+"app_fb_urlerror": {"message": "URL ERROR!"},
+"app_fb_search": {"message": "Search fanfics in the folder"},
+"app_fb_welcome_text": {"message": "Send your favourite Fic to the folder"},
+
+
+
+// Devian Plus \\
+
+"app_dp_folder": {"message": "DevianPlus - FavPage"},
+"app_dp_import": {"message": "Import a favourite or gallery page to your Google Chrome"},
+"app_dp_importexample": {"message": "http://example.deviantart.com/favourites/"},
+"app_dp_search": {"message": "Search images in the folder"},
+"app_dp_welcome_text": {"message": "Send your favourite art to the folder"},
+"app_dp_by": {"message": "by"},
+"app_dp_openimage": {"message": "Open Image"},
+"app_dp_openprofile": {"message": "Open Profile"},
+"app_dp_customiconscredit": {"message": "Custom Icons - Credits"},
+"app_dp_getthumbcode": {"message": "Thumb Code"},
+"app_dp_geticoncode": {"message": "Icon Code"},
+"app_dp_getdevcode": {"message": "Dev Code"},
+
+
+
+// SoundBook Plus \\
+
+"app_sp_folder": {"message": "SoundBook Plus - Music List"},
+"app_sp_livemode": {"message": "Live Mode - Theme Options"},
+"app_sp_backgroundcolor": {"message": "Background Color"},
+"app_sp_button": {"message": "Button"},
+"app_sp_buttonhover": {"message": "Button Hover"},
+"app_sp_buttonclick": {"message": "Button Click"},
+"app_sp_buttonactive": {"message": "Button Active"},
+"app_sp_time": {"message": "Time"},
+"app_sp_author": {"message": "Author"},
+"app_sp_progressbar": {"message": "Progress Bar"},
+"app_sp_progressbarcomplete": {"message": "Progress Bar Complete"},
+"app_sp_progressbaricon": {"message": "Progress Bar Icon"},
+"app_sp_progressbariconative": {"message": "Progress Bar Icon Active"},
+"app_sp_progressbariconhover": {"message": "Progress Bar Icon Hover"},
+"app_sp_volumeclick": {"message": "Volume Click"},
+"app_sp_volumebarclick": {"message": "Volume Bar Click"},
+"app_sp_text": {"message": "Text"},
+"app_sp_importexport": {"message": "Import / Export"},
+"app_sp_exportcolors": {"message": "Export Colors"},
+"app_sp_import": {"message": "Import Colors"},
+"app_sp_importtitle": {"message": "Import a playlist or album page to your Google Chrome"},
+"app_sp_yt_small": {"message": "Small"},
+"app_sp_yt_medium": {"message": "Medium"},
+"app_sp_yt_large": {"message": "Large"},
+"app_sp_yt_hd720": {"message": "HD 720p"},
+"app_sp_yt_hd1080": {"message": "HD 1080p"},
+"app_sp_yt_highres": {"message": "Highres"},
+"app_sp_yt_importexample": {"message": "https://www.youtube.com/playlist?list=Example"},
+"app_sp_sc_importexample": {"message": "https://soundcloud.com/example/sets/example"},
+"app_sp_search": {"message": "Search musics in the folder"},
+"app_sp_reloadplaylist": {"message": "Reload Playlist"},
+"app_sp_play": {"message": "Play / Pause"},
+"app_sp_welcome_text": {"message": "Send your favourite Music to the folder"},
+"app_sp_foldername": {"message": "Folder Name"},
+"app_sp_setcustomtime": {"message": "Set Custom Time"},
+"app_sp_changefilename": {"message": "Change File Name"},
+"app_sp_confirmaction": {"message": "Confirm your action"},
+"app_sp_items": {"message": "items"},
+"app_sp_to": {"message": "to"},
+"app_sp_replacefilename": {"message": "Replace File Name"},
+
+
+
+
+
+// Names \\
+
+"tumblr": {"message": "Tumblr"},
+"twitter": {"message": "Twitter"},
+"facebook": {"message": "Facebook"},
+"github": {"message": "GitHub"},
+"deviantart": {"message": "Deviantart"},
+"derpibooru": {"message": "Derpibooru"},
+"soundcloud": {"message": "SoundCloud ®"},
+"youtube": {"message": "Youtube"},
+"fanfiction": {"message": "Fanfiction"},
+"nyahfanfiction": {"message": "Nyah! Fanfiction"},
+"fimfiction": {"message": "FIM Fiction"}
+
+
+
+}

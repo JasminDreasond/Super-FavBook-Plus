@@ -1,0 +1,644 @@
+/* Base */
+
+html,body{
+background: #D4DFD0;
+}
+
+.modal .modal-dialog .modal-content{
+background: #D4DFD0;
+}
+
+.badge{
+background-color: #5FAC75;
+}
+
+.modal .modal-dialog .modal-content *{
+border-color: transparent;
+}
+
+.modal .modal-dialog .modal-content button{
+border-color: #93A98F;
+}
+
+.modal .modal-dialog .modal-content .modal-header{
+background-color: #313836;
+border-color: #242927;
+color: #AFC0B9;
+}
+
+.modal .close{
+color: #FFF;
+}
+
+
+
+
+.navbar-inverse{
+background-color: #313836;
+border-color: #242927;
+}
+
+.navbar-inverse a{
+color: #AFC0B9 !important;
+}
+
+.navbar-inverse a:hover{
+color: #e6e6e6 !important;
+}
+
+#container{
+background: #D4DFD0;
+}
+
+.clickdevart{
+background: linear-gradient(#DAF087, #B2E140);
+border: 1px solid #93A98F;
+color: #333;
+text-shadow: 0px 1px 1px #E1F3AF;
+}
+
+.clickdevart:hover{
+background: linear-gradient(#E6F788, #C0EC30);
+}
+
+.clickdevart:active{
+background: linear-gradient(#92C01F, #BBD167);
+}
+
+.clickdevart2{
+border: 0px solid transparent;
+background-color: #5FAC75;
+color: #FFF;
+}
+
+.clickdevart2:hover{
+background-color: #4F8F61;
+}
+
+.clickdevart2:active{
+background-color: #396947;
+}
+
+.clickdevart2:focus{outline: none;}
+
+
+::selection {
+background-color: #212c24 !important;
+color: #FFF !important;
+}
+ 
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 2px rgba(53,0,0,0.0); 
+background-color: #475C4D;
+}
+ 
+::-webkit-scrollbar-thumb {
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
+background-color: #8ca693;
+}
+
+::-webkit-scrollbar-thumb:hover {
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1);
+background-color: rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+background-color: rgba(0,0,0,0.2);
+-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
+}
+
+
+#folders::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 2px rgba(53,0,0,0.0); 
+background-color: transparent !important;
+}
+
+
+
+
+/* Scroll Up */
+
+#scrollup:before{
+background-color: #313836;
+}
+#scrollup:before, #scrollup{
+color: #FFF;
+}
+
+#scrollup:hover:before{
+background-color: #1a1a1a !important;
+}
+#scrollup:active:before{
+background-color: #0d0d0d !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Image Preview */
+
+#imgpreview #conteudo center .invertimagepx{
+-webkit-transform: scaleX(-1);
+}
+
+#imgpreview[class="backchhangepx"]{
+background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+#imgpreview .invertimagepx, #imgpreview #backchangecolor[class*="backchhangepx"]{
+color: #9b9b9b !important;
+background-color: transparent !important;
+}
+
+#imgpreview .invertimagepx:hover, #imgpreview #backchangecolor[class*="backchhangepx"]:hover{
+color: #DDD !important;
+}
+
+#imgpreview .invertimagepx:active, #imgpreview #backchangecolor[class*="backchhangepx"]:active{
+color: #FFF !important;
+}
+
+#nextimageclickpx, #previousimageclickpx, #imginvertclick, #backchangecolor, #clickclosepagepxk{
+color: #FFF;
+cursor: pointer;
+position: fixed;
+transition: color 0.15s;
+}
+
+#imginvertclick{
+left: 15px;
+top: 15px;
+font-size: 25pt;
+}
+
+#nextimageclickpx, #previousimageclickpx{
+top: 93%;
+font-size: 29pt;
+}
+
+#nextimageclickpx, #nextimageclickpx:before{
+right: 0px;
+margin-right: 15px;
+}
+
+#previousimageclickpx, #previousimageclickpx:before{
+left: 0px;
+margin-left: 7px;
+}
+
+.limitpagepx{
+color: #f2a01d !important;
+}
+
+.limitpagepx:hover{
+color: #c18017 !important;
+}
+
+.limitpagepx:active{
+color: #915f0f !important;
+}
+
+
+.anticlick #nextimageclickpx,.anticlick #nextimageclickpx:before{
+right: -16px !important;
+}
+
+#imginvertclick:hover, #nextimageclickpx:hover, #previousimageclickpx:hover, #backchangecolor:hover, #clickclosepagepxk:hover{
+color: #B4B4B4;
+}
+
+#imginvertclick:active, #nextimageclickpx:active, #previousimageclickpx:active, #backchangecolor:active, #clickclosepagepxk:active{
+color: #949494;
+}
+
+
+#backchangecolor{
+left: 15px;
+top: 55px;
+}
+
+#clickclosepagepxk{
+right: 35px;
+top: 15px;
+}
+
+.anticlick #clickclosepagepxk{
+right: 19px !important;
+}
+
+
+
+
+
+
+
+
+
+
+#imgpreview[class*="backchhangepx"] .invertimagepx, #imgpreview #backchangecolor[class*="backchhangepx"]{
+color: #9b9b9b !important;
+}
+
+#imgpreview[class*="backchhangepx"] .invertimagepx:hover, #imgpreview[class*="backchhangepx"] #backchangecolor[class*="backchhangepx"]:hover{
+color: #bababa !important;
+}
+
+#imgpreview[class*="backchhangepx"] .invertimagepx:active, #imgpreview #backchangecolor[class*="backchhangepx"]:active{
+color: #333 !important;
+}
+
+#imgpreview[class*="backchhangepx"] #nextimageclickpx, #imgpreview[class*="backchhangepx"] #previousimageclickpx, #imgpreview[class*="backchhangepx"] #imginvertclick, #imgpreview[class*="backchhangepx"] #backchangecolor, #imgpreview[class*="backchhangepx"] #clickclosepagepxk{
+color: #333;
+}
+
+#imgpreview[class*="backchhangepx"] #nextimageclickpx:hover, #imgpreview[class*="backchhangepx"] #previousimageclickpx:hover, #imgpreview[class*="backchhangepx"] #imginvertclick:hover, #imgpreview[class*="backchhangepx"] #backchangecolor:hover, #imgpreview[class*="backchhangepx"] #clickclosepagepxk:hover{
+color: #606060;
+}
+
+#imgpreview[class*="backchhangepx"] #nextimageclickpx:active, #imgpreview[class*="backchhangepx"] #previousimageclickpx:active, #imgpreview[class*="backchhangepx"] #imginvertclick:active, #imgpreview[class*="backchhangepx"] #backchangecolor:active, #imgpreview[class*="backchhangepx"] #clickclosepagepxk:active{
+color: #878787;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.imagemodeps{
+padding-right: 15px;
+}
+
+#imgpreview{
+overflow-y: scroll;
+text-align: center;
+}
+
+#imgpreview #conteudo{
+text-align: left;
+width: 100%;
+margin: 0 auto;
+min-height: 100%;
+}
+
+#imgpreview img{
+margin: 2% 0px;
+cursor: pointer;
+transition: -webkit-filter 0.15s;
+}
+
+
+@media screen and (min-height: 1px) {
+#imgpreview img{
+max-width: 500px ;
+}
+}
+
+@media screen and (min-height: 600px) {
+#imgpreview img{
+max-width: 1000px;
+
+}
+}
+
+@media screen and (min-height: 700px) {
+#imgpreview img{
+max-width: 1100px;
+}
+}
+
+@media screen and (min-height: 800px) {
+#imgpreview img{
+max-width: 1200px;
+}
+}
+
+@media screen and (min-height: 900px) {
+#imgpreview img{
+max-width: 1300px;
+}
+}
+
+@media screen and (min-height: 1000px) {
+#imgpreview img{
+max-width: 1400px;
+}
+}
+
+@media screen and (min-height: 1100px) {
+#imgpreview img{
+max-width: 1500px;
+}
+}
+@media screen and (min-height: 1200px) {
+#imgpreview img{
+max-width: 1600px;
+}
+}
+@media screen and (min-height: 1300px) {
+#imgpreview img{
+max-width: 1700px;
+}
+}
+@media screen and (min-height: 1400px) {
+#imgpreview img{
+max-width: 1800px;
+}
+}
+@media screen and (min-height: 1500px) {
+#imgpreview img{
+max-width: 1900px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Folder List */
+
+.homefolder a{
+color: #333;
+}
+
+.homefolder a:hover{
+color: #000;
+}
+
+
+
+[id^="iconopensubfolderpx"]:hover:before{
+color: #000;
+}
+
+[id^="iconopensubfolderpx"]:active:before{
+color: #222;
+}
+
+
+
+
+#folders{
+background-color: #B5C9B1;
+}
+
+#folders a{
+color: #43564e;
+}
+
+#folders a:hover{
+color: #000;
+}
+
+#folders a:active{
+color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+/* Images */
+
+#imagelist figure img{
+max-height: 250px;
+box-shadow: 0px 0px 5px #333;
+cursor: pointer;
+transition: box-shadow 0.10s;
+}
+
+#imagelist figure img:hover{
+box-shadow: 0px 0px 10px #333;
+}
+
+#imagelist figure img:active{
+box-shadow: 0px 0px 15px #333;
+}
+
+#imagelist figure .title{
+margin-top: 20px;
+}
+
+#imagelist figure #markseck{
+margin: 0px 6px !important;
+}
+
+#imagelist figure .title a{
+color: #333;
+font-weight: bold;
+}
+
+#imagelist figure .title a:hover{
+color: #006080;
+font-weight: bold;
+}
+
+#imagelist figure .author{
+margin-top: -11px;
+margin-bottom: 0px;
+font-size: 9pt;
+color: #8C9A88;
+}
+
+
+
+
+#imagelist figure .provider a{
+color: #4a5363;
+font-size: 8pt;
+}
+
+#imagelist figure .provider a:hover{
+color: #6d7c96;
+font-size: 8pt;
+}
+
+
+
+
+#imagelist figure{
+text-align: center;
+display: inline-block;
+margin: 15px 20px;
+padding: 13px;
+max-width: 250px !important;
+transition: background-color 0.15s;
+}
+
+#imagelist figure img{
+max-width: 200px !important;
+height: auto !important;
+background-color: #DFEBDA;
+}
+
+
+
+#removefavclick{
+margin-left: -25px;
+right: 6px;
+top: 5px;
+float: right;
+border: 1px solid #bfbfbf;
+border-radius: 5px;
+background: linear-gradient(-90deg, rgba(230, 230, 230, 0.8), rgba(204, 204, 204, 0.8));
+}
+
+figure:hover #removefavclick{
+opacity: 1;
+}
+
+#removefavclick:hover{
+background: linear-gradient(rgba(230, 230, 230, 0.8), rgba(140, 140, 140, 0.8));
+}
+
+#removefavclick:active{
+background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8));
+color: #FFF;
+}
+
+
+
+
+
+.artmark{
+background-color: #baccb3 !important;
+}
+
+
+
+
+
+/* Right Click */
+
+.selectedplusthumbpx{
+-webkit-filter: brightness(70%) grayscale(50%);
+color: #595959;
+}
+
+.contextMenuPlugin{
+background-color: #E1E8DF;
+border: 1px solid #52695C;
+outline: 1px solid transparent;
+}
+
+.contextMenuPlugin > li > a {
+padding: 3px 15px 3px 35px;
+}
+
+.contextMenuPlugin > li > a:hover {
+background: -webkit-linear-gradient(top, #508EA0,#39798D);
+outline: 1px solid transparent;
+border: 1px solid transparent;
+color: #FFFFEF
+}
+
+.contextMenuPlugin > .gutterLine {
+border-left: 1px solid transparent;
+border-right: 1px solid transparent;
+}
+
+.contextMenuPlugin > li.divider {
+border-top: 0px dashed #9EB1A2;
+border-bottom: 0.1px dashed #9EB1A2;
+}
+
+.contextMenuPlugin > .header {
+background: transparent;
+color: ButtonText;
+text-align: center;
+padding: 5px;
+font-weight: bold;
+}
+
+
+#copytextdapkl{
+background-color: #E1E8DF;
+border: 1px solid #52695C;
+outline: 1px solid transparent;
+width: 400px;
+height: 116px;
+position: fixed;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+z-index: 10000;
+text-align: center;
+padding: 10px 10px 15px 10px;
+}
+
+#copytextdapkl p{
+font-weight: bold;
+}
+
+#copytextdapkl input[type="text"]{
+text-align: center;
+width: 350px;
+}
+
+#copytextdapkl input[type="submit"]{
+margin: 6px;
+background: linear-gradient(#DAF087, #B2E140);
+border: 1px solid #93A98F;
+color: #333;
+text-shadow: 0px 1px 1px #E1F3AF;
+padding: 4px 25px;
+border-radius: 3px;
+cursor: pointer;
+}
+
+#copytextdapkl input[type="submit"]:hover{
+background: linear-gradient(#E6F788, #C0EC30);
+}
+
+#copytextdapkl input[type="submit"]:active{
+background: linear-gradient(#92C01F, #BBD167);
+}

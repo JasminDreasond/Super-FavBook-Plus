@@ -14,11 +14,6 @@
 .navbar-fixed-bottom .container-fluid{padding-left: 10px;padding-right: 10px;}
 }
 
-@media screen and (max-width: 1246px) {
-#container{margin-top: 103px;}
-#selectmultimusic2, .clickoptionsmusic2{top: 111px !important;}
-}
-
 @media screen and (max-width: 1150px) {
 .musicbar .progress, .musicbar #musicbar{width: 32%;}
 #musicbar{margin-left: -32%;}
@@ -31,11 +26,9 @@
 
 @media screen and (max-width: 1135px) {
 #openpagefav, #itemnumber{display: none;}
-#container{margin-top: 53px;}
-#selectmultimusic2, .clickoptionsmusic2{top: 60px !important;}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1001px) {
 .navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
 .musicbar .progress, .musicbar #musicbar{width: 20%;}
 #musicbar{margin-left: -20%;}

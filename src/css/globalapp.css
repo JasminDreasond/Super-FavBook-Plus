@@ -1,5 +1,20 @@
 /* Base */
 
+.folderitems{
+margin-right: 7px;
+}
+
+.folderid{
+font-size: 12pt;
+position: absolute;
+top: 18px;
+right: 10px;
+}
+
+.text_space{
+white-space:pre-wrap;
+}
+
 body{
 overflow-y: scroll;
 background-color: #000;

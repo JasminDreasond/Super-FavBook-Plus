@@ -2,12 +2,13 @@
 <html>
 
 <head>
-<title>SoundBook Plus</title>
+<title langchrome="appsoundbookplus"></title>
 <meta charset="UTF-8">
 <link rel="icon" href="../appicons/soundbookplus.png">
 <script src="../js/jquery/jquery-3.1.0.js" type="text/javascript"></script>
 <script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
 <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
+<script src="../js/language.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
 <link rel="stylesheet" type="text/css" href="../css/apps/soundbookplus/default.css">
@@ -24,90 +25,90 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Live Mode - Theme Options</h4>
+        <h4 class="modal-title" langchrome="app_sp_livemode"></h4>
       </div>
       <div class="modal-body">
 	
 <table class="table liveoptionsp">
     <thead>
       <tr>
-        <th>Option</th>
-        <th>Value</th>
+        <th langchrome="option"></th>
+        <th langchrome="value"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Background Color:</td>
+        <td><span langchrome="app_sp_backgroundcolor"></span>:</td>
         <td><input type="color" id="backgroundlive" /></td>
       </tr>
       <tr>
-        <td>Button:</td>
+        <td><span langchrome="app_sp_button"></span>:</td>
         <td><input type="color" id="buttonslive" /></td>
       </tr>
       <tr>
-        <td>Button Hover:</td>
+        <td><span langchrome="app_sp_buttonhover"></span>:</td>
         <td><input type="color" id="buttonshoverlive" /></td>
       </tr>
       <tr>
-        <td>Button Click:</td>
+        <td><span langchrome="app_sp_buttonclick"></span>:</td>
         <td><input type="color" id="buttonsclicklive" /></td>
       </tr>
       <tr>
-        <td>Button Active:</td>
+        <td><span langchrome="app_sp_buttonactive"></span>:</td>
         <td><input type="color" id="buttonsactivelive" /></td>
       </tr>
       <tr>
-        <td>Time:</td>
+        <td><span langchrome="app_sp_time"></span>:</td>
         <td><input type="color" id="timer1live" /></td>
       </tr>
       <tr>
-        <td>Author:</td>
+        <td><span langchrome="app_sp_author"></span>:</td>
         <td><input type="color" id="authorlive" /></td>
       </tr>
       <tr>
-        <td>Progress Bar:</td>
+        <td><span langchrome="app_sp_progressbar"></span>:</td>
         <td><input type="color" id="progressbarlive" /></td>
       </tr>
       <tr>
-        <td>Progress Bar Complete:</td>
+        <td><span langchrome="app_sp_progressbarcomplete"></span>:</td>
         <td><input type="color" id="progressbar2live" /></td>
       </tr>
       <tr>
-        <td>Progress Bar Icon:</td>
+        <td><span langchrome="app_sp_progressbaricon"></span>:</td>
         <td><input type="color" id="progressbariconlive" /></td>
       </tr>
       <tr>
-        <td>Progress Bar Icon Active:</td>
+        <td><span langchrome="app_sp_progressbariconative"></span>:</td>
         <td><input type="color" id="progressbariconactivelive" /></td>
       </tr>
       <tr>
-        <td>Progress Bar Icon Hover:</td>
+        <td><span langchrome="app_sp_progressbariconhover"></span>:</td>
         <td><input type="color" id="progressbariconhoverlive" /></td>
       </tr>
       <tr>
-        <td>Volume Click:</td>
+        <td><span langchrome="app_sp_volumeclick"></span>:</td>
         <td><input type="color" id="volumeclicklive" /></td>
       </tr>
       <tr>
-        <td>Volume Bar Click:</td>
+        <td><span langchrome="app_sp_volumebarclick"></span>:</td>
         <td><input type="color" id="volumebarclicklive" /></td>
       </tr>
       <tr>
-        <td>Text:</td>
+        <td><span langchrome="app_sp_text"></span>:</td>
         <td><input type="color" id="textlive" /></td>
       </tr>
 	  
       <tr>
-        <td>Import/Export:</td>
+        <td><span langchrome="app_sp_importexport"></span>:</td>
         <td><textarea id="exportimportcolors"></textarea></td>
       </tr>
 	  
       <tr>
-        <td>Show:</td>
+        <td><span langchrome="show"></span>:</td>
         <td>
-		<label>Credits <input type="checkbox" id="creditslive" /></label>
-		<label>Options <input type="checkbox" id="optionslive" /></label>
-		<label>Progress Bar <input type="checkbox" id="progresslive" /></label>
+		<label><span langchrome="credits"></span> <input type="checkbox" id="creditslive" /></label>
+		<label><span langchrome="options"></span> <input type="checkbox" id="optionslive" /></label>
+		<label><span langchrome="progressbar"></span> <input type="checkbox" id="progresslive" /></label>
 		</td>
       </tr>
     </tbody>
@@ -116,11 +117,11 @@
 	</div>
 	
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-default" id="exportcolorlive">Export Colors</button>
-        <button type="button" class="btn btn-default" id="importcolorlive">Import Colors</button>
-        <button type="button" class="btn btn-default" id="defaultlive">Restore Default</button>
-        <button type="button" class="btn btn-default" id="confirmlive">Confirm</button>
+        <button type="button" class="btn btn-default" langchrome="close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" langchrome="app_sp_exportcolors" id="exportcolorlive"></button>
+        <button type="button" class="btn btn-default" langchrome="app_sp_import" id="importcolorlive"></button>
+        <button type="button" class="btn btn-default" langchrome="restoredefault" id="defaultlive"></button>
+        <button type="button" class="btn btn-default" langchrome="confirm" id="confirmlive"></button>
       </div>
     </div>
 
@@ -132,14 +133,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">New Folder Created!</h4>
+        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
       </div>
       <div class="modal-body">
-        <p>Please, check your bookmark now.</p>
-		<p>Folder Home Name: SoundBook Plus - Music List</p>
+        <p langchrome="gapp_checkfolder">Please, check your bookmark now.</p>
+		<p><span langchrome="gapp_folderhomenm">Folder Home Name</span>: <span langchrome="app_sp_folder"></span></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
       </div>
     </div>
 
@@ -150,8 +151,8 @@
 
 
 <div id="loading">
-<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext">Loading</div>
-<div class="ldmessagepx">Please, wait a moment...</div>
+<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
+<div class="ldmessagepx" langchrome="gapp_loading"></div>
 </div>
 
 
@@ -160,19 +161,19 @@
 
 <center><div id="conteudo">
 
-Import a playlist or album page to your Google Chrome
+<span langchrome="app_sp_importtitle"></span>
 
 <br/>
 
 <span id="soundcloudimport" class="hide">
-<input type="text" id="daautodetectsf" placeholder="https://soundcloud.com/example/sets/example"/>
+<input type="text" id="daautodetectsf" langchrome="" langchrome2="app_sp_sc_importexample" tsplaceholder="true" />
 <br/>
 
 https://soundcloud.com/ <input type="text" id="danamesf"/> / <select id="favtypesf"><option value="sets">sets</option><option value="albums">albums</option></select> / <input type="text" id="favfoldersf"/>
 </span>
 
 <span id="youtubeimport">
-<input type="text" id="daautodetectsf2" class="daautodetectsf" placeholder="https://www.youtube.com/playlist?list=Example"/>
+<input type="text" id="daautodetectsf2" class="daautodetectsf" langchrome="" langchrome2="app_sp_yt_importexample" tsplaceholder="true" />
 <br/>
 
 https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
@@ -182,12 +183,12 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 
 <div id="resultimportpx"></div>
 
-<input type="submit" id="dasubmovsf" class="clickdevart" value="Send" />
+<input type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" />
 <select id="importtype" class="hide" disabled>
-<option value="soundcloud">SoundCloud</option>
-<option value="Youtube" selected>Youtube</option>
+<option value="soundcloud" langchrome="soundcloud"></option>
+<option value="Youtube" selected langchrome="youtube"></option>
 </select>
-<input type="submit" id="dasubclosesf" class="clickdevart" value="Close" />
+<input type="submit" id="dasubclosesf" class="clickdevart" langchrome="close" />
 
 </div></center>
 
@@ -212,21 +213,21 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
 <div class="navbar-header">
-<a class="navbar-brand titletop"><img src="../appicons/soundbookplus.png" alt="logo"><span>SoundBook Plus</span></a>
+<a class="navbar-brand titletop"><img src="../appicons/soundbookplus.png" alt="logo"><span langchrome="appsoundbookplus">SoundBook Plus</span></a>
 </div>
 <ul class="nav navbar-nav">
-<li><input type="text" id="search" class="form-group" placeholder="Search musics in the folder" /></li>
+<li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_sp_search" tsplaceholder="true" /></li>
 <li><select id="appquality" class="form-control">
-<option value="small">Small</option>
-<option value="medium">Medium</option>
-<option value="large">Large</option>
-<option value="hd720">HD 720</option>
-<option value="hd1080">HD 1080</option>
-<option value="highres">Highres</option>
+<option value="small" langchrome="app_sp_yt_small"></option>
+<option value="medium" langchrome="app_sp_yt_medium"></option>
+<option value="large" langchrome="app_sp_yt_large"></option>
+<option value="hd720" langchrome="app_sp_yt_hd720"></option>
+<option value="hd1080" langchrome="app_sp_yt_hd1080"></option>
+<option value="highres" langchrome="app_sp_yt_highres"></option>
 </select></li>
-<li><a data-toggle="tooltip" data-placement="bottom" title="Notifications"><label><span class="glyphicon glyphicon-bell"></span> <input id="soundbooknoti" type="checkbox" /></label></a></li>
-<li><input id="openimportbtx" class="clickdevart2 importclick" value="Import Pages" /></li>
-<li><input id="livemode" class="clickdevart2 importclick" value="Live Mode" /></li>
+<li><a id="addnotificationspx" data-placement="bottom"><label><span class="glyphicon glyphicon-bell"></span> <input id="soundbooknoti" type="checkbox" /></label></a></li>
+<li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
+<li><input id="livemode" class="clickdevart2 importclick" langchrome="gapp_livemode" /></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li><a id="itemnumber"></a></li>
@@ -238,7 +239,7 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 <div id="folders">
 
 <p class="title">
-<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" title="Refresh"></span> COLLECTIONS CHROME
+<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
 <br/>
 <span id="openpagefav"></span>
 </p>
@@ -250,10 +251,10 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 
 <div id="images">
 <div id="selectionoptions2">
-<div class="glyphicon glyphicon-remove clickoptionsmusic2" id="removefavclick2" folderid="5222"></div>
-<div class="glyphicon glyphicon-console clickoptionsmusic2" id="renamefavclick2" folderid="5222"></div>
-<div class="glyphicon glyphicon-time clickoptionsmusic2" id="timefavclick2" folderid="5222"></div>
-<label class="clickoptionsmusic2" id="selectmultimusic2">Select all - <input type="checkbox"></label>
+<div class="glyphicon glyphicon-remove clickoptionsmusic2" id="removefavclick2"></div>
+<div class="glyphicon glyphicon-console clickoptionsmusic2" id="renamefavclick2"></div>
+<div class="glyphicon glyphicon-time clickoptionsmusic2" id="timefavclick2"></div>
+<label class="clickoptionsmusic2" id="selectmultimusic2"><span langchrome="selectall"></span> - <input type="checkbox"></label>
 </div>
 <div id="imagelist"></div>
 <div id="moreclickbase"></div>
@@ -264,21 +265,19 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 <div class="container-fluid"><center class="itemsmusic">
 
-<div id="creditslivepx">Super FavBook Plus © - Google Chrome Extension</div>
-
 <span class="options optionsox" id="options">
-<span id="closelive" class="glyphicon glyphicon-remove hide" title="Close Live Mode"></span>
-<a id="linkopen" target="_blank"><span class="glyphicon glyphicon-link" title="Open Link"></span></a>
-<span id="reloadfolderlive" class="glyphicon glyphicon-refresh" title="Reload Playlist"></span>
-<span id="enablerepeatmusic" class="glyphicon glyphicon-repeat" title="Repeat"></span>
-<span id="enablerandommusic" class="glyphicon glyphicon-random" title="Random"></span>
-<span id="previousimageclickpx" class="glyphicon glyphicon-step-backward stopclick" title="Previous"></span>
-<span id="playpause" class="glyphicon glyphicon-stop stopclick" title="Play"></span>
-<span id="nextimageclickpx" class="glyphicon glyphicon-step-forward stopclick" title="Next"></span>
+<span id="closelive" class="glyphicon glyphicon-remove hide" langchrome="" langchrome2="gapp_closelive" newtitle_lang="true"></span>
+<a id="linkopen" target="_blank"><span class="glyphicon glyphicon-link" langchrome="" langchrome2="openlink" newtitle_lang="true"></span></a>
+<span id="reloadfolderlive" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="app_sp_reloadplaylist" newtitle_lang="true"></span>
+<span id="enablerepeatmusic" class="glyphicon glyphicon-repeat" langchrome="" langchrome2="repeat" newtitle_lang="true"></span>
+<span id="enablerandommusic" class="glyphicon glyphicon-random" langchrome="" langchrome2="random" newtitle_lang="true"></span>
+<span id="previousimageclickpx" class="glyphicon glyphicon-step-backward stopclick" langchrome="" langchrome2="previous" newtitle_lang="true"></span>
+<span id="playpause" class="glyphicon glyphicon-stop stopclick" langchrome="" langchrome2="app_sp_play" newtitle_lang="true"></span>
+<span id="nextimageclickpx" class="glyphicon glyphicon-step-forward stopclick" langchrome="" langchrome2="next" newtitle_lang="true" ></span>
 </span>
 
 <span class="dropdown optionsox">
-<a class="dropdown-toggle volumeclick glyphicon glyphicon-volume-off" data-toggle="dropdown" id="volumeico" title="Volume">
+<a class="dropdown-toggle volumeclick glyphicon glyphicon-volume-off" data-toggle="dropdown" id="volumeico" langchrome="" langchrome2="volume" newtitle_lang="true">
 <span class="caret"></span></a>
 <ul class="dropdown-menu" id="soundspace">
 <li><input type="range" id="sound" max="100" /></li>
@@ -307,11 +306,11 @@ https://www.youtube.com/playlist?list= <input type="text" id="idplaylist"/>
 <table id="tableinfomusic">
 
 <thead>
-<tr><td id="infomuser">Unknown</td></tr>
+<tr><td id="infomuser" langchrome="unknown"></td></tr>
 </thead>
 
 <tbody>
-<tr><td id="infomtitle">None</td></tr>
+<tr><td id="infomtitle" langchrome="none"></td></tr>
 </tbody>
 
 </table>

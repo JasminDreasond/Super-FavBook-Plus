@@ -1,9 +1,10 @@
 {  
-"name":"Super FavBook Plus",
+"name":"__MSG_appName__",
 "short_name":"SFBP",
-"description":"Your new super bookmark",
-"version":"1.6.1",
+"description":"__MSG_appDesc__",
+"version":"1.6.2",
 "manifest_version":2,
+"default_locale": "en",
 "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js; object-src 'self'",
 "background": {
       "page": "background.html"
