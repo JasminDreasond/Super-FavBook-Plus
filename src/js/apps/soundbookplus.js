@@ -279,18 +279,27 @@ progressmusicxp($(this).val());
 if(detectagain == "again"){}
 else{if(api_soundcloud == true){
 widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(){
+
+if(playertype == "soundcloud"){
 if(detectprogresspx == true){detectloadsucess = true}
 widget.getPosition(function(datapor){progressmusicxp(datapor);});
+}
+else{widget.pause();}
+
 })
 }}
 
 
 // Youtube
 
-function youtubeplaying(){if(playertype == "youtube"){if(api_youtube == true){if(youtubeplayer.getPlayerState() == 1){
+function youtubeplaying(){
+	
+if(playertype == "youtube"){if(api_youtube == true){if(youtubeplayer.getPlayerState() == 1){
 if(detectprogresspx == true){detectloadsucess = true}
 progressmusicxp(youtubeplayer.getCurrentTime()*1000);
-}}}
+}
+
+}}
 
 if(pageclicknumberpmaxdss == null){randommusic = 0}
 else if(randommusic > pageclicknumberpmaxdss-1){randommusic = 1}
@@ -1336,7 +1345,7 @@ widget.bind(SC.Widget.Events.ERROR, function(){errormusicst(playlistpxct[pagecli
 }}
 
 // Youtube
-function youtubechange(videostates){
+function youtubechange(videostates){if(playertype == "youtube"){
 	
 infocollectmusic({
 "artwork": "https://img.youtube.com/vi/"+videostates.target.j.videoData.video_id+"/default.jpg",
@@ -1367,7 +1376,10 @@ newvideodetect = false
 else if(youtubeplayer.getPlayerState() == 0){if(newvideodetect == true){} else{
 if(repeatmusicen == true){youtubeplayer.seekTo(0,true);}
 else{nextimagestpx("next");}
-}}}
+}}
+
+}
+else{youtubeplayer.pauseVideo();}}
 
 
 
