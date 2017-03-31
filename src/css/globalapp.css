@@ -396,6 +396,7 @@ margin-right: 5px;
 
 #openpagefav{
 font-size: 8pt;
+cursor: pointer;
 }
 
 #defaultfolder{

@@ -25,6 +25,11 @@ $("#openimportbtx, #enablerandommusic, #appquality").remove();
 
 });
 
+chrome.notifications.onClicked.addListener(function(){
+chrome.notifications.clear("errormusic");
+chrome.notifications.clear("musicct");
+});
+
 var youtubeplayer;
 var youtubeplaylist = null;
 var newvideodetect = true;
@@ -777,6 +782,7 @@ $("<input>", {type: "submit", value: chrome.i18n.getMessage("cancel")}).click(fu
 
 
 ).fadeIn())
+checkcheckboxst();
 }
 
 if(globaledit == true){systempkexne(thishere);}
@@ -836,6 +842,8 @@ $("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(fun
 
 
 ).fadeIn())
+checkcheckboxst();
+$("#newtitlefolderinsert").focus();
 
 
 })}
@@ -944,7 +952,8 @@ $("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(fun
 
 
 ).fadeIn())
-
+checkcheckboxst();
+$("#newtitlefolderinsert").focus();
 
 })}
 
@@ -1042,6 +1051,8 @@ $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");
 
 
 ).fadeIn())
+checkcheckboxst();
+$("#hourst").focus();
 
 if(idgenkex == "NONENONE"){}
 
@@ -1261,7 +1272,7 @@ chrome.storage.local.get({soundbooknoti: false}, function(confignoti){if(confign
 
 if(datype == "repeatload"){}
 else{
-chrome.notifications.clear("musicct")
+chrome.notifications.clear("musicct");
 chrome.notifications.create("musicct",{
 type: "basic",
 iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
@@ -1315,7 +1326,7 @@ function errormusicst(errorid){
 nextimagestpx("next", "error");
 $("#"+errorid.id+" span").addClass("glyphicon glyphicon-ban-circle").addClass("errormusic");
 $("#"+errorid.id).addClass("errormusic");
-chrome.notifications.clear("errormusic")
+chrome.notifications.clear("errormusic");
 chrome.notifications.create("errormusic",{
 type: "basic",
 iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
@@ -1443,7 +1454,8 @@ $("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {cl
 openfolder(startid, this, "homepage");
 })));
 
-$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip());
+$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip())
+.click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+startid, type: "normal", state: "normal"});});
 
 	
 }
@@ -1581,6 +1593,9 @@ if(start == "subfolder"){if(urlpage == null){
 $("#iconopen"+folderset).addClass("subfolderctpxcf");
 $("#folder"+folderset).append($("<li>",{id: "subfolderpx"+data[subfoldernb].id, class: "subfolderkp"+subcounter}).append($("<span>", {class: "glyphicon glyphicon-folder-close foldericon", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>", {class: "foldername", foldermyidauto: data[subfoldernb].id}).text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder"); folderopeneddt = data[subfoldernb].id;
+}).contextmenu(function(){
+chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
+return false;
 })));
 
 subfoldercreate(data[subfoldernb].id);
@@ -1597,6 +1612,9 @@ if(start == true){
 // New Folder
 $("#"+folderset).append($("<li>", {id: "subfolderpx"+data[subfoldernb].id, class: "firstsubfolder"}).append($("<span>", {class: "glyphicon glyphicon-folder-close foldericon", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>", {class: "foldername", foldermyidauto: data[subfoldernb].id}).text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder"); folderopeneddt = data[subfoldernb].id;
+}).contextmenu(function(){
+chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
+return false;
 })));
 
 // New Sub Folder
@@ -1789,34 +1807,77 @@ $("#musictimep1").text("0:00");
 
 });
 
+var delaymusicpekx = false;
 
+function systemshortsystem(){
 shortcut.add("RIGHT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+	
+if(delaymusicpekx == false){
 var newshutat = Number($("#musicbar").val())+1900;
 if(playerdur > newshutat){
 $("#musicbar").val(newshutat);
 $("#musicbar").trigger("change");
-}}});
+}}
+delaymusicpekx = true;
+setTimeout(function(){delaymusicpekx = false;}, 100);
+
+}});
 
 shortcut.add("LEFT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+
+if(delaymusicpekx == false){
 var newshutat = Number($("#musicbar").val())-1900;
 if(0 < newshutat){
 $("#musicbar").val(newshutat);
 $("#musicbar").trigger("change");
-}}});
+}}
+delaymusicpekx = true;
+setTimeout(function(){delaymusicpekx = false;}, 100);
+
+}});
 
 shortcut.add("UP",function(){if($("input[type='text'], textarea").is(":focus") == false){
+
+if(delaymusicpekx == false){
 var newshutat = Number($("#sound").val())+1;
 if(newshutat < 101){
 $("#sound").val(newshutat);
 $("#sound").trigger("change");
-}}});
+}}
+delaymusicpekx = true;
+setTimeout(function(){delaymusicpekx = false;}, 100);
+
+}});
 
 shortcut.add("DOWN",function(){if($("input[type='text'], textarea").is(":focus") == false){
+
+if(delaymusicpekx == false){
 var newshutat = Number($("#sound").val())-1;
 if(newshutat > -1){
 $("#sound").val(newshutat);
 $("#sound").trigger("change");
-}}});
+}}
+delaymusicpekx = true;
+setTimeout(function(){delaymusicpekx = false;}, 100);
+
+}});
+}
+
+systemshortsystem();
+
+
+function checkcheckboxst(){
+$("input[type='text'], textarea").off("blur").off("focus").blur(function(){
+systemshortsystem();
+}).focus(function(){
+shortcut.remove("RIGHT");
+shortcut.remove("LEFT");
+shortcut.remove("UP");
+shortcut.remove("DOWN");
+});
+}
+
+checkcheckboxst();
 
 
 })}
@@ -1824,8 +1885,14 @@ $("#sound").trigger("change");
 // Start System
 
 function searchfolder(detectagain){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
-if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_sp_folder")}, function(){
+if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_sp_folder")}, function(newfoldersystem){
+chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("gapp_demofolder")}, function(newfoldersystem2){
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://soundcloud.com/jackiedreasond/jackie-dreasond-theme"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://soundcloud.com/jackiedreasond/jukine-theme-star-fox-64-fan-made"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://soundcloud.com/jackiedreasond/dubstell-fest"});	
+});
 $("#foldercreatesc").modal();
+$("#openclicknewfolder").click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+newfoldersystem.id, type: "normal", state: "normal"}); $("#foldercreatesc").modal("toggle");});
 searchfolder(detectagain);
 })}
 else{startfavpage(favdata[0].id, detectagain);}

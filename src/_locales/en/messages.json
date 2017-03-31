@@ -98,6 +98,7 @@
 "page": {"message": "Page"},
 "by": {"message": "By"},
 "enter": {"message": "Enter"},
+"wiki": {"message": "Wiki"},
 
 
 
@@ -122,6 +123,11 @@
 "gapp_artcredits": {"message": "Art made by"},
 "gapp_folderimerror": {"message": "Error in the URL was detected!"},
 "gapp_folderimcomplete": {"message": "Your new folder was created with success!"},
+"gapp_demofolder": {"message": "Demo Folder"},
+"gapp_filedemo1": {"message": "Demo URL 1"},
+"gapp_filedemo2": {"message": "Demo URL 2"},
+"gapp_filedemo3": {"message": "Demo URL 3"},
+"gapp_opennewfolder": {"message": "Open New Folder"},
 
 
 

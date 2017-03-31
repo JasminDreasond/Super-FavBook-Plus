@@ -462,7 +462,8 @@ $("#defaultfolder").prepend($("<li>", {class: "homefolder"}).append($("<a>", {cl
 openfolder(startid, this, "homepage");
 })));
 
-$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip());
+$("#openpagefav").append($("<span>", {class: "glyphicon glyphicon-star folderitems folderid", "data-placement": "bottom", "data-original-title": chrome.i18n.getMessage("gapp_folderid")+": "+startid}).tooltip())
+.click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+startid, type: "normal", state: "normal"});});
 	
 }
 
@@ -543,6 +544,9 @@ if(start == "subfolder"){if(urlpage == null){
 $("#iconopen"+folderset).addClass("subfolderctpxcf");
 $("#folder"+folderset).append($("<li>",{id: "subfolderpx"+data[subfoldernb].id, class: "subfolderkp"+subcounter}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>").text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder");
+}).contextmenu(function(){
+chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
+return false;
 })));
 
 subfoldercreate(data[subfoldernb].id);
@@ -559,6 +563,9 @@ if(start == true){
 // New Folder
 $("#"+folderset).append($("<li>", {id: "subfolderpx"+data[subfoldernb].id, class: "firstsubfolder"}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>").text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder");
+}).contextmenu(function(){
+chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
+return false;
 })));
 
 // New Sub Folder
@@ -665,8 +672,14 @@ generatorimages(foldercfg[0].children, folder.length, true, foldercfg[0].id, "fo
 // Start System
 
 function searchfolder(detectagain){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_fb_folder")}, function(favdata){
-if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_fb_folder")}, function(){
+if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_fb_folder")}, function(newfoldersystem){
+chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("gapp_demofolder")}, function(newfoldersystem2){
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://www.fanfiction.net/s/12044162/1/Pokemon-Hoenn-Adventure-The-Final-Generation"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://www.fanfiction.net/s/12403503/1/The-Epic-of-Renji-Nami-s-Father"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://www.fanfiction.net/s/12334588/1/Before-I-Go"});	
+});
 $("#foldercreatesc").modal();
+$("#openclicknewfolder").click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+newfoldersystem.id, type: "normal", state: "normal"}); $("#foldercreatesc").modal("toggle");});
 searchfolder(detectagain);
 })}
 else{startfavpage(favdata[0].id, detectagain);}

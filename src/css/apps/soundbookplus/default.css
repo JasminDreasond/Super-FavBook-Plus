@@ -415,7 +415,7 @@ transition: background-color 100ms linear;
 }
 
 .musicbar .progress, .musicbar #musicbar{
-width: 42%;
+width: 40%;
 display: inline-block;
 }
 
@@ -450,7 +450,7 @@ margin: 0px;
 position: relative;
 height: 8px;
 background-color: transparent;
-margin-left: -42%;
+margin-left: -40%;
 bottom: 3px;
 right: 4px;
 }
