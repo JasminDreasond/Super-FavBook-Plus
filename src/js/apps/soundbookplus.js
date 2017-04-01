@@ -1357,10 +1357,14 @@ widget.bind(SC.Widget.Events.ERROR, function(){errormusicst(playlistpxct[pagecli
 
 // Youtube
 function youtubechange(videostates){if(playertype == "youtube"){
-	
+
+if((appquality == "hd720") || (appquality == "hd1080") || (appquality == "highres")){var imagequality = "hqdefault";}
+//else if((appquality == "hd720") || (appquality == "hd1080") || (appquality == "highres")){var imagequality = "maxresdefault";}
+else{var imagequality = "default";}
+
 infocollectmusic({
-"artwork": "https://img.youtube.com/vi/"+videostates.target.j.videoData.video_id+"/default.jpg",
-"avatar": "https://img.youtube.com/vi/"+videostates.target.j.videoData.video_id+"/default.jpg",
+"artwork": "https://img.youtube.com/vi/"+videostates.target.j.videoData.video_id+"/"+imagequality+".jpg",
+"avatar": "https://img.youtube.com/vi/"+videostates.target.j.videoData.video_id+"/"+imagequality+".jpg",
 "title": videostates.target.j.videoData.title ,
 "username": videostates.target.j.videoData.author,
 "url": youtubeplayer.getVideoUrl()
