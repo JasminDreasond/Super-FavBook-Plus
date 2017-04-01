@@ -312,6 +312,25 @@ else{nextimagestpx(typeclick, detectautonext);}
 
 $("#nextimageclickpx").click(function(){nextimagestpx("next");});
 $("#previousimageclickpx").click(function(){nextimagestpx("previous");});
+
+function closeimagest(){
+detectpageopenx = false
+detectpageopenx2 = false
+
+$("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
+document.title = chrome.i18n.getMessage("appdevianplus");
+
+$("body").css("overflow", "").removeClass("imagemodeps");
+$("#imgpreview").addClass("anticlick").fadeOut(function(){
+$("#imgpreview img").attr("src", "");
+});
+}
+
+
+
+// Teclas de Atalho
+
+function systemshortsystem(){
 shortcut.add("RIGHT",function(){if($("input[type='text'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){nextimagestpx("next");}
 }});
@@ -328,23 +347,32 @@ shortcut.add("DOWN",function(){if($("input[type='text'], textarea").is(":focus")
 if(detectpageopenx2 == true){$("#imgpreview").scrollTop($("#imgpreview").scrollTop()+25);}
 }});
 
-
-function closeimagest(){
-detectpageopenx = false
-detectpageopenx2 = false
-
-$("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
-document.title = chrome.i18n.getMessage("appdevianplus");
-
-$("body").css("overflow", "").removeClass("imagemodeps");
-$("#imgpreview").addClass("anticlick").fadeOut(function(){
-$("#imgpreview img").attr("src", "");
-});
-}
-
 shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){closeimagest();}
 }});
+}
+
+systemshortsystem();
+
+
+function checkcheckboxst(){
+$("input[type='text'], textarea").off("blur").off("focus").blur(function(){
+systemshortsystem();
+}).focus(function(){
+shortcut.remove("RIGHT");
+shortcut.remove("LEFT");
+shortcut.remove("UP");
+shortcut.remove("DOWN");
+shortcut.remove("ESC");
+});
+}
+
+checkcheckboxst();
+
+
+
+
+
 
 function openimagest(datype, clickdata, thishere){
 
