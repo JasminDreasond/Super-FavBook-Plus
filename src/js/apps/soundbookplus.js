@@ -112,7 +112,7 @@ if(document.webkitIsFullScreen == false){exitfullscreenvideo();}
 // Modo Tetro
 
 var theatremodeen = false;
-function theatrenabledpx(typeclick){
+function theatrenabledpx(typeclick){if(fullscreenvideomode != true){
 
 function detectclassaddrandomen(randomrd){
 if(randomrd == true){
@@ -152,7 +152,7 @@ detectclassaddrandomen(false);
  
 }
 
-}
+}}
 
 $("#theatremode").click(function(){theatrenabledpx();})
 
@@ -171,6 +171,7 @@ $("#theatremode").click(function(){theatrenabledpx();})
 
 var firstloadpx = true
 var loadfoldeertime = false;
+var loadfoldeertime2 = false;
 
 var widgetIframe = document.getElementById('sc-widget');
 var widget;
@@ -324,10 +325,11 @@ $("#subfolderpx"+playlistpxct[globalpageclicknumberpdss].folderid+" [foldermyida
 playlistpxct = playlistpx;
 pageclicknumberpmaxdss = pageclicknumberpmax;
 }}
-$("#reloadfolderlive").click(function(){
+$("#reloadfolderlive").click(function(){if(loadfoldeertime2 == false){
 loadfoldeertime = true;
+loadfoldeertime2 = true;
 livereload();
-});
+}});
 }
 
 
@@ -1832,7 +1834,7 @@ if(data[0] == undefined){generatormenupx();}
 // LAST LOAD
 if(artcountpx == maxitem-1){if(folderpxsepx == false){folderpxse = true}
 
-if(loadfoldeertime == true){setTimeout(function(){livereload();},100);}
+if(loadfoldeertime == true){setTimeout(function(){livereload(); loadfoldeertime2 = false;},100);}
 loadfoldeertime = false;
 
 }
@@ -2146,7 +2148,16 @@ setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
 
-shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){exitfullscreenvideo(); fullscreenvideomode = false;}});
+shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){
+if(livemodet == true){livemodet = false; livestreamst();}
+else{exitfullscreenvideo(); fullscreenvideomode = false;}
+}});
+
+shortcut.add("Z",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#thumbchangep").trigger("click");}});
+shortcut.add("X",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#theatremode").trigger("click");}});
+shortcut.add("F",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#enterfullscreen").trigger("click");}});
+shortcut.add("R",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#reloadfolderlive").trigger("click");}});
+shortcut.add("C",function(){if($("input[type='text'], textarea").is(":focus") == false){window.open($("#linkopen").attr("href"), "_blank");}});
 
 }
 
@@ -2162,6 +2173,11 @@ shortcut.remove("LEFT");
 shortcut.remove("UP");
 shortcut.remove("DOWN");
 shortcut.remove("ESC");
+shortcut.remove("Z");
+shortcut.remove("X");
+shortcut.remove("F");
+shortcut.remove("R");
+shortcut.remove("C");
 });
 }
 
@@ -2693,7 +2709,7 @@ return false;
 
 function createconenmenutb(){
 
-$("#thumbchangep").off("click").click(function(){
+$("#thumbchangep").off("click").click(function(){if(fullscreenvideomode != true){
 
 if(playertype == "none"){controlthumbst(false, "enable", "add");} else{
 if(thumbvideoen == true){controlthumbst(false, "enable", "add");}
@@ -2702,7 +2718,7 @@ else if(thumbvideoen == false){controlthumbst(true, "disable", "remove");}
 
 createconenmenutb();
 
-});
+}});
 $("#thumbchangep .text").text(thumbvideoen1+" "+chrome.i18n.getMessage("video"));
 $("#enterfullscreen").off("click").click(function(){
 	
