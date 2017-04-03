@@ -19,6 +19,17 @@ contextMessage: chrome.i18n.getMessage("appsoundbookplus")
 
 
 
+// Sound
+
+var sd_option_on;
+var sd_option_off;
+function createsoundoptions(){
+sd_option_on = new Audio(chrome.extension.getURL('sound/on.mp3'));
+sd_option_off = new Audio(chrome.extension.getURL('sound/off.mp3'));
+}
+createsoundoptions();
+var soundshortcut = false;
+
 
 
 
@@ -597,8 +608,10 @@ loadingset(false);
 function randomenabledpx(typeclick){
 
 function detectclassaddrandomen(randomrd){
-if(randomrd == true){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("disable"));}
-else if(randomrd == false){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("enable"));}
+if(randomrd == true){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("disable")); 
+if(soundshortcut == true){sd_option_on.play(); soundshortcut = false;}}
+else if(randomrd == false){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("enable")); 
+if(soundshortcut == true){sd_option_off.play(); soundshortcut = false;}}
 }
 
 if(typeclick == "auto"){chrome.storage.local.get({enablerandommusic: false}, function(confignoti){
@@ -632,8 +645,10 @@ else{$("#enablerandommusic").click(function(){randomenabledpx();})}
 function repeatenabledpx(typeclick){
 
 function detectclassaddrandomen(randomrd){
-if(randomrd == true){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("disable"));}
-else if(randomrd == false){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("enable"));}
+if(randomrd == true){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("disable")); 
+if(soundshortcut == true){sd_option_on.play(); soundshortcut = false;}}
+else if(randomrd == false){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("enable")); 
+if(soundshortcut == true){sd_option_off.play(); soundshortcut = false;}}
 }
 
 if(typeclick == "auto"){chrome.storage.local.get({enablerepeatmusic: false}, function(confignoti){
@@ -668,8 +683,10 @@ else{$("#enablerepeatmusic").click(function(){repeatenabledpx();})}
 function finishnabledpx(typeclick){
 
 function detectclassaddrandomen(randomrd){
-if(randomrd == true){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("disable"));}
-else if(randomrd == false){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("enable"));}
+if(randomrd == true){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("disable")); 
+if(soundshortcut == true){sd_option_on.play(); soundshortcut = false;}}
+else if(randomrd == false){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("enable")); 
+if(soundshortcut == true){sd_option_off.play(); soundshortcut = false;}}
 }
 
 if(typeclick == "auto"){chrome.storage.local.get({finishplaylist: false}, function(confignoti){
@@ -2153,6 +2170,10 @@ if(livemodet == true){livemodet = false; livestreamst();}
 else{exitfullscreenvideo(); fullscreenvideomode = false;}
 }});
 
+shortcut.add("I",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#finishplaylist").trigger("click");}});
+shortcut.add("O",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerepeatmusic").trigger("click");}});
+shortcut.add("P",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerandommusic").trigger("click");}});
+
 shortcut.add("Z",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#thumbchangep").trigger("click");}});
 shortcut.add("X",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#theatremode").trigger("click");}});
 shortcut.add("F",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#enterfullscreen").trigger("click");}});
@@ -2173,6 +2194,9 @@ shortcut.remove("LEFT");
 shortcut.remove("UP");
 shortcut.remove("DOWN");
 shortcut.remove("ESC");
+shortcut.remove("I");
+shortcut.remove("O");
+shortcut.remove("P");
 shortcut.remove("Z");
 shortcut.remove("X");
 shortcut.remove("F");
