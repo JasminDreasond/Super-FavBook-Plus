@@ -214,6 +214,7 @@
 "app_sp_errorurl": {"message": "URL Error"},
 "app_sp_playlistcomplete": {"message": "Playlist Complete Successfully"},
 "app_sp_errorapi": {"message": "Error: API Disabled"},
+"app_sp_theatremode": {"message": "Theatre Mode"},
 
 
 // Names \\

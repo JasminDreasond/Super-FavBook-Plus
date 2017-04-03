@@ -66,6 +66,7 @@ var fullscreenvideomode = false;
 
 // Entrar Full Screen
 function enterfullscreenvideo(){if(fullscreenvideomode == false){if(playertype == "youtube"){
+theatrenabledpx("disable");
 $("#size_page").prop("disabled", true);
 $("head").append($("<link>", {id: "videofullscreen", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/fullscreen_video.css"}));
 
@@ -100,11 +101,68 @@ document.webkitExitFullscreen();
 
 fullscreenvideomode = false;
 $(window).trigger("resize");
+theatrenabledpx("enable");
 }}
 
 $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e){       
 if(document.webkitIsFullScreen == false){exitfullscreenvideo();}
 });
+
+
+// Modo Tetro
+
+var theatremodeen = false;
+function theatrenabledpx(typeclick){
+
+function detectclassaddrandomen(randomrd){
+if(randomrd == true){
+$("#youtubeplayer").addClass("theatremode");
+$(".soundcloudbase").addClass("theatremodebase");
+$("#theatremode .enoroff").text(chrome.i18n.getMessage("disable"));
+}
+else if(randomrd == false){
+$("#youtubeplayer").removeClass("theatremode");
+$(".soundcloudbase").removeClass("theatremodebase");
+$("#theatremode .enoroff").text(chrome.i18n.getMessage("enable"));
+}
+}
+
+if(typeclick == "auto"){chrome.storage.local.get({theatremode: false}, function(confignoti){
+theatremodeen = confignoti.theatremode
+detectclassaddrandomen(confignoti.theatremode);
+})}
+else{
+
+if(typeclick == "disable"){
+detectclassaddrandomen(false);
+}
+else if(typeclick == "enable"){if(theatremodeen == true){
+detectclassaddrandomen(true);
+}}
+else if(theatremodeen == false){
+chrome.storage.local.set({theatremode: true})
+theatremodeen = true
+detectclassaddrandomen(true);
+}
+else if(theatremodeen == true){
+chrome.storage.local.set({theatremode: false})
+theatremodeen = false
+detectclassaddrandomen(false);
+}
+ 
+}
+
+}
+
+$("#theatremode").click(function(){theatrenabledpx();})
+
+
+
+
+
+
+
+
 
 
 
@@ -642,6 +700,13 @@ else{$("#finishplaylist").click(function(){finishnabledpx();})}
 
 
 
+
+
+
+
+
+
+
 // Notification
 
 if(detectagain == "again"){}
@@ -654,6 +719,7 @@ repeatmusicen = confignoti.enablerepeatmusic
 randomenabledpx("auto");
 repeatenabledpx("auto");
 finishnabledpx("auto");
+theatrenabledpx("auto");
 })
 
 
@@ -706,7 +772,12 @@ resetprogressmusicxp(datadur);
 })
 $("#volumeico").removeClass("volloading");
 changesoundpx("load");
-widget.getCurrentSound(function(datamusic){infocollectmusic({
+widget.getCurrentSound(function(datamusic){
+if((appquality == "hd720") || (appquality == "hd1080") || (appquality == "highres")){
+if(datamusic.user.avatar_url != null){datamusic.user.avatar_url = datamusic.user.avatar_url.replace("-large.jpg", "-t500x500.jpg");}
+if(datamusic.artwork_url != null){datamusic.artwork_url = datamusic.artwork_url.replace("-large.jpg", "-t500x500.jpg");}
+}
+infocollectmusic({
 "artwork": datamusic.artwork_url,
 "avatar": datamusic.user.avatar_url,
 "title": datamusic.title,
@@ -2390,7 +2461,7 @@ var antiprogressbarpx = false;
 }
 
 $("#closelive").removeClass("hide");
-$("#thumbchangep, #enterfullscreen, #finishplaylist").addClass("hide");
+$("#thumbchangep, #enterfullscreen, #finishplaylist, #theatremode").addClass("hide");
 $("#size_page").prop("disabled", true);
 $("head").append(
 $("<link>", {id: "customtheme1", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/live.css"}),
@@ -2456,7 +2527,7 @@ $("#musicthumbnail").off("click");
 else if(livemodet == false){
 
 $("#closelive").addClass("hide");
-$("#thumbchangep, #enterfullscreen, #finishplaylist").removeClass("hide");
+$("#thumbchangep, #enterfullscreen, #finishplaylist, #theatremode").removeClass("hide");
 $("#size_page").prop("disabled", false);
 $("#customtheme1, #customtheme2, #customtheme3, #customtheme4").prop("disabled", true).remove();
 $(".optionsox").removeClass("viewitem"); viewitemcontrolp = false;

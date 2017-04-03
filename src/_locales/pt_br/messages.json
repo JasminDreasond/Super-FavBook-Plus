@@ -164,6 +164,7 @@
 "app_sp_errorurl": {"message": "Ocorreu um erro na URL"},
 "app_sp_playlistcomplete": {"message": "Playlist terminou todo o Conteúdo"},
 "app_sp_errorapi": {"message": "Error: API Desativado"},
+"app_sp_theatremode": {"message": "Modo Teatro"},
 "tumblr":{"message":"Tumblr"},
 "twitter":{"message":"Twitter"},
 "facebook":{"message":"Facebook"},

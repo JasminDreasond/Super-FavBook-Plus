@@ -25,7 +25,7 @@ opacity: 0;
 }
 
 .soundcloudbase{
-transition: opacity 0.15s;
+transition: opacity 0.20s, margin 0.20s, top 0.20s, bottom 0.20s, left 0.20s, right 0.20s;
 position: fixed;
 bottom: 52px;
 right: 0px;
@@ -45,11 +45,30 @@ opacity: 0.3 !important;
 #youtubeplayer{
 height: 190px;
 width: 338px;
+transition: height 0.20s, width 0.20s;
 }
 
 .hideplayer{
 opacity: 0 !important;
 }
+
+
+
+.theatremode{
+height: 75% !important;
+width: 100% !important;
+}
+
+.theatremodebase{
+position: fixed;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+margin: 90px 20% 0px 20%;
+z-index: 111 !important;
+}
+
 
 
 
