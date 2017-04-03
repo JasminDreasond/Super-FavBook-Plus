@@ -2,7 +2,7 @@
 "name":"__MSG_appName__",
 "short_name":"SFBP",
 "description":"__MSG_appDesc__",
-"version":"1.6.5.1",
+"version":"1.7",
 "manifest_version":2,
 "default_locale": "en",
 "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js; object-src 'self'",

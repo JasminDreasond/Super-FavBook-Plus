@@ -23,7 +23,7 @@
  * MIT License: https://github.com/joewalnes/jquery-simple-context-menupretty/blob/master/LICENSE.txt
  */
  
-jQuery.fn.contextPopup = function(menuData) {
+jQuery.fn.contextPopup = function(menuData, contextmenutypepxST) {
 	
 	// Define default settingspretty
 	var settingspretty = {
@@ -74,8 +74,11 @@ jQuery.fn.contextPopup = function(menuData) {
     return menupretty;
   }
 
+  if(contextmenutypepxST == null){var contextmenutypepx = "contextmenu";}
+  else{var contextmenutypepx = contextmenutypepxST;}
+  
   // On contextmenu event (right click)
-  this.on('contextmenu', function(e) {
+  this.on(contextmenutypepx, function(e) {
 	  
     var menupretty = createMenu(e)
       .show();

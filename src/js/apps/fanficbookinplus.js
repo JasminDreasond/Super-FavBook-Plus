@@ -283,7 +283,7 @@ function closeimagest(){
 detectpageopenx = false
 
 $("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
-document.title = chrome.i18n.getMessage("appfanficbookin");
+document.title = chrome.i18n.getMessage("appfanficbookinplus");
 
 $("body").css("overflow", "").removeClass("imagemodeps");
 $("#imgpreview").addClass("anticlick").fadeOut();
@@ -291,7 +291,7 @@ $("#imgpreview").addClass("anticlick").fadeOut();
 
 function openimagest(datype, clickdata, thishere){
 
-document.title = $(thishere).text()+" - "+chrome.i18n.getMessage("appfanficbookin");
+document.title = $(thishere).text()+" - "+chrome.i18n.getMessage("appfanficbookinplus");
 
 $("#clickclosepagepxk, #capsubmit").off("click");
 $("#capselect").off("change");

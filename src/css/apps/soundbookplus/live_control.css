@@ -1,5 +1,14 @@
 .optionsox{display: none;}
+.viewitem{display: block;}
 
-.viewitem{
-display: block;
+.viewitem .moreoptionskx, .viewitem .moreoptionskx2{
+display: inline-block;
 }
+
+.itemsmusic #options{margin-top: 0px;}
+
+.itemsmusic #musictimep1, .musicbar,.itemsmusic #musictimep2,.itemsmusic #infoimpmusic{
+margin-top: 26px;
+}
+
+.spaceoptions, #soundspace{bottom: 6px !important;}

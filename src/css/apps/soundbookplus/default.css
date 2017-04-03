@@ -1,24 +1,59 @@
-/* Sound Cloud */
+/* Intro */
 
 #creditslivepx{
 display: none;
 }
 
-#sc-widget{
-height: 120px;
-}
+#moreclickbase{display: none;}
 
-.soundcloudbase{
-background-color: #F5F5F5;
-position: fixed;
-bottom: 0;
-width: 100%;
-border-top: 1px solid #FF6500;
+.contextMenuPlugin .header{background: #333;}
+
+
+
+
+
+
+/* Player */
+
+.scrolltothumb #scrollup,.scrolltothumb #scrollup:before{bottom: 255px !important;}
+
+#sc-widget{
+height: 0px;
+width: 0px;
 z-index: -1 !important;
 opacity: 0;
 }
 
-#moreclickbase{display: none;}
+.soundcloudbase{
+transition: opacity 0.15s;
+position: fixed;
+bottom: 52px;
+right: 0px;
+z-index: 11115 !important;
+pointer-events: none !important;
+}
+
+.modal-open .soundcloudbase{
+right: 16px;
+z-index: 0 !important;
+}
+
+.soundcloudbase:hover{
+opacity: 0.3 !important;
+}
+
+#youtubeplayer{
+height: 190px;
+width: 338px;
+}
+
+.hideplayer{
+opacity: 0 !important;
+}
+
+
+
+
 
 /* Base */
 
@@ -230,6 +265,18 @@ display: none;
 
 /* Audio Player */
 
+#fullscreenico, #volumeico{width: 45px; margin-left: 0px;}
+.spaceoptions{bottom: 37px !important;}
+.spaceoptions a{cursor: pointer;}
+.spaceoptions a span, .spaceoptions a span:before{color: #404040 !important; font-size: 10pt !important;}
+.spaceoptions a:hover span, .spaceoptions a:hover span:before{color: #808080 !important;}
+.spaceoptions a:active span, .spaceoptions a:active span:before{color: #999 !important;}
+#fullscreenico .caret, #volumeico .caret{display: none;}
+.spaceoptions a span{margin: 0px !important;}
+.spaceoptions a span:before{margin-right: 10px !important;}
+.spaceoptions hr{cursor: default !important; margin: 5px 0px; border-color: transparent;}
+
+
 #appquality{
 padding: 5px;
 margin-top: 9px;
@@ -256,22 +303,6 @@ background-color: #D7D7D7 !important;
 
 .volumeclick{
 padding: 19px 10px;
-}
-
-#enablerandommusic:before{
-margin: 0px 10px;
-}
-
-.randomenabled:before{
-color: #FF6500 !important;
-}
-
-.randomenabled:hover{
-color: #333 !important;
-}
-
-.randomenabled:active{
-color: #FFF !important;
 }
 
 #options span, .volumeclick{
@@ -415,7 +446,7 @@ transition: background-color 100ms linear;
 }
 
 .musicbar .progress, .musicbar #musicbar{
-width: 40%;
+width: 47%;
 display: inline-block;
 }
 
@@ -450,7 +481,7 @@ margin: 0px;
 position: relative;
 height: 8px;
 background-color: transparent;
-margin-left: -40%;
+margin-left: -47%;
 bottom: 3px;
 right: 4px;
 }
@@ -508,10 +539,18 @@ margin-bottom: 1px;
 #musictimep3{
 position: absolute;
 top: 5px;
-left: 50%;
+left: 25%;
+right: 25%;
 margin: 0px auto;
-display: none;
+opacity: 0;
+display: inline;
 font-weight: bold;
+transition: opacity 0.10s;
+}
+
+.ajustmusic3px{
+opacity: 1 !important;
+transition: opacity 0.10s;
 }
 
 
@@ -534,6 +573,8 @@ font-size: 9pt;
 min-width: 250px;
 max-width: 250px;
 width: 250px;
+height: 33px;
+overflow: hidden;
 }
 
 #infomuser{
@@ -784,10 +825,9 @@ margin-left: 5px;
 
 
 
-.errormusic{
-color: #cc0000;
-font-weight: bold;
-}
+.errormusic, .errormusic_api{font-weight: bold;}
+.errormusic{color: #cc0000;}
+.errormusic_api{color: #3399ff;}
 
 .cortedps{display: none;}
 

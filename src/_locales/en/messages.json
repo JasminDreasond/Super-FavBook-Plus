@@ -14,7 +14,7 @@
 
 "appdevianplus": {"message": "Devian Plus"},
 "appsoundbookplus": {"message": "SoundBook Plus"},
-"appfanficbookin": {"message": "FanFic Bookin"},
+"appfanficbookinplus": {"message": "FanFic Bookin"},
 
 
 
@@ -39,6 +39,7 @@
 "checkapi_main2": {"message": "Status Services"},
 "checkapi_scapi": {"message": "SoundCloud API"},
 "checkapi_ytapi": {"message": "Youtube API"},
+"checkapi_dmapi": {"message": "Dailymotion API"},
 "checkapi_daapi": {"message": "Deviantart API"},
 "checkapi_dbapi": {"message": "Derpibooru API"},
 
@@ -99,6 +100,10 @@
 "by": {"message": "By"},
 "enter": {"message": "Enter"},
 "wiki": {"message": "Wiki"},
+"disable": {"message": "Disable"},
+"enable": {"message": "Enable"},
+"thumb": {"message": "Thumb"},
+"video": {"message": "Video"},
 
 
 
@@ -201,9 +206,14 @@
 "app_sp_items": {"message": "items"},
 "app_sp_to": {"message": "to"},
 "app_sp_replacefilename": {"message": "Replace File Name"},
-
-
-
+"app_sp_examplemusic": {"message": "Demo Video Folder"},
+"app_sp_videoview_fullscreen": {"message": "Full Screen"},
+"app_sp_enablevideo": {"message": "Enable Video"},
+"app_sp_moreoptions": {"message": "More Options"},
+"app_sp_finishplaylist": {"message": "Play Playlist Only Once"},
+"app_sp_errorurl": {"message": "URL Error"},
+"app_sp_playlistcomplete": {"message": "Playlist Complete Successfully"},
+"app_sp_errorapi": {"message": "Error: API Disabled"},
 
 
 // Names \\
@@ -216,6 +226,7 @@
 "derpibooru": {"message": "Derpibooru"},
 "soundcloud": {"message": "SoundCloud ®"},
 "youtube": {"message": "Youtube"},
+"dailymotion": {"message": "Dailymotion"},
 "fanfiction": {"message": "Fanfiction"},
 "nyahfanfiction": {"message": "Nyah! Fanfiction"},
 "fimfiction": {"message": "FIM Fiction"}

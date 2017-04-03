@@ -13,35 +13,22 @@ types: ["main_frame"]
 }
 );
 
+function createmenuspekx(data){
 chrome.contextMenus.create({	
-    id: "opencheckapi",	
-    title: chrome.i18n.getMessage("checkapi_title"),
+    id: data.id,	
+    title: data.title,
     contexts:["browser_action"], 
-    onclick: function(){chrome.windows.create({url: "apps/checkapi.html", type: "popup", state: "maximized"})}
+    onclick: function(){chrome.windows.create({url: data.url, type: "popup", state: "maximized"})}
 });
+}
+
+createmenuspekx({"title": chrome.i18n.getMessage("checkapi_title"),"id": "opencheckapi", "url": "apps/checkapi.html"});
 
 chrome.contextMenus.create({	
     type: "separator",	
     contexts:["browser_action"]
 });
 
-chrome.contextMenus.create({	
-    id: "opendevianplus",	
-    title: chrome.i18n.getMessage("appdevianplus"),
-    contexts:["browser_action"], 
-    onclick: function(){chrome.windows.create({url: "apps/devianplus.html", type: "popup", state: "maximized"})}
-});
-
-chrome.contextMenus.create({	
-    id: "opendsoundbookplus",	
-    title: chrome.i18n.getMessage("appsoundbookplus"),
-    contexts:["browser_action"], 
-    onclick: function(){chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "maximized"})}
-});
-
-chrome.contextMenus.create({	
-    id: "openfanficbookin",	
-    title: chrome.i18n.getMessage("appfanficbookin"),
-    contexts:["browser_action"], 
-    onclick: function(){chrome.windows.create({url: "apps/fanficbookinplus.html", type: "popup", state: "maximized"})}
-});
+createmenuspekx({"title": chrome.i18n.getMessage("appdevianplus"),"id": "opendevianplus", "url": "apps/devianplus.html"});
+createmenuspekx({"title": chrome.i18n.getMessage("appsoundbookplus"),"id": "opendsoundbookplus", "url": "apps/soundbookplus.html"});
+createmenuspekx({"title": chrome.i18n.getMessage("appfanficbookinplus"),"id": "openfanficbookin", "url": "apps/fanficbookinplus.html"});

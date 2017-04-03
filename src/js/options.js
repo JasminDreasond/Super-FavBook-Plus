@@ -1,25 +1,27 @@
-$("#devianplus").click(function(){window.open("apps/devianplus.html", "devianplusfp");}).on("contextmenu",function(){
-chrome.windows.create({url: "apps/devianplus.html", type: "popup", state: "maximized"});
+function createclickoption(data){
+
+if(data.disablecs == true){
+$("#"+data.id).click(function(){window.open("apps/"+data.id+".html", data.id+"fp");}).on("contextmenu",function(){
+chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"});
 return false;
 })
-
-$("#devianplus img").attr("title", chrome.i18n.getMessage("appdevianplus")).tooltip(); 
-
-$("#soundplus").click(function(){
-chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "maximized"})
+}
+else{
+$("#"+data.id).click(function(){
+chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"})
 }).on("contextmenu",function(){
-chrome.windows.create({url: "apps/soundbookplus.html", type: "popup", state: "maximized"})
+chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"})
 return false;
 })
+}
 
-$("#soundplus img").attr("title", chrome.i18n.getMessage("appsoundbookplus")).tooltip(); 
+$("#"+data.id+" img").attr("title", chrome.i18n.getMessage("app"+data.id)).tooltip(); 
 
-$("#fanficbookinplus").click(function(){window.open("apps/fanficbookinplus.html", "soundbookplusfp");}).on("contextmenu",function(){
-chrome.windows.create({url: "apps/fanficbookinplus.html", type: "popup", state: "maximized"});
-return false;
-})
+}
 
-$("#fanficbookinplus img").attr("title", chrome.i18n.getMessage("appfanficbookin")).tooltip(); 
+createclickoption({"id": "devianplus","disablecs": true});
+createclickoption({"id": "soundbookplus"});
+createclickoption({"id": "fanficbookinplus"});
 
 // Facebook
 

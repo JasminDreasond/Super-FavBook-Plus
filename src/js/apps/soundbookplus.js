@@ -1,3 +1,116 @@
+//Player Type
+var playertype = "none"
+
+
+
+//Notification Playlist Complete
+
+function playlistcomplete(){
+chrome.notifications.clear("playlistcomplete");
+chrome.notifications.create("playlistcomplete",{
+type: "basic",
+iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
+title: chrome.i18n.getMessage("app_sp_playlistcomplete"),
+message: "",
+contextMessage: chrome.i18n.getMessage("appsoundbookplus")
+})
+}
+
+
+
+
+
+
+
+// Video Screen
+
+var thumbvideoen = false;
+var thumbvideoen1 = chrome.i18n.getMessage("enable");
+var antithumbvideo;
+var afkcursor = false;
+
+function controlthumbst(thumbon1, thumbon2, thumbon3, thumbon4){
+
+function genthumboptions(thumbenxs){
+if(thumbenxs == true){
+$(".soundcloudbase").addClass("hideplayer");
+$("body").removeClass("scrolltothumb");
+exitfullscreenvideo();
+}
+else if(thumbenxs == false){
+$(".soundcloudbase").removeClass("hideplayer");
+$("body").addClass("scrolltothumb");
+}
+}
+
+function checkthumbpk(thumbon1, thumbon2, thumbon3){
+thumbvideoen = thumbon1;
+thumbvideoen1 = chrome.i18n.getMessage(thumbon2);
+if(thumbon3 == "add"){genthumboptions(true);}
+else if(thumbon3 == "remove"){genthumboptions(false);}
+}
+
+if(thumbon4 == "checking"){
+if(antithumbvideo == true){genthumboptions(true);}
+else{if(thumbvideoen == true){checkthumbpk(true, "disable", "remove");}}
+}
+else{
+if(antithumbvideo == true){checkthumbpk(thumbon1, thumbon2, "add");}
+else{checkthumbpk(thumbon1, thumbon2, thumbon3);}
+}}
+
+
+var fullscreenvideomode = false;
+
+//var isFullScreen = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+
+// Entrar Full Screen
+function enterfullscreenvideo(){if(fullscreenvideomode == false){if(playertype == "youtube"){
+$("#size_page").prop("disabled", true);
+$("head").append($("<link>", {id: "videofullscreen", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/fullscreen_video.css"}));
+
+var elem = document.getElementsByTagName("BODY")[0];
+if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+} else if (elem.msRequestFullscreen) {
+  elem.msRequestFullscreen();
+} else if (elem.mozRequestFullScreen) {
+  elem.mozRequestFullScreen();
+} else if (elem.webkitRequestFullscreen) {
+  elem.webkitRequestFullscreen();
+}
+}}}
+
+// Sair Full Screen
+function exitfullscreenvideo(){if(fullscreenvideomode == true){
+$("#size_page").prop("disabled", false);
+$("#videofullscreen").prop("disabled", true).remove();
+
+if(document.webkitIsFullScreen == true){
+if (document.exitFullscreen) {
+document.exitFullscreen();
+} else if (document.msExitFullscreen) {
+document.msExitFullscreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitExitFullscreen) {
+document.webkitExitFullscreen();
+}
+}
+
+fullscreenvideomode = false;
+$(window).trigger("resize");
+}}
+
+$(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e){       
+if(document.webkitIsFullScreen == false){exitfullscreenvideo();}
+});
+
+
+
+
+// New System
+
 var firstloadpx = true
 var loadfoldeertime = false;
 
@@ -20,13 +133,14 @@ youtubefirstScriptTag.parentNode.insertBefore(youtubetag, youtubefirstScriptTag)
 }
 
 else{
-$("#openimportbtx, #enablerandommusic, #appquality").remove();
+$("#openimportbtx").remove();
 }
 
 });
 
 chrome.notifications.onClicked.addListener(function(){
 chrome.notifications.clear("errormusic");
+chrome.notifications.clear("playlistcomplete");
 chrome.notifications.clear("musicct");
 });
 
@@ -40,8 +154,8 @@ function(){ $("html, body").animate({ scrollTop: 0 }, "slow");}).affix({offset:{
 
 function loadingset(data){
 if(data == "firstload"){firstloadpx = false; data = false;}
-if((data == true) || (firstloadpx == true)){$("#loading").removeClass("hide"); $("#container").addClass("wait");}
-else if(data == false){$("#loading").addClass("hide"); $("#container").removeClass("wait");}
+if((data == true) || (firstloadpx == true)){$("#loading").removeClass("hide"); $("#container, .soundcloudbase").addClass("wait");}
+else if(data == false){$("#loading").addClass("hide"); $("#container, .soundcloudbase").removeClass("wait");}
 }
 
 $('[data-toggle="tooltip"]').tooltip();
@@ -73,8 +187,9 @@ if(livemodet == true){
 var widthwn = 1000+windowbns;
 var heightwn = 61+windowbns2;
 if(($(window).height() > 61) || ($(window).height() < 61)){window.resizeTo(getwindow_width,heightwn);}
-if($(window).width() < 1000){window.resizeTo(widthwn,getwindow_height);}
+//if($(window).width() < 1000){window.resizeTo(widthwn,getwindow_height);}
 }
+else if(fullscreenvideomode == true){}
 else{
 var widthwn = 399+windowbns;
 var heightwn = 412+windowbns2;
@@ -101,23 +216,24 @@ $(window).trigger("resize");
 
 
 
-var dataprogressglobal
-var pagesforsec = 24
-var pagesforsecpgnbx
-var volumeapp = 1
-var appquality = "large"
-var volumeenabled = false
-var playlistpx = []
-var playlistpxct = []
-var randommusic = 0
-var randommusicen = false
-var repeatmusicen = false
-var repeatnumber
-var detectloadsucess = true
-var detectprogresspx = true
-var playerdur = 0
-var playertype = "none"
-var folderopeneddt
+var dataprogressglobal;
+var pagesforsec = 24;
+var pagesforsecpgnbx;
+var volumeapp = 1;
+var appquality = "large";
+var volumeenabled = false;
+var playlistpx = [];
+var playlistpxct = [];
+var randommusic = 0;
+var randommusicen = false;
+var repeatmusicen = false;
+var finishplaylisten = false;
+var detectfinishplaylist = false;
+var repeatnumber;
+var detectloadsucess = true;
+var detectprogresspx = true;
+var playerdur = 0;
+var folderopeneddt;
 var custommusictime = false;
 var replacesystempx1;
 var replacesystempx2;
@@ -130,19 +246,19 @@ if(api_soundcloud == true){widget = SC.Widget(widgetIframe);}
 
 if(detectagain == "again"){}
 else{
-var subcounter = 0
-var finalcomplete = false
-var folderpxse = false
-var folderpxsepx = false
-var createdmore = false
-var pagesforsecpg
-var pageclicknumberp
-var pageclicknumberpmax
-var pageclicknumberpdss
-var pageclicknumberpmaxdss
-var detectpageopenx = false
-var typepsxanex
-var numbercountitems = 0
+var subcounter = 0;
+var finalcomplete = false;
+var folderpxse = false;
+var folderpxsepx = false;
+var createdmore = false;
+var pagesforsecpg;
+var pageclicknumberp;
+var pageclicknumberpmax;
+var pageclicknumberpdss;
+var pageclicknumberpmaxdss;
+var detectpageopenx = false;
+var typepsxanex;
+var numbercountitems = 0;
 
 // Live Reload
 function livereload(){if(playlistpxct.length == 0){} else{
@@ -255,16 +371,27 @@ $("#musicbargp").css("width", "0%").attr("aria-valuenow", 0);
 
 
 // Música Trocar Manual
-$("#musicbar").on("mouseleave" ,function(){
-progressmusicselect = false
-$("#musictimep3").fadeOut(0.10);
-}).mousemove(function(){
+
+function fadesystmusic3(stxxx){
+if(stxxx == true){
 progressmusicselect = true
-$("#musictimep3").fadeIn(0.10);
+$("#musictimep3").addClass("ajustmusic3px");
+$("#options").addClass("ajustoptionspx");
+}
+else if(stxxx == false){
+progressmusicselect = false
+$("#musictimep3").removeClass("ajustmusic3px");
+$("#options").removeClass("ajustoptionspx");
+}
+}
+
+$("#musicbar").on("mouseleave" ,function(){
+fadesystmusic3(false);
+}).mousemove(function(){
+fadesystmusic3(true);
 createclocktime($(this).val(), "musictimep3")
 }).change(function(){
-progressmusicselect = false
-$("#musictimep3").fadeOut(0.10);
+fadesystmusic3(false);
 
 // SoundCloud
 if(playertype == "soundcloud"){widget.seekTo($(this).val());}
@@ -297,6 +424,14 @@ else{widget.pause();}
 
 // Youtube
 
+$(document).mousemove(function(){
+
+afkcursor = false;
+afktime = 3000;
+$("body").removeClass("anticursorfull");
+
+});
+
 function youtubeplaying(){
 	
 if(playertype == "youtube"){if(api_youtube == true){if(youtubeplayer.getPlayerState() == 1){
@@ -309,6 +444,11 @@ progressmusicxp(youtubeplayer.getCurrentTime()*1000);
 if(pageclicknumberpmaxdss == null){randommusic = 0}
 else if(randommusic > pageclicknumberpmaxdss-1){randommusic = 1}
 else{randommusic = randommusic+1}
+
+if(fullscreenvideomode == true){
+if(afktime <= 0){$("body").addClass("anticursorfull");}
+else{afktime = afktime-100;}
+}
 
 }
 
@@ -397,8 +537,8 @@ loadingset(false);
 function randomenabledpx(typeclick){
 
 function detectclassaddrandomen(randomrd){
-if(randomrd == true){$("#enablerandommusic").addClass("randomenabled");}
-else if(randomrd == false){$("#enablerandommusic").removeClass("randomenabled");}
+if(randomrd == true){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("disable"));}
+else if(randomrd == false){$("#enablerandommusic .enoroff").text(chrome.i18n.getMessage("enable"));}
 }
 
 if(typeclick == "auto"){chrome.storage.local.get({enablerandommusic: false}, function(confignoti){
@@ -432,8 +572,8 @@ else{$("#enablerandommusic").click(function(){randomenabledpx();})}
 function repeatenabledpx(typeclick){
 
 function detectclassaddrandomen(randomrd){
-if(randomrd == true){$("#enablerepeatmusic").addClass("randomenabled");}
-else if(randomrd == false){$("#enablerepeatmusic").removeClass("randomenabled");}
+if(randomrd == true){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("disable"));}
+else if(randomrd == false){$("#enablerepeatmusic .enoroff").text(chrome.i18n.getMessage("enable"));}
 }
 
 if(typeclick == "auto"){chrome.storage.local.get({enablerepeatmusic: false}, function(confignoti){
@@ -462,6 +602,46 @@ else{$("#enablerepeatmusic").click(function(){repeatenabledpx();})}
 
 
 
+
+// Finish Ativar
+
+function finishnabledpx(typeclick){
+
+function detectclassaddrandomen(randomrd){
+if(randomrd == true){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("disable"));}
+else if(randomrd == false){$("#finishplaylist .enoroff").text(chrome.i18n.getMessage("enable"));}
+}
+
+if(typeclick == "auto"){chrome.storage.local.get({finishplaylist: false}, function(confignoti){
+finishplaylisten = confignoti.finishplaylist
+detectclassaddrandomen(confignoti.finishplaylist);
+})}
+else{
+
+if(finishplaylisten == false){
+chrome.storage.local.set({finishplaylist: true})
+finishplaylisten = true
+detectclassaddrandomen(true);
+}
+else if(finishplaylisten == true){
+chrome.storage.local.set({finishplaylist: false})
+finishplaylisten = false
+detectclassaddrandomen(false);
+}
+ 
+}
+
+}
+
+if(detectagain == "again"){}
+else{$("#finishplaylist").click(function(){finishnabledpx();})}
+
+
+
+
+
+
+
 // Notification
 
 if(detectagain == "again"){}
@@ -473,6 +653,7 @@ randommusicen = confignoti.enablerandommusic
 repeatmusicen = confignoti.enablerepeatmusic
 randomenabledpx("auto");
 repeatenabledpx("auto");
+finishnabledpx("auto");
 })
 
 
@@ -533,6 +714,12 @@ widget.getCurrentSound(function(datamusic){infocollectmusic({
 "url": datamusic.permalink_url
 });});
 autoplaypause(3);
+
+if(detectfinishplaylist == true){
+widget.pause();
+detectfinishplaylist = false;
+autoplaypause(1);
+}
 });
 }}
 
@@ -1241,11 +1428,12 @@ if(repeatlistdetect == 2){repeatlistdetect = 0;}
 
 // SoundCloud Load
 else if(playertype == "soundcloud"){
-if(api_soundcloud == true){widget.load(playlistpxct[pageclicknumberpdss].url, {show_artwork: true, show_comments: false, show_playcount: false, auto_play: true});}
-else{errormusicst(playlistpxct[pageclicknumberpdss]);}}
+if(api_soundcloud == true){antithumbvideo = true; controlthumbst(false,"","","checking"); createconenmenutb(); widget.load(playlistpxct[pageclicknumberpdss].url, {show_artwork: true, show_comments: false, show_playcount: false, auto_play: true});}
+else{errormusicstapi(playlistpxct[pageclicknumberpdss], "soundcloud");}}
 
 // Youtube Load
 else if(playertype == "youtube"){if(api_youtube == true){
+antithumbvideo = false; controlthumbst(false,"","","checking"); createconenmenutb();
 newvideodetect = true
 
 if((playlistpxct[pageclicknumberpdss].starts == null) || (playlistpxct[pageclicknumberpdss].ends == null)){
@@ -1264,7 +1452,7 @@ youtubeplayer.loadVideoById({'videoId': playlistpxct[pageclicknumberpdss].url
 
 }
 
-else{errormusicst(playlistpxct[pageclicknumberpdss]);}}
+else{errormusicstapi(playlistpxct[pageclicknumberpdss], "youtube");}}
 
 
 
@@ -1300,6 +1488,7 @@ typepsxanex = "next"
 if(pageclicknumberpdss == pageclicknumberpmaxdss){pageclicknumberpdss = 0
 if(detectautonext == "error"){repeatlistdetect = repeatlistdetect+1}
 $("#nextimageclickpx").addClass("limitpagepx");
+if(finishplaylisten == true){if(randommusicen == false){detectfinishplaylist = true; playlistcomplete();}}
 }
 pageclicknumberpdss = pageclicknumberpdss+1
 if(playlistpxct[pageclicknumberpdss] == null){pageclicknumberpdss = 1}
@@ -1330,7 +1519,21 @@ chrome.notifications.clear("errormusic");
 chrome.notifications.create("errormusic",{
 type: "basic",
 iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
-title: "ERROR URL",
+title: chrome.i18n.getMessage("app_sp_errorurl"),
+message: errorid.title,
+contextMessage: chrome.i18n.getMessage("appsoundbookplus")
+})
+}
+
+function errormusicstapi(errorid, sourceerror){
+nextimagestpx("next", "error");
+$("#"+errorid.id+" span").addClass("glyphicon glyphicon-ban-circle").addClass("errormusic_api");
+$("#"+errorid.id).addClass("errormusic_api");
+chrome.notifications.clear("errormusic");
+chrome.notifications.create("errormusic",{
+type: "basic",
+iconUrl: chrome.extension.getURL('appicons/soundbookplus.png'),
+title: chrome.i18n.getMessage("app_sp_errorapi")+" ("+chrome.i18n.getMessage(sourceerror)+")",
 message: errorid.title,
 contextMessage: chrome.i18n.getMessage("appsoundbookplus")
 })
@@ -1383,6 +1586,11 @@ resetprogressmusicxp(youtubeplayer.getDuration()*1000);
 $("#volumeico").removeClass("volloading");
 changesoundpx("load");
 autoplaypause(3);
+if(detectfinishplaylist == true){
+youtubeplayer.pauseVideo();
+detectfinishplaylist = false;
+autoplaypause(1);
+}
 }
 
 newvideodetect = false
@@ -1764,8 +1972,9 @@ else{
 // Ativar Todo Sistema
 
 var youtubesystemcomplete = {
-height: '0',
-width: '0',
+height: 'auto',
+width: 'auto',
+playerVars: {'controls': 0, 'showinfo': 0, 'rel': 0},
 videoId: 'TIAbeZOdjNc',
 events: {
 'onReady': function(){loadingset("firstload");},
@@ -1865,6 +2074,9 @@ delaymusicpekx = true;
 setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
+
+shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){exitfullscreenvideo(); fullscreenvideomode = false;}});
+
 }
 
 systemshortsystem();
@@ -1878,6 +2090,7 @@ shortcut.remove("RIGHT");
 shortcut.remove("LEFT");
 shortcut.remove("UP");
 shortcut.remove("DOWN");
+shortcut.remove("ESC");
 });
 }
 
@@ -1895,6 +2108,11 @@ chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.g
 chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://soundcloud.com/jackiedreasond/jukine-theme-star-fox-64-fan-made"});
 chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://soundcloud.com/jackiedreasond/dubstell-fest"});	
 });
+chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("app_sp_examplemusic")}, function(newfoldersystem2){
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://www.youtube.com/watch?v=eeNDSe8HfcM"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://www.youtube.com/watch?v=njos57IJf-0"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://www.youtube.com/watch?v=yzC4hFK5P3g"});	
+});
 $("#foldercreatesc").modal();
 $("#openclicknewfolder").click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+newfoldersystem.id, type: "normal", state: "normal"}); $("#foldercreatesc").modal("toggle");});
 searchfolder(detectagain);
@@ -1903,8 +2121,7 @@ else{startfavpage(favdata[0].id, detectagain);}
 })}
 
 
-if(api_youtube == true){function onYouTubeIframeAPIReady(){searchfolder("");}}
-else{searchfolder("");}
+$(window).on('load', function() {searchfolder("");});
 
 //$("#refreshfolderlist").click(function(){$(".homefolder").trigger("click"); loadingset(true); $("#folderlist, .homefolder").empty(); searchfolder("again");});
 $("#refreshfolderlist").click(function(){location.reload();});
@@ -2166,42 +2383,72 @@ if(livemodet == true){
 
 var show_credits = "";
 var show_progress = "";
+var antiprogressbarpx = true;
 if(color_save.live_show_credits == false){var show_credits = "#infoimpmusic{display: none !important;}";}
-if(color_save.live_show_progress == false){var show_progress = "#musictimep1, #musictimep2, .musicbar{display: none !important;}";}
+if(color_save.live_show_progress == false){var show_progress = "#musictimep1, #musictimep2, .musicbar{display: none !important;}";
+var antiprogressbarpx = false;
+}
 
 $("#closelive").removeClass("hide");
+$("#thumbchangep, #enterfullscreen, #finishplaylist").addClass("hide");
 $("#size_page").prop("disabled", true);
 $("head").append(
 $("<link>", {id: "customtheme1", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/live.css"}),
 $("<style>", {id: "customtheme2"}).text(
 show_credits+" "+show_progress+" \n"+
+
+
+'::-webkit-scrollbar-track {background-color: '+color_save.live_progressbar+';}\n'+
+'::-webkit-scrollbar-thumb { background-color: '+color_save.live_progressbarcomplete+';}\n'+
+'::-webkit-scrollbar-thumb:hover {background-color: '+color_save.live_volumeclick+';}\n'+
+'::-webkit-scrollbar-thumb:active {-webkit-box-shadow: '+color_save.live_volumeclick+';}\n'+
+
+
+'.volloading:before{color: '+color_save.live_buttonactive+' !important;}\n'+
+
 '.navbar-fixed-bottom{background-color:'+color_save.live_background+';}\n'+
 '.navbar-fixed-bottom{color:'+color_save.live_text+';}\n'+
+
 '#options span:before{color:'+color_save.live_button+';}\n'+
 '#options span:hover:before{color:'+color_save.live_buttonhover+';}\n'+
 '#options span:active:before{color:'+color_save.live_buttonclick+';}\n'+
-'.randomenabled:before{color:'+color_save.live_buttonactive+' !important;}\n'+
-'.randomenabled:hover:before{color:'+color_save.live_buttonhover+' !important;}\n'+
-'.randomenabled:active:before{color:'+color_save.live_buttonclick+' !important;}\n'+
+
+'.spaceoptions a span{color: '+color_save.live_button+';}\n'+
+'.spaceoptions a:hover span{color: '+color_save.live_buttonhover+';}\n'+
+'.spaceoptions a:active span{color: '+color_save.live_buttonclick+';}\n'+
+'.spaceoptions{background-color: '+color_save.live_background+';}\n'+
+'.spaceoptions li a:hover{background-color : '+color_save.live_volumeclick+' !important;}\n'+
+
+'.itemsmusic .optionsox .volumeclick:before{color: '+color_save.live_button+' !important;}\n'+
+'.itemsmusic .optionsox .volumeclick:hover:before{color: '+color_save.live_buttonhover+' !important;}\n'+
+'.itemsmusic .optionsox .volumeclick:active:before{color: '+color_save.live_buttonclick+' !important;}\n'+
+
 '#musictimep1{color:'+color_save.live_time+'; !important;}\n'+
 '#musictimep3{color:'+color_save.live_text+'; !important;}\n'+
 '#infomuser{color:'+color_save.live_author+'; !important;}\n'+
+
 '.musicbar .progress{background-color:'+color_save.live_progressbar+';}\n'+
 '.musicbar .progress-bar{background-color:'+color_save.live_progressbarcomplete+';}\n'+
 '#musicbar:hover::-webkit-slider-thumb{background-color:'+color_save.live_progressbaricon+';}\n'+
 '#musicbar:active::-webkit-slider-thumb{background-color:'+color_save.live_progressbariconhover+';}\n'+
 '#musicbar:disabled::-webkit-slider-thumb{background-color:'+color_save.live_progressbariconactive+';}\n'+
 '#musicbar::-webkit-slider-thumb{background-color:'+color_save.live_progressbariconactive+';}'+
+
 '.volumeclick:hover, .open .volumeclick{background-color:'+color_save.live_volumeclick+' !important;}'+
+
 '#soundspace{background-color:'+color_save.live_background+' !important;}'+
 '#soundspace input[type=range]::-webkit-slider-thumb{background:'+color_save.live_progressbaricon+' !important; border-color: transparent;}'+
 '#soundspace input[type=range]:hover::-webkit-slider-thumb{background:'+color_save.live_progressbariconhover+' !important; border-color: transparent;}'+
-'#soundspace input[type=range]::-webkit-slider-runnable-track{background:'+color_save.live_progressbarcomplete+' !important;}'+
-'#soundspace input[type=range]:active::-webkit-slider-runnable-track{background:'+color_save.live_volumebarclick+' !important;}'
+'#soundspace input[type=range]::-webkit-slider-runnable-track{background:'+color_save.live_progressbarcomplete+' !important; border-color: transparent;}'+
+'#soundspace input[type=range]:active::-webkit-slider-runnable-track{background:'+color_save.live_volumebarclick+' !important; border-color: transparent;}'
+
 ),
-$("<link>", {id: "customtheme3", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/live_control.css"}).prop("disabled", color_save.live_show_options)
+$("<link>", {id: "customtheme3", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/live_control.css"}).prop("disabled", color_save.live_show_options),
+$("<link>", {id: "customtheme4", rel: "stylesheet", type: "text/css", href: "../css/apps/soundbookplus/live_control2.css"}).prop("disabled", antiprogressbarpx)
 );
 live_show_options = color_save.live_show_options;
+controlthumbst(false, "enable", "add");
+$("#musicthumbnail").off("click");
 
 }
 
@@ -2209,9 +2456,11 @@ live_show_options = color_save.live_show_options;
 else if(livemodet == false){
 
 $("#closelive").addClass("hide");
+$("#thumbchangep, #enterfullscreen, #finishplaylist").removeClass("hide");
 $("#size_page").prop("disabled", false);
-$("#customtheme1, #customtheme2, #customtheme3").prop("disabled", true).remove();
+$("#customtheme1, #customtheme2, #customtheme3, #customtheme4").prop("disabled", true).remove();
 $(".optionsox").removeClass("viewitem"); viewitemcontrolp = false;
+createconenmenutb();
 
 }
 
@@ -2363,3 +2612,41 @@ else{$(".optionsox").removeClass("viewitem"); viewitemcontrolp = false;}
 return false;
 
 }}});
+
+
+
+
+
+
+// Video Screen
+
+function createconenmenutb(){
+
+$("#thumbchangep").off("click").click(function(){
+
+if(playertype == "none"){controlthumbst(false, "enable", "add");} else{
+if(thumbvideoen == true){controlthumbst(false, "enable", "add");}
+else if(thumbvideoen == false){controlthumbst(true, "disable", "remove");}
+}
+
+createconenmenutb();
+
+});
+$("#thumbchangep .text").text(thumbvideoen1+" "+chrome.i18n.getMessage("video"));
+$("#enterfullscreen").off("click").click(function(){
+	
+if(fullscreenvideomode == true){
+exitfullscreenvideo();
+fullscreenvideomode = false;
+}
+else if(fullscreenvideomode == false){
+enterfullscreenvideo();
+fullscreenvideomode = true;
+}
+
+});
+$("#enterfullscreen .text").text(chrome.i18n.getMessage("app_sp_videoview_fullscreen"));
+
+}
+
+createconenmenutb();

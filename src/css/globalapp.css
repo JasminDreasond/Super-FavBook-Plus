@@ -1,5 +1,9 @@
 /* Base */
 
+.contextMenuPlugin{
+position: fixed;
+}
+
 .folderitems{
 margin-right: 7px;
 }
@@ -232,12 +236,14 @@ padding: 7px 35px !important;
 /* Pesquisar */
 
 #search{
-border-radius: 3px;
+border-radius: 0px;
 border: 1px solid rgba(38, 38, 38, 0.7);
 padding: 3px;
 margin: 11px 0px;
 width: 300px;
 }
+
+#appquality{border-radius: 0px;}
 
 
 
@@ -250,7 +256,7 @@ font-size: 15pt;
 line-height: 1.1;
 position: fixed;
 background-color: rgba(240, 255, 234, 0.9);
-border-radius: 20px;
+border-radius: 3px;
 
 position: fixed;
 width: 500px;
@@ -260,7 +266,7 @@ left: 50%;
 margin-top: -100px;
 margin-left: -250px;
 
-z-index: 10;
+z-index: 11117;
 }
 
 #loadingtext{
@@ -324,7 +330,7 @@ margin: 15% 0px;
 background: #D4DFD0;
 width: 80%;
 padding: 25px;
-border-radius: 8px;
+border-radius: 3px;
 font-size: 13pt;
 font-weight: normal;
 }
