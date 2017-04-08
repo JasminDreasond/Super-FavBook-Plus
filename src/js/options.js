@@ -52,10 +52,11 @@ chrome.windows.create({url: "apps/checkapi.html", type: "popup", state: "maximiz
 
 // Api Change
 
-chrome.storage.local.get({api_youtube: true, api_soundcloud: true},function(data){
+chrome.storage.local.get({api_youtube: true, api_soundcloud: true, api_dailymotion: true},function(data){
 $("[id='api_change']").each(function(){
 if($(this).attr("api") == "youtube"){$(this).prop("checked", data.api_youtube);}
 else if($(this).attr("api") == "soundcloud"){$(this).prop("checked", data.api_soundcloud);}
+else if($(this).attr("api") == "dailymotion"){$(this).prop("checked", data.api_dailymotion);}
 });});
 
 $("[id='api_change']").click(function(){
@@ -64,6 +65,9 @@ chrome.storage.local.set({api_youtube: $(this).prop("checked")})
 }
 else if($(this).attr("api") == "soundcloud"){
 chrome.storage.local.set({api_soundcloud: $(this).prop("checked")})
+}
+else if($(this).attr("api") == "dailymotion"){
+chrome.storage.local.set({api_dailymotion: $(this).prop("checked")})
 }
 });
 
@@ -75,3 +79,14 @@ $("#translatorcredits").attr("href", chrome.i18n.getMessage("translator_page"));
 if((chrome.i18n.getMessage("translator_text") == "") || (chrome.i18n.getMessage("translator_text") == null) || (chrome.i18n.getMessage("translator_text") == undefined)){
 $("#translatorspace").remove();
 }
+
+
+
+
+// Tumblr Page
+
+//$("#tumblrpost").tumblr(
+//{"id": "jackiedreasond"}, 
+//{'limit': 2, 'scroll': false, 'pagination': 4, 'next_top': 2, 'window_mode': true, 'scroll_page': true, 'force_disable_tag': true,
+//'custom_description_blog': chrome.i18n.getMessage("options_tumblr_description")}
+//);

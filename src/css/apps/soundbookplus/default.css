@@ -15,7 +15,12 @@ display: none;
 
 /* Player */
 
+.playlistplayer{opacity: 0 !important; max-height: 0px !important; max-width: 0px !important; position: absolute;}
 .scrolltothumb #scrollup,.scrolltothumb #scrollup:before{bottom: 255px !important;}
+
+#playerspacekt{
+position: absolute;
+}
 
 #sc-widget{
 height: 0px;
@@ -30,7 +35,7 @@ position: fixed;
 bottom: 52px;
 right: 0px;
 z-index: 11115 !important;
-pointer-events: none !important;
+pointer-events: none;
 }
 
 .modal-open .soundcloudbase{
@@ -38,11 +43,7 @@ right: 16px;
 z-index: 0 !important;
 }
 
-.soundcloudbase:hover{
-opacity: 0.3 !important;
-}
-
-#youtubeplayer{
+#youtubeplayer, #dailymotionplayer, #playerspacekt{
 height: 190px;
 width: 338px;
 transition: height 0.20s, width 0.20s;
@@ -50,7 +51,11 @@ transition: height 0.20s, width 0.20s;
 
 .hideplayer{
 opacity: 0 !important;
+pointer-events: none;
 }
+
+.advideopl{pointer-events: all !important; opacity: 1 !important;}
+.advideoplsm, .nopeplayer{max-height: 0px !important; max-width: 0px !important; pointer-events: none !important;}
 
 
 
@@ -179,7 +184,7 @@ background-color: #ad3900;
 .clickdevart2:focus, .clickdevart:focus{outline: none;}
 
 
-:not(#search):not(#appquality):not(#appquality):not(.selectpxnyya):not(#exportimportcolors)::selection {
+:not(#search):not(#appquality):not(#appquality):not(.selectpxnyya):not(#exportimportcolors):not(#daautodetectsf2):not(#idplaylist):not(#daautodetectsf3):not(#idplaylist2)::selection {
 background-color: transparent !important;
 }
 

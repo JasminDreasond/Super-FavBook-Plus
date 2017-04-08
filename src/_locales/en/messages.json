@@ -28,6 +28,7 @@
 "options_privacy": {"message": "Privacy Policy"},
 "options_privacy_text": {"message": "By using this product, you agree that you'll allow storing files in your browser to save all of your progress. \nThis extension does not possess advertising and no information or data will be collected during use. \n\nAll softwares is powered by a Website API | This extension is not affiliated or endorsed"},
 "options_credit": {"message": "made by"},
+"options_tumblr_description": {"message": "News and Others"},
 
 
 
@@ -195,6 +196,7 @@
 "app_sp_yt_highres": {"message": "Highres"},
 "app_sp_yt_importexample": {"message": "https://www.youtube.com/playlist?list=Example"},
 "app_sp_sc_importexample": {"message": "https://soundcloud.com/example/sets/example"},
+"app_sp_dm_importexample": {"message": "http://www.dailymotion.com/playlist/example"},
 "app_sp_search": {"message": "Search musics in the folder"},
 "app_sp_reloadplaylist": {"message": "Reload Playlist"},
 "app_sp_play": {"message": "Play / Pause"},
@@ -215,6 +217,24 @@
 "app_sp_playlistcomplete": {"message": "Playlist Complete Successfully"},
 "app_sp_errorapi": {"message": "Error: API Disabled"},
 "app_sp_theatremode": {"message": "Theatre Mode"},
+"app_sp_advideo": {"message": "Video Advertising"},
+
+
+
+
+
+
+
+// Tumblr API \\
+
+"tumblr_postdefaultname": {"message": "Open Post"},
+"tumblr_noneposts": {"message": "Found 0 posts"},
+"tumblr_removetag": {"message": "Remove the tag"},
+
+
+
+
+
 
 
 // Names \\

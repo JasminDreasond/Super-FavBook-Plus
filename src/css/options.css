@@ -1,7 +1,8 @@
 body{
 background-color: #f4f4f4
-
 }
+
+a:hover{text-decoration: none;}
 
 .text_space{
 white-space:pre-wrap;
