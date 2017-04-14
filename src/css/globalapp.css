@@ -323,43 +323,28 @@ width: 120px !important;
 margin: 11px 35px;
 }
 
-#importfavfolder #conteudo{
+#importpagesmodal .modal-body{
 text-align: center;
-margin: 0 auto;
-margin: 15% 0px;
-background: #D4DFD0;
-width: 80%;
 padding: 25px;
-border-radius: 3px;
-font-size: 13pt;
-font-weight: normal;
 }
 
-#importfavfolder #conteudo input{
-width: 250px;
-}
-
-#importfavfolder #conteudo select{
-width: 150px;
-}
-
-#daautodetectsf, .daautodetectsf{
-margin: 15px;
-width: 800px !important;
+#daautodetectsf, .daautodetectsf, .selectpxnyya{
 text-align: center;
 }
 
 #dasubmovsf, #dasubclosesf{
-margin: 35px 15px 0px 15px;
-width: 150px !important;
+margin: 0px 15px;
+width: 100px;
 }
 
-#resultimportpx{
+#resultimportpx, #resultimportpx2{
 margin-top: 10px;
 font-weight: bold;
 }
 
-
+#impofavstpx .modal-footer button{
+margin: 0px 10px;
+}
 
 
 

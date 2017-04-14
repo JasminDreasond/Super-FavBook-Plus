@@ -1,5 +1,5 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
-var chromeponypopup = window.open(chrome.extension.getURL('options.html'), "chromeponypopup");
+var chromeponypopup = window.open(chrome.extension.getURL('index.html'), "chromeponypopup");
 chromeponypopup.focus(); 
 });
 

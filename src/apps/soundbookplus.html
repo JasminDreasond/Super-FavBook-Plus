@@ -9,6 +9,7 @@
 <script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
 <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
 <script src="../js/language.js" type="text/javascript"></script>
+<script src="../js/api/filesaver.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/jquery.contextmenu.css">
 <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
@@ -149,40 +150,31 @@
   </div>
 </div>
 
-</div>
-
-
-<div id="loading">
-<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
-<div class="ldmessagepx" langchrome="gapp_loading"></div>
-</div>
-
-
-
-<div id="importfavfolder" class="anticlick" style="display: none;">
-
-<center><div id="conteudo">
-
-<span langchrome="app_sp_importtitle"></span>
-
-<br/>
+<div id="importpagesmodal" class="modal fade bs-example-modal-lg" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
+      </div>
+      <div class="modal-body">
 
 <span id="soundcloudimport" class="hide">
-<input type="text" id="daautodetectsf" langchrome="" langchrome2="app_sp_sc_importexample" tsplaceholder="true" />
+<input type="text" id="daautodetectsf" class="form-control" langchrome="" langchrome2="app_sp_sc_importexample" tsplaceholder="true" />
 <br/>
 
 https://soundcloud.com/ <input type="text" id="danamesf"/> / <select id="favtypesf"><option value="sets">sets</option><option value="albums">albums</option></select> / <input type="text" id="favfoldersf"/>
 </span>
 
 <span id="youtubeimport">
-<input type="text" id="daautodetectsf2" class="daautodetectsf selectpxnyya" langchrome="" langchrome2="app_sp_yt_importexample" tsplaceholder="true" />
+<input type="text" id="daautodetectsf2" class="daautodetectsf selectpxnyya form-control" langchrome="" langchrome2="app_sp_yt_importexample" tsplaceholder="true" />
 <br/>
 
 https://www.youtube.com/playlist?list= <input type="text" class="selectpxnyya" id="idplaylist"/>
 </span>
 
 <span id="dailymotionimport" class="hide">
-<input type="text" id="daautodetectsf3" class="daautodetectsf selectpxnyya" langchrome="" langchrome2="app_sp_dm_importexample" tsplaceholder="true" />
+<input type="text" id="daautodetectsf3" class="daautodetectsf selectpxnyya form-control" langchrome="" langchrome2="app_sp_dm_importexample" tsplaceholder="true" />
 <br/>
 
 http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id="idplaylist2"/>
@@ -191,17 +183,53 @@ http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id=
 <br/>
 
 <div id="resultimportpx"></div>
+	  
+      </div>
+      <div class="modal-footer">
+        <!--<select id="importtype">
+        <option value="soundcloud" langchrome="soundcloud"></option
+        <option value="youtube" selected langchrome="youtube"></option>
+        <option value="dailymotion" langchrome="dailymotion"></option>
+        </select>-->
+        <button type="button" class="clickdevart" langchrome="close" id="dasubclosesf"></button>
+        <button type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" ></button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<input type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" />
-<!--<select id="importtype">
-<option value="soundcloud" langchrome="soundcloud"></option
-<option value="youtube" selected langchrome="youtube"></option>
-<option value="dailymotion" langchrome="dailymotion"></option>
-</select>>-->
-<input type="submit" id="dasubclosesf" class="clickdevart" langchrome="close" />
+<div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
+      </div>
+      <div class="modal-body">
 
-</div></center>
+<h4><span langchrome="gapp_pagecode_title"></span>:</h4>
+<input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true"/>
 
+<br/>
+
+<div id="resultimportpx2"></div>
+	  
+      </div>
+      <div class="modal-footer">
+		<button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+        <button type="submit" id="excodefolder" class="clickdevart" langchrome="export" ></button>
+        <button type="submit" id="impcodefolder" class="clickdevart" langchrome="import" ></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="loading">
+<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
+<div class="ldmessagepx" langchrome="gapp_loading"></div>
 </div>
 
 
@@ -226,7 +254,7 @@ http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id=
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
 <div class="navbar-header">
-<a class="navbar-brand titletop"><img src="../appicons/soundbookplus.png" alt="logo"><span langchrome="appsoundbookplus">SoundBook Plus</span></a>
+<a class="navbar-brand titletop"><img src="../appicons/soundbookplus.png" alt="logo"><span id="logo_name_sf" langchrome="appsoundbookplus"></span></a>
 </div>
 <ul class="nav navbar-nav">
 <li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_sp_search" tsplaceholder="true" /></li>
@@ -344,7 +372,7 @@ http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id=
 </thead>
 
 <tbody>
-<tr><td id="infomtitle" langchrome="none"></td></tr>
+<tr><td id="infomtitle" langchrome="none"></td><td id="infomtitle2" langchrome="none"></td></tr>
 </tbody>
 
 </table>

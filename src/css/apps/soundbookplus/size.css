@@ -104,7 +104,7 @@ display: inline;
 font-size: 11pt;
 }
 
-#infomtitle{
+#infomtitle, #infomtitle2{
 font-size: 13pt;
 }
 
@@ -134,4 +134,12 @@ font-size: 13pt;
 @media screen and (max-width: 425px) {
 .musicbar .progress, .musicbar #musicbar{width: 72%;}
 #musicbar{margin-left: -72%;}
+}
+
+@media screen and (max-width: 399px) {
+#logo_name_sf{display: none;}
+.titletop{height: 26px; width: 26px;}
+#infomtitle{display: none;}
+#infomtitle2{display: block; width: 260px; overflow: hidden; max-height: 24px;}
+.spaceoptions{left: -39px !important;}
 }

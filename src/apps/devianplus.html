@@ -11,6 +11,7 @@
 <script src="../js/jquery/jquery.contextmenu.js" type="text/javascript"></script>
 <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
 <script src="../js/language.js" type="text/javascript"></script>
+<script src="../js/api/filesaver.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/jquery.contextmenu.css">
 <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
@@ -42,6 +43,59 @@
   </div>
 </div>
 
+<div id="importpagesmodal" class="modal fade bs-example-modal-lg" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" langchrome="app_dp_import"></h4>
+      </div>
+      <div class="modal-body">
+
+<input type="text" id="daautodetectsf" class="form-control" langchrome="" langchrome2="app_dp_importexample" tsplaceholder="true"/>
+<br/>
+
+http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtypesf"><option value="gallery">gallery</option><option value="favourites">favourites</option></select> / <input type="text" id="favfoldersf"/>
+
+<br/>
+
+<div id="resultimportpx"></div>
+	  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="clickdevart" langchrome="close" id="dasubclosesf"></button>
+        <button type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" ></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" langchrome="app_dp_import"></h4>
+      </div>
+      <div class="modal-body">
+
+<h4><span langchrome="gapp_pagecode_title"></span>:</h4>
+<input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true"/>
+
+<br/>
+
+<div id="resultimportpx2"></div>
+	  
+      </div>
+      <div class="modal-footer">
+		<button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+        <button type="submit" id="excodefolder" class="clickdevart" langchrome="export" ></button>
+        <button type="submit" id="impcodefolder" class="clickdevart" langchrome="import" ></button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 
@@ -64,32 +118,6 @@
 <div id="conteudo"><center>
 <img src=""/>
 </center></div>
-
-</div>
-
-
-
-
-<div id="importfavfolder" class="anticlick" style="display: none;">
-
-<center><div id="conteudo">
-
-<span langchrome="app_dp_import"></span>
-
-<br/>
-
-<input type="text" id="daautodetectsf" langchrome="" langchrome2="app_dp_importexample" tsplaceholder="true"/>
-<br/>
-
-http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtypesf"><option value="gallery">gallery</option><option value="favourites">favourites</option></select> / <input type="text" id="favfoldersf"/>
-
-<br/>
-
-<div id="resultimportpx"></div>
-
-<input type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" /> <input type="submit" id="dasubclosesf" class="clickdevart" langchrome="close" />
-
-</div></center>
 
 </div>
 

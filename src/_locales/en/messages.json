@@ -53,6 +53,7 @@
 
 // Message \\
 
+"code": {"message": "Code"},
 "close": {"message": "Close"},
 "save": {"message": "Save"},
 "send": {"message": "Send"},
@@ -105,6 +106,8 @@
 "enable": {"message": "Enable"},
 "thumb": {"message": "Thumb"},
 "video": {"message": "Video"},
+"export": {"message": "Export"},
+"import": {"message": "Import"},
 
 
 
@@ -134,6 +137,7 @@
 "gapp_filedemo2": {"message": "Demo URL 2"},
 "gapp_filedemo3": {"message": "Demo URL 3"},
 "gapp_opennewfolder": {"message": "Open New Folder"},
+"gapp_pagecode_title": {"message": "Insert a Fav Folder Code"},
 
 
 
