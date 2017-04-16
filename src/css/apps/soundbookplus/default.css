@@ -7,7 +7,7 @@ display: none;
 #moreclickbase{display: none;}
 
 .contextMenuPlugin .header{background: #333;}
-#infomtitle2{display: none;}
+#infomtitle2, #infomtitle3{display: none;}
 
 
 
@@ -33,13 +33,12 @@ opacity: 0;
 transition: opacity 0.20s, margin 0.20s, top 0.20s, bottom 0.20s, left 0.20s, right 0.20s;
 position: fixed;
 bottom: 52px;
-right: 0px;
+right: -4px;
 z-index: 11115 !important;
 pointer-events: none;
 }
 
 .modal-open .soundcloudbase{
-right: 16px;
 z-index: 0 !important;
 }
 

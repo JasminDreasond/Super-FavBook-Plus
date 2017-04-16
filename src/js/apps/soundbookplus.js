@@ -388,6 +388,7 @@ if(datamusic.username.length > 40) {datamusic.username = datamusic.username.subs
 $("#infomuser").text(datamusic.username);
 $("#infomtitle").text(datamusic.title);
 $("#infomtitle2").text(minititleplayerpek);
+$("#infomtitle3").text(newtitlepagemusic);
 $("#linkopen").attr("href", datamusic.url);
 
 document.title = newtitlepagemusic+" - "+chrome.i18n.getMessage("appsoundbookplus");
