@@ -141,7 +141,7 @@ margin-top: 53px;
 padding-top: 56px;
 }
 
-.clickdevart{
+.clickdevart, .clickdevart:focus{
 text-align: center;
 background-color: #FF5500;
 border: 0px solid #ffa366;
@@ -153,16 +153,16 @@ cursor: pointer;
 }
 
 .clickdevart:hover{
-background-color: #ce4400;
+background-color: #ce4400 !important;
 color: #FFF !important;
 }
 
 .clickdevart:active{
-background-color: #ad3900;
+background-color: #ad3900 !important;
 color: #FFF !important;
 }
 
-.clickdevart2{
+.clickdevart2, .clickdevart2:focus{
 text-align: center;
 border: 0px solid transparent;
 background-color: #FF5500;
@@ -176,14 +176,14 @@ font-size: 10pt;
 }
 
 .clickdevart2:hover{
-background-color: #ce4400;
+background-color: #ce4400 !important;
 }
 
 .clickdevart2:active{
-background-color: #ad3900;
+background-color: #ad3900 !important;
 }
 
-.clickdevart2:focus, .clickdevart:focus{outline: none;}
+.clickdevart2:focus, .clickdevart:focus{outline: none !important;}
 
 
 :not(#search):not(#appquality):not(#appquality):not(.selectpxnyya):not(#exportimportcolors):not(#daautodetectsf2):not(#idplaylist):not(#daautodetectsf3):not(#idplaylist2)::selection {

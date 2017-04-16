@@ -3012,7 +3012,7 @@ items_folder_create_file.push({'title': foldercfg[0].children[i].title, 'url': f
 }}
 var json_save_file_st = {'title': foldercfg[0].title,'items': items_folder_create_file};
 var blob = new Blob([JSON.stringify(json_save_file_st)], {type: "text/plain;charset=utf-8"});
-saveAs(blob, "sfv+_"+foldercfg[0].title+".txt");
+saveAs(blob, "sfb+_sbp_"+foldercfg[0].title+".txt");
 
 });}});
 

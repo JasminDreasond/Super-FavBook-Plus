@@ -542,7 +542,7 @@ generatorimages(foldercfg2[0].children, subfolderchi.length, "subfolder", folder
 // New Sub Folder
 if(start == "subfolder"){if(urlpage == null){
 $("#iconopen"+folderset).addClass("subfolderctpxcf");
-$("#folder"+folderset).append($("<li>",{id: "subfolderpx"+data[subfoldernb].id, class: "subfolderkp"+subcounter}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>").text(data[subfoldernb].title).click(function(){
+$("#folder"+folderset).append($("<li>",{id: "subfolderpx"+data[subfoldernb].id, class: "subfolderkp"+subcounter}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>", {folderidreg: data[subfoldernb].id}).text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder");
 }).contextmenu(function(){
 chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
@@ -561,7 +561,7 @@ if(urlpage == null){
 if(start == true){
 
 // New Folder
-$("#"+folderset).append($("<li>", {id: "subfolderpx"+data[subfoldernb].id, class: "firstsubfolder"}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>").text(data[subfoldernb].title).click(function(){
+$("#"+folderset).append($("<li>", {id: "subfolderpx"+data[subfoldernb].id, class: "firstsubfolder"}).append($("<span>", {class: "glyphicon glyphicon-folder-close", id: "iconopensubfolderpx"+data[subfoldernb].id}).click(function(){openmorefolder("subfolderpx"+data[subfoldernb].id);}), $("<a>", {folderidreg: data[subfoldernb].id}).text(data[subfoldernb].title).click(function(){
 openfolder(data[subfoldernb].id, this, "folder");
 }).contextmenu(function(){
 chrome.windows.create({url: "chrome://bookmarks/#"+data[subfoldernb].id, type: "normal", state: "normal"});
@@ -688,3 +688,38 @@ else{startfavpage(favdata[0].id, detectagain);}
 searchfolder("");
 
 $("#refreshfolderlist").click(function(){location.reload();});
+
+
+
+
+
+
+
+// Import or Export Folder
+
+$("#excodefolder").click(function(){if($('#folderlist .active').attr('folderidreg') != undefined){chrome.bookmarks.getSubTree($('#folderlist .active').attr('folderidreg') ,function(foldercfg){
+
+var items_folder_create_file = [];
+for (i = 0; i < foldercfg[0].children.length; i++) {if((foldercfg[0].children[i].url != null) && (foldercfg[0].children[i].url != undefined) && (foldercfg[0].children[i].url != '')){
+items_folder_create_file.push({'title': foldercfg[0].children[i].title, 'url': foldercfg[0].children[i].url});
+}}
+var json_save_file_st = {'title': foldercfg[0].title,'items': items_folder_create_file};
+var blob = new Blob([JSON.stringify(json_save_file_st)], {type: "text/plain;charset=utf-8"});
+saveAs(blob, "sfb+_fbp_"+foldercfg[0].title+".txt");
+
+});}});
+
+$("#impcodefolder").click(function(){if($("#codepekxed").val() != ''){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_fb_folder")}, function(favdata){
+var json_save_file_jt = JSON.parse($("#codepekxed").val());
+chrome.bookmarks.create({"parentId": favdata[0].id, "title": json_save_file_jt.title}, function(newfoldersystem2){
+
+for (i = 0; i < json_save_file_jt.items.length; i++) {
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": json_save_file_jt.items[i].title, "url": json_save_file_jt.items[i].url});
+}
+$("#resultimportpx2").text(chrome.i18n.getMessage("gapp_folderimcomplete"));
+$("#codepekxed").val('');
+
+});
+})}});
+
+$("#openimportbtx").on('click contextmenu', function(){$('#impofavstpx').modal(); return false;});

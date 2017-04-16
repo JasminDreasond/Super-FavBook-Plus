@@ -131,7 +131,7 @@
 "gapp_welcome_text": {"message": "This is your Chrome Favourites Page"},
 "gapp_artcredits": {"message": "Art made by"},
 "gapp_folderimerror": {"message": "Error in the URL was detected!"},
-"gapp_folderimcomplete": {"message": "Your new folder was created with success!"},
+"gapp_folderimcomplete": {"message": "Your new folder was created with success! Please, refresh the page."},
 "gapp_demofolder": {"message": "Demo Folder"},
 "gapp_filedemo1": {"message": "Demo URL 1"},
 "gapp_filedemo2": {"message": "Demo URL 2"},
@@ -146,6 +146,7 @@
 // Fanfic Bookin \\
 
 "app_fb_folder": {"message": "FanFic Bookin - Fic List"},
+"app_fb_import": {"message": "Import a fanfic folder to your Google Chrome"},
 "app_fb_urlerror": {"message": "URL ERROR!"},
 "app_fb_search": {"message": "Search fanfics in the folder"},
 "app_fb_welcome_text": {"message": "Send your favourite Fic to the folder"},

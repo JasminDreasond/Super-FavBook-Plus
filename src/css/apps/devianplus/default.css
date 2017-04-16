@@ -50,7 +50,7 @@ color: #e6e6e6 !important;
 background: #D4DFD0;
 }
 
-.clickdevart{
+.clickdevart, .clickdevart:focus{
 background: linear-gradient(#DAF087, #B2E140);
 border: 1px solid #93A98F;
 color: #333;
@@ -58,28 +58,28 @@ text-shadow: 0px 1px 1px #E1F3AF;
 }
 
 .clickdevart:hover{
-background: linear-gradient(#E6F788, #C0EC30);
+background: linear-gradient(#E6F788, #C0EC30) !important;
 }
 
 .clickdevart:active{
-background: linear-gradient(#92C01F, #BBD167);
+background: linear-gradient(#92C01F, #BBD167) !important;
 }
 
-.clickdevart2{
+.clickdevart2, .clickdevart2:focus{
 border: 0px solid transparent;
 background-color: #5FAC75;
 color: #FFF;
 }
 
 .clickdevart2:hover{
-background-color: #4F8F61;
+background-color: #4F8F61 !important;
 }
 
 .clickdevart2:active{
-background-color: #396947;
+background-color: #396947 !important;
 }
 
-.clickdevart2:focus{outline: none;}
+.clickdevart2:focus{outline: none !important;}
 
 
 ::selection {
