@@ -109,6 +109,7 @@ font-size: 13pt;
 overflow: hidden; 
 max-height: 24px;
 }
+#infomtitle{display: block;}
 
 @media screen and (max-height: 550px) {
 #infoimpmusic{top: 130px;}	
