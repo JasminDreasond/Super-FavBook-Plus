@@ -917,7 +917,7 @@ $("#favtypesf").val("gallery")
 $("#favfoldersf").val("")
 
 if(data.intro == "again"){
-$("#dasubclosesf").off("click").click(function(){location.reload();})
+//$("#dasubclosesf").off("click").click(function(){location.reload();})
 }
 
 updatepagesforsec();
