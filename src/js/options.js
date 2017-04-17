@@ -1,6 +1,41 @@
+
+//Ajustador Máximo
+
+var windowbns = 16;
+var windowbns2 = 39;
+
+// GET
+if(location_GET.appmode == 'true'){
+
+var widthwn = 760+windowbns;
+var heightwn = 450+windowbns2;
+window.resizeTo(widthwn,heightwn);
+$("body").removeClass('hide').addClass('app');
+
+}
+else{$("body").removeClass('hide');}
+
+
+var getidextension = chrome.extension.getURL('');
+var getidextension = getidextension.replace('chrome-extension://', '').replace('/', '');
+$("#desktopurl").attr("href", chrome.extension.getURL('index.html?appmode=true'));
+$("#urliconfixed").text('%USERPROFILE%/\AppData/\Local/\Google/\Chrome/\User Data/\Default/\Web Applications/\_crx_'+getidextension+'/'+chrome.i18n.getMessage('appName')+'.ico');
+
+
+// Create Click
 function createclickoption(data){
 
-if(data.disablecs == true){
+if (data.appmode == true){
+$("#"+data.id).click(function(){
+chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"});
+window.close();
+}).on("contextmenu",function(){
+chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"});
+window.close();
+return false;
+})
+}
+else if(data.disablecs == true){
 $("#"+data.id).click(function(){window.open("apps/"+data.id+".html", data.id+"fp");}).on("contextmenu",function(){
 chrome.windows.create({url: "apps/"+data.id+".html", type: "popup", state: "maximized"});
 return false;
@@ -19,9 +54,10 @@ $("#"+data.id+" img").attr("title", chrome.i18n.getMessage("app"+data.id)).toolt
 
 }
 
-createclickoption({"id": "devianplus","disablecs": true});
-createclickoption({"id": "soundbookplus"});
-createclickoption({"id": "fanficbookinplus"});
+if(location_GET.appmode == 'true'){var disablecsper = true;} else {var disablecsper = false;}
+createclickoption({"id": "devianplus","disablecs": true, 'appmode': disablecsper});
+createclickoption({"id": "soundbookplus", 'appmode': disablecsper});
+createclickoption({"id": "fanficbookinplus", 'appmode': disablecsper});
 
 // Facebook
 

@@ -29,6 +29,19 @@
 "options_privacy_text": {"message": "By using this product, you agree that you'll allow storing files in your browser to save all of your progress. \nThis extension does not possess advertising and no information or data will be collected during use. \n\nAll softwares is powered by a Website API | This extension is not affiliated or endorsed"},
 "options_credit": {"message": "made by"},
 "options_tumblr_description": {"message": "News and Others"},
+"options_desktop_text_1": {"message": "Add this page in your Desktop"},
+"options_desktop_text_2": {"message": "Open this"},
+"options_desktop_text_3": {"message": "in your browser. Now..."},
+"options_desktop_text_4": {"message": "At the top right, click More"},
+"options_desktop_text_5": {"message": "More Tools"},
+"options_desktop_text_6": {"message": "Add the app. Please, change to checked the Open New Window."},
+"options_desktop_text_7": {"message": "Windows users"},
+"options_desktop_text_8": {"message": "Linux users"},
+"options_desktop_text_9": {"message": "Chromebook users"},
+"options_desktop_text_10": {"message": "Add to taskbar"},
+"options_desktop_text_11": {"message": "Add to desktop"},
+"options_desktop_text_12": {"message": "Add to shelf"},
+"options_desktop_text_13": {"message": "Directory Icon Fixed"},
 
 
 
@@ -108,6 +121,9 @@
 "video": {"message": "Video"},
 "export": {"message": "Export"},
 "import": {"message": "Import"},
+"click": {"message": "Click"},
+"url": {"message": "URL"},
+"beta": {"message": "BETA"},
 
 
 
