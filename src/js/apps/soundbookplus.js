@@ -2113,7 +2113,7 @@ else{
 function endloadgeneratorbase(){
 endimageload();
 folderpxsepx = true
-setTimeout(function(){loopcreatordv();},1);
+setTimeout(function(){loopcreatordv();},0);
 }
 
 function generatorlistbase(typemusicload){
