@@ -738,7 +738,7 @@ $("#openimportbtx").on('click contextmenu', function(){$('#impofavstpx').modal()
 // Custom CSS
 
 function loadcustomcssst(css){
-$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css+"\n\n"));
+$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css.replace(/pointer\-events/g, 'nope')+"\n\n"));
 }
 
 function loadsystemcssclick(){chrome.storage.local.get({loadsync: 'local', ffb_css: ''} ,function(settings){

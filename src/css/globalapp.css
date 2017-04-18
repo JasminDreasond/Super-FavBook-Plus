@@ -1,5 +1,21 @@
 /* Base */
 
+.background, .background_container{
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+z-index: -1;
+}
+
+.background_container{position: fixed;}
+#folders .background{position: fixed;width: 19%;}
+
+
+
+
+
+
 .contextMenuPlugin{
 position: fixed;
 }

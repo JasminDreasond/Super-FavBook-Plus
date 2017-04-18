@@ -2906,7 +2906,8 @@ $("#progresslive").prop("checked", defaultcolorslive.live_show_progress);
 
 // Export
 $("#exportcolorlive").click(function(){chrome.storage.sync.get(defaultcolorslive, function(color_save){
-$("#exportimportcolors").val(JSON.stringify(color_save));
+var blob = new Blob([JSON.stringify(color_save)], {type: "text/plain;charset=utf-8"});
+saveAs(blob, "sfb+_sbp_live_color.txt");
 })});
 
 // Import
@@ -3044,7 +3045,7 @@ $("#codepekxed").val('');
 // Custom CSS
 
 function loadcustomcssst(css){
-$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css+"\n\n"));
+$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css.replace(/pointer\-events/g, 'nope')+"\n\n"));
 }
 
 function loadsystemcssclick(){chrome.storage.local.get({loadsync: 'local', sb_css: ''} ,function(settings){
