@@ -23,6 +23,8 @@
  * MIT License: https://github.com/joewalnes/jquery-simple-context-menupretty/blob/master/LICENSE.txt
  */
  
+ $(document).scroll(function(){$('.rightclick_remove_pek').trigger('click');});
+ 
 jQuery.fn.contextPopup = function(menuData, contextmenutypepxST) {
 	
 	// Define default settingspretty
@@ -97,7 +99,7 @@ jQuery.fn.contextPopup = function(menuData, contextmenutypepxST) {
       .on('contextmenu', function() { return false; });
 
     // Cover rest of page with invisible div that when clicked will cancel the popup.
-    var bgpretty = $('<div></div>')
+    var bgpretty = $('<div></div>', {class: "rightclick_remove_pek"})
       .css({left:0, top:0, width:'100%', height:'100%', position:'fixed', zIndex:1000000, overflow:'hidden'})
       .appendTo(document.body)
       .on('contextmenu click', function() {
