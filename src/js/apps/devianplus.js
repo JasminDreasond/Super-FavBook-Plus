@@ -1071,7 +1071,7 @@ function loadcustomcssst(css){
 $("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css+"\n\n"));
 }
 
-function loadsystemcssclick(){chrome.storage.local.get({loadsync: false, dp_css: ''} ,function(settings){
+function loadsystemcssclick(){chrome.storage.local.get({loadsync: 'local', dp_css: ''} ,function(settings){
 if(settings.loadsync == 'sync'){chrome.storage.sync.get({dp_css: ''} ,function(settings2){
 loadcustomcssst(settings2.dp_css);
 })}

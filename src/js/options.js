@@ -33,7 +33,7 @@ validatorwarncss($("#ctcss_appfanficbookinplus").val());
 
 function loadcustomcssst(data){$("#ctcss_appdevianplus").val(data.dp); $("#ctcss_appsoundbookplus").val(data.sb); $("#ctcss_appfanficbookinplus").val(data.ffb); $("#ctcss_appdevianplus").trigger('change');}
 
-function loadsystemcssclick(){chrome.storage.local.get({loadsync: false, dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
+function loadsystemcssclick(){chrome.storage.local.get({loadsync: 'local', dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
 if(settings.loadsync == 'sync'){chrome.storage.sync.get({dp_css: '', sb_css: '', ffb_css: ''} ,function(settings2){
 loadcustomcssst({dp: settings2.dp_css, sb: settings2.sb_css, ffb: settings2.ffb_css});
 $("#loadcscsstype").val(settings.loadsync);
@@ -44,7 +44,7 @@ $("#loadcscsstype").val(settings.loadsync);
 }
 })}
 
-$("#savecustomcss").click(function(){chrome.storage.local.get({loadsync: false, dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
+$("#savecustomcss").click(function(){chrome.storage.local.get({loadsync: 'local', dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
 
 if(settings.loadsync == 'sync'){
 chrome.storage.sync.set({
