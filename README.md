@@ -17,6 +17,7 @@ SoundBook Plus
 
 - SoundCloud ®
 - Youtube
+- Dailymotion
 <hr/>
 FanFic Bookin
 
