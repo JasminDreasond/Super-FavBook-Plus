@@ -1,3 +1,94 @@
+// Click Load CSS System
+
+function validatorwarncss(css){function checklinesetk(cssitem){
+
+if((cssitem.indexOf('http://') > -1) || (cssitem.indexOf('https://') > -1) || (cssitem.indexOf('ftp://') > -1) || (cssitem.indexOf('file://') > -1)){
+console.log(cssitem);
+
+if(cssitem.indexOf('file://') > -1){var warntypecss = 'file';}
+else if(cssitem.indexOf('ftp://') > -1){var warntypecss = 'ftp';}
+else if(cssitem.indexOf('http://') > -1){var warntypecss = 'http';}
+else if(cssitem.indexOf('https://') > -1){var warntypecss = 'https';}
+
+
+$("#csswarns").append($("<div>", {class: "warn_here "+warntypecss}).text(cssitem));
+}
+
+}
+var enteredText = css;
+var numberOfLineBreaks = (enteredText.match(/\n/g)||[]).length;
+var characterCount = enteredText.length + numberOfLineBreaks;
+checklinesetk(css.split('\n')[0]);
+for (i = 0; i < numberOfLineBreaks; i++) {checklinesetk(css.split('\n')[i+1]);}
+
+}
+
+
+$("#ctcss_appdevianplus, #ctcss_appsoundbookplus, #ctcss_appfanficbookinplus").change(function(){
+$("#csswarns").empty();
+validatorwarncss($("#ctcss_appdevianplus").val());
+validatorwarncss($("#ctcss_appsoundbookplus").val());
+validatorwarncss($("#ctcss_appfanficbookinplus").val());
+});
+
+function loadcustomcssst(data){$("#ctcss_appdevianplus").val(data.dp); $("#ctcss_appsoundbookplus").val(data.sb); $("#ctcss_appfanficbookinplus").val(data.ffb); $("#ctcss_appdevianplus").trigger('change');}
+
+function loadsystemcssclick(){chrome.storage.local.get({loadsync: false, dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
+if(settings.loadsync == 'sync'){chrome.storage.sync.get({dp_css: '', sb_css: '', ffb_css: ''} ,function(settings2){
+loadcustomcssst({dp: settings2.dp_css, sb: settings2.sb_css, ffb: settings2.ffb_css});
+$("#loadcscsstype").val(settings.loadsync);
+})}
+else{
+loadcustomcssst({dp: settings.dp_css, sb: settings.sb_css, ffb: settings.ffb_css});
+$("#loadcscsstype").val(settings.loadsync);
+}
+})}
+
+$("#savecustomcss").click(function(){chrome.storage.local.get({loadsync: false, dp_css: '', sb_css: '', ffb_css: ''} ,function(settings){
+
+if(settings.loadsync == 'sync'){
+chrome.storage.sync.set({
+dp_css: $("#ctcss_appdevianplus").val(),
+sb_css: $("#ctcss_appsoundbookplus").val(),
+ffb_css: $("#ctcss_appfanficbookinplus").val()
+}, function(){
+$("#customcssbase").modal('toggle');
+})
+}
+
+else{
+chrome.storage.local.set({
+dp_css: $("#ctcss_appdevianplus").val(),
+sb_css: $("#ctcss_appsoundbookplus").val(),
+ffb_css: $("#ctcss_appfanficbookinplus").val()
+}, function(){
+$("#customcssbase").modal('toggle');
+})
+}
+
+})});
+
+
+
+
+
+// Clicks Modal
+$("#opencustomcss").click(function(){loadsystemcssclick(); $("#customcssbase").modal();});
+$("#desktopopen").click(function(){$('#opendesktopkep').modal();});
+$("#privacyopen").click(function(){$('#privacyhere').modal();});
+$("#loadcscsstype").change(function(){chrome.storage.local.set({loadsync: $(this).val()}, function(){loadsystemcssclick();});});
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Ajustador Máximo
 
@@ -8,7 +99,7 @@ var windowbns2 = 39;
 if(location_GET.appmode == 'true'){
 
 var widthwn = 760+windowbns;
-var heightwn = 450+windowbns2;
+var heightwn = 460+windowbns2;
 window.resizeTo(widthwn,heightwn);
 $("body").removeClass('hide').addClass('app');
 

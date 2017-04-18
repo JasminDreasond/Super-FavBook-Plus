@@ -3029,3 +3029,30 @@ $("#codepekxed").val('');
 
 });
 })}});
+
+
+
+
+
+
+
+
+
+
+
+
+// Custom CSS
+
+function loadcustomcssst(css){
+$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css+"\n\n"));
+}
+
+function loadsystemcssclick(){chrome.storage.local.get({loadsync: false, sb_css: ''} ,function(settings){
+if(settings.loadsync == 'sync'){chrome.storage.sync.get({sb_css: ''} ,function(settings2){
+loadcustomcssst(settings2.sb_css);
+})}
+else{
+loadcustomcssst(settings.sb_css);
+}
+})}
+loadsystemcssclick();

@@ -42,6 +42,8 @@
 "options_desktop_text_11": {"message": "Add to desktop"},
 "options_desktop_text_12": {"message": "Add to shelf"},
 "options_desktop_text_13": {"message": "Directory Icon Fixed"},
+"options_custom_theme": {"message": "Custom Theme"},
+"options_externallist": {"message": "External files list"},
 
 
 
@@ -124,6 +126,9 @@
 "click": {"message": "Click"},
 "url": {"message": "URL"},
 "beta": {"message": "BETA"},
+"desktop": {"message": "Desktop"},
+"local": {"message": "Local"},
+"sync": {"message": "Sync"},
 
 
 

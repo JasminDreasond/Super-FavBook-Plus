@@ -723,3 +723,30 @@ $("#codepekxed").val('');
 })}});
 
 $("#openimportbtx").on('click contextmenu', function(){$('#impofavstpx').modal(); return false;});
+
+
+
+
+
+
+
+
+
+
+
+
+// Custom CSS
+
+function loadcustomcssst(css){
+$("head").append($("<style>", {id: "customcss"}).text("\n\n/* "+chrome.i18n.getMessage("options_custom_theme")+" */\n\n"+css+"\n\n"));
+}
+
+function loadsystemcssclick(){chrome.storage.local.get({loadsync: false, ffb_css: ''} ,function(settings){
+if(settings.loadsync == 'sync'){chrome.storage.sync.get({ffb_css: ''} ,function(settings2){
+loadcustomcssst(settings2.ffb_css);
+})}
+else{
+loadcustomcssst(settings.ffb_css);
+}
+})}
+loadsystemcssclick();

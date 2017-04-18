@@ -62,17 +62,21 @@ font-family: Tahoma, Geneva, sans-serif;
 font-weight: bold;
 }
 
-.titletop img{
-max-height: 26px;
-margin-right: 135px;
+.titletop #logosoftware{
+height: 26px;
+width: 26px;
+background-size: 26px 26px;
+display: inline-block;
 }
 
 .titletop span{
-display: inline;
+display: inline-block;
 position: absolute;
-margin-top: -25px;
 margin-left: 35px;
+display: none;
 }
+
+.navbar-header{width: auto;}
 
 .navbar-inverse{
 margin-bottom: 0px;
@@ -367,6 +371,7 @@ overflow-y: hidden !important;
 
 [id^="iconopensubfolderpx"]:not(.subfolderctpxcf){
 opacity: 0.5;
+pointer-events: none;
 }
 
 [id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"]:before, [id^="iconopensubfolderpx"]:before{

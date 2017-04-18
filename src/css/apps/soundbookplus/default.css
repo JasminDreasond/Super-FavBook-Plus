@@ -80,11 +80,12 @@ z-index: 111 !important;
 
 /* Base */
 
+#logosoftware{background-image: url(../../../appicons/soundbookplus.png);}
+
 body{cursor: default;}
 
-.titletop:hover{
-cursor: pointer;
-}
+.titletop:hover{cursor: pointer; filter:grayscale(40%);}
+.titletop:active{filter:grayscale(70%);}
 
 html,body{
 background: #F2F2F2;
