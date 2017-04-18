@@ -1,6 +1,6 @@
 /* Base */
 
-.background, .background_container{
+.background, .background2, .background_container, .background_container2{
 height: 100%;
 width: 100%;
 position: absolute;
@@ -8,8 +8,8 @@ top: 0;
 z-index: -1;
 }
 
-.background_container{position: fixed;}
-#folders .background{position: fixed;width: 19%;}
+.background_container, .background_container2{position: fixed;}
+#folders .background, #folders .background2{position: fixed;width: 19%;}
 
 
 
