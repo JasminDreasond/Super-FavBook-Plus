@@ -6,6 +6,7 @@ width: 100%;
 position: absolute;
 top: 0;
 z-index: -1;
+pointer-events: none;
 }
 
 .background_container, .background_container2{position: fixed;}
