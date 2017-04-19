@@ -252,13 +252,8 @@ background-color: #0d0d0d !important;
 
 /* Home */
 
-#homepx .title{
-margin: 15px;
-}
-
-#homepx #devmasc{
-width: 300px;
-}
+#homepx{margin: -45px 0px; margin-top: -45px;}
+#homepx #devmasc{width: 300px;}
 
 
 

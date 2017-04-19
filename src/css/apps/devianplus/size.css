@@ -1,10 +1,5 @@
 /* New Screen */
 
-@media screen and (max-width: 895px) {
-#openpagefav, #itemnumber{display: none;}
-}
-
-
 @media screen and (max-width: 800px) {
 #folders, #openimportbtx, #search, #loadnmbde, #loadnumber, .navbar-nav{display: none;}
 #images{margin: 0px; width: 100%;}

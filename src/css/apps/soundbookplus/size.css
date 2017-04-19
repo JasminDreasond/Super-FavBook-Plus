@@ -24,17 +24,16 @@
 #musicbar{margin-left: -32%;}
 }
 
-@media screen and (max-width: 1135px) {
-#openpagefav, #itemnumber{display: none;}
-}
-
 @media screen and (max-width: 1001px) {
 .navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
 .musicbar .progress, .musicbar #musicbar{width: 27%;}
 #musicbar{margin-left: -27%;}
-.importclick, #importfavfolder{display: none;}
+#openpagefav, #itemnumber{display: none;}
 }
 
+@media screen and (max-width: 950px) {
+.importclick, #importfavfolder{display: none;}
+}
 
 @media screen and (max-width: 920px) {
 #infoimpmusic{display: block;}
