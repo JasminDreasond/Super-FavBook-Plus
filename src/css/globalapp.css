@@ -69,9 +69,12 @@ border-radius: 0px;
 font-weight: bold !important;
 }
 
+.navbar-fixed-top{min-height: 53px;}
+
 .titletop{
 font-family: Tahoma, Geneva, sans-serif;
 font-weight: bold;
+margin-top: 0px;
 }
 
 .titletop #logosoftware{
@@ -103,8 +106,10 @@ opacity: 0.4;
 #container{
 min-height: 100%;
 min-width:100%;
-margin-top: 51px;
+margin-top: 53px;
 }
+
+.navbar-right{margin-top: 1px;}
 
 .imagemodeps .navbar, .modal-open .navbar{
 padding-right: 16px !important;
@@ -226,6 +231,8 @@ margin-top: 15px;
 #loadnumber{
 width: 35px;
 margin: 11px 0px;
+margin-top: 13px;
+top: 5px;
 }
 
 #loadnmbde{
@@ -256,6 +263,7 @@ border-radius: 0px;
 border: 1px solid rgba(38, 38, 38, 0.7);
 padding: 3px;
 margin: 11px 0px;
+margin-top: 12px;
 width: 300px;
 }
 
@@ -337,6 +345,7 @@ z-index: 999999999999999999999999999999999999;
 padding: 4px 2px !important;
 width: 120px !important;
 margin: 11px 35px;
+margin-top: 13px;
 }
 
 #importpagesmodal .modal-body{
