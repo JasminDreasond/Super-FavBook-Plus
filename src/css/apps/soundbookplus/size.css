@@ -126,6 +126,9 @@ max-height: 24px;
 #infoimpmusic{top: 90px;}	
 }
 
+.background_container, .background_container2{display: none;}
+.background_container3, .background_container4{display: block;}
+
 }
 
 @media screen and (max-width: 450px) {

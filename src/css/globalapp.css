@@ -1,6 +1,6 @@
 /* Base */
 
-.background, .background2, .background_container, .background_container2{
+.background, .background2, .background_container, .background_container2, .background_container3, .background_container4{
 height: 100%;
 width: 100%;
 position: absolute;
@@ -9,7 +9,8 @@ z-index: -1;
 pointer-events: none;
 }
 
-.background_container, .background_container2{position: fixed;}
+.background_container, .background_container2, .background_container3, .background_container4{position: fixed;}
+.background_container3, .background_container4{display: none;}
 #folders .background, #folders .background2{position: fixed;width: 19%;}
 #homepx{padding: 45px 0px;}
 
