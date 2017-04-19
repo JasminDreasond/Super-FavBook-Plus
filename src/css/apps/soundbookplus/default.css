@@ -185,6 +185,7 @@ background-color: #ad3900 !important;
 
 .clickdevart2:focus, .clickdevart:focus{outline: none !important;}
 
+.liveclickbp{margin: 4px 3px;}
 
 :not(#search):not(#appquality):not(#appquality):not(.selectpxnyya):not(#exportimportcolors):not(#daautodetectsf2):not(#idplaylist):not(#daautodetectsf3):not(#idplaylist2)::selection {
 background-color: transparent !important;

@@ -9,6 +9,7 @@ if(cssitem.indexOf('file://') > -1){var warntypecss = 'file';}
 else if(cssitem.indexOf('ftp://') > -1){var warntypecss = 'ftp';}
 else if(cssitem.indexOf('http://') > -1){var warntypecss = 'http';}
 else if(cssitem.indexOf('https://') > -1){var warntypecss = 'https';}
+if(cssitem.indexOf('@import ') > -1){var warntypecss = warntypecss+' import';}
 
 
 $("#csswarns").append($("<div>", {class: "warn_here "+warntypecss}).text(cssitem));

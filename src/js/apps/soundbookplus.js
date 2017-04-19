@@ -628,7 +628,10 @@ $("#imagelist").append($("<div>", {id: "homepx"}).append(
 $("<h1>", {class: "title"}).text(chrome.i18n.getMessage("welcome")),
 
 $("<p>", {class: "info"}).text(chrome.i18n.getMessage("gapp_welcome_text")),
-$("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_sp_welcome_text")+' "'+chrome.i18n.getMessage("app_sp_folder")+'"')
+$("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_sp_welcome_text")+' "'+chrome.i18n.getMessage("app_sp_folder")+'"'),
+
+$("<div>", {class: "custom_theme_img"}),
+$("<p>", {class: "custom_theme_author"})
 
 ))
 

@@ -33,7 +33,7 @@ $("<input>", {type: "text", value: code})
 
 $("<br>"),
 
-$("<input>", {type: "submit", value: "Close"}).click(function(){$("#copytextdapkl").remove();})
+$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove();})
 
 ).fadeIn())
 
@@ -114,7 +114,10 @@ $("<p>", {class: "info"}).text(chrome.i18n.getMessage("gapp_welcome_text")),
 $("<p>", {class: "info"}).text(chrome.i18n.getMessage("app_dp_welcome_text")+' "'+chrome.i18n.getMessage("app_dp_folder")+'"'),
 $("<img>", {id: "devmasc", alt: "devmasc", src: "http://orig11.deviantart.net/9365/f/2009/291/8/3/f_e_l_l_a___deviantart_tour_4_by_greatlp.png"}),
 
-$("<p>", {class: "credits"}).text(chrome.i18n.getMessage("gapp_artcredits")+" ").append($("<a>", {href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank"}).text("thekidKaos"))
+$("<p>", {class: "credits"}).text(chrome.i18n.getMessage("gapp_artcredits")+" ").append($("<a>", {href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank"}).text("thekidKaos")),
+
+$("<div>", {class: "custom_theme_img"}),
+$("<p>", {class: "custom_theme_author"})
 
 
 ))

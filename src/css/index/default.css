@@ -161,3 +161,4 @@ overflow-y: scroll;
 #csswarns .https{color: #009900;}
 #csswarns .ftp{color: #b3b300;}
 #csswarns .file{color: #e60000;}
+#csswarns .import{color: #e60000; font-weight: bold;}
