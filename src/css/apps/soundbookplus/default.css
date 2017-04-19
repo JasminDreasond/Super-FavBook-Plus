@@ -491,6 +491,8 @@ position: relative;
 background-color: #FF6500;
 }
 
+.progress-bar .background, .progress-bar .background2{z-index: 0;}
+
 #musicbar::-webkit-slider-runnable-track{
 height: 8px;
 border: 0px solid transparent;

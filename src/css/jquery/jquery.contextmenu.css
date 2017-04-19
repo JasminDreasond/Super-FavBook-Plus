@@ -38,6 +38,17 @@
   width: 16px;
   height: 16px;
 }
+.contextMenuPlugin .img{
+  height: 16px !important;
+  width: 16px !important;
+  display: inline;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 3px;
+  margin-top: -1px;
+}
 .contextMenuPlugin > li > a:hover {
   border: 1px solid #fffbff;
   outline: 1px solid #b5d3ff;
@@ -98,4 +109,3 @@
   left: 26px;
   z-index: 0;
 }
-

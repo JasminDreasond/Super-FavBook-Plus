@@ -479,7 +479,7 @@ var customrightclickimg = {
   title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [
   
-{label:chrome.i18n.getMessage("page"), icon:'https://derpicdn.net/favicon.ico' , action:function() {window.open(thumbdata.url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'https://derpicdn.net/favicon.ico' , class: 'derpiico' , action:function() {window.open(thumbdata.url, "_blank")}}
   
 ]}
 
@@ -488,13 +488,13 @@ var customrightclickprofile = {
   title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:chrome.i18n.getMessage("page"), icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , class: 'page2' , action:function() {window.open(thumbdata.author_url, "_blank")}}
   
 ]}
 }
@@ -506,17 +506,17 @@ var customrightclickimg = {
   title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [ 
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:chrome.i18n.getMessage("page"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.url, "_blank")}},
+{label:chrome.i18n.getMessage("page"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'page' , action:function() {window.open(thumbdata.url, "_blank")}},
 
 null, 
 
-{label:chrome.i18n.getMessage("app_dp_getthumbcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_getthumbcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , class: 'thumb' , action:function() {
 copycodestpx(chrome.i18n.getMessage("app_dp_getthumbcode"),":thumb"+thumbdata.artid+":");
 }}
   
@@ -527,25 +527,25 @@ var customrightclickprofile = {
   title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
 window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
 }},
   
 null, 
   
-{label:chrome.i18n.getMessage("profile"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , action:function() {window.open(thumbdata.author_url, "_blank")}},
-{label:chrome.i18n.getMessage("gallery"), icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , action:function() {window.open(thumbdata.author_url+"/gallery/", "_blank")} },
-{label:chrome.i18n.getMessage("prints"), icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , action:function() {window.open(thumbdata.author_url+"/prints/", "_blank")} },
-{label:chrome.i18n.getMessage("favourites"), icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , action:function() {window.open(thumbdata.author_url+"/favourites/", "_blank")} },
-{label:chrome.i18n.getMessage("journal"), icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , action:function() {window.open(thumbdata.author_url+"/journal/", "_blank")} },
+{label:chrome.i18n.getMessage("profile"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'profile' , action:function() {window.open(thumbdata.author_url, "_blank")}},
+{label:chrome.i18n.getMessage("gallery"), icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , class: 'gallery' , action:function() {window.open(thumbdata.author_url+"/gallery/", "_blank")} },
+{label:chrome.i18n.getMessage("prints"), icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , class: 'prints' , action:function() {window.open(thumbdata.author_url+"/prints/", "_blank")} },
+{label:chrome.i18n.getMessage("favourites"), icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , class: 'favourites' , action:function() {window.open(thumbdata.author_url+"/favourites/", "_blank")} },
+{label:chrome.i18n.getMessage("journal"), icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , class: 'journal' , action:function() {window.open(thumbdata.author_url+"/journal/", "_blank")} },
 
 null,
 
-{label:chrome.i18n.getMessage("app_dp_geticoncode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_geticoncode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , class: 'geticon' , action:function() {
 copycodestpx(chrome.i18n.getMessage("app_dp_geticoncode"),":icon"+thumbdata.author_name.toLowerCase()+":");
 }},
 
-{label:chrome.i18n.getMessage("app_dp_getdevcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , action:function() {
+{label:chrome.i18n.getMessage("app_dp_getdevcode"), icon:"http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif" , class: 'getdev' , action:function() {
 copycodestpx(chrome.i18n.getMessage("app_dp_getdevcode"),":dev"+thumbdata.author_name.toLowerCase()+":");
 }}
   

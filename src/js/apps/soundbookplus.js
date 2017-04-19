@@ -433,7 +433,7 @@ dataprogressglobal = dataprogress;
 createclocktime(dataprogress, "musictimep1");
 createclocktime(playerdur, "musictimep2");
 var porcentpxld = dataprogress*100/playerdur
-$("#musicbargp").css("width", porcentpxld+"%").attr("aria-valuenow", porcentpxld);
+$("#musicbargp, #musicbargp .background, #musicbargp .background2").css("width", porcentpxld+"%").attr("aria-valuenow", porcentpxld);
 }
 
 // Resetar Música
@@ -441,11 +441,11 @@ $("#musicbargp").css("width", porcentpxld+"%").attr("aria-valuenow", porcentpxld
 function resetprogressmusicxp(datadur, playing){
 if(playing == true){
 $("#musicbar").attr("max", datadur).val(dataprogressglobal);
-$("#musicbargp").css("width", dataprogressglobal+"%").attr("aria-valuenow", dataprogressglobal);
+$("#musicbargp, #musicbargp .background, #musicbargp .background2").css("width", dataprogressglobal+"%").attr("aria-valuenow", dataprogressglobal);
 }
 else{
 $("#musicbar").attr("max", datadur).val(0);
-$("#musicbargp").css("width", "0%").attr("aria-valuenow", 0);
+$("#musicbargp, #musicbargp .background, #musicbargp .background2").css("width", "0%").attr("aria-valuenow", 0);
 }}
 
 
@@ -2259,7 +2259,7 @@ if(api_soundcloud == true){if(playertype == "soundcloud"){widget.pause(); widget
 if(api_dailymotion == true){if(playertype == "dailymotion"){dailymotionplayer.pause(); dailymotionplayer.seek(0);}}
 if(api_youtube == true){if(playertype == "youtube"){youtubeplayer.pauseVideo(); youtubeplayer.seekTo(0,true);}}
 $("#musicbar").val(0);
-$("#musicbargp").css("width", "0%").attr("aria-valuenow", 0);
+$("#musicbargp, #musicbargp .background, #musicbargp .background2").css("width", "0%").attr("aria-valuenow", 0);
 $("#musictimep1").text("0:00");
 }
 }

@@ -1,5 +1,5 @@
 body{overflow: hidden !important;}
-#images , #folders, #separatorpfx, .navbar-fixed-top{display: none;} 
+#images , #folders, #separatorpfx, .navbar-fixed-top, .navbar-fixed-bottom .background, .navbar-fixed-bottom .background2{display: none;} 
 
 .soundcloudbase{opacity: 1 !important;}
 
