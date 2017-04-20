@@ -1,7 +1,5 @@
 body{overflow: hidden !important;}
-#images , #folders, #separatorpfx, .navbar-fixed-top, .navbar-fixed-bottom .background, .navbar-fixed-bottom .background2{display: none;} 
-
-.soundcloudbase{opacity: 1 !important;}
+#musicthumbnail, #images , #folders, #separatorpfx, .navbar-fixed-top, .navbar-fixed-bottom .background, .navbar-fixed-bottom .background2{display: none;} 
 
 .soundcloudbase, #youtubeplayer, #dailymotionplayer, #playerspacekt{
 min-height: 100%;
@@ -14,7 +12,10 @@ bottom: 0px;
 top: 0px;
 left: 0px;
 right: 0px;
+pointer-events: none !important;
 }
+
+.soundcloudbase{opacity: 1 !important; pointer-events: all !important;}
 
 #youtubeplayer, #dailymotionplayer, #playerspacekt{
 margin-top: -20px;

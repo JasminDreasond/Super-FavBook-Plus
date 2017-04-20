@@ -4,6 +4,8 @@ body{
 background-color: #f4f4f4
 }
 
+a{transition: color 0.15s;}
+button{transition: background-color 0.15s;}
 a:hover{text-decoration: none; cursor: pointer;}
 
 .text_space{
@@ -108,6 +110,7 @@ font-weight: bold;
 border-radius: 3px;
 padding: 3px 6px;
 font-size: 8pt;
+transition: background-color 0.15s;
 }
 
 #sharelist a:focus, #sharelist a:hover{
@@ -155,6 +158,10 @@ min-height: 100px;
 max-height: 100px;
 height: 100px;
 overflow-y: scroll;
+border: 1px solid #CCC;
+border-radius: 5px;
+padding: 3px 12px;
+margin-bottom: 15px;
 }
 
 #csswarns .http{color: #ff6600;}
@@ -162,3 +169,10 @@ overflow-y: scroll;
 #csswarns .ftp{color: #b3b300;}
 #csswarns .file{color: #e60000;}
 #csswarns .import{color: #e60000; font-weight: bold;}
+
+.warn_here{padding: 4px 0px;}
+
+.contextMenuPlugin .header{display: none;}
+#creditslist #authorlist_css, #creditslist{margin: 0px 5px;}
+#creditslist #authorlist_css{font-weight: bold;}
+#creditslist #authorlist_css:hover, .selectedplusthumbpx{color: #999; cursor: pointer; transition: color 0.15s;}

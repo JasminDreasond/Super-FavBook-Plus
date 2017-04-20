@@ -129,6 +129,7 @@
 "desktop": {"message": "Desktop"},
 "local": {"message": "Local"},
 "sync": {"message": "Sync"},
+"author": {"message": "Author"},
 
 
 

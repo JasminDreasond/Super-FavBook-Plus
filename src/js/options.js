@@ -1,9 +1,21 @@
 // Click Load CSS System
 
-function validatorwarncss(css){function checklinesetk(cssitem){
+function antirepeat(data1, data2, type){
+var duplicateChk = {};
+$(""+data1+":contains("+data2+")").each(function(){
+if (duplicateChk.hasOwnProperty(this.id)) {
+if(type == 'remove'){$(this).remove();}
+else if(type == 'hide'){$(this).addClass('hide');}
+} else {
+duplicateChk[this.id] = 'true';
+}
+});
+}
 
+function validatorwarncss(css , number){function checklinesetk(cssitem){
+
+if((cssitem.startsWith('Author:') == false) && (cssitem.startsWith('URL:') == false) && (cssitem.startsWith('Page:') == false)){
 if((cssitem.indexOf('http://') > -1) || (cssitem.indexOf('https://') > -1) || (cssitem.indexOf('ftp://') > -1) || (cssitem.indexOf('file://') > -1)){
-console.log(cssitem);
 
 if(cssitem.indexOf('file://') > -1){var warntypecss = 'file';}
 else if(cssitem.indexOf('ftp://') > -1){var warntypecss = 'ftp';}
@@ -13,7 +25,37 @@ if(cssitem.indexOf('@import ') > -1){var warntypecss = warntypecss+' import';}
 
 
 $("#csswarns").append($("<div>", {class: "warn_here "+warntypecss}).text(cssitem));
+antirepeat("[class^='warn_here']", cssitem, 'remove');
+
+}} else{if((cssitem != undefined) && (cssitem != null) && (cssitem != '')){
+
+if(cssitem.startsWith('Author:')){
+
+$("#authorlist_css[number='1']:contains("+chrome.i18n.getMessage("none")+")").text('');
+var datauserpek = cssitem.replace('Author: ', '').replace('Author:', '');
+$("#authorlist_css[number='"+number+"']").text(datauserpek).contextPopup({
+  title: chrome.i18n.getMessage("author"),
+  items: [
+  
+{label:chrome.i18n.getMessage("profile"), icon:'',action:function(){}, href: $("#authorlist_css[number='"+number+"']").attr('url'), target: '_blank'},
+{label:chrome.i18n.getMessage("page"), icon:'',action:function(){}, href: $("#authorlist_css[number='"+number+"']").attr('page') , target: '_blank'}
+  
+]}, 'click').click(function(){$(this).addClass("selectedplusthumbpx");});
+antirepeat("[id='authorlist_css']", datauserpek, 'hide');
+
+} else if(cssitem.startsWith('URL:')){
+
+var datauserpek = cssitem.replace('URL: ', '').replace('URL:', '');
+$("#authorlist_css[number='"+number+"']").attr('url', datauserpek);
+
+} else if(cssitem.startsWith('Page:')){
+
+var datauserpek = cssitem.replace('Page: ', '').replace('Page:', '');
+$("#authorlist_css[number='"+number+"']").attr('page', datauserpek);
+
 }
+
+}}
 
 }
 var enteredText = css;
@@ -26,10 +68,11 @@ for (i = 0; i < numberOfLineBreaks; i++) {checklinesetk(css.split('\n')[i+1]);}
 
 
 $("#ctcss_appdevianplus, #ctcss_appsoundbookplus, #ctcss_appfanficbookinplus").change(function(){
-$("#csswarns").empty();
-validatorwarncss($("#ctcss_appdevianplus").val());
-validatorwarncss($("#ctcss_appsoundbookplus").val());
-validatorwarncss($("#ctcss_appfanficbookinplus").val());
+$("#csswarns, [id='authorlist_css']").empty().removeClass('hide').off('click');
+$("#authorlist_css[number='1']").text(chrome.i18n.getMessage("none"));
+validatorwarncss($("#ctcss_appdevianplus").val(), 1);
+validatorwarncss($("#ctcss_appsoundbookplus").val(), 2);
+validatorwarncss($("#ctcss_appfanficbookinplus").val(), 3);
 });
 
 function loadcustomcssst(data){$("#ctcss_appdevianplus").val(data.dp); $("#ctcss_appsoundbookplus").val(data.sb); $("#ctcss_appfanficbookinplus").val(data.ffb); $("#ctcss_appdevianplus").trigger('change');}

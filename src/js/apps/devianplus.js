@@ -33,7 +33,7 @@ $("<input>", {type: "text", value: code})
 
 $("<br>"),
 
-$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove();})
+$("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove();})
 
 ).fadeIn())
 
@@ -334,24 +334,25 @@ $("#imgpreview img").attr("src", "");
 // Teclas de Atalho
 
 function systemshortsystem(){
-shortcut.add("RIGHT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("RIGHT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){nextimagestpx("next");}
 }});
-shortcut.add("LEFT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("LEFT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){nextimagestpx("previous");}
 }});
 
 
-shortcut.add("UP",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("UP",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){$("#imgpreview").scrollTop($("#imgpreview").scrollTop()-25);}
 }});
 
-shortcut.add("DOWN",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("DOWN",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){$("#imgpreview").scrollTop($("#imgpreview").scrollTop()+25);}
 }});
 
-shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("ESC",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(detectpageopenx2 == true){closeimagest();}
+$(".copytextdapklclose").trigger("click");
 }});
 }
 
@@ -359,7 +360,7 @@ systemshortsystem();
 
 
 function checkcheckboxst(){
-$("input[type='text'], textarea").off("blur").off("focus").blur(function(){
+$("input[type='text'], input[type='number'], textarea").off("blur").off("focus").blur(function(){
 systemshortsystem();
 }).focus(function(){
 shortcut.remove("RIGHT");
@@ -445,13 +446,6 @@ $("#subfolderpx"+oldfolder).append($("<ul>", {id: "folder"+folderset}));
 // Criação
 function generatordv(thumbdata){
 
-if(thumbdata.img == null){
-thumbdata.img = chrome.extension.getURL("images/noimg.png")
-thumbdata.height = "200"
-}
-
-
-
 // Custom Right Click
 
 function addrightclickclass(thishere){
@@ -479,7 +473,7 @@ var customrightclickimg = {
   title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [
   
-{label:chrome.i18n.getMessage("page"), icon:'https://derpicdn.net/favicon.ico' , class: 'derpiico' , action:function() {window.open(thumbdata.url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'https://derpicdn.net/favicon.ico' , class: 'derpiico' , href: thumbdata.url , target: '_blank' , action:function(){}}
   
 ]}
 
@@ -488,13 +482,11 @@ var customrightclickprofile = {
   title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
-window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
-}},
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS" , target: '_blank' , action:function(){}},
   
 null, 
   
-{label:chrome.i18n.getMessage("page"), icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , class: 'page2' , action:function() {window.open(thumbdata.author_url, "_blank")}}
+{label:chrome.i18n.getMessage("page"), icon:'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif' , class: 'page2' , href: thumbdata.author_url , target: '_blank' , action:function(){}}
   
 ]}
 }
@@ -506,13 +498,11 @@ var customrightclickimg = {
   title: chrome.i18n.getMessage("app_dp_openimage"),
   items: [ 
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
-window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
-}},
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS" , target: '_blank' , action:function(){}},
   
 null, 
   
-{label:chrome.i18n.getMessage("page"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'page' , action:function() {window.open(thumbdata.url, "_blank")}},
+{label:chrome.i18n.getMessage("page"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'page' , href: thumbdata.url , target: '_blank' , action:function(){}},
 
 null, 
 
@@ -527,17 +517,15 @@ var customrightclickprofile = {
   title: chrome.i18n.getMessage("app_dp_openprofile"),
   items: [
 
-{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , action:function() {
-window.open("http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", "_blank")
-}},
+{label:chrome.i18n.getMessage("app_dp_customiconscredit"), icon:"http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif" , class: 'credits' , href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS" , target: '_blank' , action:function(){}},
   
 null, 
   
-{label:chrome.i18n.getMessage("profile"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'profile' , action:function() {window.open(thumbdata.author_url, "_blank")}},
-{label:chrome.i18n.getMessage("gallery"), icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , class: 'gallery' , action:function() {window.open(thumbdata.author_url+"/gallery/", "_blank")} },
-{label:chrome.i18n.getMessage("prints"), icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , class: 'prints' , action:function() {window.open(thumbdata.author_url+"/prints/", "_blank")} },
-{label:chrome.i18n.getMessage("favourites"), icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , class: 'favourites' , action:function() {window.open(thumbdata.author_url+"/favourites/", "_blank")} },
-{label:chrome.i18n.getMessage("journal"), icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , class: 'journal' , action:function() {window.open(thumbdata.author_url+"/journal/", "_blank")} },
+{label:chrome.i18n.getMessage("profile"), icon:'http://st.deviantart.net/emoticons/d/dalogo1.gif' , class: 'profile' , href: thumbdata.author_url , target: '_blank' , action:function(){}},
+{label:chrome.i18n.getMessage("gallery"), icon:'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif' , class: 'gallery' , href: thumbdata.author_url+"/gallery/" , target: '_blank' , action:function(){} },
+{label:chrome.i18n.getMessage("prints"), icon:'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif' , class: 'prints' , href: thumbdata.author_url+"/prints/" , target: '_blank' , action:function(){} },
+{label:chrome.i18n.getMessage("favourites"), icon:'http://st.deviantart.net/emoticons/s/star_full.gif' , class: 'favourites' , href: thumbdata.author_url+"/favourites/" , target: '_blank' , action:function(){} },
+{label:chrome.i18n.getMessage("journal"), icon:'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif' , class: 'journal' , href: thumbdata.author_url+"/journal/" , target: '_blank' , action:function(){} },
 
 null,
 
@@ -555,6 +543,30 @@ copycodestpx(chrome.i18n.getMessage("app_dp_getdevcode"),":dev"+thumbdata.author
 
 //Generator
 
+if(thumbdata.error == true){
+$("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
+$("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
+$("<span>", {style: 'background-image: url(/images/error.png);', height: thumbdata.height, class: 'img'}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);}),
+$("<p>", {class: "provider"}).append($("<a>", {href: thumbdata.provider, target: "_blank"}).text(thumbdata.provider)),
+$("<p>", {class: "hideurl"}).text(thumbdata.url)
+).addClass('error');
+}
+
+else if(thumbdata.img == null){
+$("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
+$("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
+$("<span>", {style: 'background-image: url(/images/noimg.png);', height: 200, class: 'img'}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
+.contextPopup(customrightclickimg).contextmenu(function(){addrightclickclass(this);}),
+$("<p>", {class: "title"}).append($("<a>", {href: thumbdata.url, target: "_blank"}).text(thumbdata.title), $("<input>", {type: "checkbox", id: "markseck"}).click(function(){markthisobjectart(this);})),
+$("<p>", {class: "author"}).text(chrome.i18n.getMessage("app_dp_by")+" ").append($("<a>", {href: thumbdata.author_url, target: "_blank"}).text(thumbdata.author_name)
+.contextPopup(customrightclickprofile).contextmenu(function(){addrightclickclass(this);})
+),
+$("<p>", {class: "provider"}).append($("<a>", {href: thumbdata.provider, target: "_blank"}).text(thumbdata.provider)),
+$("<p>", {class: "hideurl"}).text(thumbdata.url)
+).addClass('noimg');;
+}
+
+else{
 $("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
 $("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
 $("<img>", {src: thumbdata.img, height: thumbdata.height}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
@@ -566,6 +578,8 @@ $("<p>", {class: "author"}).text(chrome.i18n.getMessage("app_dp_by")+" ").append
 $("<p>", {class: "provider"}).append($("<a>", {href: thumbdata.provider, target: "_blank"}).text(thumbdata.provider)),
 $("<p>", {class: "hideurl"}).text(thumbdata.url)
 );
+}
+
 loopcreatordv();
 }
 
@@ -770,7 +784,7 @@ var urlinsertxs =  this.url.replace("http://backend.deviantart.com/oembed?url=",
 var urlinsertxs = urlinsertxs.substring(0, urlinsertxs.lastIndexOf("&_="))
 
 generatordv({
-"img": chrome.extension.getURL("images/error.png"), "height": "200", "url": urlinsertxs, "title": "URL Load Failed", "author_url": urlinsertxs, "author_name": "", "type": "link", "realimg": urlinsertxs, "provider": "http://www.deviantart.com/"
+"img": chrome.extension.getURL("images/error.png"), "height": "200", "url": urlinsertxs, "title": "URL Load Failed", "author_url": urlinsertxs, "author_name": "", "type": "link", "realimg": urlinsertxs, "provider": "http://www.deviantart.com/", 'error': true
 });
 
 updateimagesloadend();
@@ -802,7 +816,7 @@ var urlinsertxs =  this.url.replace("https://derpibooru.org/oembed.json?url=", "
 var urlinsertxs = urlinsertxs.substring(0, urlinsertxs.lastIndexOf("&_="))
 
 generatordv({
-"img": chrome.extension.getURL("images/error.png"), "height": "200", "url": urlinsertxs, "title": "URL Load Failed", "author_url": urlinsertxs, "author_name": "", "type": "link", "realimg": urlinsertxs, "provider": "https://derpibooru.org/"
+"img": chrome.extension.getURL("images/error.png"), "height": "200", "url": urlinsertxs, "title": "URL Load Failed", "author_url": urlinsertxs, "author_name": "", "type": "link", "realimg": urlinsertxs, "provider": "https://derpibooru.org/", 'error': true
 });
 
 updateimagesloadend();

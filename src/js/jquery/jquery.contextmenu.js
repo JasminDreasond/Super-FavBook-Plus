@@ -50,7 +50,11 @@ jQuery.fn.contextPopup = function(menuData, contextmenutypepxST) {
     }
     settingspretty.items.forEach(function(item) {
       if (item) {
-        var rowCode = '<li><a class="'+settingspretty.linkClickerClass+'"><span class="itemTitle"></span></a></li>';
+		if((item.href == null) || (item.href.startsWith('(function ')) || (item.href.startsWith('javascript:'))){var item_final_href = '';}
+		else{var item_final_href = 'href="'+item.href+'" ';}
+		if(item.target == null){var item_final_target = '';}
+		else{var item_final_target = ' target="'+item.target+'" ';}
+        var rowCode = '<li><a '+item_final_href+item_final_target+'class="'+settingspretty.linkClickerClass+'"><span class="itemTitle"></span></a></li>';
         // if(item.icon)
         //   rowCode += '<img>';
         // rowCode +=  '<span></span></a></li>';

@@ -6,6 +6,8 @@ if(data == true){$("#loading").removeClass("hide"); $("#container").addClass("wa
 else if(data == false){$("#loading").addClass("hide"); $("#container").removeClass("wait");}
 }
 
+var detectpageopenx2 = false;
+
 // System
 function startfavpage(folderid, detectagain){chrome.bookmarks.getSubTree(folderid ,function(foldercfg){ var folder = foldercfg[0].children;
 
@@ -284,6 +286,7 @@ $("#previousimageclickpx").click(function(){nextimagestpx("previous");});
 
 function closeimagest(){
 detectpageopenx = false
+detectpageopenx2 = false;
 
 $("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
 document.title = chrome.i18n.getMessage("appfanficbookinplus");
@@ -292,13 +295,44 @@ $("body").css("overflow", "").removeClass("imagemodeps");
 $("#imgpreview").addClass("anticlick").fadeOut();
 }
 
+
+
+// Teclas de Atalho
+
+function systemshortsystem(){
+shortcut.add("RIGHT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){nextimagestpx("next");}
+}});
+shortcut.add("LEFT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){nextimagestpx("previous");}
+}});
+
+shortcut.add("ESC",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
+if(detectpageopenx2 == true){closeimagest();}
+$(".copytextdapklclose").trigger("click");
+}});
+}
+
+systemshortsystem();
+
+
+function checkcheckboxst(){
+$("input[type='text'], input[type='number'], textarea").off("blur").off("focus").blur(function(){
+systemshortsystem();
+}).focus(function(){
+shortcut.remove("RIGHT");
+shortcut.remove("LEFT");
+shortcut.remove("ESC");
+});
+}
+
+checkcheckboxst();
+
+
+
 function openimagest(datype, clickdata, thishere){
-
+detectpageopenx2 = false;
 document.title = $(thishere).text()+" - "+chrome.i18n.getMessage("appfanficbookinplus");
-
-$("#clickclosepagepxk, #capsubmit").off("click");
-$("#capselect").off("change");
-$("#imgpreview #conteudo").empty();
 
 if(datype == "openurl"){
 
@@ -315,7 +349,13 @@ if(Number.isNaN(detectcapselected)){detectcapselected = 1}
 
 $.ajax({cache: false, url: $(thishere).attr("urlclick")})
 .done(function(fanfic){
+
+$("#clickclosepagepxk, #capsubmit").off("click");
+$("#capselect").off("change");
+$("#imgpreview #conteudo").empty();
+
 loadingset(false);
+detectpageopenx2 = true;
 
 var gettitlepage = fanfic.match("<title>(.*?)</title>")[1];
 var pagenumbpxk = 0

@@ -378,10 +378,11 @@ $("#itemnumber").empty().append($("<span>", {class: "glyphicon glyphicon-folder-
 //Info Music
 
 function infocollectmusic(datamusic){
+$("#musicthumbnail").removeClass('defaultthumb');
 var newtitlepagemusic = datamusic.title;
 var minititleplayerpek = datamusic.title;
-if(datamusic.artwork == null){$("#musicthumbnail").attr("src", datamusic.avatar);}
-else{$("#musicthumbnail").attr("src", datamusic.artwork);}
+if(datamusic.artwork == null){$("#musicthumbnail").css("background-image", 'url("'+datamusic.avatar+'")');}
+else{$("#musicthumbnail").css("background-image", 'url("'+datamusic.artwork+'")');}
 if(datamusic.title.length > 35) {datamusic.title = datamusic.title.substring(0,35)+"...";}
 if(minititleplayerpek.length > 25) {minititleplayerpek = minititleplayerpek.substring(0,25)+"...";}
 if(datamusic.username.length > 40) {datamusic.username = datamusic.username.substring(0,40)+"...";}
@@ -598,7 +599,8 @@ else if(youtubeplayer.getPlayerState() == 1){youtubeplayer.pauseVideo(); autopla
 }
 }
 
-$("#playpause").click(function(){playpausemusic();})
+$("#playpause, .soundcloudbase").click(function(){playpausemusic();})
+$("#playpause, .soundcloudbase").dblclick(function(){$('#enterfullscreen').trigger('click');});
 }
 
 
@@ -1166,7 +1168,7 @@ $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");
 
 }),
 
-$("<input>", {type: "submit", value: chrome.i18n.getMessage("cancel")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.getMessage("cancel")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -1226,7 +1228,7 @@ $("#copytextdapkl").remove();
 
 }),
 
-$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -1336,7 +1338,7 @@ $("#copytextdapkl").remove();
 
 }),
 
-$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
+$("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");})
 
 
 
@@ -1422,7 +1424,7 @@ $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");
 
 
 
-$("<input>", {type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");}),
+$("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.getMessage("close")}).click(function(){$("#copytextdapkl").remove(); $(".SELECTEDSETTIME").removeClass("SELECTEDSETTIME"); $("[id='selectmultimusic'], [id='selectmultimusic2']").removeClass("anticlick");}),
 
 
 
@@ -2269,7 +2271,7 @@ $("#musictimep1").text("0:00");
 var delaymusicpekx = false;
 
 function systemshortsystem(){
-shortcut.add("RIGHT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("RIGHT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 	
 if(delaymusicpekx == false){
 var newshutat = Number($("#musicbar").val())+1900;
@@ -2282,7 +2284,7 @@ setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
 
-shortcut.add("LEFT",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("LEFT",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 
 if(delaymusicpekx == false){
 var newshutat = Number($("#musicbar").val())-1900;
@@ -2295,7 +2297,7 @@ setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
 
-shortcut.add("UP",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("UP",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 
 if(delaymusicpekx == false){
 var newshutat = Number($("#sound").val())+1;
@@ -2308,7 +2310,7 @@ setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
 
-shortcut.add("DOWN",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("DOWN",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 
 if(delaymusicpekx == false){
 var newshutat = Number($("#sound").val())-1;
@@ -2321,20 +2323,20 @@ setTimeout(function(){delaymusicpekx = false;}, 100);
 
 }});
 
-shortcut.add("ESC",function(){if($("input[type='text'], textarea").is(":focus") == false){
+shortcut.add("ESC",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){
 if(livemodet == true){livemodet = false; livestreamst();}
-else{exitfullscreenvideo(); fullscreenvideomode = false;}
+else{exitfullscreenvideo(); fullscreenvideomode = false; $('.copytextdapklclose').trigger('click');}
 }});
 
-shortcut.add("I",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#finishplaylist").trigger("click");}});
-shortcut.add("O",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerepeatmusic").trigger("click");}});
-shortcut.add("P",function(){if($("input[type='text'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerandommusic").trigger("click");}});
+shortcut.add("I",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#finishplaylist").trigger("click");}});
+shortcut.add("O",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerepeatmusic").trigger("click");}});
+shortcut.add("P",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){soundshortcut = true; createsoundoptions(); $("#enablerandommusic").trigger("click");}});
 
-shortcut.add("Z",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#thumbchangep").trigger("click");}});
-shortcut.add("X",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#theatremode").trigger("click");}});
-shortcut.add("F",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#enterfullscreen").trigger("click");}});
-shortcut.add("R",function(){if($("input[type='text'], textarea").is(":focus") == false){$("#reloadfolderlive").trigger("click");}});
-shortcut.add("C",function(){if($("input[type='text'], textarea").is(":focus") == false){window.open($("#linkopen").attr("href"), "_blank");}});
+shortcut.add("Z",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){$("#thumbchangep").trigger("click");}});
+shortcut.add("X",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){$("#theatremode").trigger("click");}});
+shortcut.add("F",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){$("#enterfullscreen").trigger("click");}});
+shortcut.add("R",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){$("#reloadfolderlive").trigger("click");}});
+shortcut.add("C",function(){if($("input[type='text'], input[type='number'], textarea").is(":focus") == false){window.open($("#linkopen").attr("href"), "_blank");}});
 
 }
 
@@ -2342,7 +2344,7 @@ systemshortsystem();
 
 
 function checkcheckboxst(){
-$("input[type='text'], textarea").off("blur").off("focus").blur(function(){
+$("input[type='text'], input[type='number'], textarea").off("blur").off("focus").blur(function(){
 systemshortsystem();
 }).focus(function(){
 shortcut.remove("RIGHT");
@@ -2378,7 +2380,7 @@ chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.g
 chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("app_sp_examplemusic")}, function(newfoldersystem2){
 chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://www.youtube.com/watch?v=eeNDSe8HfcM"});
 chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://www.youtube.com/watch?v=njos57IJf-0"});
-chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://www.youtube.com/watch?v=yzC4hFK5P3g"});	
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://www.youtube.com/watch?v=bzXXazAVRNE"});	
 });
 $("#foldercreatesc").modal();
 $("#openclicknewfolder").click(function(){chrome.windows.create({url: "chrome://bookmarks/#"+newfoldersystem.id, type: "normal", state: "normal"}); $("#foldercreatesc").modal("toggle");});

@@ -131,14 +131,19 @@ max-height: 24px;
 
 }
 
+@media screen and (max-width: 560px) {
+.musicbar .progress, .musicbar #musicbar{width: 70%;}
+#musicbar{margin-left: -70%;}
+}
+
 @media screen and (max-width: 450px) {
-.musicbar .progress, .musicbar #musicbar{width: 72%;}
-#musicbar{margin-left: -72%;}
+.musicbar .progress, .musicbar #musicbar{width: 65%;}
+#musicbar{margin-left: -65%;}
 }
 
 @media screen and (max-width: 425px) {
-.musicbar .progress, .musicbar #musicbar{width: 72%;}
-#musicbar{margin-left: -72%;}
+.musicbar .progress, .musicbar #musicbar{width: 60%;}
+#musicbar{margin-left: -60%;}
 }
 
 @media screen and (max-width: 399px) {

@@ -38,7 +38,9 @@ overflow-y: scroll;
 background-color: #000;
 }
 
-a{transition: color 0.15s;}
+a, #refreshfolderlist{transition: color 0.15s;}
+button, input{transition: background-color 0.15s;}
+#removefavclick, .clickoptionsmusic{transition: background 0.15s, color 0.15s;}
 
 label{
 margin: 0;
@@ -84,6 +86,7 @@ height: 26px;
 width: 26px;
 background-size: 26px 26px;
 display: inline-block;
+transition: filter 0.15s, -webkit-filter 0.15s;
 }
 
 .titletop span{

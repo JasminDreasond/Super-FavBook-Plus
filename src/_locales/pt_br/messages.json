@@ -102,6 +102,7 @@
 "desktop": {"message": "Desktop"},
 "local": {"message": "Local"},
 "sync": {"message": "Sync"},
+"author": {"message": "Autor"},
 "gapp_newfolder":{"message":"Nova Pasta Criada!"},
 "gapp_checkfolder":{"message":"Por favor, cheque agora a sua biblioteca de favoritos."},
 "gapp_folderhomenm":{"message":"Nome da pasta Home"},

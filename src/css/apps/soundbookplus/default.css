@@ -71,9 +71,10 @@ top: 0px;
 bottom: 0px;
 margin: 90px 20% 0px 20%;
 z-index: 111 !important;
+pointer-events: all !important;
 }
 
-
+.theatremodebase iframe, .theatremodebase[class*="hideplayer"]{pointer-events: none !important;}
 
 
 
@@ -583,9 +584,11 @@ transition: opacity 0.10s;
 #musicthumbnail{
 height: 40px;
 width: 40px;
-bottom: 5px;
+margin-bottom: -12px;
 position: relative;
 margin-left: 16px;
+display: inline-block;
+background-size: 100% 100%;
 }
 
 #tableinfomusic{
