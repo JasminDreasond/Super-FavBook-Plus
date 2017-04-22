@@ -600,7 +600,7 @@ else if(youtubeplayer.getPlayerState() == 1){youtubeplayer.pauseVideo(); autopla
 }
 
 $("#playpause, .soundcloudbase").click(function(){playpausemusic();})
-$("#playpause, .soundcloudbase").dblclick(function(){$('#enterfullscreen').trigger('click');});
+$(".soundcloudbase").dblclick(function(){$('#enterfullscreen').trigger('click');});
 }
 
 

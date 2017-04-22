@@ -35,7 +35,7 @@ position: fixed;
 bottom: 52px;
 right: -4px;
 z-index: 11115 !important;
-pointer-events: none;
+pointer-events: all;
 }
 
 .modal-open .soundcloudbase{
@@ -71,10 +71,9 @@ top: 0px;
 bottom: 0px;
 margin: 90px 20% 0px 20%;
 z-index: 111 !important;
-pointer-events: all !important;
 }
 
-.theatremodebase iframe, .theatremodebase[class*="hideplayer"]{pointer-events: none !important;}
+.soundcloudbase iframe, .soundcloudbase[class*="hideplayer"]{pointer-events: none !important;}
 
 
 
