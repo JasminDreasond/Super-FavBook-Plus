@@ -19,7 +19,7 @@ background-position: center;
 background-image: url(https://derpicdn.net/img/2017/3/7/1381146/large.png);
 }
 #homepx .custom_theme_author:before{
-content: "Prisma Theme made by Jackie Dreasond\A Image Credits Prisma - https://derpibooru.org/profiles/Prisma";
+content: "Prisma Theme made by Jackie Dreasond\A Image Credits Prisma";
 white-space: pre-wrap;
 }
 
@@ -86,7 +86,7 @@ animation-timing-function: linear;
 
 /* Folder List */
 
-#folders{background-color: #D6C66E;}
+#folders{background-color: #CBBC6A;}
 #folders, #folders a{color: #FFF;}
 #folders a:hover{color: #d9d9d9;}
 
