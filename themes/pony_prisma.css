@@ -1,0 +1,325 @@
+/* Author */
+
+/*
+
+URL: http://jackiedreasond.deviantart.com/
+Page: http://chibi-jen-hen.deviantart.com/art/Rarity-s-nap-217084416
+Author: Jackie Dreasond
+
+*/
+
+#homepx .custom_theme_img{
+height: 310px;
+width: 300px;
+margin: 20px auto;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-position: center;
+/* https://derpibooru.org/1381146 */
+background-image: url(https://derpicdn.net/img/2017/3/7/1381146/large.png);
+}
+#homepx .custom_theme_author:before{
+content: "Prisma Theme made by Jackie Dreasond\A Image Credits Prisma";
+white-space: pre-wrap;
+}
+
+
+
+/* Anti Default Welcome Image */
+#devmasc, .credits{display: none;}
+
+
+
+
+
+/* Navbar */
+
+.navbar-fixed-top{
+background-color: #F0F4FC;
+border-color: #d9d9d9;
+}
+
+.navbar-fixed-bottom{
+background-color: #F0F4FC;
+border-color: #d9d9d9;
+}
+
+.navbar-fixed-top a{color: #737373 !important;}
+.navbar-fixed-top a:hover{color: #999 !important;}
+
+
+
+
+
+
+
+/* Music */
+
+.musicbar .progress-bar{
+background: #FF8FFE !important;
+}
+
+#musictimep1, .volloading:before, .volloading{color: #CA81BD !important;}
+
+#sound::-webkit-slider-runnable-track{
+background: #FF8FFE;
+}
+
+#sound:hover::-webkit-slider-thumb{
+background-color: #7e00a8;
+}
+
+#sound:active::-webkit-slider-runnable-track{
+background: #39004d;
+}
+
+.defaultthumb{
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+
+
+
+
+/* Folder List */
+
+#folders{background-color: #D6C66E;}
+#folders, #folders a{color: #FFF;}
+#folders a:hover{color: #d9d9d9;}
+
+.homefolder a{color: #FFF !important;}
+.homefolder a:hover{color: #d9d9d9 !important;}
+
+
+
+/* Music Folder */
+
+/* Main */
+.musicplayfolder > .foldername, .musicplayfolder > .foldericon{//color: #ccf2ff !important;}
+.musicplayfolder > .foldername:hover, .musicplayfolder > .foldericon:hover{//color: #FFF !important;}
+
+/* Sub */
+.submusicplayfolder > .foldername, .submusicplayfolder > .foldericon{//color: #b3ccff !important;}
+.submusicplayfolder > .foldername:hover, .submusicplayfolder > .foldericon:hover{//color: #FFF !important;}
+
+
+
+
+
+
+
+
+
+/* Background */
+
+#container, body{background-color: transparent !important;}
+
+.background_container2, .background_container4{background-color: rgba(255,255,255,0.7) !important;}
+.background_container{
+background-color: #FFF;
+background-repeat: no-repeat;
+background-position: right bottom;
+background-attachment: fixed;
+background-size: 600px;
+/* https://derpibooru.org/1390428 */
+background-image: url(https://derpicdn.net/img/2017/3/18/1390428/large.png);
+}
+.background_container3{
+background-color: #FFF;
+}
+
+
+
+
+/* Logo */
+
+@keyframes rainbowlogo {
+    from {filter: hue-rotate(0deg);}
+    to {filter: hue-rotate(360deg);}
+}
+
+#logosoftware:hover{
+animation-name: none !important;
+filter: hue-rotate(210deg) !important;
+}
+#logosoftware:active{
+animation-name: none !important;
+filter: hue-rotate(250deg) !important;
+}
+
+
+
+/* Click */
+
+input[type="text"]:focus{
+outline: none !important;
+border-color: #9ecaed !important;
+border-style: solid !important;
+box-shadow: 0 0 10px #9ecaed !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+.clickdevart2, .clickdevart2:focus, .clickdevart, .clickdevart:focus, .badge{
+background: #19C59B !important;
+color: #FFF !important;
+border: 0px solid transparent !important;
+text-shadow: none !important;
+outline: none;
+}
+.clickdevart2:hover, .clickdevart:hover{
+background: #2A4E7E !important;
+color: #FFF !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+.clickdevart2:active, .clickdevart:active{
+background: #2D1842 !important;
+}
+
+.badge{background: #AD4965 !important;}
+
+[id^="moreclick"]:not(#moreclickbase), [id^="moreclick"]:focus:not(#moreclickbase), #copytextdapkl [type="submit"]{
+background: #E43C3C !important;
+color: #FFF !important;
+border: 0px solid transparent !important;
+text-shadow: none !important;
+outline: none;
+}
+[id^="moreclick"]:hover:not(#moreclickbase), #copytextdapkl [type="submit"]:hover{
+background: #914929 !important;
+color: #FFF !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+[id^="moreclick"]:active:not(#moreclickbase), #copytextdapkl [type="submit"]:active{
+background: #2D1842 !important;
+}
+
+
+.modal-content .clickdevart, .clickdevart:focus{
+background: #8D69CE !important;
+color: #FFF !important;
+border: 0px solid transparent !important;
+text-shadow: none !important;
+outline: none;
+}
+.modal-content .clickdevart:hover{
+background: #4A528E !important;
+color: #FFF !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+.modal-content .clickdevart:active{
+background: #4A708E !important;
+}
+
+
+
+
+
+
+/* Modal */
+
+.modal .modal-title{color: #333;}
+.modal .modal-header{
+background-color: #f2f2f2 !important;
+border-color: #B9C1CA !important;
+}
+.modal .modal-content{
+background-color: #F0F4FC !important;
+}
+
+
+
+/* Background Image View */
+
+#imagelist figure img{background-color: #FFF !important;}
+
+
+
+
+/* Right Click */
+.contextMenuPlugin, #copytextdapkl{
+background-color: #f2f2f2;
+border-color: #B9C1CA;
+}
+
+
+
+
+/* Scroll Bar */
+
+::selection, #search::selection, #appquality::selection, .selectpxnyya::selection {
+background-color: #49AD4B !important;
+color: #FFF !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+ 
+::-webkit-scrollbar-track {
+background-color: #47475c;
+}
+ 
+::-webkit-scrollbar-thumb { 
+background-color: #8c92a6;
+}
+
+::-webkit-scrollbar-thumb:hover { 
+background-color: #595f73;
+}
+
+::-webkit-scrollbar-thumb:active { 
+background-color: #373b48;
+}
+
+
+
+ 
+#folders::-webkit-scrollbar-thumb { 
+background-color: #A9753D !important;
+}
+
+#folders::-webkit-scrollbar-thumb:hover { 
+background-color: #6D4C28 !important;
+}
+
+#folders::-webkit-scrollbar-thumb:active { 
+background-color: #432E17 !important;
+}
+
+
+
+
+/* Scroll Up */
+
+#scrollup:before{
+background-color: #CE5914;
+}
+#scrollup:before, #scrollup{
+color: #FFF;
+}
+
+#scrollup:hover:before{
+background-color: #772F04 !important;
+animation-name: rainbowlogo;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+#scrollup:active:before{
+background-color: #251736 !important;
+}
