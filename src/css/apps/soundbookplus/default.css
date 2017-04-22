@@ -73,7 +73,7 @@ margin: 90px 20% 0px 20%;
 z-index: 111 !important;
 }
 
-.soundcloudbase iframe, .soundcloudbase[class*="hideplayer"]{pointer-events: none !important;}
+.soundcloudbase iframe, .soundcloudbase[class*="hideplayer"]{pointer-events: none;}
 
 
 
