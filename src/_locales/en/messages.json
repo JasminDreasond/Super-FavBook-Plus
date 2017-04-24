@@ -44,6 +44,16 @@
 "options_desktop_text_13": {"message": "Directory Icon Fixed"},
 "options_custom_theme": {"message": "Custom Theme"},
 "options_externallist": {"message": "External files list"},
+"options_customerror_1": {"message": "Textarea with red light not contains the"},
+"options_customerror_2": {"message": "in code to confirm the code."},
+
+
+
+// Custom Theme \\
+
+"customtheme_invalid": {"message": "Invalid Custom Theme!"},
+"customtheme_getcode": {"message": "Download Custom Theme - Selected"},
+"customtheme_geturl": {"message": "Download Custom Theme - URL"},
 
 
 
@@ -130,6 +140,8 @@
 "local": {"message": "Local"},
 "sync": {"message": "Sync"},
 "author": {"message": "Author"},
+"install": {"message": "Install"},
+"unistall": {"message": "Unistall"},
 
 
 

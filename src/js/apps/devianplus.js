@@ -899,7 +899,7 @@ function openrecpagespx(){$("#importpagesmodal").modal();}
 
 // Atualizar verificador de pastas
 function updatepagesforsec(){
-$.ajax({cache: false, url: "https://www.deviantart.com/settings/browsing"})
+$.ajax({cache: false, url: "https://www.deviantart.com/settings/browsing", dataType: "html"})
 .done(function(data){
 loadingset(false);
 $("#openimportbtx").val(chrome.i18n.getMessage("gapp_importpages"));

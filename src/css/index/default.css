@@ -176,3 +176,28 @@ margin-bottom: 15px;
 #creditslist #authorlist_css, #creditslist{margin: 0px 5px;}
 #creditslist #authorlist_css{font-weight: bold;}
 #creditslist #authorlist_css:hover, .selectedplusthumbpx{color: #999; cursor: pointer; transition: color 0.15s;}
+
+
+.csserror{
+outline: none !important;
+border-color: red !important;
+border-style: solid !important;
+box-shadow: 0 0 10px red !important;
+}
+
+.removecss{
+border: 1px solid rgba(0,0,0, 0.2);
+padding: 1px 4px;
+color: rgba(0,0,0, 0.6);
+cursor: pointer;
+}
+
+.removecss:hover{
+color: rgba(0,0,0, 0.8);
+border: 1px solid rgba(0,0,0, 0.4);
+}
+
+.removecss:active{
+color: rgba(0,0,0, 1);
+border: 1px solid rgba(0,0,0, 0.3);
+}

@@ -3,7 +3,7 @@
 "short_name":"SFBP",
 "description":"__MSG_appDesc__",
 "author": "JackieApkon",
-"version":"1.9.5.1",
+"version":"1.10",
 "manifest_version":2,
 "default_locale": "en",
 "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/ https://w.soundcloud.com/player/api.js https://api.dmcdn.net/all.js https://*.tumblr.com/api/read/; object-src 'self'",
@@ -16,7 +16,7 @@
          "38": "appicons/logo.png"
       }
    },
-   "permissions": ["idle", "webRequest", "webRequestBlocking", "bookmarks", "notifications", "storage", "contextMenus", "https://*.soundcloud.com/*", "http://sta.sh/*", "http://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "http://*.deviantart.com/*", "https://derpibooru.org/*", "https://fanfiction.com.br/*", "https://www.fanfiction.net/", "http://www.fimfiction.net/", "https://www.youtube.com/", "http://www.youtube.com/", "http://www.dailymotion.com/", "https://www.dailymotion.com/", "https://*.tumblr.com/*", "http://*.tumblr.com/*"],
+   "permissions": ["idle", "webRequest", "webRequestBlocking", "bookmarks", "notifications", "storage", "contextMenus", "https://*.soundcloud.com/*", "http://sta.sh/*", "http://fav.me/*", "https://sta.sh/*", "https://fav.me/*", "https://*.deviantart.com/*", "http://*.deviantart.com/*", "https://*.deviantart.net/*", "http://*.deviantart.net/*", "https://derpibooru.org/*", "https://fanfiction.com.br/*", "https://www.fanfiction.net/", "http://www.fimfiction.net/", "https://www.youtube.com/", "http://www.youtube.com/", "http://www.dailymotion.com/", "https://www.dailymotion.com/", "https://*.tumblr.com/*", "http://*.tumblr.com/*"],
 
    "options_page": "index.html",
    "icons": {
