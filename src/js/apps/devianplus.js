@@ -931,7 +931,7 @@ if((validatorurlda == "http://www.deviantart.com/") || (validatorurlda == "https
 	
 // URL Image
 
-if((urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))){
+if((urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))){
 $.ajax({cache: false, dataType: "json", url: "http://backend.deviantart.com/oembed?url="+oembed_url})
 .done(function(deviantart){
 
