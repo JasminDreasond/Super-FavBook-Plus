@@ -39,6 +39,13 @@ $("<input>", {class: 'copytextdapklclose', type: "submit", value: chrome.i18n.ge
 
 }
 
+
+
+
+
+
+
+
 // Trocar Páginas por segundo
 
 function changepagesforscd(mynmbxs){
@@ -70,6 +77,85 @@ changepagesforscd("start");
 
 $("#loadnumber").change(function(){changepagesforscd($(this).val());});
 
+
+
+// NSFW Filter
+
+var nsfw_filter;
+function changensfwfilter(mynmbxs){
+	
+$("#nsfwfilter .glyphicon").removeClass("glyphicon-ok").removeClass("glyphicon-remove");
+	
+if(mynmbxs == "start"){chrome.storage.local.get({nsfw_filter: true}, function(config){
+nsfw_filter = config.nsfw_filter;
+
+if(config.nsfw_filter == true){$("#nsfwfilter .glyphicon").addClass("glyphicon-ok");}
+else{$("#nsfwfilter .glyphicon").addClass("glyphicon-remove");}
+
+})}
+
+else{
+
+if(nsfw_filter == true){
+$("#nsfwfilter .glyphicon").addClass("glyphicon-remove");
+chrome.storage.local.set({nsfw_filter: false});
+nsfw_filter = false;
+}
+else{
+$("#nsfwfilter .glyphicon").addClass("glyphicon-ok");
+chrome.storage.local.set({nsfw_filter: true});
+nsfw_filter = true;
+}
+}
+
+}
+
+changensfwfilter("start");
+
+$("#nsfwfilter").click(function(){changensfwfilter($(this).val());});
+
+// Disable Spoiler Filter
+
+var anti_spoiler_filter;
+function changeanti_spoiler_filter(mynmbxs){
+	
+$("#anti_spoiler_filter .glyphicon").removeClass("glyphicon-ok").removeClass("glyphicon-remove");
+	
+if(mynmbxs == "start"){chrome.storage.local.get({anti_spoiler_filter: true}, function(config){
+anti_spoiler_filter = config.anti_spoiler_filter;
+
+if(config.anti_spoiler_filter == true){$("#anti_spoiler_filter .glyphicon").addClass("glyphicon-ok");}
+else{$("#anti_spoiler_filter .glyphicon").addClass("glyphicon-remove");}
+
+})}
+
+else{
+
+if(anti_spoiler_filter == true){
+$("#anti_spoiler_filter .glyphicon").addClass("glyphicon-remove");
+chrome.storage.local.set({anti_spoiler_filter: false});
+anti_spoiler_filter = false;
+}
+else{
+$("#anti_spoiler_filter .glyphicon").addClass("glyphicon-ok");
+chrome.storage.local.set({anti_spoiler_filter: true});
+anti_spoiler_filter = true;
+}
+}
+
+}
+
+changeanti_spoiler_filter("start");
+
+$("#anti_spoiler_filter").click(function(){changeanti_spoiler_filter($(this).val());});
+
+
+
+
+
+
+
+
 // System
 function startfavpage(folderid){chrome.bookmarks.getSubTree(folderid ,function(foldercfg){ var folder = foldercfg[0].children;
 var subcounter = 0
@@ -83,6 +169,14 @@ var pageclicknumberpmax
 var detectpageopenx = false
 var typepsxanex
 var numbercountitems = 0
+var webpagename;
+var webpagename_url;
+var enableurlmode = false;
+var number_web_page = 0;
+
+
+
+
 
 
 
@@ -200,8 +294,10 @@ $("#search").keyup(function(){searchimages($(this).val());});
 // Open Image
 function openfolder(idfolder, thishere, loadtypepx){
 
-pagesforsecpg = pagesforsecpgnbx
-createdmore = false
+enableurlmode = false;
+pagesforsecpg = pagesforsecpgnbx;
+createdmore = false;
+number_web_page = 0;
 $("[id='removefavclick']").off("click");
 $("#moreclick, #moreclick2").off("click").remove();
 $("#imagelist figure img").off("click", "contextmenu");
@@ -546,7 +642,7 @@ copycodestpx(chrome.i18n.getMessage("app_dp_getdevcode"),":dev"+thumbdata.author
 if(thumbdata.error == true){
 $("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
 $("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
-$("<span>", {style: 'background-image: url(/images/error.png);', height: thumbdata.height, class: 'img'}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);}),
+$("<span>", {style: 'background-image: url(/images/error.png);', height: thumbdata.height, class: 'img', "numberpage": thumbdata.numberpage}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);}),
 $("<p>", {class: "provider"}).append($("<a>", {href: thumbdata.provider, target: "_blank"}).text(thumbdata.provider)),
 $("<p>", {class: "hideurl"}).text(thumbdata.url)
 ).addClass('error');
@@ -555,7 +651,7 @@ $("<p>", {class: "hideurl"}).text(thumbdata.url)
 else if(thumbdata.img == null){
 $("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
 $("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
-$("<span>", {style: 'background-image: url(/images/noimg.png);', height: 200, class: 'img'}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
+$("<span>", {style: 'background-image: url(/images/noimg.png);', height: 200, class: 'img', "numberpage": thumbdata.numberpage}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
 .contextPopup(customrightclickimg).contextmenu(function(){addrightclickclass(this);}),
 $("<p>", {class: "title"}).append($("<a>", {href: thumbdata.url, target: "_blank"}).text(thumbdata.title), $("<input>", {type: "checkbox", id: "markseck"}).click(function(){markthisobjectart(this);})),
 $("<p>", {class: "author"}).text(chrome.i18n.getMessage("app_dp_by")+" ").append($("<a>", {href: thumbdata.author_url, target: "_blank"}).text(thumbdata.author_name)
@@ -569,7 +665,7 @@ $("<p>", {class: "hideurl"}).text(thumbdata.url)
 else{
 $("#imagelist figure[folderurl='"+thumbdata.url+"']:empty").append(
 $("<div>", {class: "glyphicon glyphicon-remove", id: "removefavclick"}).click(function(){removeimagepxke(this);}),
-$("<img>", {src: thumbdata.img, height: thumbdata.height}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
+$("<img>", {src: thumbdata.img, height: thumbdata.height, "numberpage": thumbdata.numberpage}).click(function(){openimagest(thumbdata.type, {"url": thumbdata.url, "imgthumb": thumbdata.img, "author_url": thumbdata.author_url, "author_name": thumbdata.author_name, "title": thumbdata.title, "img": thumbdata.realimg}, this);})
 .contextPopup(customrightclickimg).contextmenu(function(){addrightclickclass(this);}),
 $("<p>", {class: "title"}).append($("<a>", {href: thumbdata.url, target: "_blank"}).text(thumbdata.title), $("<input>", {type: "checkbox", id: "markseck"}).click(function(){markthisobjectart(this);})),
 $("<p>", {class: "author"}).text(chrome.i18n.getMessage("app_dp_by")+" ").append($("<a>", {href: thumbdata.author_url, target: "_blank"}).text(thumbdata.author_name)
@@ -580,8 +676,69 @@ $("<p>", {class: "hideurl"}).text(thumbdata.url)
 );
 }
 
-loopcreatordv();
+if(thumbdata.web == true){
+
+$("#markseck").remove();
+$("#removefavclick:not(.removemodi)").addClass("removemodi").off("click").removeClass("glyphicon-remove").addClass("glyphicon-plus").click(function(){
+	
+if($(this).attr("class").indexOf("addedfavimage") > -1){
+
+chrome.bookmarks.remove($(this).attr("folder_web_id"));
+$(this).removeClass("addedfavimage").removeAttr("folder_web_id");
+
 }
+else{
+
+$(this).addClass("checkfavclickimage");
+chrome.bookmarks.getSubTree($("#folderlist .active").attr("folderidreg") ,function(folderimagerepeat){
+
+var repeat_web_image = false;
+for(i = 0; i < folderimagerepeat[0].children.length; i++){
+if(folderimagerepeat[0].children[i].url == thumbdata.url){var repeat_web_image = true;}
+}
+
+if(repeat_web_image == false){
+chrome.bookmarks.create({"parentId": $("#folderlist .active").attr("folderidreg"), "title": thumbdata.title, "url": thumbdata.url}, function(dataclick_favweb){
+$(".checkfavclickimage").addClass("addedfavimage").removeClass("checkfavclickimage").attr("folder_web_id", dataclick_favweb.id);
+});
+}
+else{$(".checkfavclickimage").removeClass("checkfavclickimage");}
+
+});
+
+}});
+
+chrome.bookmarks.getSubTree($("#folderlist .active").attr("folderidreg") ,function(folderimagerepeat){
+
+var repeat_web_image = false;
+for(i = 0; i < folderimagerepeat[0].children.length; i++){
+if(folderimagerepeat[0].children[i].url == thumbdata.url){
+var repeat_web_image = true;
+ var repeat_web_id = folderimagerepeat[0].children[i].id;
+}
+}
+
+if(repeat_web_image == true){
+$("#imagelist figure[folderurl='"+thumbdata.url+"'] #removefavclick").addClass("addedfavimage").attr("folder_web_id", repeat_web_id);
+}
+
+});
+
+}
+else{loopcreatordv();}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Loop
 function loopcreatordv(){
@@ -720,6 +877,10 @@ else if(artcountpx < maxitem+1){
 
 if(urlpage == null){}
 
+
+
+
+
 // Image Generator
 else{
 
@@ -735,6 +896,9 @@ var validatorurlda = validatorurlda+".deviantart.com/";
 var validatorurlda = validatorurlda.replace(antidaname, "www");
 }
 
+
+
+
 //Validar URL
 if((validatorurlda == "http://www.deviantart.com/") || (validatorurlda == "https://www.deviantart.com/") || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/")) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (validatorurlda.startsWith("https://derpibooru.org/"))){
 
@@ -745,7 +909,29 @@ else{finalcomplete = false}
 if((start == true) || (start == "homepage")){}
 else{
 
+
+
+
+
+
+
+
+// Deviantart
+
 if((validatorurlda == "http://www.deviantart.com/") || (validatorurlda == "https://www.deviantart.com/") || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/")) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/"))){
+	
+
+
+	
+	
+	
+
+	
+	
+	
+// URL Image
+
+if((urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))){
 $.ajax({cache: false, dataType: "json", url: "http://backend.deviantart.com/oembed?url="+oembed_url})
 .done(function(deviantart){
 
@@ -792,8 +978,417 @@ loopcreatordv();
 
 });
 }
+
+
+
+
+
+
+
+
+
+
+// Load Page URL - Deviantart
+
+else if(enableurlmode == false){ if((urlpage.indexOf("deviantart.com/gallery/") > -1) || (urlpage.indexOf("deviantart.com/favourites/") > -1)){
+
+function deviantart_open_web(theurl_page){
+
+loadingset(true);
+
+// Preparar
+
+enableurlmode = true;
+$("#imagelist").empty();
+
+// Template
+
+$("#imagelist").append(
+$("<div>", {id: "clone_pagination"}),
+$("<div>", {id: "images_web_list"}), 
+$("<nav>", {id: "pagination"}).append($("<ul>", {class: "pagination"})
+));
+
+if(theurl_page == null){theurl_page = urlpage;}
+
+// Ajax
+$.ajax({cache: false, url: theurl_page}).done(function(data){
+
+
+
+// Criar Paginação
+
+if(($(data).find(".pagination .pages .next a").attr("class") != "disabled") || ($(data).find(".pagination .pages .prev a").attr("class") != "disabled"))
+{$(data).find(".pagination .pages li").each(function(){if($(this).attr("class") != "dotdotdot"){
+
+
+// Principal
+if($(this).attr("class").indexOf("current") > -1){
+
+$("#imagelist .pagination").append($("<li>", {class: "active", style: "cursor: pointer;", href_click: $(this).find("a").attr("href")}).append($("<a>").text(
+Number($(this).find("a").text())
+)));
+
+}
+
+
+// Prev Next
+else if(($(this).attr("class") == "prev") || ($(this).attr("class") == "next")){
+
+if($(this).attr("class") == "prev"){var clicktext = "«";}
+else if($(this).attr("class") == "next"){var clicktext = "»";}
+
+$("#imagelist .pagination").append($("<li>", {check_disabled: "now", class: $(this).find("a").attr("class"), style: "cursor: pointer;", href_click: $(this).find("a").attr("href")}).append($("<a>").text(clicktext)).click(function(){
+deviantart_open_web(urlpage.split(".deviantart.com")[0]+".deviantart.com"+$(this).attr("href_click"));
+}));
+
+if($("[check_disabled='now']").attr("class") == "disabled"){$("[check_disabled='now']").off("click");}
+$("[check_disabled='now']").removeAttr("check_disabled");
+
+}
+
+
+// Demais
+else{
+
+$("#imagelist .pagination").append($("<li>", {style: "cursor: pointer;", href_click: $(this).find("a").attr("href")}).append($("<a>").text(
+Number($(this).find("a").text())
+)).click(function(){
+deviantart_open_web(urlpage.split(".deviantart.com")[0]+".deviantart.com"+$(this).attr("href_click"));
+}));
+
+}
+
+
+}});}
+
+
+
+
+
+// Imagens
+
+webpagename = data.match("<title>(.*?)</title>")[1].replace(/\&#039\;/g, "'").replace(/\&quot\;/g, '"');
+webpagename_url = this.url;
+var finddefaultpage = ".folderview-art .torpedo-container .thumb";
+
+// Gerador de favoritos
+
+var numberpageweb = 0;
+
+$("#imagelist")
+.prepend($(data).find(".folderview-top .description").html())
+.prepend($("<center>").append($("<a>", {href: webpagename_url, target: "_blank"}).append($("<h2>").text(webpagename))));
+
+$(data).find(finddefaultpage).each(function(){
+var itemselectart = this;
+numberpageweb = numberpageweb+1;
+
+var thumbimageclick = $(itemselectart).find(".torpedo-thumb-link img").attr("src");
+var thumbimageclick2 = $(itemselectart).find(".torpedo-thumb-link img").attr("src");
+
+if(($(itemselectart).attr("class").indexOf("ismature") > -1) && (nsfw_filter == true)){
+var thumbimageclick = "https://st.deviantart.net/misc/noentry-green.png";
+
+if(
+($(itemselectart).attr("class").indexOf("wide") > -1) && 
+($(itemselectart).attr("data-super-full-img") != null) && 
+($(itemselectart).attr("data-super-full-img") != undefined) && 
+($(itemselectart).attr("data-super-full-img") != "")
+)
+{var thumbimageclick = thumbimageclick2;}
+
+else if(
+($(itemselectart).attr("class").indexOf("thumb") > -1) && 
+($(itemselectart).attr("data-super-img") != null) && 
+($(itemselectart).attr("data-super-img") != undefined) && 
+($(itemselectart).attr("data-super-img") != "")
+)
+{var thumbimageclick = thumbimageclick2;}
+
+}
+
+if(
+($(itemselectart).attr("class").indexOf("wide") > -1) && 
+($(itemselectart).attr("data-super-full-img") != null) && 
+($(itemselectart).attr("data-super-full-img") != undefined) && 
+($(itemselectart).attr("data-super-full-img") != "")
+)
+{var deviantarttype = "photo";}
+
+else if(
+($(itemselectart).attr("class").indexOf("thumb") > -1) && 
+($(itemselectart).attr("data-super-img") != null) && 
+($(itemselectart).attr("data-super-img") != undefined) && 
+($(itemselectart).attr("data-super-img") != "")
+)
+{var deviantarttype = "photo";}
+else if($(itemselectart).attr("class").indexOf("literature") > -1){var deviantarttype = "rich";}
+else{var deviantarttype = "link";}
+
+$("#images_web_list").append($("<figure>").attr("folderurl", $(itemselectart).attr("href")).attr("checkedload", false));
+
+generatordv({
+"img": thumbimageclick, "height": "auto", "url": $(itemselectart).attr("href"), "title": $(itemselectart).find(".info .title-wrap .title").text(), "author_url": $(itemselectart).find(".info .extra-info .artist > a").attr("href"), "author_name": $(itemselectart).find(".info .extra-info .artist a img").attr("title"), "type": deviantarttype, "realimg": $(itemselectart).attr("data-super-full-img"), "provider": "http://www.deviantart.com/", "artid": $(itemselectart).attr("data-deviationid"), "rightclicktype": "deviantart", "web": true, "numberpage": numberpageweb
+});
+
+});
+
+pageclicknumberpmax = numberpageweb;
+
+
+// Clonar Paginação
+$("#pagination").clone(true, true).prependTo("#clone_pagination");
+
+
+
+
+
+loadingset(false);
+
+}).fail(function(){loadingset(false); window.open(this.url, "_blank");});
+	
+
+}
+
+deviantart_open_web();
+	
+}}
+
+
+else{
+updateimagesloadend();
+loopcreatordv();
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Derpibooru
 	
 else if(validatorurlda.startsWith("https://derpibooru.org/")){
+	
+
+// Gallery
+	
+if(
+(urlpage.startsWith("https://derpibooru.org/search?q=")) ||
+(urlpage.startsWith("https://derpibooru.org/search/")) ||
+(urlpage.startsWith("https://derpibooru.org/galleries/")) || 
+(urlpage.startsWith("https://derpibooru.org/images/page/")) || 
+(urlpage == "https://derpibooru.org/")
+){
+	
+function derpibooru_open_web(theurl_page){
+
+loadingset(true);
+enableurlmode = true;
+$("#imagelist").empty();
+
+if(theurl_page == null){theurl_page = urlpage;}
+
+// Ajax
+$.ajax({cache: false, url: theurl_page}).done(function(data){
+
+
+$("#imagelist").append(
+$("<div>", {id: "clone_pagination"}),
+$("<div>", {id: "images_web_list"}), 
+$("<nav>", {id: "pagination"}).append($("<ul>", {class: "pagination"})
+));
+
+
+// Criar Paginação
+if($(data).find(".block__header--light .pagination").attr("class") == "pagination"){$(data).find(".block__header--light .pagination a, .block__header--light .pagination span").each(function(){if($(this).attr("class") != undefined){
+
+
+// Principal
+if($(this).attr("class").indexOf("page-current") > -1){
+
+$("#imagelist .pagination").append($("<li>", {class: "active", style: "cursor: pointer;", href_click: $(this).attr("href")}).append($("<a>").text(
+Number($(this).text())
+)));
+
+}
+
+
+// Prev Next
+else if(($(this).attr("class") == "js-prev") || ($(this).attr("class") == "js-next")){
+
+if($(this).attr("class") == "js-prev"){var clicktext = "«";}
+else if($(this).attr("class") == "js-next"){var clicktext = "»";}
+
+$("#imagelist .pagination").append($("<li>", {check_disabled: "now", class: $(this).attr("class"), style: "cursor: pointer;", href_click: $(this).attr("href")}).append($("<a>").text(clicktext)).click(function(){
+derpibooru_open_web("https://derpibooru.org"+$(this).attr("href_click"));
+}));
+
+if($("[check_disabled='now']").attr("class") == "disabled"){$("[check_disabled='now']").off("click");}
+$("[check_disabled='now']").removeAttr("check_disabled");
+
+}
+
+
+// Demais
+else if(isNaN(Number($(this).text())) == false){
+
+$("#imagelist .pagination").append($("<li>", {style: "cursor: pointer;", href_click: $(this).attr("href")}).append($("<a>").text(
+Number($(this).text())
+)).click(function(){
+derpibooru_open_web("https://derpibooru.org"+$(this).attr("href_click"));
+}));
+
+}
+
+
+
+}});}
+
+
+
+
+
+
+
+
+
+
+
+
+
+webpagename = $(data).find(".block__header__title").text().replace("byShowing images ", "by "+$(data).find(".block__header--sub a").text()+"Showing images ").split("Showing images ")[0];
+webpagename_url = this.url;
+var finddefaultpage = ".js-resizable-media-container .media-box .media-box__content .image-container";
+
+// Gerador de favoritos
+
+$("#imagelist")
+.prepend($("<center>").append($("<a>", {href: webpagename_url, target: "_blank"}).append($("<h2>").html(webpagename))));
+
+var numberpageweb = 0;
+
+$(data).find(finddefaultpage).each(function(){
+
+var itemselectart = this;
+numberpageweb = numberpageweb+1;
+
+var fixurl_web = "https://derpibooru.org";
+var fixurl_web2 = "https:";
+var urlpage_web = fixurl_web+$(itemselectart).find("a").attr("href").split("?q=")[0];
+
+if(($(itemselectart).attr("data-source-url") != null) && ($(itemselectart).attr("data-source-url") != undefined)){
+var sourceurl_web = $(itemselectart).attr("data-source-url");
+}
+else{var sourceurl_web = urlpage_web;}
+
+if(sourceurl_web == ""){sourceurl_web = "https://derpibooru.org/";}
+
+var real_webimages_json = JSON.parse($(itemselectart).attr("data-uris"));
+
+if((real_webimages_json.full != undefined) && (real_webimages_json.full != null)){var real_webimages = fixurl_web2+real_webimages_json.full;}
+else if((real_webimages_json.tall != undefined) && (real_webimages_json.tall != null)){var real_webimages = fixurl_web2+real_webimages_json.tall;}
+else if((real_webimages_json.medium != undefined) && (real_webimages_json.medium != null)){var real_webimages = fixurl_web2+real_webimages_json.medium;}
+else if((real_webimages_json.thumb != undefined) && (real_webimages_json.thumb != null)){var real_webimages = fixurl_web2+real_webimages_json.thumb;}
+else if((real_webimages_json.thumb_small != undefined) && (real_webimages_json.thumb_small != null)){var real_webimages = fixurl_web2+real_webimages_json.thumb_small;}
+else if((real_webimages_json.thumb_tiny != undefined) && (real_webimages_json.thumb_tiny != null)){var real_webimages = fixurl_web2+real_webimages_json.thumb_tiny;}
+
+
+
+if((real_webimages_json.medium != undefined) && (real_webimages_json.medium != null)){var thumb_img = fixurl_web2+real_webimages_json.medium;}
+else if((real_webimages_json.thumb != undefined) && (real_webimages_json.thumb != null)){var thumb_img = fixurl_web2+real_webimages_json.thumb;}
+else if((real_webimages_json.thumb_small != undefined) && (real_webimages_json.thumb_small != null)){var thumb_img = fixurl_web2+real_webimages_json.thumb_small;}
+else if((real_webimages_json.thumb_tiny != undefined) && (real_webimages_json.thumb_tiny != null)){var thumb_img = fixurl_web2+real_webimages_json.thumb_tiny;}
+
+var real_webimages_tags =  $(itemselectart).attr("data-image-tag-aliases").split(",");
+var type_derp = "photo";
+
+for(i = 0; i < real_webimages_tags.length; i++){
+if(real_webimages_tags[i].indexOf("artist:") > -1){var artistname_web = real_webimages_tags[i].replace("artist:", "").replace(/ /g, "");}
+if((artistname_web == undefined) || (artistname_web == null)){var artistname_web = "Unknown";}
+
+var is_nsfw_img = false;
+if(nsfw_filter == true){
+if(
+(real_webimages_tags[i].indexOf("suggestive") > -1) ||
+(real_webimages_tags[i].indexOf("semi-grimdark") > -1) ||
+(real_webimages_tags[i].indexOf("vulgar") > -1) ||
+(real_webimages_tags[i].indexOf("questionable") > -1) ||
+(real_webimages_tags[i].indexOf("explicit") > -1)
+){
+var thumb_img = "https://st.deviantart.net/misc/noentry-green.png";
+var warn_tag = real_webimages_tags[i];
+var type_derp = "link";
+var is_nsfw_img = true;
+}
+}
+
+if((real_webimages_tags[i].indexOf("spoiler") > -1) && (anti_spoiler_filter == true) && (is_nsfw_img == false)){
+var thumb_img = "https://st.deviantart.net/misc/noentry-green.png";
+var warn_tag = real_webimages_tags[i];
+var type_derp = "link";
+}
+
+}
+
+if((warn_tag != null) && (warn_tag != undefined) && (warn_tag.substring(0, 1) == " ")){var warn_tag = warn_tag.substring(1, warn_tag.length);}
+
+var title_webimage_pre = $(itemselectart).find("a").attr("title").split(" | Tagged:")[0];
+var title_webimage = $(itemselectart).find("a").attr("title").replace(title_webimage_pre, "").replace("| Tagged: ", "").replace("| Tagged:", "");
+
+$("#images_web_list").append($("<figure>").attr("folderurl", urlpage_web).attr("checkedload", false));
+
+generatordv({
+"img": thumb_img, "height": "auto", "url": urlpage_web, "title": title_webimage.substring(0,35)+"...", "author_url": sourceurl_web, "author_name": artistname_web, "type": type_derp, "realimg": real_webimages, "provider": "https://derpibooru.org/", "rightclicktype": "derpibooru", "web": true, "numberpage": numberpageweb
+});
+
+if((warn_tag != null) && (warn_tag != undefined)){
+$("[folderurl='"+urlpage_web+"']").append($("<strong>", {class: "warn-content"}).text(warn_tag));
+}
+
+});
+
+pageclicknumberpmax = numberpageweb;
+
+
+
+
+
+
+
+
+
+
+
+
+// Clonar Paginação
+$("#pagination").clone(true, true).prependTo("#clone_pagination");
+
+loadingset(false);
+
+}).fail(function(){loadingset(false); window.open(this.url, "_blank");});
+
+
+}
+
+derpibooru_open_web();
+
+}
+
+
+	
+// Image
+
+else{
 $.ajax({cache: false, dataType: "json", url: "https://derpibooru.org/oembed.json?url="+urlpage})
 .done(function(derpibooru){
 
@@ -822,8 +1417,7 @@ generatordv({
 updateimagesloadend();
 loopcreatordv();
 
-});
-}
+});}}
 
 }
 
@@ -884,6 +1478,24 @@ $("#refreshfolderlist").click(function(){location.reload();});
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var idfolderpx
 
 // Gerenciador abrir e fechar
@@ -898,23 +1510,44 @@ function openrecpagespx(){$("#importpagesmodal").modal();}
 
 
 // Atualizar verificador de pastas
-function updatepagesforsec(){
+function updatepagesforsec(loadingtype){
 $.ajax({cache: false, url: "https://www.deviantart.com/settings/browsing", dataType: "html"})
 .done(function(data){
+
+if(loadingtype != "loading_web"){
 loadingset(false);
 $("#openimportbtx").val(chrome.i18n.getMessage("gapp_importpages"));
+}
 var getconfigop = $(data).find(".browse-limit .spacemenus").val();
-if(getconfigop == null){pagesforsec = 24}
+if(getconfigop == null){pagesforsec = 24;}
 else{pagesforsec = Number(getconfigop)}
-openrecpagespx();
-}).fail(function(){
+if(loadingtype != "loading_web"){openrecpagespx();}
+
+}).fail(function(){if(loadingtype != "loading_web"){
 loadingset(false);
 $("#openimportbtx").val(chrome.i18n.getMessage("error"));
+}
+pagesforsec = null;
 })
 }
 
+
+
+
+
+
+
+
+
+
 // Sistema pegar pastas 
-function recpagespxerk(data){
+function recpagespxerk(data, next){
+	
+	
+	
+	
+// Deviantart
+if($("#importtype").val() == "deviantart"){
 
 if(data.intro == "send"){closerecpagespx("normal"); loadingset(true);
 devname = data.devname
@@ -950,7 +1583,7 @@ var completeurlsx = "?offset="+pagesforsecresult
 // Ajax
 $.ajax({cache: false, url: "http://"+devname+".deviantart.com/"+devpagetype+"/"+urlfinaldev+completeurlsx}).done(function(data){
 	
-var gettitlepage = data.match("<title>(.*?)</title>")[1];
+var gettitlepage = data.match("<title>(.*?)</title>")[1].replace(/\&#039\;/g, "'").replace(/\&quot\;/g, '"');
 var finddefaultpage = ".folderview-art .torpedo-container .thumb";
 
 // Gerador de favoritos
@@ -961,8 +1594,16 @@ if(detectfolderfavpx[0] == undefined){
 chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_dp_folder")}, function(favdata){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": gettitlepage}, function(newfavpxsd){
 $(data).find(finddefaultpage).each(function(){
+
+
 var itemselectart = this
+var is_dev_mature = false;
+if(($(itemselectart).attr("class").indexOf("ismature") > -1) && (nsfw_filter == true)){var is_dev_mature = true;}
+
+if(is_dev_mature == false){
 chrome.bookmarks.create({"parentId": newfavpxsd.id, "title": $(itemselectart).find(".info .title-wrap .title").text(), "url": $(itemselectart).attr("href")})
+}
+
 })
 })
 })
@@ -970,8 +1611,16 @@ chrome.bookmarks.create({"parentId": newfavpxsd.id, "title": $(itemselectart).fi
 
 else{
 $(data).find(finddefaultpage).each(function(){
+
+
 var itemselectart = this
+var is_dev_mature = false;
+if(($(itemselectart).attr("class").indexOf("ismature") > -1) && (nsfw_filter == true)){var is_dev_mature = true;}
+
+if(is_dev_mature == false){
 chrome.bookmarks.create({"parentId": detectfolderfavpx[0].id, "title": $(itemselectart).find(".info .title-wrap .title").text(), "url": $(itemselectart).attr("href")})
+}
+
 })
 }
 
@@ -986,13 +1635,202 @@ else{loadingset(false); pagesforsecresult = 0; recpagespxerk({"intro" :"again"})
 })
 .fail(function(){$("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimerror")); loadingset(false); recpagespxerk({"intro" :"again"});})
 
+}}
+
+
+
+
+
+
+else if($("#importtype").val() == "derpibooru"){
+
+if(data.intro == "send"){closerecpagespx("normal"); loadingset(true);
+devpagetype = data.devpagetype
+urlfinaldev = data.urlfinaldev
+}
+
+if((data.intro == "start") || (data.intro == "again")){
+
+$("#favtypesf2").val("search?q=");
+$("#favfoldersf2").val("");
+
+if(data.intro == "again"){
+//$("#dasubclosesf").off("click").click(function(){location.reload();})
+}
+
+updatepagesforsec();
+
+}
+
+else if((data.intro == "send") || (data.intro == "next")){
+
+//Validador Page
+
+if((next != null) && (next != undefined)){devpagetype = next; urlfinaldev = "";}
+else{next = "";}
+
+// Ajax
+$.ajax({cache: false, url: "https://derpibooru.org/"+devpagetype+urlfinaldev+next}).done(function(data){
+
+webpagename = $(data).find(".block__header__title").text().replace("byShowing images ", "by "+$(data).find(".block__header--sub a").text()+"Showing images ").split("Showing images ")[0];
+var finddefaultpage = ".js-resizable-media-container .media-box .media-box__content .image-container";
+
+// Gerador de favoritos
+
+chrome.bookmarks.search({"title": webpagename}, function(detectfolderfavpx){
+
+if(detectfolderfavpx[0] == undefined){
+chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_dp_folder")}, function(favdata){
+chrome.bookmarks.create({"parentId": favdata[0].id, "title": webpagename}, function(newfavpxsd){
+$(data).find(finddefaultpage).each(function(){
+
+var itemselectart = this;
+
+// ANTI NSFW
+var skip_download_web = false;
+var real_webimages_tags =  $(itemselectart).attr("data-image-tag-aliases").split(",");
+
+if((nsfw_filter == true) || (anti_spoiler_filter == true)){for(i = 0; i < real_webimages_tags.length; i++){
+
+if(nsfw_filter == true){if(
+(real_webimages_tags[i].indexOf("suggestive") > -1) ||
+(real_webimages_tags[i].indexOf("semi-grimdark") > -1) ||
+(real_webimages_tags[i].indexOf("vulgar") > -1) ||
+(real_webimages_tags[i].indexOf("questionable") > -1) ||
+(real_webimages_tags[i].indexOf("explicit") > -1)
+){
+var skip_download_web = true;
+}}
+
+if((real_webimages_tags[i].indexOf("spoiler") > -1) && (anti_spoiler_filter == true)){
+var skip_download_web = true;
+}
 
 }}
 
+if(skip_download_web == false){
+
+// URL
+var fixurl_web = "https://derpibooru.org";
+var urlpage_web = fixurl_web+$(itemselectart).find("a").attr("href").split("?q=")[0];
+
+// Título
+var title_webimage_pre = $(itemselectart).find("a").attr("title").split(" | Tagged:")[0];
+var title_webimage = $(itemselectart).find("a").attr("title").replace(title_webimage_pre, "").replace("| Tagged: ", "").replace("| Tagged:", "");
+
+// Criar
+chrome.bookmarks.create({"parentId": newfavpxsd.id, "title": title_webimage, "url": urlpage_web});
+
+}
+
+})
+})
+})
+}
+
+else{
+$(data).find(finddefaultpage).each(function(){
+
+var itemselectart = this;
+
+// Anti NSFW
+var skip_download_web = false;
+var real_webimages_tags =  $(itemselectart).attr("data-image-tag-aliases").split(",");
+
+if((nsfw_filter == true) || (anti_spoiler_filter == true)){for(i = 0; i < real_webimages_tags.length; i++){
+
+if(nsfw_filter == true){if(
+(real_webimages_tags[i].indexOf("suggestive") > -1) ||
+(real_webimages_tags[i].indexOf("semi-grimdark") > -1) ||
+(real_webimages_tags[i].indexOf("vulgar") > -1) ||
+(real_webimages_tags[i].indexOf("questionable") > -1) ||
+(real_webimages_tags[i].indexOf("explicit") > -1)
+){
+var skip_download_web = true;
+}}
+
+if((real_webimages_tags[i].indexOf("spoiler") > -1) && (anti_spoiler_filter == true)){
+var skip_download_web = true;
+}
+
+}}
+
+if(skip_download_web == false){
+
+// URL
+var fixurl_web = "https://derpibooru.org";
+var urlpage_web = fixurl_web+$(itemselectart).find("a").attr("href").split("?q=")[0];
+
+// Título
+var title_webimage_pre = $(itemselectart).find("a").attr("title").split(" | Tagged:")[0];
+var title_webimage = $(itemselectart).find("a").attr("title").replace(title_webimage_pre, "").replace("| Tagged: ", "").replace("| Tagged:", "");
+
+// Criar
+chrome.bookmarks.create({"parentId": detectfolderfavpx[0].id, "title": title_webimage, "url": urlpage_web});
+
+}
+
+})
+}
+
+})
+
+
+
+
+
+
+
+// Próximo Favorito
+if($(data).find(".pagination .js-next").attr("class") == "js-next"){
+recpagespxerk({"intro" :"next"}, $(data).find(".pagination [rel='next']").attr("href"));
+}
+else{loadingset(false); pagesforsecresult = 0; recpagespxerk({"intro" :"again"}); $("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimcomplete"));}
+})
+.fail(function(){$("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimerror")); loadingset(false); recpagespxerk({"intro" :"again"});})
+
+
+}
+
+}
+
+
+
+
+}
+
+
+
+
+
+
 $("#openimportbtx").click(function(){recpagespxerk({"intro" :"start"});}).contextmenu(function(){$('#impofavstpx').modal(); return false;});
 
-$("#dasubmovsf").click(function(){recpagespxerk({"intro" :"send", "devname": $("#danamesf").val(), "devpagetype": $("#favtypesf").val(), "urlfinaldev": $("#favfoldersf").val()});});
+$("#dasubmovsf").click(function(){
+
+if($("#importtype").val() == "deviantart"){
+recpagespxerk({"intro" :"send", "devname": $("#danamesf").val(), "devpagetype": $("#favtypesf").val(), "urlfinaldev": $("#favfoldersf").val()});
+}
+
+else if($("#importtype").val() == "derpibooru"){
+
+recpagespxerk({"intro" :"send", "devpagetype": $("#favtypesf2").val(), "urlfinaldev": $("#favfoldersf2").val()});
+
+}
+
+});
 $("#dasubclosesf").click(function(){closerecpagespx();});
+
+$("#importtype").change(function(){
+
+$("#import_deviantart, #import_derpibooru").addClass("hide");
+if($(this).val() == "deviantart"){$("#import_deviantart").removeClass("hide");}
+else if($(this).val() == "derpibooru"){$("#import_derpibooru").removeClass("hide");}
+
+});
+
+
+
 
 
 
@@ -1011,6 +1849,11 @@ $("#importpagesmodal").removeClass("hide"); loadingset(false);
 })
 
 };});
+
+
+
+
+
 
 
 
@@ -1044,6 +1887,43 @@ else if($(thishere).val().indexOf(".deviantart.com/gallery") > -1){$("#favtypesf
 $("#daautodetectsf").change(function(){autodetecturlpxs(this);});
 
 
+function autodetecturlpxs2(thishere){if(($(thishere).val().startsWith("https://derpibooru.org/") > -1) || ((thishere).val().startsWith("http://derpibooru.org/") > -1)){
+
+function removepxsurlk(typeurlfv){
+
+var gepdsdsk1 = $(thishere).val().split('.org/'+typeurlfv)[0] 
+var gepdsdsk2 = $(thishere).val().replace(gepdsdsk1, "")
+var gepdsdsk3 = gepdsdsk2.replace(".org/"+typeurlfv, "")
+
+$("#favfoldersf2").val(gepdsdsk3);
+
+$(thishere).val("");
+
+}
+
+if($(thishere).val().indexOf("derpibooru.org/search?q=") > -1){$("#favtypesf2").val("search?q="); removepxsurlk("search?q=");}
+else if($(thishere).val().indexOf("derpibooru.org/search/") > -1){$("#favtypesf2").val("search/"); removepxsurlk("search/");}
+else if($(thishere).val().indexOf("derpibooru.org/galleries/") > -1){$("#favtypesf2").val("galleries/"); removepxsurlk("galleries/");}
+
+}}
+
+$("#daautodetectsf2").change(function(){autodetecturlpxs2(this);});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1056,7 +1936,7 @@ var items_folder_create_file = [];
 for (i = 0; i < foldercfg[0].children.length; i++) {if((foldercfg[0].children[i].url != null) && (foldercfg[0].children[i].url != undefined) && (foldercfg[0].children[i].url != '')){
 items_folder_create_file.push({'title': foldercfg[0].children[i].title, 'url': foldercfg[0].children[i].url});
 }}
-var json_save_file_st = {'title': foldercfg[0].title,'items': items_folder_create_file};
+var json_save_file_st = {'service': 'super_favbook_plus_dp', 'title': foldercfg[0].title,'items': items_folder_create_file};
 var blob = new Blob([JSON.stringify(json_save_file_st)], {type: "text/plain;charset=utf-8"});
 saveAs(blob, "sfb+_dp_"+foldercfg[0].title+".txt");
 
@@ -1064,6 +1944,8 @@ saveAs(blob, "sfb+_dp_"+foldercfg[0].title+".txt");
 
 $("#impcodefolder").click(function(){if($("#codepekxed").val() != ''){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_dp_folder")}, function(favdata){
 var json_save_file_jt = JSON.parse($("#codepekxed").val());
+
+if(json_save_file_jt.service == "super_favbook_plus_dp"){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": json_save_file_jt.title}, function(newfoldersystem2){
 
 for (i = 0; i < json_save_file_jt.items.length; i++) {
@@ -1073,6 +1955,8 @@ $("#resultimportpx2").text(chrome.i18n.getMessage("gapp_folderimcomplete"));
 $("#codepekxed").val('');
 
 });
+}
+
 })}});
 
 

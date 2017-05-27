@@ -1,5 +1,9 @@
 /* New Screen */
 
+@media screen and (max-width: 920px) {
+.checknav{display: none !important;}
+}
+
 @media screen and (max-width: 800px) {
 #folders, #openimportbtx, #search, #loadnmbde, #loadnumber, .navbar-nav{display: none;}
 #images{margin: 0px; width: 100%;}

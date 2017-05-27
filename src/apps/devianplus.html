@@ -12,6 +12,7 @@
 <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
 <script src="../js/language.js" type="text/javascript"></script>
 <script src="../js/api/filesaver.js" type="text/javascript"></script>
+<script src="/js/api/location_GET.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/jquery/jquery.contextmenu.css">
 <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
@@ -53,11 +54,26 @@
         <h4 class="modal-title" langchrome="app_dp_import"></h4>
       </div>
       <div class="modal-body">
+	  
+	  
+<div id="import_deviantart">
 
 <input type="text" id="daautodetectsf" class="form-control" langchrome="" langchrome2="app_dp_importexample" tsplaceholder="true"/>
 <br/>
 
 http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtypesf"><option value="gallery">gallery</option><option value="favourites">favourites</option></select> / <input type="text" id="favfoldersf"/>
+
+</div>
+
+<div id="import_derpibooru" class="hide">
+
+<input type="text" id="daautodetectsf2" class="form-control" langchrome="" langchrome2="app_dp_importexample2" tsplaceholder="true"/>
+<br/>
+
+https://derpibooru.org/ <select id="favtypesf2"><option value="search?q=">search?q=</option><option value="search/">search/</option><option value="galleries/">galleries/</option></select> <input type="text" id="favfoldersf2"/>
+
+</div>
+
 
 <br/>
 
@@ -65,6 +81,10 @@ http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtype
 	  
       </div>
       <div class="modal-footer">
+		<select id="importtype">
+        <option value="deviantart" selected langchrome="deviantart"></option>
+        <option value="derpibooru" langchrome="derpibooru"></option>
+        </select>
         <button type="button" class="clickdevart" langchrome="close" id="dasubclosesf"></button>
         <button type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" ></button>
       </div>
@@ -142,6 +162,18 @@ http:// <input type="text" id="danamesf"/> .deviantart.com / <select id="favtype
 <li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_dp_search" tsplaceholder="true" /></li>
 <li><a id="loadnmbde"><span class="glyphicon glyphicon-picture"></span> : </a> <input type="number" id="loadnumber" min="10" max="99" class="form-group" /></li>
 <li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
+
+
+  <li role="presentation" class="dropdown checknav">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <span langchrome="more"></span> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a id="nsfwfilter" style="cursor: pointer;"><span class="glyphicon"></span> <span langchrome="app_dp_nsfwfilter"></span></a></li>
+      <li><a id="anti_spoiler_filter" style="cursor: pointer;"><span class="glyphicon"></span> <span langchrome="app_dp_anti_spoiler_filter"></span></a></li>
+    </ul>
+  </li>
+
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li><a id="itemnumber"></a></li>

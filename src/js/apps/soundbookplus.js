@@ -3017,7 +3017,7 @@ var items_folder_create_file = [];
 for (i = 0; i < foldercfg[0].children.length; i++) {if((foldercfg[0].children[i].url != null) && (foldercfg[0].children[i].url != undefined) && (foldercfg[0].children[i].url != '')){
 items_folder_create_file.push({'title': foldercfg[0].children[i].title, 'url': foldercfg[0].children[i].url});
 }}
-var json_save_file_st = {'title': foldercfg[0].title,'items': items_folder_create_file};
+var json_save_file_st = {'service': 'super_favbook_plus_sb', 'title': foldercfg[0].title,'items': items_folder_create_file};
 var blob = new Blob([JSON.stringify(json_save_file_st)], {type: "text/plain;charset=utf-8"});
 saveAs(blob, "sfb+_sbp_"+foldercfg[0].title+".txt");
 
@@ -3025,6 +3025,8 @@ saveAs(blob, "sfb+_sbp_"+foldercfg[0].title+".txt");
 
 $("#impcodefolder").click(function(){if($("#codepekxed").val() != ''){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
 var json_save_file_jt = JSON.parse($("#codepekxed").val());
+
+if(json_save_file_jt.service == "super_favbook_plus_sb"){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": json_save_file_jt.title}, function(newfoldersystem2){
 
 for (i = 0; i < json_save_file_jt.items.length; i++) {
@@ -3034,6 +3036,8 @@ $("#resultimportpx2").text(chrome.i18n.getMessage("gapp_folderimcomplete"));
 $("#codepekxed").val('');
 
 });
+}
+
 })}});
 
 

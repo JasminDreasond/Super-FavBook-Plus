@@ -541,6 +541,12 @@ border-radius: 5px;
 background: linear-gradient(-90deg, rgba(230, 230, 230, 0.8), rgba(204, 204, 204, 0.8));
 }
 
+.addedfavimage{
+background: #00af00 !important;
+color: #005803;
+opacity: 1 !important;
+}
+
 figure:hover #removefavclick{
 opacity: 1;
 }
@@ -560,6 +566,11 @@ color: #FFF;
 
 .artmark{
 background-color: #baccb3 !important;
+}
+
+
+.warn-content{
+color: #de3535;
 }
 
 
@@ -653,3 +664,6 @@ background: linear-gradient(#E6F788, #C0EC30);
 #copytextdapkl input[type="submit"]:active{
 background: linear-gradient(#92C01F, #BBD167);
 }
+
+
+#daautodetectsf2{text-align: center;}

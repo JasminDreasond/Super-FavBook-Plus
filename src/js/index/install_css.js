@@ -20,7 +20,7 @@ window.resizeTo(widthwn,heightwn);
 	
 function checklinesetk(cssitem){
 
-if((cssitem.startsWith('Author:') == false) && (cssitem.startsWith('URL:') == false) && (cssitem.startsWith('Page:') == false) && (cssitem.startsWith('Name:') == false) && (cssitem.startsWith('Type:') == false)){
+if((cssitem.startsWith('Author:') == false) && (cssitem.startsWith('URL:') == false) && (cssitem.startsWith('Page:') == false) && (cssitem.startsWith('Name:') == false) && (cssitem.startsWith('Notype:') == false) && (cssitem.startsWith('Type:') == false)){
 if((cssitem.indexOf('http://') > -1) || (cssitem.indexOf('https://') > -1) || (cssitem.indexOf('ftp://') > -1) || (cssitem.indexOf('file://') > -1)){
 
 if(cssitem.indexOf('file://') > -1){var warntypecss = 'file';}
@@ -60,6 +60,16 @@ $("#authorlist_css").attr('page', datauserpek);
 
 var datauserpek = cssitem.replace('Name: ', '').replace('Name:', '');
 document.title = datauserpek;
+
+} else if(cssitem.startsWith('Notype:')){
+
+var datauserpek = cssitem.replace('Notype: ', '').replace('NoType:', '').replace(/ /g,'').replace("\r", "").split(",");
+$("#installselect option:selected").prop('selected', false);
+
+$("#installselect option[value='all']").remove();
+if((datauserpek[0] != null) || (datauserpek[0] != undefined)){$("#installselect option[value='"+datauserpek[0]+"']").remove();}
+if((datauserpek[1] != null) || (datauserpek[2] != undefined)){$("#installselect option[value='"+datauserpek[1]+"']").remove();}
+if((datauserpek[3] != null) || (datauserpek[3] != undefined)){$("#installselect option[value='"+datauserpek[2]+"']").remove();}
 
 } else if(cssitem.startsWith('Type:')){
 
