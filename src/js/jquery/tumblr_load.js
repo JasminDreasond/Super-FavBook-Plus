@@ -1,6 +1,6 @@
 /**
 
- * https://github.com/JackieApkon
+ * https://github.com/JackieApkon/Super-FavBook-Plus
  * Version : 1.0
  * By Jackie Apkon
  * License : MIT

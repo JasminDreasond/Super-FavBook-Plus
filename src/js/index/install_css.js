@@ -1,3 +1,13 @@
+
+/**
+
+ * Super FavBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 function startdownloadst(){chrome.storage.local.get({download_code_css: "", loadsync: "local"}, function(download_st){if(download_st.download_code_css != ""){
 
 // Base

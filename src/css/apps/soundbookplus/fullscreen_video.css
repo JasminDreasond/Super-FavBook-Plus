@@ -1,3 +1,13 @@
+
+/*
+
+ * SoundBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+
+*/
+
 body{overflow: hidden !important;}
 #musicthumbnail, #images , #folders, #separatorpfx, .navbar-fixed-top, .navbar-fixed-bottom .background, .navbar-fixed-bottom .background2{display: none;} 
 

@@ -1,8 +1,19 @@
+
+/**
+
+ * SoundBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 //Player Type
 var playertype = "none"
 var apicount = 3;
 var apiready = 0;
 var newdetectvideo = false;
+var repeatavxvideo_newplaylist;
 
 
 //Notification Playlist Complete
@@ -221,6 +232,7 @@ chrome.notifications.clear("musicct");
 var youtubeplayer;
 var dailymotionplayer;
 var youtubeplaylist = null;
+var youtubeplaylist2 = null;
 var dailymotionlist = null;
 var newvideodetect = true;
 var createnewplaylistid;
@@ -2128,6 +2140,123 @@ var itemnamesetbase = data[artcountpx].title.replace(itemnamesetkx, "").replace(
 var itemnamesetkst = itemnamesetbase.split('x')[0];
 var itemnamesetkfn = itemnamesetbase.split('::SETCUSTOMTIMEPX=')[0].replace(itemnamesetkst+"x", "");
 
+
+
+if((data[artcountpx].url.startsWith("https://www.youtube.com/playlist?list=")) || (data[artcountpx].url.startsWith("http://www.youtube.com/playlist?list="))){
+
+finalcomplete = true;
+pagesforsecpg = 0
+$("#moreclick, #moreclick2").off("click").remove();
+$("#selectmultimusic2 input").prop("checked", false);
+var numberimgdetectpx = 0
+pageclicknumberpmax = 0
+playlistpx = []
+var playlistaddauto = {}
+folderpxsepx = true
+
+volumeenabled = true;
+$("#nextimageclickpx, #previousimageclickpx").removeClass("limitpagepx");
+pagesforsecpg = 9999999999
+createdmore = false
+$("[id='openmusic']").off("click contextmenu");
+$("[id='removefavclick']").off("click");
+$("[id='renamefavclick']").off("click");
+$("[id='timefavclick']").off("click");
+$("#moreclick, #moreclick2").off("click").remove();
+
+$("#imagelist").empty().append($("<center>").append($("<a>", {href: data[artcountpx].url, target: "_blank"}).append($("<h2>").text(data[artcountpx].title))));
+
+repeatavxvideo_newplaylist = false;
+
+var theurl_playlist = data[artcountpx].url
+.replace("https://www.youtube.com/playlist?list=", "")
+.replace("http://www.youtube.com/playlist?list=", "");
+
+function actionyoutubeplaylist2(dataplaylist, theurl_playlist){
+youtubeplaylist2.pauseVideo();
+if(dataplaylist == "error"){
+$("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimerror")); loadingset(false); recpagespxerk({"intro" :"again"});
+}
+else if(dataplaylist == "ready"){youtubeplaylist2.cuePlaylist({
+list:theurl_playlist,
+index:0,
+startSeconds:0,
+suggestedQuality:"small"});}
+else{if(repeatavxvideo_newplaylist == false){
+
+// GERADOR
+repeatavxvideo_newplaylist = true 
+
+
+
+
+
+function checkfinishst(numbercheck){if(countpxsk == numbercheck){
+generatorimages(videolistpk, videolistpk.length, "folder");
+}}
+
+var countpxsk = 0;
+
+var videolistpk = [];
+
+function launchgetplaylist(){if(countpxsk != youtubeplaylist2.getPlaylist().length){
+
+$.ajax({
+url: "https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids="+youtubeplaylist2.getPlaylist()[countpxsk]+"&mynumber="+youtubeplaylist2.getPlaylist().length,
+}).done(function(datavideopx) {
+
+countpxsk = countpxsk+1
+videolistpk.push({'title': datavideopx["video"][0]["title"], 'url': this.url
+.replace("https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids=", "https://www.youtube.com/watch?v=")
+.replace("&mynumber="+getParameterByName("mynumber", this.url), ""), id: Number(countpxsk)+Number(data[artcountpx].url.replace(/[^0-9\.]+/g, '').replace(/\./g, '').replace(/\,/g, '')),
+'web': true
+});
+
+checkfinishst(Number(getParameterByName("mynumber", this.url)));
+launchgetplaylist();
+
+})
+}}
+
+launchgetplaylist();
+
+
+
+
+
+}}
+}
+
+if(youtubeplaylist2 == null){
+youtubeplaylist2 = new YT.Player('youtubeplaylist2', {
+height: '0',
+width: '0',
+videoId: 'TIAbeZOdjNc',
+events: {
+'onReady': function(){actionyoutubeplaylist2("ready", theurl_playlist)},
+'onStateChange': function(){actionyoutubeplaylist2(theurl_playlist);},
+'onError': function(){actionyoutubeplaylist2("error")}
+}
+});
+}
+else{
+youtubeplaylist2.cuePlaylist({
+list: theurl_playlist,
+index:0,
+startSeconds:0,
+suggestedQuality:"small"});
+}
+
+
+
+
+
+
+
+}
+
+else{
+
 if((typemusicload == "youtube") || (typemusicload == "dailymotion")){
 
 $("#imagelist").append($("<div>", {id: "objfavit"+data[artcountpx].id, folderurl:  data[artcountpx].url, foldertitle: itemnamesetkx, checkedload: checkedart, folderidopend: folderopeneddt, starts: itemnamesetkst, ends: itemnamesetkfn}).append(
@@ -2169,8 +2298,72 @@ return false;
 
 }
 
-endloadgeneratorbase();
+if((data[artcountpx].url == null) || (data[artcountpx].url != undefined)){create_folder_web_url = data[artcountpx].url;}
+else{create_folder_web_url = "yay";}
+if((data[artcountpx].title == null) || (data[artcountpx].title != undefined)){create_folder_web_title = data[artcountpx].title;}
+else{create_folder_web_title = "yay";}
+
+if(data[artcountpx].web == true){
+
+$("#imagelist").addClass("imagelist_web");
+$("#selectionoptions2").addClass("hide");
+$("[id='selectmultimusic'], [id='renamefavclick'], [id='timefavclick']").remove();
+
+$("#removefavclick:not(.removemodi)").addClass("removemodi").off("click").removeClass("glyphicon-remove").addClass("glyphicon-plus").click(function(){
+	
+if($(this).attr("class").indexOf("addedfavimage") > -1){
+
+chrome.bookmarks.remove($(this).attr("folder_web_id"));
+$(this).removeClass("addedfavimage").removeAttr("folder_web_id");
+
 }
+else{
+
+$(this).addClass("checkfavclickimage");
+chrome.bookmarks.getSubTree($("#folderlist .active").attr("foldermyidauto") ,function(folderimagerepeat){
+
+var repeat_web_image = false;
+for(i = 0; i < folderimagerepeat[0].children.length; i++){
+if(folderimagerepeat[0].children[i].url == $("[id^='objfavit']").has(".checkfavclickimage").attr("folderurl")){var repeat_web_image = true;}
+}
+
+if(repeat_web_image == false){
+chrome.bookmarks.create({"parentId": $("#folderlist .active").attr("foldermyidauto"), "title": $("[id^='objfavit']:has(.checkfavclickimage) p").text(), "url": $("[id^='objfavit']").has(".checkfavclickimage").attr("folderurl")}, function(dataclick_favweb){
+$(".checkfavclickimage").addClass("addedfavimage").removeClass("checkfavclickimage").attr("folder_web_id", dataclick_favweb.id);
+});
+}
+else{$(".checkfavclickimage").removeClass("checkfavclickimage");}
+
+});
+
+}});
+
+chrome.bookmarks.getSubTree($("#folderlist .active").attr("foldermyidauto") ,function(folderimagerepeat){
+
+var repeat_web_image = false;
+for(i = 0; i < folderimagerepeat[0].children.length; i++){
+if(folderimagerepeat[0].children[i].url == create_folder_web_url){
+var repeat_web_image = true;
+var repeat_web_id = folderimagerepeat[0].children[i].id;
+}
+}
+
+if(repeat_web_image == true){
+$("#imagelist div[folderurl='"+create_folder_web_url+"'] #removefavclick").addClass("addedfavimage").attr("folder_web_id", repeat_web_id);
+}
+
+});
+
+}
+
+else{
+$("#selectionoptions2").removeClass("hide");
+$("#imagelist").removeClass("imagelist_web");
+}
+
+
+endloadgeneratorbase();
+}}
 
 if(artcountpx == maxitem){finalcomplete = true}
 else{finalcomplete = false}
@@ -2516,23 +2709,39 @@ var gettitlepage = prompt(chrome.i18n.getMessage("app_sp_foldername")+":", "");
 chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
 chrome.bookmarks.create({"parentId": favdata[0].id, "title": gettitlepage}, function(newfavpxsd){
 
-createnewplaylistid = newfavpxsd.id
-var countpxsk = 1
-for(var prop in youtubeplaylist.getPlaylist()) {
-if(countpxsk == Number(youtubeplaylist.getPlaylist().length)){loadingset(false); recpagespxerk({"intro" :"again"}); $("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimcomplete"));}
-if(youtubeplaylist.getPlaylist().hasOwnProperty(prop)){
+function checkfinishst(numbercheck){if(countpxsk == numbercheck){
+for(i = 0; i < videolistpk.length; i++){
+chrome.bookmarks.create({"parentId": createnewplaylistid, "title": videolistpk[i].title, "url": videolistpk[i].url});
+}
+loadingset(false); recpagespxerk({"intro" :"again"}); $("#resultimportpx").text(chrome.i18n.getMessage("gapp_folderimcomplete"));
+}}
 
-countpxsk = countpxsk+1
+createnewplaylistid = newfavpxsd.id;
+var countpxsk = 0;
+
+var videolistpk = [];
+
+function launchgetplaylist(){if(countpxsk != youtubeplaylist.getPlaylist().length){
 
 $.ajax({
-url: "https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids="+youtubeplaylist.getPlaylist()[prop],
+url: "https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids="+youtubeplaylist.getPlaylist()[countpxsk]+"&mynumber="+youtubeplaylist.getPlaylist().length,
 }).done(function(datavideopx) {
-	
-chrome.bookmarks.create({"parentId": createnewplaylistid, "title": datavideopx["video"][0]["title"], "url": this.url.replace("https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids=", "https://www.youtube.com/watch?v=")})
+
+countpxsk = countpxsk+1
+videolistpk.push({'title': datavideopx["video"][0]["title"], 'url': this.url
+.replace("https://www.youtube.com/list_ajax?style=json&action_get_templist=1&video_ids=", "https://www.youtube.com/watch?v=")
+.replace("&mynumber="+getParameterByName("mynumber", this.url), "")
+});
+
+checkfinishst(Number(getParameterByName("mynumber", this.url)));
+launchgetplaylist();
 
 })
-
 }}
+
+launchgetplaylist();
+
+
 
 })
 })

@@ -1,3 +1,13 @@
+
+/*
+
+ * SoundBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+
+*/
+
 /* Intro */
 
 #creditslivepx{
@@ -685,6 +695,9 @@ color: #000;
 
 /* Music List */
 
+.imagelist_web{
+margin: 25px !important;
+}
 
 #imagelist div[id^="objfavit"] #openmusic{
 padding: 5px 20px;
@@ -765,9 +778,13 @@ padding: 2px 5px 0px 6px;
 
 
 
-#selectionoptions2{
-
+.addedfavimage{
+background: #00af00 !important;
+color: #005803;
+opacity: 1 !important;
 }
+
+
 
 .clickoptionsmusic2{
 opacity: 1 !important;

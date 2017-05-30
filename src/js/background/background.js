@@ -1,3 +1,13 @@
+
+/**
+
+ * Super FavBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 function startmenu(){
 
 // Intro

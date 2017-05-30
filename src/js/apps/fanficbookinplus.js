@@ -1,3 +1,13 @@
+
+/**
+
+ * Fanfic Bookin Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 $("body").append($("<div>", {id: "scrollup", class: "glyphicon glyphicon-arrow-up"}).click(
 function(){ $("html, body").animate({ scrollTop: 0 }, "slow");}).affix({offset:{top: 575}}))
 

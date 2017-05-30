@@ -1,3 +1,13 @@
+
+/**
+
+ * Super FavBook Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 var widgetIframe = document.getElementById('sc-widget'),
 widget = SC.Widget(widgetIframe);
 

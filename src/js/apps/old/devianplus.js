@@ -1,4 +1,13 @@
 
+/**
+
+ * Fanfic Bookin Plus
+ * https://github.com/JackieApkon/Super-FavBook-Plus
+ * By Jackie Apkon
+ * License : MIT
+ 
+**/
+
 // Derpibooru
 	
 else if(validatorurlda.startsWith("https://derpibooru.org/")){
