@@ -288,10 +288,10 @@
     "message":"Wiki"
   },
   "disable":{
-    "message":"Enable"
+    "message":"Disable"
   },
   "enable":{
-    "message":"Disable"
+    "message":"Enable"
   },
   "thumb":{
     "message":"Thumb"
@@ -579,7 +579,7 @@
     "message":"Confirme sua ação"
   },
   "app_sp_items":{
-    "message":"itens"
+    "message":"Items"
   },
   "app_sp_to":{
     "message":"para"
@@ -591,13 +591,13 @@
     "message":"Pasta Demo de Vídeos"
   },
   "app_sp_videoview_fullscreen":{
-    "message":"Tela Cheia"
+    "message":"Full Screen"
   },
   "app_sp_enablevideo":{
-    "message":"Ativar Vídeo"
+    "message":"Enable Video"
   },
   "app_sp_moreoptions":{
-    "message":"Mais Opções"
+    "message":"More Options"
   },
   "app_sp_finishplaylist":{
     "message":"Tocar Playlist Apenas uma Vez"
@@ -612,19 +612,19 @@
     "message":"Error: API Desativado"
   },
   "app_sp_theatremode":{
-    "message":"Modo Teatro"
+    "message":"Theater Mode"
   },
   "app_sp_advideo":{
     "message":"Vídeo Publicitário"
   },
   "tumblr_postdefaultname":{
-    "message":"Abrir Postagem"
+    "message":"Open Post"
   },
   "tumblr_noneposts":{
     "message":"Nenhuma postagem foi encontrada"
   },
   "tumblr_removetag":{
-    "message":"Remover a Tag"
+    "message":"Remove Tag"
   },
   "tumblr":{
     "message":"Tumblr"
