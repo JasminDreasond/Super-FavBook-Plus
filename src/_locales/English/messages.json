@@ -24,7 +24,7 @@
     "message":"FanFic Bookin"
   },
   "options_title":{
-    "message":"Bem Vindo!"
+    "message":"Welcome!"
   },
   "options_text1":{
     "message":"Por favor, escolha um software para usar"
@@ -141,34 +141,34 @@
     "message":"Status"
   },
   "code":{
-    "message":"Código"
+    "message":"Code"
   },
   "close":{
-    "message":"Fechar"
+    "message":"Close"
   },
   "save":{
-    "message":"Salvar"
+    "message":"Save"
   },
   "send":{
-    "message":"Enviar"
+    "message":"Send"
   },
   "error":{
     "message":"Error"
   },
   "loading":{
-    "message":"Carregando"
+    "message":"Loading"
   },
   "option":{
-    "message":"Opção"
+    "message":"Option"
   },
   "value":{
-    "message":"Valor"
+    "message":"Value"
   },
   "credits":{
-    "message":"Créditos"
+    "message":"Credits"
   },
   "options":{
-    "message":"Opções"
+    "message":"Options"
   },
   "progressbar":{
     "message":"Barra de Progresso"
@@ -177,10 +177,10 @@
     "message":"Restaurar Padrão"
   },
   "confirm":{
-    "message":"Confirmar"
+    "message":"Confirm"
   },
   "show":{
-    "message":"Mostrar"
+    "message":"Show"
   },
   "selectall":{
     "message":"Selecionar Tudo"
@@ -192,16 +192,16 @@
     "message":"Nenhum"
   },
   "next":{
-    "message":"Próximo"
+    "message":"Next"
   },
   "previous":{
-    "message":"Anterior"
+    "message":"Previous"
   },
   "refresh":{
     "message":"Refresh"
   },
   "reload":{
-    "message":"Recarregar"
+    "message":"Reload"
   },
   "changecolor":{
     "message":"Trocar Cor"
@@ -210,13 +210,13 @@
     "message":"Refletir"
   },
   "openlink":{
-    "message":"Abrir URL"
+    "message":"Open URL"
   },
   "repeat":{
-    "message":"Repetir"
+    "message":"Repeat"
   },
   "random":{
-    "message":"Aleatório"
+    "message":"Random"
   },
   "play":{
     "message":"Play"
@@ -225,58 +225,58 @@
     "message":"Volume"
   },
   "notifications":{
-    "message":"Notificações"
+    "message":"Notifications"
   },
   "welcome":{
-    "message":"Bem Vindo"
+    "message":"Welcome"
   },
   "start":{
-    "message":"Começar"
+    "message":"Start"
   },
   "end":{
-    "message":"Fim"
+    "message":"End"
   },
   "remove":{
-    "message":"Remover"
+    "message":"Remove"
   },
   "reset":{
-    "message":"Resetar"
+    "message":"Reset"
   },
   "cancel":{
-    "message":"Cancelar"
+    "message":"Cancel"
   },
   "replace":{
-    "message":"Substituir"
+    "message":"Replace"
   },
   "home":{
     "message":"Home"
   },
   "more":{
-    "message":"Mais"
+    "message":"More"
   },
   "all":{
-    "message":"Tudo"
+    "message":"All"
   },
   "max":{
-    "message":"Máximo"
+    "message":"Max"
   },
   "profile":{
-    "message":"Perfil"
+    "message":"Profile"
   },
   "gallery":{
-    "message":"Galeria"
+    "message":"Gallery"
   },
   "prints":{
     "message":"Prints"
   },
   "favourites":{
-    "message":"Favoritos"
+    "message":"Favourites"
   },
   "journal":{
-    "message":"Jornal"
+    "message":"Journal"
   },
   "page":{
-    "message":"Página"
+    "message":"Page"
   },
   "by":{
     "message":"Por"
@@ -288,25 +288,25 @@
     "message":"Wiki"
   },
   "disable":{
-    "message":"Desativar"
+    "message":"Enable"
   },
   "enable":{
-    "message":"Ativar"
+    "message":"Disable"
   },
   "thumb":{
     "message":"Thumb"
   },
   "video":{
-    "message":"Vídeo"
+    "message":"Video"
   },
   "export":{
-    "message":"Exportar"
+    "message":"Export"
   },
   "import":{
-    "message":"Importar"
+    "message":"Import"
   },
   "click":{
-    "message":"Clicar"
+    "message":"Click"
   },
   "url":{
     "message":"URL"
@@ -324,13 +324,13 @@
     "message":"Sync"
   },
   "author":{
-    "message":"Autor"
+    "message":"Author"
   },
   "install":{
-    "message":"Instalar"
+    "message":"Install"
   },
   "unistall":{
-    "message":"Desinstalar"
+    "message":"Uninstall"
   },
   "gapp_newfolder":{
     "message":"Nova Pasta Criada!"
@@ -351,13 +351,13 @@
     "message":"Carregamento por página"
   },
   "gapp_importpages":{
-    "message":"Importar Páginas"
+    "message":"Import Pages"
   },
   "gapp_livemode":{
-    "message":"Modo Live"
+    "message":"Live Mode"
   },
   "gapp_closelive":{
-    "message":"Fechar Modo Live"
+    "message":"Close Live Mode"
   },
   "gapp_nothingfolder":{
     "message":"Nada nesta pasta"
@@ -372,7 +372,7 @@
     "message":"Esta é a Home"
   },
   "gapp_folderid":{
-    "message":"ID da Pasta"
+    "message":"Folder ID"
   },
   "gapp_welcome_text":{
     "message":"Esta é a sua página de Favoritos do Chrome"
@@ -387,7 +387,7 @@
     "message":"Sua nova pasta foi criada com sucesso! Favor, recarregue a página."
   },
   "gapp_demofolder":{
-    "message":"Pasta Demo"
+    "message":"Demo Folder"
   },
   "gapp_filedemo1":{
     "message":"URL Demo 1"
@@ -441,25 +441,25 @@
     "message":"por"
   },
   "app_dp_openimage":{
-    "message":"Abrir Imagem"
+    "message":"Open Image"
   },
   "app_dp_openprofile":{
-    "message":"Abrir Perfil"
+    "message":"Open Profile"
   },
   "app_dp_customiconscredit":{
     "message":"Ícones Personalizados - Créditos"
   },
   "app_dp_getthumbcode":{
-    "message":"Código Thumb"
+    "message":"Thumb Code"
   },
   "app_dp_geticoncode":{
-    "message":"Código Icon"
+    "message":"Icon Code"
   },
   "app_dp_getdevcode":{
-    "message":"Código Dev"
+    "message":"Dev Code"
   },
   "app_dp_nsfwfilter":{
-    "message":"Filtro NSFW (+18)"
+    "message":"NSFW Filter (+18)"
   },
   "app_dp_anti_spoiler_filter":{
     "message":"Anti Spoiler"
@@ -468,7 +468,7 @@
     "message":"SoundBook Plus - Music List"
   },
   "app_sp_livemode":{
-    "message":"Modo Live - Opções de Tema"
+    "message":"Live Mode - Theme Options"
   },
   "app_sp_backgroundcolor":{
     "message":"Background Color"
@@ -516,13 +516,13 @@
     "message":"Text"
   },
   "app_sp_importexport":{
-    "message":"Importar \/ Exportar"
+    "message":"Import \/ Export"
   },
   "app_sp_exportcolors":{
-    "message":"Exportar Cores"
+    "message":"Export Colrs"
   },
   "app_sp_import":{
-    "message":"Importar Cores"
+    "message":"Import Colors"
   },
   "app_sp_importtitle":{
     "message":"Importar uma Playlist ou Álbum para o Google Chrome"
@@ -567,7 +567,7 @@
     "message":"Envie sua música favorita para a pasta"
   },
   "app_sp_foldername":{
-    "message":"Nome da pasta"
+    "message":"Folder Name"
   },
   "app_sp_setcustomtime":{
     "message":"Definir Tempo Personalizado"
