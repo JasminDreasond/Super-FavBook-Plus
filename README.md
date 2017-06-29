@@ -51,4 +51,5 @@ All softwares is powered by a Website API | This extension is not affiliated or 
 
 <h1>Extension folder in bookmark</h1>
 <img src="https://github.com/JackieApkon/Super-FavBook-Plus/blob/master/PRINTS/v42342v.PNG?raw=true" alt="yay"/>
+<img src="https://github.com/JackieApkon/Super-FavBook-Plus/blob/master/PRINTS/2017-06-29_07-54-48.gif?raw=true" alt="yay"/>
 </center>
