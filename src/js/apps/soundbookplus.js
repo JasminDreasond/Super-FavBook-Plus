@@ -806,7 +806,7 @@ else if(volumeapp < 0.20){$("#volumeico").addClass("glyphicon-volume-down");}
 else{$("#volumeico").addClass("glyphicon-volume-up");}
 
 // SoundCloud
-if(api_soundcloud == true){widget.setVolume(Number(volumeapp))}
+if(api_soundcloud == true){widget.setVolume(Number(volumeapp)*100)}
 // Dailymotion
 if(api_dailymotion == true){dailymotionplayer.setVolume(Number(volumeapp))}
 // Youtube
@@ -2566,9 +2566,9 @@ checkcheckboxst();
 function searchfolder(detectagain){chrome.bookmarks.search({"title": chrome.i18n.getMessage("app_sp_folder")}, function(favdata){
 if(favdata[0] == null){chrome.bookmarks.create({"parentId": "1", "title": chrome.i18n.getMessage("app_sp_folder")}, function(newfoldersystem){
 chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("gapp_demofolder")}, function(newfoldersystem2){
-chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://soundcloud.com/jackiedreasond/jackie-dreasond-theme"});
-chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://soundcloud.com/jackiedreasond/jukine-theme-star-fox-64-fan-made"});
-chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://soundcloud.com/jackiedreasond/dubstell-fest"});	
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://soundcloud.com/jasmindreasond/jackie-dreasond-theme"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://soundcloud.com/jasmindreasond/jukine-theme-star-fox-64-fan-made"});
+chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://soundcloud.com/jasmindreasond/dubstell-fest"});	
 });
 chrome.bookmarks.create({"parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("app_sp_examplemusic")}, function(newfoldersystem2){
 chrome.bookmarks.create({"parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://www.youtube.com/watch?v=eeNDSe8HfcM"});
