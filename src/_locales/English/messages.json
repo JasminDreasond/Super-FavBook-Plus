@@ -1,0 +1,665 @@
+{
+  "translator_text":{
+    "message":""
+  },
+  "translator_name":{
+    "message":"Crowdin Community"
+  },
+  "translator_page":{
+    "message":"https:\/\/crowdin.com\/project\/super-favbook-plus"
+  },
+  "appName":{
+    "message":"Super FavBook Plus"
+  },
+  "appDesc":{
+    "message":"Sua nova super biblioteca de favoritos"
+  },
+  "appdevianplus":{
+    "message":"Devian Plus"
+  },
+  "appsoundbookplus":{
+    "message":"SoundBook Plus"
+  },
+  "appfanficbookinplus":{
+    "message":"FanFic Bookin"
+  },
+  "options_title":{
+    "message":"Welcome!"
+  },
+  "options_text1":{
+    "message":"Por favor, escolha um software para usar"
+  },
+  "options_text2":{
+    "message":"Desativar API"
+  },
+  "options_text3":{
+    "message":"Compartilhe esta extensão com seus amigos"
+  },
+  "options_checkapi":{
+    "message":"Checar API Status"
+  },
+  "options_privacy":{
+    "message":"Política de Privacidade"
+  },
+  "options_privacy_text":{
+    "message":"Ao usar este produto, você concorda em armazenar dados em seu navegador para salvar todo o seu progresso. \nEsta extensão não exibi anúncios e não coletará suas informações em momento algum durante o uso. \n\nTodos os softwares são alimentados por uma Website API | Esta extensão não é afiliada ou endossada"
+  },
+  "options_credit":{
+    "message":"feito por"
+  },
+  "options_tumblr_description":{
+    "message":"Novidades e Outros"
+  },
+  "options_desktop_text_1":{
+    "message":"Adicione esta página em sua Desktop"
+  },
+  "options_desktop_text_2":{
+    "message":"Abra esta"
+  },
+  "options_desktop_text_3":{
+    "message":"em seu navegador. Agora..."
+  },
+  "options_desktop_text_4":{
+    "message":"Vai até o topo Direito, clique em Mais"
+  },
+  "options_desktop_text_5":{
+    "message":"Mais Ferramentas"
+  },
+  "options_desktop_text_6":{
+    "message":"Adicionar à área de trabalho. Favor, não esqueça de marcar o Abrir em nova janela."
+  },
+  "options_desktop_text_7":{
+    "message":"Usuários de Windows"
+  },
+  "options_desktop_text_8":{
+    "message":"Usuários de Linux"
+  },
+  "options_desktop_text_9":{
+    "message":"Usuários de Chromebook"
+  },
+  "options_desktop_text_10":{
+    "message":"Adicionar para taskbar"
+  },
+  "options_desktop_text_11":{
+    "message":"Adicionar para desktop"
+  },
+  "options_desktop_text_12":{
+    "message":"Adicionar para shelf"
+  },
+  "options_desktop_text_13":{
+    "message":"Diretório do Ícone Corrigido"
+  },
+  "options_custom_theme":{
+    "message":"Tema Personalizado"
+  },
+  "options_externallist":{
+    "message":"Lista de arquivos externos presentes"
+  },
+  "options_customerror_1":{
+    "message":"As seguintes áreas de Tema Personalizado não possuem o comentário"
+  },
+  "options_customerror_2":{
+    "message":"para confirmar o código."
+  },
+  "customtheme_invalid":{
+    "message":"Tema Personalizado Inválido!"
+  },
+  "customtheme_getcode":{
+    "message":"Download Tema Personalizado - Selecionado"
+  },
+  "customtheme_geturl":{
+    "message":"Download Tema Personalizado - URL"
+  },
+  "checkapi_title":{
+    "message":"Checar API Status"
+  },
+  "checkapi_main":{
+    "message":"Status de API"
+  },
+  "checkapi_main2":{
+    "message":"Status de Serviço"
+  },
+  "checkapi_scapi":{
+    "message":"SoundCloud API"
+  },
+  "checkapi_ytapi":{
+    "message":"Youtube API"
+  },
+  "checkapi_dmapi":{
+    "message":"Dailymotion API"
+  },
+  "checkapi_daapi":{
+    "message":"Deviantart API"
+  },
+  "checkapi_dbapi":{
+    "message":"Derpibooru API"
+  },
+  "checkapi_service":{
+    "message":"Serviço"
+  },
+  "checkapi_status":{
+    "message":"Status"
+  },
+  "code":{
+    "message":"Code"
+  },
+  "close":{
+    "message":"Close"
+  },
+  "save":{
+    "message":"Save"
+  },
+  "send":{
+    "message":"Send"
+  },
+  "error":{
+    "message":"Error"
+  },
+  "loading":{
+    "message":"Loading"
+  },
+  "option":{
+    "message":"Option"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "credits":{
+    "message":"Credits"
+  },
+  "options":{
+    "message":"Options"
+  },
+  "progressbar":{
+    "message":"Barra de Progresso"
+  },
+  "restoredefault":{
+    "message":"Restaurar Padrão"
+  },
+  "confirm":{
+    "message":"Confirm"
+  },
+  "show":{
+    "message":"Show"
+  },
+  "selectall":{
+    "message":"Selecionar Tudo"
+  },
+  "unknown":{
+    "message":"Desconhecido"
+  },
+  "none":{
+    "message":"Nenhum"
+  },
+  "next":{
+    "message":"Next"
+  },
+  "previous":{
+    "message":"Previous"
+  },
+  "refresh":{
+    "message":"Refresh"
+  },
+  "reload":{
+    "message":"Reload"
+  },
+  "changecolor":{
+    "message":"Trocar Cor"
+  },
+  "reflect":{
+    "message":"Refletir"
+  },
+  "openlink":{
+    "message":"Open URL"
+  },
+  "repeat":{
+    "message":"Repeat"
+  },
+  "random":{
+    "message":"Random"
+  },
+  "play":{
+    "message":"Play"
+  },
+  "volume":{
+    "message":"Volume"
+  },
+  "notifications":{
+    "message":"Notifications"
+  },
+  "welcome":{
+    "message":"Welcome"
+  },
+  "start":{
+    "message":"Start"
+  },
+  "end":{
+    "message":"End"
+  },
+  "remove":{
+    "message":"Remove"
+  },
+  "reset":{
+    "message":"Reset"
+  },
+  "cancel":{
+    "message":"Cancel"
+  },
+  "replace":{
+    "message":"Replace"
+  },
+  "home":{
+    "message":"Home"
+  },
+  "more":{
+    "message":"More"
+  },
+  "all":{
+    "message":"All"
+  },
+  "max":{
+    "message":"Max"
+  },
+  "profile":{
+    "message":"Profile"
+  },
+  "gallery":{
+    "message":"Gallery"
+  },
+  "prints":{
+    "message":"Prints"
+  },
+  "favourites":{
+    "message":"Favourites"
+  },
+  "journal":{
+    "message":"Journal"
+  },
+  "page":{
+    "message":"Page"
+  },
+  "by":{
+    "message":"Por"
+  },
+  "enter":{
+    "message":"Entrar"
+  },
+  "wiki":{
+    "message":"Wiki"
+  },
+  "disable":{
+    "message":"Disable"
+  },
+  "enable":{
+    "message":"Enable"
+  },
+  "thumb":{
+    "message":"Thumb"
+  },
+  "video":{
+    "message":"Video"
+  },
+  "export":{
+    "message":"Export"
+  },
+  "import":{
+    "message":"Import"
+  },
+  "click":{
+    "message":"Click"
+  },
+  "url":{
+    "message":"URL"
+  },
+  "beta":{
+    "message":"BETA"
+  },
+  "desktop":{
+    "message":"Desktop"
+  },
+  "local":{
+    "message":"Local"
+  },
+  "sync":{
+    "message":"Sync"
+  },
+  "author":{
+    "message":"Author"
+  },
+  "install":{
+    "message":"Install"
+  },
+  "unistall":{
+    "message":"Uninstall"
+  },
+  "gapp_newfolder":{
+    "message":"Nova Pasta Criada!"
+  },
+  "gapp_checkfolder":{
+    "message":"Por favor, cheque agora a sua biblioteca de favoritos."
+  },
+  "gapp_folderhomenm":{
+    "message":"Nome da pasta Home"
+  },
+  "gapp_loading":{
+    "message":"Por favor, espere um momento..."
+  },
+  "gapp_collections":{
+    "message":"COLEÇÕES CHROME"
+  },
+  "gapp_loadperpage":{
+    "message":"Carregamento por página"
+  },
+  "gapp_importpages":{
+    "message":"Import Pages"
+  },
+  "gapp_livemode":{
+    "message":"Live Mode"
+  },
+  "gapp_closelive":{
+    "message":"Close Live Mode"
+  },
+  "gapp_nothingfolder":{
+    "message":"Nada nesta pasta"
+  },
+  "gapp_itemfolder":{
+    "message":"Item na pasta"
+  },
+  "gapp_itemsfolder":{
+    "message":"Itens na pasta"
+  },
+  "gapp_folderhome":{
+    "message":"Esta é a Home"
+  },
+  "gapp_folderid":{
+    "message":"Folder ID"
+  },
+  "gapp_welcome_text":{
+    "message":"Esta é a sua página de Favoritos do Chrome"
+  },
+  "gapp_artcredits":{
+    "message":"Arte feita por"
+  },
+  "gapp_folderimerror":{
+    "message":"Erro detectado na URL!"
+  },
+  "gapp_folderimcomplete":{
+    "message":"Sua nova pasta foi criada com sucesso! Favor, recarregue a página."
+  },
+  "gapp_demofolder":{
+    "message":"Demo Folder"
+  },
+  "gapp_filedemo1":{
+    "message":"URL Demo 1"
+  },
+  "gapp_filedemo2":{
+    "message":"URL Demo 2"
+  },
+  "gapp_filedemo3":{
+    "message":"URL Demo 3"
+  },
+  "gapp_opennewfolder":{
+    "message":"Abrir Nova Pasta"
+  },
+  "gapp_pagecode_title":{
+    "message":"Inserir um código de Pasta Fav"
+  },
+  "app_fb_folder":{
+    "message":"FanFic Bookin - Fic List"
+  },
+  "app_fb_import":{
+    "message":"Importar uma pasta de fanfic para seu Google Chrome"
+  },
+  "app_fb_urlerror":{
+    "message":"ERROR NA URL!"
+  },
+  "app_fb_search":{
+    "message":"Procurar Fics na pasta"
+  },
+  "app_fb_welcome_text":{
+    "message":"Envie sua Fic para a pasta"
+  },
+  "app_dp_folder":{
+    "message":"DevianPlus - FavPage"
+  },
+  "app_dp_import":{
+    "message":"Importar uma página de Favoritos ou Galeria para o Google Chrome"
+  },
+  "app_dp_importexample":{
+    "message":"http:\/\/example.deviantart.com\/favourites\/"
+  },
+  "app_dp_importexample2":{
+    "message":"https:\/\/derpibooru.org\/galleries\/exemplo"
+  },
+  "app_dp_search":{
+    "message":"Procurar imagens na pasta"
+  },
+  "app_dp_welcome_text":{
+    "message":"Envie sua arte para a pasta"
+  },
+  "app_dp_by":{
+    "message":"por"
+  },
+  "app_dp_openimage":{
+    "message":"Open Image"
+  },
+  "app_dp_openprofile":{
+    "message":"Open Profile"
+  },
+  "app_dp_customiconscredit":{
+    "message":"Ícones Personalizados - Créditos"
+  },
+  "app_dp_getthumbcode":{
+    "message":"Thumb Code"
+  },
+  "app_dp_geticoncode":{
+    "message":"Icon Code"
+  },
+  "app_dp_getdevcode":{
+    "message":"Dev Code"
+  },
+  "app_dp_nsfwfilter":{
+    "message":"NSFW Filter (+18)"
+  },
+  "app_dp_anti_spoiler_filter":{
+    "message":"Anti Spoiler"
+  },
+  "app_sp_folder":{
+    "message":"SoundBook Plus - Music List"
+  },
+  "app_sp_livemode":{
+    "message":"Live Mode - Theme Options"
+  },
+  "app_sp_backgroundcolor":{
+    "message":"Background Color"
+  },
+  "app_sp_button":{
+    "message":"Button"
+  },
+  "app_sp_buttonhover":{
+    "message":"Button Hover"
+  },
+  "app_sp_buttonclick":{
+    "message":"Button Click"
+  },
+  "app_sp_buttonactive":{
+    "message":"Button Active"
+  },
+  "app_sp_time":{
+    "message":"Time"
+  },
+  "app_sp_author":{
+    "message":"Author"
+  },
+  "app_sp_progressbar":{
+    "message":"Progress Bar"
+  },
+  "app_sp_progressbarcomplete":{
+    "message":"Progress Bar Complete"
+  },
+  "app_sp_progressbaricon":{
+    "message":"Progress Bar Icon"
+  },
+  "app_sp_progressbariconative":{
+    "message":"Progress Bar Icon Active"
+  },
+  "app_sp_progressbariconhover":{
+    "message":"Progress Bar Icon Hover"
+  },
+  "app_sp_volumeclick":{
+    "message":"Volume Click"
+  },
+  "app_sp_volumebarclick":{
+    "message":"Volume Bar Click"
+  },
+  "app_sp_text":{
+    "message":"Text"
+  },
+  "app_sp_importexport":{
+    "message":"Import \/ Export"
+  },
+  "app_sp_exportcolors":{
+    "message":"Export Colrs"
+  },
+  "app_sp_import":{
+    "message":"Import Colors"
+  },
+  "app_sp_importtitle":{
+    "message":"Importar uma Playlist ou Álbum para o Google Chrome"
+  },
+  "app_sp_yt_small":{
+    "message":"Baixo"
+  },
+  "app_sp_yt_medium":{
+    "message":"Médio"
+  },
+  "app_sp_yt_large":{
+    "message":"Grande"
+  },
+  "app_sp_yt_hd720":{
+    "message":"HD 720p"
+  },
+  "app_sp_yt_hd1080":{
+    "message":"HD 1080p"
+  },
+  "app_sp_yt_highres":{
+    "message":"Alto"
+  },
+  "app_sp_yt_importexample":{
+    "message":"https:\/\/www.youtube.com\/playlist?list=Exemplo"
+  },
+  "app_sp_sc_importexample":{
+    "message":"https:\/\/soundcloud.com\/example\/sets\/exemplo"
+  },
+  "app_sp_dm_importexample":{
+    "message":"http:\/\/www.dailymotion.com\/playlist\/exemplo"
+  },
+  "app_sp_search":{
+    "message":"Procurar músicas na pasta"
+  },
+  "app_sp_reloadplaylist":{
+    "message":"Recarregar Playlist"
+  },
+  "app_sp_play":{
+    "message":"Play \/ Pause"
+  },
+  "app_sp_welcome_text":{
+    "message":"Envie sua música favorita para a pasta"
+  },
+  "app_sp_foldername":{
+    "message":"Folder Name"
+  },
+  "app_sp_setcustomtime":{
+    "message":"Definir Tempo Personalizado"
+  },
+  "app_sp_changefilename":{
+    "message":"Trocar nome do Arquivo"
+  },
+  "app_sp_confirmaction":{
+    "message":"Confirme sua ação"
+  },
+  "app_sp_items":{
+    "message":"Items"
+  },
+  "app_sp_to":{
+    "message":"para"
+  },
+  "app_sp_replacefilename":{
+    "message":"Substituir nome do Arquivo"
+  },
+  "app_sp_examplemusic":{
+    "message":"Pasta Demo de Vídeos"
+  },
+  "app_sp_videoview_fullscreen":{
+    "message":"Full Screen"
+  },
+  "app_sp_enablevideo":{
+    "message":"Enable Video"
+  },
+  "app_sp_moreoptions":{
+    "message":"More Options"
+  },
+  "app_sp_finishplaylist":{
+    "message":"Tocar Playlist Apenas uma Vez"
+  },
+  "app_sp_errorurl":{
+    "message":"Ocorreu um erro na URL"
+  },
+  "app_sp_playlistcomplete":{
+    "message":"Playlist terminou todo o Conteúdo"
+  },
+  "app_sp_errorapi":{
+    "message":"Error: API Desativado"
+  },
+  "app_sp_theatremode":{
+    "message":"Theater Mode"
+  },
+  "app_sp_advideo":{
+    "message":"Vídeo Publicitário"
+  },
+  "tumblr_postdefaultname":{
+    "message":"Open Post"
+  },
+  "tumblr_noneposts":{
+    "message":"Nenhuma postagem foi encontrada"
+  },
+  "tumblr_removetag":{
+    "message":"Remove Tag"
+  },
+  "tumblr":{
+    "message":"Tumblr"
+  },
+  "twitter":{
+    "message":"Twitter"
+  },
+  "facebook":{
+    "message":"Facebook"
+  },
+  "github":{
+    "message":"GitHub"
+  },
+  "deviantart":{
+    "message":"Deviantart"
+  },
+  "derpibooru":{
+    "message":"Derpibooru"
+  },
+  "soundcloud":{
+    "message":"SoundCloud ®"
+  },
+  "youtube":{
+    "message":"Youtube"
+  },
+  "dailymotion":{
+    "message":"Dailymotion"
+  },
+  "fanfiction":{
+    "message":"Fanfiction"
+  },
+  "nyahfanfiction":{
+    "message":"Nyah! Fanfiction"
+  },
+  "fimfiction":{
+    "message":"FIM Fiction"
+  }
+}
