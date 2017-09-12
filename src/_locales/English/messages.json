@@ -464,6 +464,9 @@
   "app_dp_anti_spoiler_filter":{
     "message":"Anti Spoiler"
   },
+  "app_dp_discord_attachment":{
+    "message":"Discord App - Anexo"
+  },
   "app_sp_folder":{
     "message":"SoundBook Plus - Music List"
   },
@@ -661,5 +664,8 @@
   },
   "fimfiction":{
     "message":"FIM Fiction"
+  },
+  "discord":{
+    "message":"Discord App"
   }
 }
