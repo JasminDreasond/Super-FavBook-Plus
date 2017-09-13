@@ -12,6 +12,8 @@ Devian Plus
 
 - Deviantart
 - Derpibooru
+- Discord App
+
 <hr/>
 SoundBook Plus
 
