@@ -11,167 +11,177 @@
 -->
 
 <head>
-<title langchrome="appfanficbookinplus"></title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width" />
-<link rel="icon" href="../appicons/fanficbookinplus.png">
-<script src="../js/jquery/jquery-3.2.0.js" type="text/javascript"></script>
-<script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
-<script src="../js/language.js" type="text/javascript"></script>
-<script src="../js/api/filesaver.js" type="text/javascript"></script>
-<script src="../js/jquery/shortcut.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/globalapp.css">
-<link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/default.css">
-<link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/size.css">
+    <title langchrome="appfanficbookinplus"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../appicons/fanficbookinplus.png">
+    <script src="../js/jquery/jquery-3.2.0.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <script src="../js/language.js" type="text/javascript"></script>
+    <script src="../js/api/filesaver.js" type="text/javascript"></script>
+    <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/default.css">
+    <link rel="stylesheet" type="text/css" href="../css/apps/fanficbookinplus/size.css">
 </head>
 
 <body class="fanficbookplus">
 
-<div id="modalcollection">
+    <div id="modalcollection">
 
-<div id="foldercreatesc" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
-      </div>
-      <div class="modal-body">
-        <p langchrome="gapp_checkfolder"></p>
-		<p><span langchrome="gapp_folderhomenm"></span>: <span langchrome="app_fb_folder"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button id="openclicknewfolder" type="button" class="btn btn-default clickdevart" langchrome="gapp_opennewfolder"></button>
-		<button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
+        <div id="foldercreatesc" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p langchrome="gapp_checkfolder"></p>
+                        <p><span langchrome="gapp_folderhomenm"></span>: <span langchrome="app_fb_folder"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="openclicknewfolder" type="button" class="btn btn-default clickdevart" langchrome="gapp_opennewfolder"></button>
+                        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="erroropen" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" langchrome="error"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p langchrome="app_fb_urlerror"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" langchrome="app_fb_import"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <h4><span langchrome="gapp_pagecode_title"></span>:</h4>
+                        <input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true" />
+
+                        <br/>
+
+                        <div id="resultimportpx2"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default clickdevart2" data-dismiss="modal" langchrome="close"></button>
+                        <button type="submit" id="excodefolder" class="clickdevart2" langchrome="export"></button>
+                        <button type="submit" id="impcodefolder" class="clickdevart2" langchrome="import"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-  </div>
-</div>
 
-<div id="erroropen" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" langchrome="error"></h4>
-      </div>
-      <div class="modal-body">
-        <p langchrome="app_fb_urlerror"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
+    <div id="loading">
+        <div class="glyphicon glyphicon-refresh"></div>
+        <div id="loadingtext" langchrome="loading"></div>
+        <div class="ldmessagepx" langchrome="gapp_loading"></div>
+        <div class="background"></div>
+        <div class="background2"></div>
     </div>
 
-  </div>
-</div>
 
-<div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" langchrome="app_fb_import"></h4>
-      </div>
-      <div class="modal-body">
 
-<h4><span langchrome="gapp_pagecode_title"></span>:</h4>
-<input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true"/>
+    <div id="imgpreview" class="anticlick" style="display: none;">
 
-<br/>
+        <div id="clickclosepagepxk" class="glyphicon glyphicon-remove" langchrome="" langchrome2="close" newtitle_lang="true"></div>
 
-<div id="resultimportpx2"></div>
-	  
-      </div>
-      <div class="modal-footer">
-		<button type="button" class="btn btn-default clickdevart2" data-dismiss="modal" langchrome="close"></button>
-        <button type="submit" id="excodefolder" class="clickdevart2" langchrome="export" ></button>
-        <button type="submit" id="impcodefolder" class="clickdevart2" langchrome="import" ></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
+        <div id="nextimageclickpx" class="glyphicon glyphicon-arrow-right" langchrome="" langchrome2="next" newtitle_lang="true"></div>
+        <div id="previousimageclickpx" class="glyphicon glyphicon-arrow-left" langchrome="" langchrome2="previous" newtitle_lang="true"></div>
+
+        <div id="conteudo" class="container">
+            <center>
+
+            </center>
+        </div>
+
     </div>
-  </div>
-</div>
-
-</div>
-
-
-<div id="loading">
-<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
-<div class="ldmessagepx" langchrome="gapp_loading"></div>
-<div class="background"></div>
-<div class="background2"></div>
-</div>
 
 
 
-<div id="imgpreview" class="anticlick" style="display: none;">
+    <div id="container" class="wait">
 
-<div id="clickclosepagepxk" class="glyphicon glyphicon-remove" langchrome="" langchrome2="close" newtitle_lang="true"></div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand titletop">
+                        <div id="logosoftware"></div><span langchrome="appfanficbookinplus"></span></a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_fb_search" tsplaceholder="true" /></li>
+                    <li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="itemnumber"></a>
+                    </li>
+                    <li>
+                        <a id="openpagefav"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="background"></div>
+            <div class="background2"></div>
+        </nav>
 
-<div id="nextimageclickpx" class="glyphicon glyphicon-arrow-right" langchrome="" langchrome2="next" newtitle_lang="true"></div>
-<div id="previousimageclickpx" class="glyphicon glyphicon-arrow-left" langchrome="" langchrome2="previous" newtitle_lang="true"></div>
+        <div id="folders">
 
-<div id="conteudo" class="container"><center>
-
-</center></div>
-
-</div>
-
-
-
-<div id="container" class="wait">
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand titletop"><div id="logosoftware"></div><span langchrome="appfanficbookinplus"></span></a>
-</div>
-<ul class="nav navbar-nav">
-<li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_fb_search" tsplaceholder="true" /></li>
-<li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><a id="itemnumber"></a></li>
-<li><a id="openpagefav"></a></li>
-</ul>
-</div>
-<div class="background"></div>
-<div class="background2"></div>
-</nav>
-
-<div id="folders">
-
-<p class="title">
-<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
-<br/>
-<span id="openpagefav"></span>
-</p>
+            <p class="title">
+                <span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
+                <br/>
+                <span id="openpagefav"></span>
+            </p>
 
 
-<ul id="defaultfolder"><ul id="folderlist"></ul></ul>
-<div class="background"></div>
-<div class="background2"></div>
-</div>
+            <ul id="defaultfolder">
+                <ul id="folderlist"></ul>
+            </ul>
+            <div class="background"></div>
+            <div class="background2"></div>
+        </div>
 
 
-<div id="images">
-<div id="imagelist"></div>
-<div id="moreclickbase"></div>
-</div>
+        <div id="images">
+            <div id="imagelist"></div>
+            <div id="moreclickbase"></div>
+        </div>
 
-<div class="background_container"></div>
-<div class="background_container2"></div>
-</div>
+        <div class="background_container"></div>
+        <div class="background_container2"></div>
+    </div>
 
-<script src="../js/apps/fanficbookinplus.js" type="text/javascript"></script>
+    <script src="../js/apps/fanficbookinplus.js" type="text/javascript"></script>
 </body>
 
 </html>

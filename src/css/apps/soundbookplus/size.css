@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,158 +7,261 @@
 
 */
 
+
 /* New Screen */
 
 @media screen and (max-width: 1330px) {
-.musicbar .progress, .musicbar #musicbar{width: 42%;}
-#musicbar{margin-left: -42%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 42%;
+    }
+    #musicbar {
+        margin-left: -42%;
+    }
 }
 
 @media screen and (max-width: 1275px) {
-.musicbar .progress, .musicbar #musicbar{width: 40%;}
-#musicbar{margin-left: -40%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 40%;
+    }
+    #musicbar {
+        margin-left: -40%;
+    }
 }
 
 @media screen and (max-width: 1250px) {
-.navbar-fixed-bottom .container-fluid{padding-left: 10px;padding-right: 10px;}
+    .navbar-fixed-bottom .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @media screen and (max-width: 1150px) {
-.musicbar .progress, .musicbar #musicbar{width: 39%;}
-#musicbar{margin-left: -39%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 39%;
+    }
+    #musicbar {
+        margin-left: -39%;
+    }
 }
 
 @media screen and (max-width: 1090px) {
-.musicbar .progress, .musicbar #musicbar{width: 32%;}
-#musicbar{margin-left: -32%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 32%;
+    }
+    #musicbar {
+        margin-left: -32%;
+    }
 }
 
 @media screen and (max-width: 1001px) {
-.navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
-.musicbar .progress, .musicbar #musicbar{width: 27%;}
-#musicbar{margin-left: -27%;}
-#openpagefav, #itemnumber{display: none;}
+    .navbar-fixed-bottom .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 27%;
+    }
+    #musicbar {
+        margin-left: -27%;
+    }
+    #openpagefav,
+    #itemnumber {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 950px) {
-.importclick, #importfavfolder{display: none;}
+    .importclick,
+    #importfavfolder {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 920px) {
-#infoimpmusic{display: block;}
-#scrollup, #scrollup:before, .scrolltothumb #scrollup,.scrolltothumb #scrollup:before{bottom: 115px !important;}
-.musicbar .progress, .musicbar #musicbar{width: 52%;}
-#musicbar{margin-left: -52%;}
-.soundcloudbase{display: none;}
+    #infoimpmusic {
+        display: block;
+    }
+    #scrollup,
+    #scrollup:before,
+    .scrolltothumb #scrollup,
+    .scrolltothumb #scrollup:before {
+        bottom: 115px !important;
+    }
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 52%;
+    }
+    #musicbar {
+        margin-left: -52%;
+    }
+    .soundcloudbase {
+        display: none;
+    }
 }
-
 
 @media screen and (max-width: 767px) {
-.navbar-fixed-bottom .container-fluid{padding-left: 5px;padding-right: 5px;}
-#folders, #images, #search{display: none;}
-#appquality, .navbar-fixed-top li label, .navbar-header{position: absolute;}
-body{overflow: hidden;}
-.cortedps{display: block;}
-.musicbar .progress, .musicbar #musicbar{width: 77%;}
-#musicbar{margin-left: -77%;}
-
-
-.tooltip{display:none !important;}
-#musictimep3{top: 45px;}
-#options{margin-right: -5px !important;}
-
-
-#appquality{
-width: 110px;
-top: -9px;
-right: 15px;
-z-index: 1;
-}
-
-.navbar-fixed-top li label{
-right: 145px;
-top: 8px;
-}
-
-.navbar-header{
-top: -2px;
-z-index: 1;
-}
-
-
-#infoimpmusic{
-width: 300px;
-height: 100px;
-width: 100%;
-position: fixed; 
-margin:0 auto;
-top: 150px;
-display: block;
-}
-
-#musicthumbnail{
-height: 150px;
-width: 150px;
-margin: 0px;
-}
-
-#tableinfomusic{
-margin: 0px;
-text-align: center !important;
-display: inline;
-}
-
-#infomuser{
-font-size: 11pt;
-}
-
-#infomtitle, #infomtitle2{
-font-size: 13pt;
-overflow: hidden; 
-max-height: 24px;
-}
-#infomtitle{display: block;}
-
-@media screen and (max-height: 550px) {
-#infoimpmusic{top: 130px;}	
-}
-
-@media screen and (max-height: 500px) {
-#infoimpmusic{top: 95px;}	
-}
-
-@media screen and (max-height: 435px) {
-#infoimpmusic{top: 100px;}	
-}
-
-@media screen and (max-height: 420px) {
-#infoimpmusic{top: 90px;}	
-}
-
-.background_container, .background_container2{display: none;}
-.background_container3, .background_container4{display: block;}
-
+    .navbar-fixed-bottom .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #folders,
+    #images,
+    #search {
+        display: none;
+    }
+    #appquality,
+    .navbar-fixed-top li label,
+    .navbar-header {
+        position: absolute;
+    }
+    body {
+        overflow: hidden;
+    }
+    .cortedps {
+        display: block;
+    }
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 77%;
+    }
+    #musicbar {
+        margin-left: -77%;
+    }
+    .tooltip {
+        display: none !important;
+    }
+    #musictimep3 {
+        top: 45px;
+    }
+    #options {
+        margin-right: -5px !important;
+    }
+    #appquality {
+        width: 110px;
+        top: -9px;
+        right: 15px;
+        z-index: 1;
+    }
+    .navbar-fixed-top li label {
+        right: 145px;
+        top: 8px;
+    }
+    .navbar-header {
+        top: -2px;
+        z-index: 1;
+    }
+    #infoimpmusic {
+        width: 300px;
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        margin: 0 auto;
+        top: 150px;
+        display: block;
+    }
+    #musicthumbnail {
+        height: 150px;
+        width: 150px;
+        margin: 0px;
+    }
+    #tableinfomusic {
+        margin: 0px;
+        text-align: center !important;
+        display: inline;
+    }
+    #infomuser {
+        font-size: 11pt;
+    }
+    #infomtitle,
+    #infomtitle2 {
+        font-size: 13pt;
+        overflow: hidden;
+        max-height: 24px;
+    }
+    #infomtitle {
+        display: block;
+    }
+    @media screen and (max-height: 550px) {
+        #infoimpmusic {
+            top: 130px;
+        }
+    }
+    @media screen and (max-height: 500px) {
+        #infoimpmusic {
+            top: 95px;
+        }
+    }
+    @media screen and (max-height: 435px) {
+        #infoimpmusic {
+            top: 100px;
+        }
+    }
+    @media screen and (max-height: 420px) {
+        #infoimpmusic {
+            top: 90px;
+        }
+    }
+    .background_container,
+    .background_container2 {
+        display: none;
+    }
+    .background_container3,
+    .background_container4 {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 560px) {
-.musicbar .progress, .musicbar #musicbar{width: 70%;}
-#musicbar{margin-left: -70%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 70%;
+    }
+    #musicbar {
+        margin-left: -70%;
+    }
 }
 
 @media screen and (max-width: 450px) {
-.musicbar .progress, .musicbar #musicbar{width: 65%;}
-#musicbar{margin-left: -65%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 65%;
+    }
+    #musicbar {
+        margin-left: -65%;
+    }
 }
 
 @media screen and (max-width: 425px) {
-.musicbar .progress, .musicbar #musicbar{width: 60%;}
-#musicbar{margin-left: -60%;}
+    .musicbar .progress,
+    .musicbar #musicbar {
+        width: 60%;
+    }
+    #musicbar {
+        margin-left: -60%;
+    }
 }
 
 @media screen and (max-width: 399px) {
-#logo_name_sf{display: none;}
-.titletop{height: 26px; width: 26px;}
-#infomtitle{display: none;}
-#infomtitle2{display: block; width: 260px;}
-.spaceoptions{left: -39px !important;}
+    #logo_name_sf {
+        display: none;
+    }
+    .titletop {
+        height: 26px;
+        width: 26px;
+    }
+    #infomtitle {
+        display: none;
+    }
+    #infomtitle2 {
+        display: block;
+        width: 260px;
+    }
+    .spaceoptions {
+        left: -39px !important;
+    }
 }

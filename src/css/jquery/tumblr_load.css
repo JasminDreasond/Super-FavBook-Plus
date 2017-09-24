@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,112 +7,235 @@
 
 */
 
-.tumblr_base{border: 1px solid #CCC; margin: 25px 0px;}
-
-.tumblr_title_page{margin-top: 0px !important;}
-.tumblr_remove_tag{margin-bottom: 0px;}
-
-.tumblr_share div, .tumblr_share a{
-display: inline !important;
-margin: 0px 8px !important;
-cursor: pointer;
+.tumblr_base {
+    border: 1px solid #CCC;
+    margin: 25px 0px;
 }
 
-.tumblr_share a svg{
-height: 21px;
-width: 21px;
+.tumblr_title_page {
+    margin-top: 0px !important;
 }
 
-.tumblr_share a:hover, .tumblr_share iframe:hover{
-opacity: 0.5;
+.tumblr_remove_tag {
+    margin-bottom: 0px;
 }
 
-.tumblr_posts .tumblr_post, .tumblr_head_page, .tumblr_window_mode, .tumblr_not_result{
-padding: 35px;
-margin: 15px;
-border: 1px solid #CCC;
+.tumblr_share div,
+.tumblr_share a {
+    display: inline !important;
+    margin: 0px 8px !important;
+    cursor: pointer;
 }
 
-.tumblr_head_page a{font-weight: bold;}
-
-
-.tumblr_img img{
-max-width: 90%;
-margin: 0px;
+.tumblr_share a svg {
+    height: 21px;
+    width: 21px;
 }
 
-.tumblr_img a img{
--webkit-transition: -webkit-filter 0.2s;
-transition: -webkit-filter 0.2s;
+.tumblr_share a:hover,
+.tumblr_share iframe:hover {
+    opacity: 0.5;
 }
 
-.tumblr_img a img:hover{
--webkit-filter: opacity(80%);
--webkit-transition: -webkit-filter 0.2s;
-filter: opacity(80%);
-transition: -webkit-filter 0.2s;
+.tumblr_posts .tumblr_post,
+.tumblr_head_page,
+.tumblr_window_mode,
+.tumblr_not_result {
+    padding: 35px;
+    margin: 15px;
+    border: 1px solid #CCC;
 }
 
-.tumblr_img a img:active{
--webkit-filter: opacity(70%);
--webkit-transition: -webkit-filter 0.2s;
+.tumblr_head_page a {
+    font-weight: bold;
 }
 
-.tumblr_url_title{
-font-size: 18pt;
-font-weight: bold;
+.tumblr_img img {
+    max-width: 90%;
+    margin: 0px;
 }
 
-.tumblr_url_title_url{
-margin-bottom: 25px;
-margin-top: -3px;
+.tumblr_img a img {
+    -webkit-transition: -webkit-filter 0.2s;
+    transition: -webkit-filter 0.2s;
 }
 
-.tumblr_url_title a, .tumblr_head_page a, .tumblr_url_title_url a{color: #333 ;}
-.tumblr_url_title a:hover, .tumblr_head_page a:hover, .tumblr_url_title_url a:hover{color: #595959; text-decoration: none;}
-
-.tumblr_video iframe, .tumblr_audio{height: 100%;width: 100%;}
-.tumblr_video{height: 480px; width: 853px; margin: 0px auto;}
-.tumblr_audio .soundcloud_audio_player{height: 150px; width: 100%; margin: 0px;}
-
-.tumblr_conversation{width: 100%;}
-.tumblr_conversation .tumblr_c_t{padding-left: 20%;}
-.tumblr_conversation .tumblr_c_r{padding-right: 20%;}
-.tumblr_c_t{font-weight: bold;}
-.tumblr_url{font-size: 13pt;}
-
-.tumblr_tags{margin: 17px 0px;}
-.tumblr_tags a, .tumblr_time{color: #b3b3b3;}
-.tumblr_tags a{margin: 0px 9px; font-size: 11pt; cursor: pointer;}
-.tumblr_tags a:hover{color: #999; text-decoration: none;}
-
-.tumblr_img img, .tumblr_video, .tumblr_info, .tumblr_audio, .tumblr_conversation{margin-bottom: 25px;}
-.tumblr_hideall_config, .tumblr_top_next_page .tumblr_next_sts{margin-bottom: 0px;}
-
-
-.tumblr_next, .tumblr_previous, .tumblr_pagination:not(.active){cursor: pointer;}
-.tumblr_next_sts{margin-top: 0px;}
-.tumblr_next_sts, .tumblr_not_result{margin-bottom: 15px;}
-.tumblr_load_pagination, .tumblr_anti_pagination{pointer-events: none;}
-.tumblr_next_sts li a{min-width: 60px}
-
-.tumblr_anti_pagination a{color: #414141 !important;}
-
-
-
-
-.tumblr_window_mode{overflow-y: scroll; overflow-x: hidden;}
-
-.tumblr_window_mode .tumblr_posts,.tumblr_window_mode .tumblr_not_result{
-padding: 0px;
-margin: 0px;
-border: 0px solid transparent;
+.tumblr_img a img:hover {
+    -webkit-filter: opacity(80%);
+    -webkit-transition: -webkit-filter 0.2s;
+    filter: opacity(80%);
+    transition: -webkit-filter 0.2s;
 }
 
-.tumblr_window_mode .tumblr_not_result{margin-bottom: 0px;}
+.tumblr_img a img:active {
+    -webkit-filter: opacity(70%);
+    -webkit-transition: -webkit-filter 0.2s;
+}
 
-@media screen and (min-height: 200px) {.tumblr_window_mode{max-height: 200px;}}
-@media screen and (min-height: 400px) {.tumblr_window_mode{max-height: 350px;}}
-@media screen and (min-height: 600px) {.tumblr_window_mode{max-height: 500px;}}
-@media screen and (min-height: 800px) {.tumblr_window_mode{max-height: 650px;}}
-@media screen and (min-height: 1000px) {.tumblr_window_mode{max-height: 800px;}}
+.tumblr_url_title {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.tumblr_url_title_url {
+    margin-bottom: 25px;
+    margin-top: -3px;
+}
+
+.tumblr_url_title a,
+.tumblr_head_page a,
+.tumblr_url_title_url a {
+    color: #333;
+}
+
+.tumblr_url_title a:hover,
+.tumblr_head_page a:hover,
+.tumblr_url_title_url a:hover {
+    color: #595959;
+    text-decoration: none;
+}
+
+.tumblr_video iframe,
+.tumblr_audio {
+    height: 100%;
+    width: 100%;
+}
+
+.tumblr_video {
+    height: 480px;
+    width: 853px;
+    margin: 0px auto;
+}
+
+.tumblr_audio .soundcloud_audio_player {
+    height: 150px;
+    width: 100%;
+    margin: 0px;
+}
+
+.tumblr_conversation {
+    width: 100%;
+}
+
+.tumblr_conversation .tumblr_c_t {
+    padding-left: 20%;
+}
+
+.tumblr_conversation .tumblr_c_r {
+    padding-right: 20%;
+}
+
+.tumblr_c_t {
+    font-weight: bold;
+}
+
+.tumblr_url {
+    font-size: 13pt;
+}
+
+.tumblr_tags {
+    margin: 17px 0px;
+}
+
+.tumblr_tags a,
+.tumblr_time {
+    color: #b3b3b3;
+}
+
+.tumblr_tags a {
+    margin: 0px 9px;
+    font-size: 11pt;
+    cursor: pointer;
+}
+
+.tumblr_tags a:hover {
+    color: #999;
+    text-decoration: none;
+}
+
+.tumblr_img img,
+.tumblr_video,
+.tumblr_info,
+.tumblr_audio,
+.tumblr_conversation {
+    margin-bottom: 25px;
+}
+
+.tumblr_hideall_config,
+.tumblr_top_next_page .tumblr_next_sts {
+    margin-bottom: 0px;
+}
+
+.tumblr_next,
+.tumblr_previous,
+.tumblr_pagination:not(.active) {
+    cursor: pointer;
+}
+
+.tumblr_next_sts {
+    margin-top: 0px;
+}
+
+.tumblr_next_sts,
+.tumblr_not_result {
+    margin-bottom: 15px;
+}
+
+.tumblr_load_pagination,
+.tumblr_anti_pagination {
+    pointer-events: none;
+}
+
+.tumblr_next_sts li a {
+    min-width: 60px
+}
+
+.tumblr_anti_pagination a {
+    color: #414141 !important;
+}
+
+.tumblr_window_mode {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tumblr_window_mode .tumblr_posts,
+.tumblr_window_mode .tumblr_not_result {
+    padding: 0px;
+    margin: 0px;
+    border: 0px solid transparent;
+}
+
+.tumblr_window_mode .tumblr_not_result {
+    margin-bottom: 0px;
+}
+
+@media screen and (min-height: 200px) {
+    .tumblr_window_mode {
+        max-height: 200px;
+    }
+}
+
+@media screen and (min-height: 400px) {
+    .tumblr_window_mode {
+        max-height: 350px;
+    }
+}
+
+@media screen and (min-height: 600px) {
+    .tumblr_window_mode {
+        max-height: 500px;
+    }
+}
+
+@media screen and (min-height: 800px) {
+    .tumblr_window_mode {
+        max-height: 650px;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .tumblr_window_mode {
+        max-height: 800px;
+    }
+}

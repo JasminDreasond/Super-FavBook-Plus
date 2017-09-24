@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,48 +7,53 @@
 
 */
 
-#logosoftware{background-image: url(../../../appicons/logo.png);}
-
-body{background-color: #FFF;}
-.container{
-margin-top: 51px;
+#logosoftware {
+    background-image: url(../../../appicons/logo.png);
 }
 
-.all .complete{
-font-weight: bold;
-color: green;
+body {
+    background-color: #FFF;
 }
 
-.all .error{
-font-weight: bold;
-color: red;
+.container {
+    margin-top: 51px;
 }
 
-.page-header:not(small):not(span){
-color: #0099e6;
-transition: color 0.15s;
+.all .complete {
+    font-weight: bold;
+    color: green;
 }
 
-.page-header:not(small):not(span):hover{
-color: #0077b3;
+.all .error {
+    font-weight: bold;
+    color: red;
+}
+
+.page-header:not(small):not(span) {
+    color: #0099e6;
+    transition: color 0.15s;
+}
+
+.page-header:not(small):not(span):hover {
+    color: #0077b3;
 }
 
 ::-webkit-scrollbar-track {
--webkit-box-shadow: inset 0 0 2px rgba(53,0,0,0.0); 
-background-color: #333;
+    -webkit-box-shadow: inset 0 0 2px rgba(53, 0, 0, 0.0);
+    background-color: #333;
 }
- 
+
 ::-webkit-scrollbar-thumb {
--webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
-background-color: rgba(0, 153, 230, 0.8);
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 153, 230, 0.8);
 }
 
 ::-webkit-scrollbar-thumb:hover {
--webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1);
-background-color: rgba(0, 153, 230, 0.5);
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 153, 230, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:active {
-background-color: rgba(0, 153, 230, 0.4);
--webkit-box-shadow: inset 0 0 2px rgba(0,0,0,1); 
+    background-color: rgba(0, 153, 230, 0.4);
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
 }

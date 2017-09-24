@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,9 +7,20 @@
 
 */
 
+
 /* New Screen */
 
 @media screen and (max-width: 800px) {
-#folders, #openimportbtx, #search, #loadnmbde, #loadnumber, .navbar-nav{display: none;}
-#images{margin: 0px; width: 100%;}
+    #folders,
+    #openimportbtx,
+    #search,
+    #loadnmbde,
+    #loadnumber,
+    .navbar-nav {
+        display: none;
+    }
+    #images {
+        margin: 0px;
+        width: 100%;
+    }
 }

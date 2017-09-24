@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,17 +7,31 @@
 
 */
 
-.optionsox{display: none;}
-.viewitem{display: block;}
-
-.viewitem .moreoptionskx, .viewitem .moreoptionskx2{
-display: inline-block;
+.optionsox {
+    display: none;
 }
 
-.itemsmusic #options{margin-top: 0px;}
-
-.itemsmusic #musictimep1, .musicbar,.itemsmusic #musictimep2,.itemsmusic #infoimpmusic{
-margin-top: 26px;
+.viewitem {
+    display: block;
 }
 
-.spaceoptions, #soundspace{bottom: 6px !important;}
+.viewitem .moreoptionskx,
+.viewitem .moreoptionskx2 {
+    display: inline-block;
+}
+
+.itemsmusic #options {
+    margin-top: 0px;
+}
+
+.itemsmusic #musictimep1,
+.musicbar,
+.itemsmusic #musictimep2,
+.itemsmusic #infoimpmusic {
+    margin-top: 26px;
+}
+
+.spaceoptions,
+#soundspace {
+    bottom: 6px !important;
+}

@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,510 +7,497 @@
 
 */
 
+
 /* Base */
 
-.background, .background2, .background_container, .background_container2, .background_container3, .background_container4{
-height: 100%;
-width: 100%;
-position: absolute;
-top: 0;
-z-index: -1;
-pointer-events: none;
+.background,
+.background2,
+.background_container,
+.background_container2,
+.background_container3,
+.background_container4 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.background_container, .background_container2, .background_container3, .background_container4{position: fixed;}
-.background_container3, .background_container4{display: none;}
-#folders .background, #folders .background2{position: fixed;width: 19%;}
-#homepx{padding: 45px 0px;}
-
-
-
-
-
-.folderitems{
-margin-right: 7px;
+.background_container,
+.background_container2,
+.background_container3,
+.background_container4 {
+    position: fixed;
 }
 
-.folderid{
-font-size: 12pt;
-position: absolute;
-top: 18px;
-right: 10px;
+.background_container3,
+.background_container4 {
+    display: none;
 }
 
-.text_space{
-white-space:pre-wrap;
+#folders .background,
+#folders .background2 {
+    position: fixed;
+    width: 19%;
 }
 
-body{
-overflow-y: scroll;
-background-color: #000;
+#homepx {
+    padding: 45px 0px;
 }
 
-a, #refreshfolderlist{transition: color 0.15s;}
-button, input{transition: background-color 0.15s;}
-#removefavclick, .clickoptionsmusic{transition: background 0.15s, color 0.15s;}
-
-label{
-margin: 0;
+.folderitems {
+    margin-right: 7px;
 }
 
-html,body{
-margin:0; 
-padding:0; 
-height:96%; 
-width:100%;
+.folderid {
+    font-size: 12pt;
+    position: absolute;
+    top: 18px;
+    right: 10px;
 }
 
-
-#refreshfolderlist{
-margin-right: 5px;
-font-size: 10pt;
+.text_space {
+    white-space: pre-wrap;
 }
 
-#refreshfolderlist:hover{
-color: #666;
-cursor: pointer;
+body {
+    overflow-y: scroll;
+    background-color: #000;
 }
 
-.modal .modal-dialog .modal-content{
-border: 0px solid transparent;
-border-radius: 0px;
+a,
+#refreshfolderlist {
+    transition: color 0.15s;
 }
 
-.modal .modal-dialog .modal-content .modal-header h4{
-font-weight: bold !important;
+button,
+input {
+    transition: background-color 0.15s;
 }
 
-.navbar-fixed-top{min-height: 53px;}
-
-.titletop{
-font-family: Tahoma, Geneva, sans-serif;
-font-weight: bold;
-margin-top: 0px;
+#removefavclick,
+.clickoptionsmusic {
+    transition: background 0.15s, color 0.15s;
 }
 
-.titletop #logosoftware{
-height: 26px;
-width: 26px;
-background-size: 26px 26px;
-display: inline-block;
-transition: filter 0.15s, -webkit-filter 0.15s;
+label {
+    margin: 0;
 }
 
-.titletop span{
-display: inline-block;
-position: absolute;
-margin-left: 35px;
-display: none;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 96%;
+    width: 100%;
 }
 
-.navbar-header{width: auto;}
-
-.navbar-inverse{
-margin-bottom: 0px;
+#refreshfolderlist {
+    margin-right: 5px;
+    font-size: 10pt;
 }
 
-.wait:not(#loading){
-pointer-events: none;
-opacity: 0.4;
+#refreshfolderlist:hover {
+    color: #666;
+    cursor: pointer;
 }
 
-
-#container{
-min-height: 100%;
-min-width:100%;
-margin-top: 53px;
+.modal .modal-dialog .modal-content {
+    border: 0px solid transparent;
+    border-radius: 0px;
 }
 
-.navbar-right{margin-top: 1px;}
-
-.imagemodeps .navbar, .modal-open .navbar{
-padding-right: 16px !important;
+.modal .modal-dialog .modal-content .modal-header h4 {
+    font-weight: bold !important;
 }
 
-a:hover{
-text-decoration: none;
+.navbar-fixed-top {
+    min-height: 53px;
 }
 
-
-
-
-
-.clickdevart{
-text-align: center;
-border-radius: 3px;
-padding: 5px 25px;
-z-index: 999999999;
-cursor: pointer;
+.titletop {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    margin-top: 0px;
 }
 
-.clickdevart2{
-text-align: center;
-border: 0px solid transparent;
-border-radius: 3px;
-padding: 10px 25px;
-z-index: 999999999;
-cursor: pointer;
-font-weight: bold;
-font-size: 10pt;
+.titletop #logosoftware {
+    height: 26px;
+    width: 26px;
+    background-size: 26px 26px;
+    display: inline-block;
+    transition: filter 0.15s, -webkit-filter 0.15s;
 }
 
+.titletop span {
+    display: inline-block;
+    position: absolute;
+    margin-left: 35px;
+    display: none;
+}
 
+.navbar-header {
+    width: auto;
+}
 
+.navbar-inverse {
+    margin-bottom: 0px;
+}
+
+.wait:not(#loading) {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+#container {
+    min-height: 100%;
+    min-width: 100%;
+    margin-top: 53px;
+}
+
+.navbar-right {
+    margin-top: 1px;
+}
+
+.imagemodeps .navbar,
+.modal-open .navbar {
+    padding-right: 16px !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.clickdevart {
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 25px;
+    z-index: 999999999;
+    cursor: pointer;
+}
+
+.clickdevart2 {
+    text-align: center;
+    border: 0px solid transparent;
+    border-radius: 3px;
+    padding: 10px 25px;
+    z-index: 999999999;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 10pt;
+}
 
 ::-webkit-scrollbar {
-width: 16px;
+    width: 16px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-margin: 5px !important;
+    margin: 5px !important;
 }
 
 ::-webkit-scrollbar-thumb:active {
-border-radius: 5px;
+    border-radius: 5px;
 }
-
-
-
-
 
 
 /* Scroll Up */
 
-#scrollup{
-transition: opacity 0.35s, z-index 0.35s;
-opacity: 0;
-z-index: -1;
-cursor: pointer;
-
-}
-#scrollup:before{
-transition: background-color 0.12s;
-border-radius: 50%;
-padding: 15px 12px;
-padding-right: 14px;
-}
-#scrollup:before, #scrollup{
-font-size: 25pt;
-position: fixed;
-bottom: 40px;
-right: 25px;
+#scrollup {
+    transition: opacity 0.35s, z-index 0.35s;
+    opacity: 0;
+    z-index: -1;
+    cursor: pointer;
 }
 
-#scrollup[class*="affix"]:not(.affix-top){
-opacity: 1;
-z-index: 1 !important;
+#scrollup:before {
+    transition: background-color 0.12s;
+    border-radius: 50%;
+    padding: 15px 12px;
+    padding-right: 14px;
 }
 
-.modal-open #scrollup:before[class*="affix"]:not(.affix-top), .hidescroll #scrollup:before[class*="affix"]:not(.affix-top){
-//margin-right: 116px !important;
+#scrollup:before,
+#scrollup {
+    font-size: 25pt;
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
 }
 
+#scrollup[class*="affix"]:not(.affix-top) {
+    opacity: 1;
+    z-index: 1 !important;
+}
 
-
-
-
+.modal-open #scrollup:before[class*="affix"]:not(.affix-top),
+.hidescroll #scrollup:before[class*="affix"]:not(.affix-top) {
+    //margin-right: 116px !important;
+}
 
 
 /* Home */
 
-#homepx{
-text-align: center;
+#homepx {
+    text-align: center;
 }
 
-#homepx .title{
-font-size: 35pt;
-margin: 5px;
-font-weight: bold;
+#homepx .title {
+    font-size: 35pt;
+    margin: 5px;
+    font-weight: bold;
 }
 
-#homepx #devmasc{
-margin-top: 25px;
+#homepx #devmasc {
+    margin-top: 25px;
 }
 
-#homepx .credits{
-margin-top: 15px;
+#homepx .credits {
+    margin-top: 15px;
 }
-
-
-
-
-
-
 
 
 /* Loads por segundo */
 
-#loadnumber{
-width: 35px;
-margin: 11px 0px;
-margin-top: 13px;
-top: 5px;
+#loadnumber {
+    width: 35px;
+    margin: 11px 0px;
+    margin-top: 13px;
+    top: 5px;
 }
 
-#loadnmbde{
-display: inline;
-padding-right: 5px;
+#loadnmbde {
+    display: inline;
+    padding-right: 5px;
 }
 
-#moreclickbase{
-margin: 40px auto;
+#moreclickbase {
+    margin: 40px auto;
 }
 
-#moreclickbase div{
-display: inline;
-margin: 0px 10px;
-padding: 7px 35px !important;
+#moreclickbase div {
+    display: inline;
+    margin: 0px 10px;
+    padding: 7px 35px !important;
 }
-
-
-
-
-
 
 
 /* Pesquisar */
 
-#search{
-border-radius: 0px;
-border: 1px solid rgba(38, 38, 38, 0.7);
-padding: 3px;
-margin: 11px 0px;
-margin-top: 12px;
-width: 300px;
+#search {
+    border-radius: 0px;
+    border: 1px solid rgba(38, 38, 38, 0.7);
+    padding: 3px;
+    margin: 11px 0px;
+    margin-top: 12px;
+    width: 300px;
 }
 
-#appquality{border-radius: 0px;}
-
+#appquality {
+    border-radius: 0px;
+}
 
 
 /* Loading */
 
-#loading{
-text-align: center;
-padding: 25px;
-font-size: 15pt;
-line-height: 1.1;
-position: fixed;
-background-color: rgba(240, 255, 234, 0.9);
-border-radius: 3px;
-
-position: fixed;
-width: 500px;
-height: 138px;
-top: 50%;
-left: 50%;
-margin-top: -100px;
-margin-left: -250px;
-
-z-index: 11117;
+#loading {
+    text-align: center;
+    padding: 25px;
+    font-size: 15pt;
+    line-height: 1.1;
+    position: fixed;
+    background-color: rgba(240, 255, 234, 0.9);
+    border-radius: 3px;
+    position: fixed;
+    width: 500px;
+    height: 138px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -250px;
+    z-index: 11117;
 }
 
-#loadingtext{
-margin-bottom: 5px;
-font-weight: bold;
+#loadingtext {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 @keyframes loading {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-
-#loading .glyphicon{
-animation-name: loading;
-animation-duration: 1s;
-animation-iteration-count: infinite;
+#loading .glyphicon {
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
-
-
-
 
 
 /* Pop Template */
 
-#imgpreview, #importfavfolder{
-font-weight: bold;
-text-align: center;
-font-size: 15pt;
-line-height: 1.1;
-position: fixed;
-
-position: fixed;
-width: 100%;
-height: 100%;
-
-margin-top: -50px;
-text-align: center;
-
-background-color: rgba(0,0,0, 0.9);
-z-index: 999999999999999999999999999999999999;
+#imgpreview,
+#importfavfolder {
+    font-weight: bold;
+    text-align: center;
+    font-size: 15pt;
+    line-height: 1.1;
+    position: fixed;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: -50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999999999999999999999999999999999999;
 }
-
-
-
-
 
 
 /* Importar Favoritos */
 
-.importclick{
-padding: 4px 2px !important;
-width: 120px !important;
-margin: 11px 35px;
-margin-top: 13px;
+.importclick {
+    padding: 4px 2px !important;
+    width: 120px !important;
+    margin: 11px 35px;
+    margin-top: 13px;
 }
 
-#importpagesmodal .modal-body{
-text-align: center;
-padding: 25px;
+#importpagesmodal .modal-body {
+    text-align: center;
+    padding: 25px;
 }
 
-#daautodetectsf, .daautodetectsf, .selectpxnyya{
-text-align: center;
+#daautodetectsf,
+.daautodetectsf,
+.selectpxnyya {
+    text-align: center;
 }
 
-#dasubmovsf, #dasubclosesf{
-margin: 0px 15px;
-width: 100px;
+#dasubmovsf,
+#dasubclosesf {
+    margin: 0px 15px;
+    width: 100px;
 }
 
-#resultimportpx, #resultimportpx2{
-margin-top: 10px;
-font-weight: bold;
+#resultimportpx,
+#resultimportpx2 {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-#impofavstpx .modal-footer button{
-margin: 0px 10px;
+#impofavstpx .modal-footer button {
+    margin: 0px 10px;
 }
 
-
-
-
-
-
-
-.anticlick{
-pointer-events: none;
-overflow-y: hidden !important;
+.anticlick {
+    pointer-events: none;
+    overflow-y: hidden !important;
 }
-
-
-
-
-
 
 
 /* Folder List */
 
-[id^="iconopensubfolderpx"]:not(.subfolderctpxcf){
-opacity: 0.5;
-pointer-events: none;
+[id^="iconopensubfolderpx"]:not(.subfolderctpxcf) {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-[id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"], [id^="iconopensubfolderpx"]:before, [id^="iconopensubfolderpx"]:before{
-margin-right: 2px;
+[id^="iconopensubfolderpx"],
+[id^="iconopensubfolderpx"],
+[id^="iconopensubfolderpx"]:before,
+[id^="iconopensubfolderpx"]:before {
+    margin-right: 2px;
 }
 
-[id^="foldersubfolderpx"]{
-display: none;
+[id^="foldersubfolderpx"] {
+    display: none;
 }
 
-[id^="iconopensubfolderpx"]:hover:before{
-cursor: pointer;
+[id^="iconopensubfolderpx"]:hover:before {
+    cursor: pointer;
 }
 
-.homefolder a:before{
-margin-right: 5px;
+.homefolder a:before {
+    margin-right: 5px;
 }
 
-#openpagefav{
-font-size: 8pt;
-cursor: pointer;
+#openpagefav {
+    font-size: 8pt;
+    cursor: pointer;
 }
 
-#defaultfolder{
-margin-left: -30px;
+#defaultfolder {
+    margin-left: -30px;
 }
 
-#folders ul[class="open"]{
-display: block !important;
+#folders ul[class="open"] {
+    display: block !important;
 }
 
-#folders ul{
-list-style: none;
-margin-left: -15px;
+#folders ul {
+    list-style: none;
+    margin-left: -15px;
 }
 
-
-#folders{
-width: 19%;
-position: fixed;
-overflow: scroll;
-height: 100%;
-padding-bottom: 35px !important;
+#folders {
+    width: 19%;
+    position: fixed;
+    overflow: scroll;
+    height: 100%;
+    padding-bottom: 35px !important;
 }
 
-#folderlist li{
-margin: 2px;
-min-width: 120px;
+#folderlist li {
+    margin: 2px;
+    min-width: 120px;
 }
 
-#folders a{
-cursor: pointer;
-margin: 3px;
+#folders a {
+    cursor: pointer;
+    margin: 3px;
 }
 
-#folders .active{
-font-weight: bold;
+#folders .active {
+    font-weight: bold;
 }
 
-#folders .title{
-text-align: center;
-margin-top: 15px;
-font-weight: bold;
-font-size: 9pt;
+#folders .title {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 9pt;
 }
 
-.imagemodeps #folders{
-width: 18.8%;
+.imagemodeps #folders {
+    width: 18.8%;
 }
-
-
-
 
 
 /* Images */
 
-#images{
-text-align: center;
-width: 80%;
-display: inline-block;
-margin-left: 19%;
+#images {
+    text-align: center;
+    width: 80%;
+    display: inline-block;
+    margin-left: 19%;
 }
 
-
-
-#imagelist{
-text-align: center;
+#imagelist {
+    text-align: center;
 }
 
-
-
-.hideurl{
-display: none;
+.hideurl {
+    display: none;
 }
 
-
-
-
-
-
-
-#removefavclick{
-opacity: 0;
-position: relative;
-z-index: 15;
-padding: 3px;
+#removefavclick {
+    opacity: 0;
+    position: relative;
+    z-index: 15;
+    padding: 3px;
 }

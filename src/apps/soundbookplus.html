@@ -11,275 +11,277 @@
 -->
 
 <head>
-<title langchrome="appsoundbookplus"></title>
-<meta charset="UTF-8">
-<link rel="icon" href="../appicons/soundbookplus.png">
-<script src="../js/jquery/jquery-3.2.0.js" type="text/javascript"></script>
-<script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
-<script src="../js/jquery/shortcut.js" type="text/javascript"></script>
-<script src="../js/language.js" type="text/javascript"></script>
-<script src="../js/api/filesaver.js" type="text/javascript"></script>
-<script src="/js/api/location_GET.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/jquery/jquery.contextmenu.css">
-<link rel="stylesheet" type="text/css" href="../css/globalapp.css">
-<link rel="stylesheet" type="text/css" href="../css/apps/soundbookplus/default.css">
-<link id="size_page" rel="stylesheet" type="text/css" href="../css/apps/soundbookplus/size.css">
+    <title langchrome="appsoundbookplus"></title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../appicons/soundbookplus.png">
+    <script src="../js/jquery/jquery-3.2.0.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <script src="../js/jquery/shortcut.js" type="text/javascript"></script>
+    <script src="../js/language.js" type="text/javascript"></script>
+    <script src="../js/api/filesaver.js" type="text/javascript"></script>
+    <script src="/js/api/location_GET.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery/jquery.contextmenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/globalapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/apps/soundbookplus/default.css">
+    <link id="size_page" rel="stylesheet" type="text/css" href="../css/apps/soundbookplus/size.css">
 </head>
 
 <body class="soundbookplus">
 
-<div id="modalcollection">
+    <div id="modalcollection">
 
-<div id="liveconfig" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+        <div id="liveconfig" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" langchrome="app_sp_livemode"></h4>
-      </div>
-      <div class="modal-body">
-	
-<table class="table liveoptionsp">
-    <thead>
-      <tr>
-        <th langchrome="option"></th>
-        <th langchrome="value"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span langchrome="app_sp_backgroundcolor"></span>:</td>
-        <td><input type="color" id="backgroundlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_button"></span>:</td>
-        <td><input type="color" id="buttonslive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_buttonhover"></span>:</td>
-        <td><input type="color" id="buttonshoverlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_buttonclick"></span>:</td>
-        <td><input type="color" id="buttonsclicklive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_buttonactive"></span>:</td>
-        <td><input type="color" id="buttonsactivelive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_time"></span>:</td>
-        <td><input type="color" id="timer1live" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_author"></span>:</td>
-        <td><input type="color" id="authorlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_progressbar"></span>:</td>
-        <td><input type="color" id="progressbarlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_progressbarcomplete"></span>:</td>
-        <td><input type="color" id="progressbar2live" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_progressbaricon"></span>:</td>
-        <td><input type="color" id="progressbariconlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_progressbariconative"></span>:</td>
-        <td><input type="color" id="progressbariconactivelive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_progressbariconhover"></span>:</td>
-        <td><input type="color" id="progressbariconhoverlive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_volumeclick"></span>:</td>
-        <td><input type="color" id="volumeclicklive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_volumebarclick"></span>:</td>
-        <td><input type="color" id="volumebarclicklive" /></td>
-      </tr>
-      <tr>
-        <td><span langchrome="app_sp_text"></span>:</td>
-        <td><input type="color" id="textlive" /></td>
-      </tr>
-	  
-      <tr>
-        <td><span langchrome="import"></span>:</td>
-        <td><textarea id="exportimportcolors"></textarea></td>
-      </tr>
-	  
-      <tr>
-        <td><span langchrome="show"></span>:</td>
-        <td>
-		<label><span langchrome="credits"></span> <input type="checkbox" id="creditslive" /></label>
-		<label><span langchrome="options"></span> <input type="checkbox" id="optionslive" /></label>
-		<label><span langchrome="progressbar"></span> <input type="checkbox" id="progresslive" /></label>
-		</td>
-      </tr>
-    </tbody>
-  </table>
-	
-	</div>
-	
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="close" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="app_sp_exportcolors" id="exportcolorlive"></button>
-        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="app_sp_import" id="importcolorlive"></button>
-        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="restoredefault" id="defaultlive"></button>
-        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="confirm" id="confirmlive"></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
-	</div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" langchrome="app_sp_livemode"></h4>
+                    </div>
+                    <div class="modal-body">
 
-  </div>
-</div>
+                        <table class="table liveoptionsp">
+                            <thead>
+                                <tr>
+                                    <th langchrome="option"></th>
+                                    <th langchrome="value"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span langchrome="app_sp_backgroundcolor"></span>:</td>
+                                    <td><input type="color" id="backgroundlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_button"></span>:</td>
+                                    <td><input type="color" id="buttonslive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_buttonhover"></span>:</td>
+                                    <td><input type="color" id="buttonshoverlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_buttonclick"></span>:</td>
+                                    <td><input type="color" id="buttonsclicklive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_buttonactive"></span>:</td>
+                                    <td><input type="color" id="buttonsactivelive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_time"></span>:</td>
+                                    <td><input type="color" id="timer1live" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_author"></span>:</td>
+                                    <td><input type="color" id="authorlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_progressbar"></span>:</td>
+                                    <td><input type="color" id="progressbarlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_progressbarcomplete"></span>:</td>
+                                    <td><input type="color" id="progressbar2live" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_progressbaricon"></span>:</td>
+                                    <td><input type="color" id="progressbariconlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_progressbariconative"></span>:</td>
+                                    <td><input type="color" id="progressbariconactivelive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_progressbariconhover"></span>:</td>
+                                    <td><input type="color" id="progressbariconhoverlive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_volumeclick"></span>:</td>
+                                    <td><input type="color" id="volumeclicklive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_volumebarclick"></span>:</td>
+                                    <td><input type="color" id="volumebarclicklive" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span langchrome="app_sp_text"></span>:</td>
+                                    <td><input type="color" id="textlive" /></td>
+                                </tr>
 
-<div id="foldercreatesc" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
-      </div>
-      <div class="modal-body">
-        <p langchrome="gapp_checkfolder"></p>
-		<p><span langchrome="gapp_folderhomenm"></span>: <span langchrome="app_sp_folder"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button id="openclicknewfolder" type="button" class="btn btn-default clickdevart" langchrome="gapp_opennewfolder"></button>
-		<button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
-    </div>
+                                <tr>
+                                    <td><span langchrome="import"></span>:</td>
+                                    <td><textarea id="exportimportcolors"></textarea></td>
+                                </tr>
 
-  </div>
-</div>
+                                <tr>
+                                    <td><span langchrome="show"></span>:</td>
+                                    <td>
+                                        <label><span langchrome="credits"></span> <input type="checkbox" id="creditslive" /></label>
+                                        <label><span langchrome="options"></span> <input type="checkbox" id="optionslive" /></label>
+                                        <label><span langchrome="progressbar"></span> <input type="checkbox" id="progresslive" /></label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-<div id="importpagesmodal" class="modal fade bs-example-modal-lg" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
-      </div>
-      <div class="modal-body">
+                    </div>
 
-<span id="soundcloudimport" class="hide">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="close" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="app_sp_exportcolors" id="exportcolorlive"></button>
+                        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="app_sp_import" id="importcolorlive"></button>
+                        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="restoredefault" id="defaultlive"></button>
+                        <button type="button" class="btn btn-default clickdevart liveclickbp" langchrome="confirm" id="confirmlive"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="foldercreatesc" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" langchrome="gapp_newfolder"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p langchrome="gapp_checkfolder"></p>
+                        <p><span langchrome="gapp_folderhomenm"></span>: <span langchrome="app_sp_folder"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="openclicknewfolder" type="button" class="btn btn-default clickdevart" langchrome="gapp_opennewfolder"></button>
+                        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="importpagesmodal" class="modal fade bs-example-modal-lg" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <span id="soundcloudimport" class="hide">
 <input type="text" id="daautodetectsf" class="form-control" langchrome="" langchrome2="app_sp_sc_importexample" tsplaceholder="true" />
 <br/>
 
 https://soundcloud.com/ <input type="text" id="danamesf"/> / <select id="favtypesf"><option value="sets">sets</option><option value="albums">albums</option></select> / <input type="text" id="favfoldersf"/>
 </span>
 
-<span id="youtubeimport">
+                        <span id="youtubeimport">
 <input type="text" id="daautodetectsf2" class="daautodetectsf selectpxnyya form-control" langchrome="" langchrome2="app_sp_yt_importexample" tsplaceholder="true" />
 <br/>
 
 https://www.youtube.com/playlist?list= <input type="text" class="selectpxnyya" id="idplaylist"/>
 </span>
 
-<span id="dailymotionimport" class="hide">
+                        <span id="dailymotionimport" class="hide">
 <input type="text" id="daautodetectsf3" class="daautodetectsf selectpxnyya form-control" langchrome="" langchrome2="app_sp_dm_importexample" tsplaceholder="true" />
 <br/>
 
 http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id="idplaylist2"/>
 </span>
 
-<br/>
+                        <br/>
 
-<div id="resultimportpx"></div>
-	  
-      </div>
-      <div class="modal-footer">
-        <!--<select id="importtype">
+                        <div id="resultimportpx"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <!--<select id="importtype">
         <option value="soundcloud" langchrome="soundcloud"></option
         <option value="youtube" selected langchrome="youtube"></option>
         <option value="dailymotion" langchrome="dailymotion"></option>
         </select>-->
-        <button type="button" class="clickdevart" langchrome="close" id="dasubclosesf"></button>
-        <button type="submit" id="dasubmovsf" class="clickdevart" langchrome="send" ></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
+                        <button type="button" class="clickdevart" langchrome="close" id="dasubclosesf"></button>
+                        <button type="submit" id="dasubmovsf" class="clickdevart" langchrome="send"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <h4><span langchrome="gapp_pagecode_title"></span>:</h4>
+                        <input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true" />
+
+                        <br/>
+
+                        <div id="resultimportpx2"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
+                        <button type="submit" id="excodefolder" class="clickdevart" langchrome="export"></button>
+                        <button type="submit" id="impcodefolder" class="clickdevart" langchrome="import"></button>
+                    </div>
+                    <div class="background"></div>
+                    <div class="background2"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-</div>
 
-<div id="impofavstpx" class="modal fade bs-example-modal-lg" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" langchrome="app_sp_importtitle"></h4>
-      </div>
-      <div class="modal-body">
 
-<h4><span langchrome="gapp_pagecode_title"></span>:</h4>
-<input type="text" id="codepekxed" class="form-control" langchrome="" langchrome2="code" tsplaceholder="true"/>
-
-<br/>
-
-<div id="resultimportpx2"></div>
-	  
-      </div>
-      <div class="modal-footer">
-		<button type="button" class="btn btn-default clickdevart" data-dismiss="modal" langchrome="close"></button>
-        <button type="submit" id="excodefolder" class="clickdevart" langchrome="export" ></button>
-        <button type="submit" id="impcodefolder" class="clickdevart" langchrome="import" ></button>
-      </div>
-    <div class="background"></div>
-    <div class="background2"></div>
+    <div id="loading">
+        <div class="glyphicon glyphicon-refresh"></div>
+        <div id="loadingtext" langchrome="loading"></div>
+        <div class="ldmessagepx" langchrome="gapp_loading"></div>
+        <div class="background"></div>
+        <div class="background2"></div>
     </div>
-  </div>
-</div>
-
-</div>
-
-
-<div id="loading">
-<div class="glyphicon glyphicon-refresh"></div><div id="loadingtext" langchrome="loading"></div>
-<div class="ldmessagepx" langchrome="gapp_loading"></div>
-<div class="background"></div>
-<div class="background2"></div>
-</div>
 
 
 
 
-<div class="soundcloudbase hideplayer">
-<iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jasmindreasond/jackie-dreasond-theme"></iframe>
-<!--<div id="playerspacekt"></div>-->
-<div id="youtubeplayer"></div>
-<div id="dailymotionplayer"></div>
-<div id="youtubeplaylist" class="playlistplayer"></div>
-<div id="youtubeplaylist2" class="playlistplayer"></div>
-<div id="dailymotionplaylist" class="playlistplayer"></div>
-</div>
+    <div class="soundcloudbase hideplayer">
+        <iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jasmindreasond/jackie-dreasond-theme"></iframe>
+        <!--<div id="playerspacekt"></div>-->
+        <div id="youtubeplayer"></div>
+        <div id="dailymotionplayer"></div>
+        <div id="youtubeplaylist" class="playlistplayer"></div>
+        <div id="youtubeplaylist2" class="playlistplayer"></div>
+        <div id="dailymotionplaylist" class="playlistplayer"></div>
+    </div>
 
 
 
 
 
 
-<div id="container" class="wait">
+    <div id="container" class="wait">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand titletop"><div id="logosoftware"></div><span id="logo_name_sf" langchrome="appsoundbookplus"></span></a>
-</div>
-<ul class="nav navbar-nav">
-<li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_sp_search" tsplaceholder="true" /></li>
-<li><select id="appquality" class="form-control">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand titletop">
+                        <div id="logosoftware"></div><span id="logo_name_sf" langchrome="appsoundbookplus"></span></a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><input type="text" id="search" class="form-group" langchrome="" langchrome2="app_sp_search" tsplaceholder="true" /></li>
+                    <li><select id="appquality" class="form-control">
 <option value="small" langchrome="app_sp_yt_small"></option>
 <option value="medium" langchrome="app_sp_yt_medium"></option>
 <option value="large" langchrome="app_sp_yt_large"></option>
@@ -287,101 +289,108 @@ http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id=
 <option value="hd1080" langchrome="app_sp_yt_hd1080"></option>
 <option value="highres" langchrome="app_sp_yt_highres"></option>
 </select></li>
-<li><a id="addnotificationspx" data-placement="bottom"><label><span class="glyphicon glyphicon-bell"></span> <input id="soundbooknoti" type="checkbox" /></label></a></li>
-<li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
-<li><input id="livemode" class="clickdevart2 importclick" langchrome="gapp_livemode" /></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><a id="itemnumber"></a></li>
-<li><a id="openpagefav"></a></li>
-</ul>
-</div>
-<div class="background"></div>
-<div class="background2"></div>
-</nav>
+                    <li><a id="addnotificationspx" data-placement="bottom"><label><span class="glyphicon glyphicon-bell"></span> <input id="soundbooknoti" type="checkbox" /></label></a></li>
+                    <li><input id="openimportbtx" class="clickdevart2 importclick" langchrome="gapp_importpages" /></li>
+                    <li><input id="livemode" class="clickdevart2 importclick" langchrome="gapp_livemode" /></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="itemnumber"></a>
+                    </li>
+                    <li>
+                        <a id="openpagefav"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="background"></div>
+            <div class="background2"></div>
+        </nav>
 
-<div id="folders">
+        <div id="folders">
 
-<p class="title">
-<span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
-<br/>
-<span id="openpagefav"></span>
-</p>
-
-
-<ul id="defaultfolder"><ul id="folderlist"></ul></ul>
-<div class="background"></div>
-<div class="background2"></div>
-</div>
+            <p class="title">
+                <span id="refreshfolderlist" class="glyphicon glyphicon-refresh" langchrome="" langchrome2="refresh" newtitle_lang="true"></span> <span langchrome="gapp_collections"></span>
+                <br/>
+                <span id="openpagefav"></span>
+            </p>
 
 
-<div id="images">
-<div id="selectionoptions2">
-<div class="glyphicon glyphicon-remove clickoptionsmusic2" id="removefavclick2"></div>
-<div class="glyphicon glyphicon-console clickoptionsmusic2" id="renamefavclick2"></div>
-<div class="glyphicon glyphicon-time clickoptionsmusic2" id="timefavclick2"></div>
-<label class="clickoptionsmusic2" id="selectmultimusic2"><span langchrome="selectall"></span> - <input type="checkbox"></label>
-</div>
-<div id="imagelist"></div>
-<div id="moreclickbase"></div>
-</div>
+            <ul id="defaultfolder">
+                <ul id="folderlist"></ul>
+            </ul>
+            <div class="background"></div>
+            <div class="background2"></div>
+        </div>
 
-<div id="separatorpfx"></div>
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-<div class="container-fluid"><center class="itemsmusic">
+        <div id="images">
+            <div id="selectionoptions2">
+                <div class="glyphicon glyphicon-remove clickoptionsmusic2" id="removefavclick2"></div>
+                <div class="glyphicon glyphicon-console clickoptionsmusic2" id="renamefavclick2"></div>
+                <div class="glyphicon glyphicon-time clickoptionsmusic2" id="timefavclick2"></div>
+                <label class="clickoptionsmusic2" id="selectmultimusic2"><span langchrome="selectall"></span> - <input type="checkbox"></label>
+            </div>
+            <div id="imagelist"></div>
+            <div id="moreclickbase"></div>
+        </div>
 
-<span class="options optionsox" id="options">
+        <div id="separatorpfx"></div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
+                <center class="itemsmusic">
+
+                    <span class="options optionsox" id="options">
 <span class="dropdown optionsox moreoptionskx">
 <a class="dropdown-toggle volumeclick glyphicon glyphicon-option-horizontal" data-toggle="dropdown" id="fullscreenico" langchrome="" langchrome2="app_sp_moreoptions" newtitle_lang="true">
 <span class="caret"></span></a>
-<ul class="dropdown-menu spaceoptions">
-<li>
-<a id="reloadfolderlive"><span class="glyphicon glyphicon-refresh"></span> <span langchrome="app_sp_reloadplaylist"></span></a>
-<a id="linkopen" target="_blank"><span class="glyphicon glyphicon-link"></span> <span langchrome="openlink"></span></a>
+                    <ul class="dropdown-menu spaceoptions">
+                        <li>
+                            <a id="reloadfolderlive"><span class="glyphicon glyphicon-refresh"></span> <span langchrome="app_sp_reloadplaylist"></span></a>
+                            <a id="linkopen" target="_blank"><span class="glyphicon glyphicon-link"></span> <span langchrome="openlink"></span></a>
 
-<a id="finishplaylist"><span class="glyphicon glyphicon-eject"></span> <span class="enoroff"></span> <span langchrome="app_sp_finishplaylist" class="text"></span></a>
+                            <a id="finishplaylist"><span class="glyphicon glyphicon-eject"></span> <span class="enoroff"></span> <span langchrome="app_sp_finishplaylist" class="text"></span></a>
 
-<hr/>
+                            <hr/>
 
-<a id="thumbchangep"><span class="glyphicon glyphicon-picture"></span> <span langchrome="app_sp_enablevideo" class="text"></span></a>
-<a id="theatremode"><span class="glyphicon glyphicon-resize-full"></span> <span class="enoroff"></span> <span langchrome="app_sp_theatremode"></span></a>
-<a id="enterfullscreen"><span class="glyphicon glyphicon-fullscreen"></span> <span langchrome="app_sp_videoview_fullscreen" class="text"></span></a>
+                            <a id="thumbchangep"><span class="glyphicon glyphicon-picture"></span> <span langchrome="app_sp_enablevideo" class="text"></span></a>
+                            <a id="theatremode"><span class="glyphicon glyphicon-resize-full"></span> <span class="enoroff"></span> <span langchrome="app_sp_theatremode"></span></a>
+                            <a id="enterfullscreen"><span class="glyphicon glyphicon-fullscreen"></span> <span langchrome="app_sp_videoview_fullscreen" class="text"></span></a>
 
-<hr/>
+                            <hr/>
 
-<a id="enablerepeatmusic"><span class="glyphicon glyphicon-repeat"></span> <span class="enoroff"></span> <span langchrome="repeat"></span></a>
-<a id="enablerandommusic"><span class="glyphicon glyphicon-random"></span> <span class="enoroff"></span> <span langchrome="random"></span></a>
-<a id="closelive" class="hide"><span class="glyphicon glyphicon-remove"></span> <span langchrome="gapp_closelive"></span></a>
-</li>
-<div class="background"></div>
-<div class="background2"></div>
-</ul>
-</span>
+                            <a id="enablerepeatmusic"><span class="glyphicon glyphicon-repeat"></span> <span class="enoroff"></span> <span langchrome="repeat"></span></a>
+                            <a id="enablerandommusic"><span class="glyphicon glyphicon-random"></span> <span class="enoroff"></span> <span langchrome="random"></span></a>
+                            <a id="closelive" class="hide"><span class="glyphicon glyphicon-remove"></span> <span langchrome="gapp_closelive"></span></a>
+                        </li>
+                        <div class="background"></div>
+                        <div class="background2"></div>
+                    </ul>
+                    </span>
 
-<span id="previousimageclickpx" class="glyphicon glyphicon-step-backward stopclick" langchrome="" langchrome2="previous" newtitle_lang="true"></span>
-<span id="playpause" class="glyphicon glyphicon-stop stopclick" langchrome="" langchrome2="app_sp_play" newtitle_lang="true"></span>
-<span id="nextimageclickpx" class="glyphicon glyphicon-step-forward stopclick" langchrome="" langchrome2="next" newtitle_lang="true" ></span>
+                    <span id="previousimageclickpx" class="glyphicon glyphicon-step-backward stopclick" langchrome="" langchrome2="previous" newtitle_lang="true"></span>
+                    <span id="playpause" class="glyphicon glyphicon-stop stopclick" langchrome="" langchrome2="app_sp_play" newtitle_lang="true"></span>
+                    <span id="nextimageclickpx" class="glyphicon glyphicon-step-forward stopclick" langchrome="" langchrome2="next" newtitle_lang="true"></span>
 
 
-<span class="dropdown optionsox moreoptionskx2">
+                    <span class="dropdown optionsox moreoptionskx2">
 <a class="dropdown-toggle volumeclick glyphicon glyphicon-volume-off" data-toggle="dropdown" id="volumeico" langchrome="" langchrome2="volume" newtitle_lang="true">
 <span class="caret"></span></a>
-<ul class="dropdown-menu" id="soundspace">
-<li><input type="range" id="sound" max="100" /></li>
-<div class="background"></div>
-<div class="background2"></div>
-</ul>
-</span>
-</span>
+                    <ul class="dropdown-menu" id="soundspace">
+                        <li><input type="range" id="sound" max="100" /></li>
+                        <div class="background"></div>
+                        <div class="background2"></div>
+                    </ul>
+                    </span>
+                    </span>
 
-<span id="musictimep3">0:00</span>
+                    <span id="musictimep3">0:00</span>
 
-<br class="cortedps"/>
+                    <br class="cortedps" />
 
-<span id="musictimep1">0:00</span>
+                    <span id="musictimep1">0:00</span>
 
-<span class="musicbar">
+                    <span class="musicbar">
 <div class="progress">
 <div class="progress-bar" id="musicbargp" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 <div class="background" style="width: 0%;"></div>
@@ -391,45 +400,47 @@ http://www.dailymotion.com/playlist/ <input type="text" class="selectpxnyya" id=
 <input type="range" id="musicbar" max="100" value="0" disabled />
 </span>
 
-<span id="musictimep2">0:00</span>
+                    <span id="musictimep2">0:00</span>
 
-<span id="infoimpmusic">
+                    <span id="infoimpmusic">
 <span style="background-image: url(/images/noimg.png);" id="musicthumbnail" class="defaultthumb"></span>
-<br class="cortedps"/>
-<table id="tableinfomusic">
+                    <br class="cortedps" />
+                    <table id="tableinfomusic">
 
-<thead>
-<tr><td id="infomuser" langchrome="unknown"></td></tr>
-</thead>
+                        <thead>
+                            <tr>
+                                <td id="infomuser" langchrome="unknown"></td>
+                            </tr>
+                        </thead>
 
-<tbody>
-<tr>
-<td id="infomtitle" langchrome="none"></td>
-<td id="infomtitle2" langchrome="none"></td>
-<td id="infomtitle3" langchrome="none"></td>
-</tr>
-</tbody>
+                        <tbody>
+                            <tr>
+                                <td id="infomtitle" langchrome="none"></td>
+                                <td id="infomtitle2" langchrome="none"></td>
+                                <td id="infomtitle3" langchrome="none"></td>
+                            </tr>
+                        </tbody>
 
-</table>
-</span>
+                    </table>
+                    </span>
 
-</div>
-<div class="background"></div>
-<div class="background2"></div>
-</nav>
+            </div>
+            <div class="background"></div>
+            <div class="background2"></div>
+        </nav>
 
-</center>
+        </center>
 
-<div class="background_container"></div>
-<div class="background_container2"></div>
-<div class="background_container3"></div>
-<div class="background_container4"></div>
-</div>
+        <div class="background_container"></div>
+        <div class="background_container2"></div>
+        <div class="background_container3"></div>
+        <div class="background_container4"></div>
+    </div>
 
 
-<script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
-<script src="https://api.dmcdn.net/all.js" type="text/javascript"></script>
-<script src="../js/apps/soundbookplus.js" type="text/javascript"></script>
+    <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+    <script src="https://api.dmcdn.net/all.js" type="text/javascript"></script>
+    <script src="../js/apps/soundbookplus.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,42 +7,87 @@
 
 */
 
-body{padding: 0px 35px;}
-#logo{height: 60px;}
-
-#customcssbase textarea{height: 80px;}
-
-#csstext{
-width: 100%;
-height: 100px;
-white-space:pre-wrap;
+body {
+    padding: 0px 35px;
 }
 
-#loadcscsstype{width: 100px; display: inline-block}
-
-#csswarns, #csstext{
-min-height: 100px;
-max-height: 100px;
-height: 100px;
-overflow-y: scroll;
-border: 1px solid #CCC;
-border-radius: 5px;
-padding: 3px 12px;
-margin-bottom: 15px;
+#logo {
+    height: 60px;
 }
 
-#csswarns .http{color: #ff6600;}
-#csswarns .https{color: #009900;}
-#csswarns .ftp{color: #b3b300;}
-#csswarns .file{color: #e60000;}
-#csswarns .import{color: #e60000; font-weight: bold;}
+#customcssbase textarea {
+    height: 80px;
+}
 
-.warn_here{padding: 4px 0px;}
+#csstext {
+    width: 100%;
+    height: 100px;
+    white-space: pre-wrap;
+}
 
-.contextMenuPlugin .header{display: none;}
-#creditslist #authorlist_css, #creditslist{margin: 0px 5px;}
-#creditslist #authorlist_css{font-weight: bold;}
-#creditslist #authorlist_css:hover, .selectedplusthumbpx{color: #999; cursor: pointer; transition: color 0.15s;}
+#loadcscsstype {
+    width: 100px;
+    display: inline-block
+}
 
+#csswarns,
+#csstext {
+    min-height: 100px;
+    max-height: 100px;
+    height: 100px;
+    overflow-y: scroll;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 3px 12px;
+    margin-bottom: 15px;
+}
 
-.modal-footer select, .modal-footer button{margin: 0px 5px;}
+#csswarns .http {
+    color: #ff6600;
+}
+
+#csswarns .https {
+    color: #009900;
+}
+
+#csswarns .ftp {
+    color: #b3b300;
+}
+
+#csswarns .file {
+    color: #e60000;
+}
+
+#csswarns .import {
+    color: #e60000;
+    font-weight: bold;
+}
+
+.warn_here {
+    padding: 4px 0px;
+}
+
+.contextMenuPlugin .header {
+    display: none;
+}
+
+#creditslist #authorlist_css,
+#creditslist {
+    margin: 0px 5px;
+}
+
+#creditslist #authorlist_css {
+    font-weight: bold;
+}
+
+#creditslist #authorlist_css:hover,
+.selectedplusthumbpx {
+    color: #999;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.modal-footer select,
+.modal-footer button {
+    margin: 0px 5px;
+}

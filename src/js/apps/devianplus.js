@@ -1010,7 +1010,7 @@ function startfavpage(folderid) {
                                                         "img": chrome.extension.getURL("images/error.png"),
                                                         "height": "200",
                                                         "url": urlinsertxs,
-                                                        "title": "URL Load Failed",
+                                                        "title": responseText,
                                                         "author_url": urlinsertxs,
                                                         "author_name": "",
                                                         "type": "link",
@@ -1480,6 +1480,9 @@ function startfavpage(folderid) {
 
                                         // Image
                                         else {
+
+                                            urlpage = urlpage.split("?q=")[0];
+
                                             $.ajax({ cache: false, dataType: "json", url: "https://derpibooru.org/oembed.json?url=" + urlpage })
                                                 .done(function(derpibooru) {
 
@@ -1517,7 +1520,7 @@ function startfavpage(folderid) {
                                                         "img": chrome.extension.getURL("images/error.png"),
                                                         "height": "200",
                                                         "url": urlinsertxs,
-                                                        "title": "URL Load Failed",
+                                                        "title": responseText,
                                                         "author_url": urlinsertxs,
                                                         "author_name": "",
                                                         "type": "link",

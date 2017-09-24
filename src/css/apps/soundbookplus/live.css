@@ -1,4 +1,3 @@
-
 /*
 
  * SoundBook Plus
@@ -8,34 +7,63 @@
 
 */
 
-body{overflow: hidden !important;}
-
-.navbar-fixed-bottom{
-border-color: transparent;
-height: 61px;
+body {
+    overflow: hidden !important;
 }
 
-.musicbar .progress, .musicbar #musicbar{width: 50%;}
-#musicbar{margin-left: -50%;}
-
-#images , #folders, #separatorpfx, .navbar-fixed-top{display: none;} 
-
-#soundspace{
-left: -159px;
-bottom: -9px;
+.navbar-fixed-bottom {
+    border-color: transparent;
+    height: 61px;
 }
 
-.spaceoptions{bottom: -9px !important; left: -61px; height: 38px; overflow-y: scroll;}
-
-#creditslivepx{
-display: none;
-position: absolute;
-top: 42px;
-left: 25px;
-font-size: 9pt;
-z-index: 15;
+.musicbar .progress,
+.musicbar #musicbar {
+    width: 50%;
 }
 
-.navbar-fixed-bottom .container-fluid{padding-left: 0px;padding-right: 0px;}
-.optionsox{z-index: 15 !important;}
-#previousimageclickpx, #playpause, #nextimageclickpx{z-index: 14 !important;}
+#musicbar {
+    margin-left: -50%;
+}
+
+#images,
+#folders,
+#separatorpfx,
+.navbar-fixed-top {
+    display: none;
+}
+
+#soundspace {
+    left: -159px;
+    bottom: -9px;
+}
+
+.spaceoptions {
+    bottom: -9px !important;
+    left: -61px;
+    height: 38px;
+    overflow-y: scroll;
+}
+
+#creditslivepx {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 25px;
+    font-size: 9pt;
+    z-index: 15;
+}
+
+.navbar-fixed-bottom .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.optionsox {
+    z-index: 15 !important;
+}
+
+#previousimageclickpx,
+#playpause,
+#nextimageclickpx {
+    z-index: 14 !important;
+}
