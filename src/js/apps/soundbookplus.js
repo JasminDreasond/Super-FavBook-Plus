@@ -1,8 +1,8 @@
 /**
 
  * SoundBook Plus
- * https://github.com/JackieApkon/Super-FavBook-Plus
- * By Jackie Apkon
+ * https://github.com/JasminDreasond/Super-FavBook-Plus
+ * By Jasmin Dreasond
  * License : MIT
  
 **/
