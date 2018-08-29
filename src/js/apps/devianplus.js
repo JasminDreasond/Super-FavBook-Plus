@@ -956,10 +956,9 @@ function startfavpage(folderid) {
 
 
 
-
                                         // URL Image
 
-                                        if ((urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))) {
+                                        if ((urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("www.deviantart.com/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))) {
                                             $.ajax({ cache: false, dataType: "json", url: "http://backend.deviantart.com/oembed?url=" + oembed_url })
                                                 .done(function(deviantart) {
 
@@ -1577,9 +1576,9 @@ function searchfolder() {
         if (favdata[0] == null) {
             chrome.bookmarks.create({ "parentId": "1", "title": chrome.i18n.getMessage("app_dp_folder") }, function(newfoldersystem) {
                 chrome.bookmarks.create({ "parentId": newfoldersystem.id, "title": chrome.i18n.getMessage("gapp_demofolder") }, function(newfoldersystem2) {
-                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "http://jackiedreasond.deviantart.com/art/HEEYY-33-648665632" });
-                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "http://jackiedreasond.deviantart.com/art/Jackie-Dreasond-Bed-509279352" });
-                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "http://jackiedreasond.deviantart.com/art/Garry-s-Mod-Theme-Pony-Chrome-Mania-603029978" });
+                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo1"), "url": "https://derpibooru.org/1813780?q=faved_by%3Ajasmindreasond" });
+                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo2"), "url": "https://derpibooru.org/1511736" });
+                    chrome.bookmarks.create({ "parentId": newfoldersystem2.id, "title": chrome.i18n.getMessage("gapp_filedemo3"), "url": "https://www.deviantart.com/jasmindreasond/art/Sweet-Pen-644386639" });
                 });
                 $("#foldercreatesc").modal();
                 $("#openclicknewfolder").click(function() {
@@ -1705,7 +1704,7 @@ function recpagespxerk(data, next) {
 
 
             // Ajax
-            $.ajax({ cache: false, url: "http://" + devname + ".deviantart.com/" + devpagetype + "/" + urlfinaldev + completeurlsx }).done(function(data) {
+            $.ajax({ cache: false, url: "http://www.deviantart.com/" + devname + "/" + devpagetype + "/" + urlfinaldev + completeurlsx }).done(function(data) {
 
                     var gettitlepage = data.match("<title>(.*?)</title>")[1].replace(/\&#039\;/g, "'").replace(/\&quot\;/g, '"');
                     var finddefaultpage = ".folderview-art .torpedo-container .thumb";
@@ -2002,32 +2001,15 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
 function autodetecturlpxs(thishere) {
     if ($(thishere).val().indexOf(".deviantart.com") > -1) {
-        var validatorurlda = $(thishere).val().split('.deviantart.com')[0];
 
-        function removepxsurlk(typeurlfv) {
+        var tinyurl = $(thishere).val().split('/');
 
-            var gepdsdsk1 = $(thishere).val().split('.com/' + typeurlfv + '/')[0]
-            var gepdsdsk2 = $(thishere).val().replace(gepdsdsk1, "")
-            var gepdsdsk3 = gepdsdsk2.replace(".com/" + typeurlfv + "/", "")
-
-            var gepdsdsk11 = $(thishere).val().split('?offset=')[0]
-            var gepdsdsk22 = $(thishere).val().replace(gepdsdsk11, "")
-            var gepdsdsk33 = gepdsdsk22.replace("?offset=", "")
-
-            $("#favfoldersf").val(gepdsdsk3.replace("?offset=" + gepdsdsk33, ""))
-
-            $(thishere).val("");
-
+        $("#danamesf").val(tinyurl[3]);
+        if (($(thishere).val().indexOf(".deviantart.com/favourites") > -1) || ($(thishere).val().indexOf(".deviantart.com/gallery") > -1)) {
+            $("#favtypesf").val(tinyurl[4]);
         }
 
-        $("#danamesf").val(validatorurlda.replace("http://", "").replace("https://", ""));
-        if ($(thishere).val().indexOf(".deviantart.com/favourites") > -1) {
-            $("#favtypesf").val("favourites");
-            removepxsurlk("favourites");
-        } else if ($(thishere).val().indexOf(".deviantart.com/gallery") > -1) {
-            $("#favtypesf").val("gallery");
-            removepxsurlk("gallery");
-        }
+        $(thishere).val("");
 
     }
 }

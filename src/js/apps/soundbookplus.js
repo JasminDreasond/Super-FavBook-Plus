@@ -1759,9 +1759,7 @@ function startfavpage(folderid, detectagain) {
                     if (appquality == "hd1080") { var appqualitycovert = "1080"; }
                     if (appquality == "highres") { var appqualitycovert = "2160"; }
 
-                    dailymotionplayer.load(playlistpxct[pageclicknumberpdss].url.replace("http://www.dailymotion.com/video/", "")
-                        .replace("http://dai.ly/", "").replace("https://www.dailymotion.com/video/", "")
-                        .replace("https://dai.ly/", "").split('?autoPlay=')[0].split('&start=')[0].split('?start=')[0].split('?in=')[0], { quality: appqualitycovert, start: playlistpxct[pageclicknumberpdss].starts, end: playlistpxct[pageclicknumberpdss].ends, autoplay: true });
+                    dailymotionplayer.load(removeParamenters(playlistpxct[pageclicknumberpdss].url).replace("http://www.dailymotion.com/video/", ""), { quality: appqualitycovert, start: playlistpxct[pageclicknumberpdss].starts, end: playlistpxct[pageclicknumberpdss].ends, autoplay: true });
                 } else { errormusicstapi(playlistpxct[pageclicknumberpdss], "dailymotion"); }
             }
 
@@ -1775,17 +1773,13 @@ function startfavpage(folderid, detectagain) {
 
                     if ((playlistpxct[pageclicknumberpdss].starts == null) || (playlistpxct[pageclicknumberpdss].ends == null)) {
                         youtubeplayer.loadVideoById({
-                            'videoId': playlistpxct[pageclicknumberpdss].url
-                                .replace("https://www.youtube.com/watch?v=", "")
-                                .replace("https://youtu.be/", "").split('&list=')[0].split('?list=')[0].split('&index=')[0].split('?in=')[0],
+                            'videoId': getParameterByName("v", playlistpxct[pageclicknumberpdss].url),
                             'suggestedQuality': appquality
                         });
                     } else {
                         custommusictime = true;
                         youtubeplayer.loadVideoById({
-                            'videoId': playlistpxct[pageclicknumberpdss].url
-                                .replace("https://www.youtube.com/watch?v=", "")
-                                .replace("https://youtu.be/", "").split('&list=')[0].split('?list=')[0].split('&index=')[0].split('?in=')[0],
+                            'videoId': getParameterByName("v", playlistpxct[pageclicknumberpdss].url),
                             'suggestedQuality': appquality,
                             'startSeconds': playlistpxct[pageclicknumberpdss].starts,
                             'endSeconds': playlistpxct[pageclicknumberpdss].ends
@@ -2151,7 +2145,6 @@ function startfavpage(folderid, detectagain) {
                 urlpage = data[artcountpx].url;
                 urlname = data[artcountpx].title;
                 urlid = data[artcountpx].id;
-                if (urlpage == null) {} else { if (data[artcountpx].url.indexOf('?in=') > -1) { data[artcountpx].url = data[artcountpx].url.split('?in=')[0]; } }
                 if (urlpage == null) { var subfoldernb = artcountpx }
                 if ((artcountpx == pagesforsecpg) && (start == "folder")) { loadingset(false); return; }
 
@@ -2296,9 +2289,7 @@ function startfavpage(folderid, detectagain) {
 
                                 repeatavxvideo_newplaylist = false;
 
-                                var theurl_playlist = data[artcountpx].url
-                                    .replace("https://www.youtube.com/playlist?list=", "")
-                                    .replace("http://www.youtube.com/playlist?list=", "");
+                                var theurl_playlist = getParameterByName("list", data[artcountpx].url);
 
                                 function actionyoutubeplaylist2(dataplaylist, theurl_playlist) {
                                     youtubeplaylist2.pauseVideo();
@@ -2820,7 +2811,7 @@ $(window).on('load', function() {
 $("#refreshfolderlist").click(function() { location.reload(); });
 
 
-var idfolderpx
+var idfolderpx;
 
 // Gerenciador abrir e fechar
 
@@ -2829,6 +2820,15 @@ function closerecpagespx(exittype) {
 }
 
 function openrecpagespx() { $('#importpagesmodal').modal(); }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2985,50 +2985,12 @@ function recpagespxerk(data) {
         }
 
 
-
-
-
-
-
-
-
-
-        if (typeimportclickp == "dailymotion") {
-
-            if (dailymotionlist == null) {
-
-                //DM.api('/videos', {
-                //  filters: '',
-                //  fields: 'id',
-                //  limit: 100
-                //}, function(response){console.log(JSON.stringify(response));
-
-                //  var daplaylist = response.list;
-                //  dailymotionlist = DM.player(document.getElementById('dailymotionplaylist'), {
-                //    video: daplaylist.shift().id
-                //  });
-                //  dailymotionlist.addEventListener('end', function (e)
-                //  {
-                //    var nextVideo = daplaylist.shift();
-                //    if (nextVideo) {
-                //      e.target.load(nextVideo.id);
-                //    }
-                //  });
-
-                //});
-
-            } else {
-
-            }
-
-        }
-
-
     }
 }
 
-$("#openimportbtx").click(function() { if (api_youtube == true) { recpagespxerk({ "intro": "start" }); } else { $('#impofavstpx').modal(); } })
-    .contextmenu(function() { $('#impofavstpx').modal(); return false; });;
+$("#openimportbtx")
+    //.click(function() { if (api_youtube == true) { recpagespxerk({ "intro": "start" }); } else { $('#impofavstpx').modal(); } })
+    .click(function() { $('#impofavstpx').modal(); return false; });;
 $("#dasubmovsf").click(function() {
     repeatavxvideo = false;
     recpagespxerk({ "intro": "send" });
@@ -3038,86 +3000,16 @@ $("#dasubclosesf").click(function() { closerecpagespx(); });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Auto Detect URL
-
-
-
-
-// SoundCloud
-
-function autodetecturlpxs(thishere) {
-    var validatorurlda = $(thishere).val();
-
-    var preparelinkset = validatorurlda.replace("https://soundcloud.com/", "")
-    var nameprofile = preparelinkset.split('/')[0]
-    var nameprofile = preparelinkset.split('/')[0]
-
-    var typepreprofile = preparelinkset.replace(nameprofile + "/", "")
-    var typepreprofileset = typepreprofile.split('/')[0]
-
-    $("#danamesf").val(nameprofile);
-    if (typepreprofileset == "sets") { $("#favtypesf").val("sets"); } else if (typepreprofileset == "albums") { $("#favtypesf").val("albums"); }
-
-
-    $("#favfoldersf").val(preparelinkset.replace(nameprofile + "/", "").replace(typepreprofileset + "/", ""));
-    $(thishere).val("");
-
-}
-
-$("#daautodetectsf").change(function() { autodetecturlpxs(this); });
-
-
-
-
-
 // Youtube
 
 function autodetecturlpxs2(thishere) {
-    var validatorurlda = $(thishere).val();
 
-    var preparelinkset = validatorurlda.replace("https://youtu.be/", "").replace("https://www.youtube.com/", "");
-
-    if (preparelinkset.startsWith("playlist?list=")) { var preparelinkset = preparelinkset.replace("playlist?list=", "") } else if (preparelinkset.startsWith("watch?v=")) {
-        var preparelinkset = preparelinkset.replace("watch?v=", "").split('&index=')[0];
-        var preparelinkse2t = preparelinkset.split('&list=')[0];
-        var preparelinkset = preparelinkset.replace(preparelinkse2t, "").replace("&list=", "");
-    } else {
-        var preparelinkse2t = preparelinkset.split('?list=')[0];
-        var preparelinkset = preparelinkset.replace(preparelinkse2t, "").replace("?list=", "");
-    }
-
-    $("#idplaylist").val(preparelinkset);
+    $("#idplaylist").val(getParameterByName("list", $(thishere).val()));
     $(thishere).val("");
 
 }
 
 $("#daautodetectsf2").change(function() { autodetecturlpxs2(this); });
-
-// Dailymotion
-
-function autodetecturlpxs3(thishere) {
-    var validatorurlda = $(thishere).val();
-
-    var preparelinkset = validatorurlda.replace("http://www.dailymotion.com/playlist/", "").replace("https://www.dailymotion.com/playlist/", "").split("/1#video=")[0];
-
-    $("#idplaylist2").val(preparelinkset);
-    $(thishere).val("");
-
-}
-
-$("#daautodetectsf3").change(function() { autodetecturlpxs3(this); });
 
 
 
