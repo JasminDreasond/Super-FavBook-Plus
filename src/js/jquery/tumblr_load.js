@@ -19,7 +19,7 @@ WARNING: WORK ONLY WITH ID!
 $("#example").tumblr(
 {
 
-'id': 'jackiedreasond', // Blog Username
+'id': 'jasmindreasond', // Blog Username
 'page': 0, // Page (0 = Page 1)
 'type': 'tags', // Enable Tag Search
 'tag': 'jackie' // Search this tag
@@ -76,8 +76,8 @@ $("#example").tumblr(
 
  Example 2:
 
-$("#example").tumblr({'id': 'jackiedreasond'});
-$("#example").tumblr({'id': 'jackiedreasond'}, {'scroll': false});
+$("#example").tumblr({'id': 'jasmindreasond'});
+$("#example").tumblr({'id': 'jasmindreasond'}, {'scroll': false});
 
 
 
@@ -100,8 +100,10 @@ function systemgentumblrpek(data, thishere, data2, data3, data4, antiscroll, new
     var tagselectedtumblr = '';
     if ((data.type == "tags") || (newtagst != null)) {
         var systemtumblrused = "&tagged=";
-        if (newtagst != null) { var tagselectedtumblr = newtagst; } else { var tagselectedtumblr = data.tag;
-            newtagst = data.tag; }
+        if (newtagst != null) { var tagselectedtumblr = newtagst; } else {
+            var tagselectedtumblr = data.tag;
+            newtagst = data.tag;
+        }
     } else { systemtumblrused = ''; }
 
     if (data4 != null) { data.page = data4; }
@@ -154,8 +156,10 @@ function systemgentumblrpek(data, thishere, data2, data3, data4, antiscroll, new
 
                         if ((data.type != "tags") || (data2.force_disable_tag == true)) {
                             $('#' + $(thishere).attr('id') + " .tumblr_head_page").append($("<h3>", { class: "tumblr_remove_tag" }).append(
-                                $("<button>", { type: "button", class: "btn btn-default" }).text(chrome.i18n.getMessage("tumblr_removetag") + ": ").append($("<strong>").text(decodeURIComponent(newtagst))).click(function() { load_tumblr_disable_click();
-                                    $(thishere).tumblr(data, data2, true, 0, antiscroll, '') })
+                                $("<button>", { type: "button", class: "btn btn-default" }).text(chrome.i18n.getMessage("tumblr_removetag") + ": ").append($("<strong>").text(decodeURIComponent(newtagst))).click(function() {
+                                    load_tumblr_disable_click();
+                                    $(thishere).tumblr(data, data2, true, 0, antiscroll, '')
+                                })
                             ));
                         }
 
@@ -181,31 +185,53 @@ function systemgentumblrpek(data, thishere, data2, data3, data4, antiscroll, new
                                 tumblr.posts[numberpost]["quote-source"] = '';
                                 tumblr.posts[numberpost]["conversation"] = {};
                                 antiinfotmb = 'hide';
-                            } else { tumblr.posts[numberpost]["quote-source"] = "— " + tumblr.posts[numberpost]["quote-source"];
-                                antiinfotmb = ''; }
-                            if (data2.like == false) { tumblr.posts[numberpost]["like-button"] = '';
-                                antliketmb = 'hide'; } else { antliketmb = ''; }
-                            if (data2.reblog == false) { tumblr.posts[numberpost]["reblog-button"] = '';
-                                antreblogtmb = 'hide'; } else { antreblogtmb = ''; }
+                            } else {
+                                tumblr.posts[numberpost]["quote-source"] = "— " + tumblr.posts[numberpost]["quote-source"];
+                                antiinfotmb = '';
+                            }
+                            if (data2.like == false) {
+                                tumblr.posts[numberpost]["like-button"] = '';
+                                antliketmb = 'hide';
+                            } else { antliketmb = ''; }
+                            if (data2.reblog == false) {
+                                tumblr.posts[numberpost]["reblog-button"] = '';
+                                antreblogtmb = 'hide';
+                            } else { antreblogtmb = ''; }
                             if ((data2.like == false) && (data2.reblog == false)) { antsharetmb = 'hide'; } else { antsharetmb = ''; }
-                            if (data2.date == false) { tumblr.posts[numberpost].date = '';
-                                antdatetmb = 'hide'; } else { antdatetmb = ''; }
-                            if (data2.music == false) { tumblr.posts[numberpost]["audio-player"] = '';
-                                antmusictmb = 'hide'; } else { antmusictmb = ''; }
-                            if (data2.photo == false) { tumblr.posts[numberpost]["photo-url-1280"] = '';
-                                antiimgtmb = 'hide'; } else { antiimgtmb = ''; }
-                            if (data2.link == false) { tumblr.posts[numberpost]["link-url"] = '';
-                                antilinktmb = 'hide'; } else { antilinktmb = ''; }
-                            if (data2.video == false) { tumblr.posts[numberpost]["video-player"] = '';
-                                antivideotmb = 'hide'; } else { antivideotmb = ''; }
-                            if (data2.tags == false) { tagtumblr = '';
-                                anttagstmb = 'hide'; } else {
+                            if (data2.date == false) {
+                                tumblr.posts[numberpost].date = '';
+                                antdatetmb = 'hide';
+                            } else { antdatetmb = ''; }
+                            if (data2.music == false) {
+                                tumblr.posts[numberpost]["audio-player"] = '';
+                                antmusictmb = 'hide';
+                            } else { antmusictmb = ''; }
+                            if (data2.photo == false) {
+                                tumblr.posts[numberpost]["photo-url-1280"] = '';
+                                antiimgtmb = 'hide';
+                            } else { antiimgtmb = ''; }
+                            if (data2.link == false) {
+                                tumblr.posts[numberpost]["link-url"] = '';
+                                antilinktmb = 'hide';
+                            } else { antilinktmb = ''; }
+                            if (data2.video == false) {
+                                tumblr.posts[numberpost]["video-player"] = '';
+                                antivideotmb = 'hide';
+                            } else { antivideotmb = ''; }
+                            if (data2.tags == false) {
+                                tagtumblr = '';
+                                anttagstmb = 'hide';
+                            } else {
                                 // Load Tags
                                 anttagstmb = '';
                                 var tagtumblr = [];
 
-                                if ((data.type == "tags") && (data2.force_disable_tag == false)) { var tumblr_click_tagspk = function(thisclick) { window.open($(thisclick).attr('the_href'), '_blank'); } } else { var tumblr_click_tagspk = function(thisclick) { load_tumblr_disable_click();
-                                        $(thishere).tumblr(data, data2, true, 0, antiscroll, $(thisclick).attr('tumblr_tag')); } }
+                                if ((data.type == "tags") && (data2.force_disable_tag == false)) { var tumblr_click_tagspk = function(thisclick) { window.open($(thisclick).attr('the_href'), '_blank'); } } else {
+                                    var tumblr_click_tagspk = function(thisclick) {
+                                        load_tumblr_disable_click();
+                                        $(thishere).tumblr(data, data2, true, 0, antiscroll, $(thisclick).attr('tumblr_tag'));
+                                    }
+                                }
 
                                 if (tumblr.posts[numberpost].tags != undefined) {
                                     for (tagnumber = 0; tagnumber < tumblr.posts[numberpost].tags.length; tagnumber++) {

@@ -191,7 +191,7 @@
 
     "app_dp_folder": { "message": "DevianPlus - FavPage" },
     "app_dp_import": { "message": "Import a favourite or gallery page to your Google Chrome" },
-    "app_dp_importexample": { "message": "http://example.deviantart.com/favourites/" },
+    "app_dp_importexample": { "message": "https://www.deviantart.com/example/favourites/" },
     "app_dp_importexample2": { "message": "https://derpibooru.org/galleries/example" },
     "app_dp_search": { "message": "Search images in the folder" },
     "app_dp_welcome_text": { "message": "Send your favourite art to the folder" },
@@ -239,7 +239,7 @@
     "app_sp_yt_highres": { "message": "Highres" },
     "app_sp_yt_importexample": { "message": "https://www.youtube.com/playlist?list=Example" },
     "app_sp_sc_importexample": { "message": "https://soundcloud.com/example/sets/example" },
-    "app_sp_dm_importexample": { "message": "http://www.dailymotion.com/playlist/example" },
+    "app_sp_dm_importexample": { "message": "https://www.dailymotion.com/playlist/example" },
     "app_sp_search": { "message": "Search musics in the folder" },
     "app_sp_reloadplaylist": { "message": "Reload Playlist" },
     "app_sp_play": { "message": "Play / Pause" },

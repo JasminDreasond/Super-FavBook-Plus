@@ -217,9 +217,9 @@ function startfavpage(folderid) {
 
                 $("<p>", { class: "info" }).text(chrome.i18n.getMessage("gapp_welcome_text")),
                 $("<p>", { class: "info" }).text(chrome.i18n.getMessage("app_dp_welcome_text") + ' "' + chrome.i18n.getMessage("app_dp_folder") + '"'),
-                $("<img>", { id: "devmasc", alt: "devmasc", src: "http://orig11.deviantart.net/9365/f/2009/291/8/3/f_e_l_l_a___deviantart_tour_4_by_greatlp.png" }),
+                $("<img>", { id: "devmasc", alt: "devmasc", src: "https://orig11.deviantart.net/9365/f/2009/291/8/3/f_e_l_l_a___deviantart_tour_4_by_greatlp.png" }),
 
-                $("<p>", { class: "credits" }).text(chrome.i18n.getMessage("gapp_artcredits") + " ").append($("<a>", { href: "http://thekidkaos.deviantart.com/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank" }).text("thekidKaos")),
+                $("<p>", { class: "credits" }).text(chrome.i18n.getMessage("gapp_artcredits") + " ").append($("<a>", { href: "https://www.deviantart.com/thekidkaos/art/F-e-l-l-a-DeviantART-Tour-4-140702952", target: "_blank" }).text("thekidKaos")),
 
                 $("<div>", { class: "custom_theme_img" }),
                 $("<p>", { class: "custom_theme_author" })
@@ -589,11 +589,11 @@ function startfavpage(folderid) {
                         title: chrome.i18n.getMessage("app_dp_openprofile"),
                         items: [
 
-                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "https://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "https://www.deviantart.com/solchu123/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
 
                             null,
 
-                            { label: chrome.i18n.getMessage("page"), icon: 'http://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif', class: 'page2', href: thumbdata.author_url, target: '_blank', action: function() {} }
+                            { label: chrome.i18n.getMessage("page"), icon: 'https://orig03.deviantart.net/5c27/f/2016/073/d/f/bullet_camera_by_solchu123-d9v2xue.gif', class: 'page2', href: thumbdata.author_url, target: '_blank', action: function() {} }
 
                         ]
                     }
@@ -604,17 +604,17 @@ function startfavpage(folderid) {
                         title: chrome.i18n.getMessage("app_dp_openimage"),
                         items: [
 
-                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "https://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "https://www.deviantart.com/solchu123/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
 
                             null,
 
-                            { label: chrome.i18n.getMessage("page"), icon: 'http://st.deviantart.net/emoticons/d/dalogo1.gif', class: 'page', href: thumbdata.url, target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("page"), icon: 'https://st.deviantart.net/emoticons/d/dalogo1.gif', class: 'page', href: thumbdata.url, target: '_blank', action: function() {} },
 
                             null,
 
                             {
                                 label: chrome.i18n.getMessage("app_dp_getthumbcode"),
-                                icon: "http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
+                                icon: "https://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
                                 class: 'thumb',
                                 action: function() {
                                     copycodestpx(chrome.i18n.getMessage("app_dp_getthumbcode"), ":thumb" + thumbdata.artid + ":");
@@ -629,21 +629,21 @@ function startfavpage(folderid) {
                         title: chrome.i18n.getMessage("app_dp_openprofile"),
                         items: [
 
-                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "http://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "http://solchu123.deviantart.com/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("app_dp_customiconscredit"), icon: "https://orig09.deviantart.net/209a/f/2016/060/6/8/applications_by_solchu123-d9tl2cg.gif", class: 'credits', href: "https://www.deviantart.com/solchu123/gallery/59279676/EMOTICONS", target: '_blank', action: function() {} },
 
                             null,
 
-                            { label: chrome.i18n.getMessage("profile"), icon: 'http://st.deviantart.net/emoticons/d/dalogo1.gif', class: 'profile', href: thumbdata.author_url, target: '_blank', action: function() {} },
-                            { label: chrome.i18n.getMessage("gallery"), icon: 'http://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif', class: 'gallery', href: thumbdata.author_url + "/gallery/", target: '_blank', action: function() {} },
-                            { label: chrome.i18n.getMessage("prints"), icon: 'http://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif', class: 'prints', href: thumbdata.author_url + "/prints/", target: '_blank', action: function() {} },
-                            { label: chrome.i18n.getMessage("favourites"), icon: 'http://st.deviantart.net/emoticons/s/star_full.gif', class: 'favourites', href: thumbdata.author_url + "/favourites/", target: '_blank', action: function() {} },
-                            { label: chrome.i18n.getMessage("journal"), icon: 'http://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif', class: 'journal', href: thumbdata.author_url + "/journal/", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("profile"), icon: 'https://st.deviantart.net/emoticons/d/dalogo1.gif', class: 'profile', href: thumbdata.author_url, target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("gallery"), icon: 'https://orig09.deviantart.net/48a4/f/2016/070/4/e/binoculars_by_solchu123-d9uqrru.gif', class: 'gallery', href: thumbdata.author_url + "/gallery/", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("prints"), icon: 'https://orig03.deviantart.net/8ff3/f/2016/069/a/e/basket_by_solchu123-d9ulgzd.gif', class: 'prints', href: thumbdata.author_url + "/prints/", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("favourites"), icon: 'https://st.deviantart.net/emoticons/s/star_full.gif', class: 'favourites', href: thumbdata.author_url + "/favourites/", target: '_blank', action: function() {} },
+                            { label: chrome.i18n.getMessage("journal"), icon: 'https://orig02.deviantart.net/1750/f/2016/070/6/5/book_by_solchu123-d9uqsap.gif', class: 'journal', href: thumbdata.author_url + "/journal/", target: '_blank', action: function() {} },
 
                             null,
 
                             {
                                 label: chrome.i18n.getMessage("app_dp_geticoncode"),
-                                icon: "http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
+                                icon: "https://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
                                 class: 'geticon',
                                 action: function() {
                                     copycodestpx(chrome.i18n.getMessage("app_dp_geticoncode"), ":icon" + thumbdata.author_name.toLowerCase() + ":");
@@ -652,7 +652,7 @@ function startfavpage(folderid) {
 
                             {
                                 label: chrome.i18n.getMessage("app_dp_getdevcode"),
-                                icon: "http://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
+                                icon: "https://orig15.deviantart.net/c20e/f/2016/068/d/c/badge_plus_more_by_solchu123-d9uiher.gif",
                                 class: 'getdev',
                                 action: function() {
                                     copycodestpx(chrome.i18n.getMessage("app_dp_getdevcode"), ":dev" + thumbdata.author_name.toLowerCase() + ":");
@@ -959,15 +959,15 @@ function startfavpage(folderid) {
                                         // URL Image
 
                                         if ((urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/journal/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("deviantart.com/art/") > -1) || (urlpage.indexOf("www.deviantart.com/") > -1) || (urlpage.startsWith("http://sta.sh/")) || (urlpage.startsWith("https://sta.sh/")) || (urlpage.startsWith("http://fav.me/")) || (urlpage.startsWith("https://fav.me/"))) {
-                                            $.ajax({ cache: false, dataType: "json", url: "http://backend.deviantart.com/oembed?url=" + oembed_url })
+                                            $.ajax({ cache: false, dataType: "json", url: "https://backend.deviantart.com/oembed?url=" + oembed_url })
                                                 .done(function(deviantart) {
 
                                                     // Validador
 
-                                                    var urlinsertxs = this.url.replace("http://backend.deviantart.com/oembed?url=", "")
+                                                    var urlinsertxs = this.url.replace("https://backend.deviantart.com/oembed?url=", "")
                                                     var urlinsertxs = urlinsertxs.substring(0, urlinsertxs.lastIndexOf("&_="))
 
-                                                    if ((urlinsertxs.startsWith("http://sta.sh/")) || (urlinsertxs.startsWith("https://sta.sh/"))) { var providerselectda = "http://sta.sh/" } else { var providerselectda = "http://www.deviantart.com/" }
+                                                    if ((urlinsertxs.startsWith("http://sta.sh/")) || (urlinsertxs.startsWith("https://sta.sh/"))) { var providerselectda = "http://sta.sh/" } else { var providerselectda = "https://www.deviantart.com/" }
 
                                                     urldeviantart = urlinsertxs;
 
@@ -1002,7 +1002,7 @@ function startfavpage(folderid) {
                                                 })
                                                 .fail(function(xhr, responseText) {
 
-                                                    var urlinsertxs = this.url.replace("http://backend.deviantart.com/oembed?url=", "")
+                                                    var urlinsertxs = this.url.replace("https://backend.deviantart.com/oembed?url=", "")
                                                     var urlinsertxs = urlinsertxs.substring(0, urlinsertxs.lastIndexOf("&_="))
 
                                                     generatordv({
@@ -1014,7 +1014,7 @@ function startfavpage(folderid) {
                                                         "author_name": "",
                                                         "type": "link",
                                                         "realimg": urlinsertxs,
-                                                        "provider": "http://www.deviantart.com/",
+                                                        "provider": "https://www.deviantart.com/",
                                                         'error': true
                                                     });
 
@@ -1083,7 +1083,7 @@ function startfavpage(folderid) {
                                                                         if ($(this).attr("class") == "prev") { var clicktext = "«"; } else if ($(this).attr("class") == "next") { var clicktext = "»"; }
 
                                                                         $("#imagelist .pagination").append($("<li>", { check_disabled: "now", class: $(this).find("a").attr("class"), style: "cursor: pointer;", href_click: $(this).find("a").attr("href") }).append($("<a>").text(clicktext)).click(function() {
-                                                                            deviantart_open_web(urlpage.split(".deviantart.com")[0] + ".deviantart.com" + $(this).attr("href_click"));
+                                                                            deviantart_open_web("www.deviantart.com/" + urlpage.split("/")[3] + $(this).attr("href_click"));
                                                                         }));
 
                                                                         if ($("[check_disabled='now']").attr("class") == "disabled") { $("[check_disabled='now']").off("click"); }
@@ -1098,7 +1098,7 @@ function startfavpage(folderid) {
                                                                         $("#imagelist .pagination").append($("<li>", { style: "cursor: pointer;", href_click: $(this).find("a").attr("href") }).append($("<a>").text(
                                                                             Number($(this).find("a").text())
                                                                         )).click(function() {
-                                                                            deviantart_open_web(urlpage.split(".deviantart.com")[0] + ".deviantart.com" + $(this).attr("href_click"));
+                                                                            deviantart_open_web("www.deviantart.com/" + urlpage.split("/")[3] + $(this).attr("href_click"));
                                                                         }));
 
                                                                     }
@@ -1173,7 +1173,7 @@ function startfavpage(folderid) {
                                                                 "author_name": $(itemselectart).find(".info .extra-info .artist a img").attr("title"),
                                                                 "type": deviantarttype,
                                                                 "realimg": $(itemselectart).attr("data-super-full-img"),
-                                                                "provider": "http://www.deviantart.com/",
+                                                                "provider": "https://www.deviantart.com/",
                                                                 "artid": $(itemselectart).attr("data-deviationid"),
                                                                 "rightclicktype": "deviantart",
                                                                 "web": true,
@@ -1704,7 +1704,7 @@ function recpagespxerk(data, next) {
 
 
             // Ajax
-            $.ajax({ cache: false, url: "http://www.deviantart.com/" + devname + "/" + devpagetype + "/" + urlfinaldev + completeurlsx }).done(function(data) {
+            $.ajax({ cache: false, url: "https://www.deviantart.com/" + devname + "/" + devpagetype + "/" + urlfinaldev + completeurlsx }).done(function(data) {
 
                     var gettitlepage = data.match("<title>(.*?)</title>")[1].replace(/\&#039\;/g, "'").replace(/\&quot\;/g, '"');
                     var finddefaultpage = ".folderview-art .torpedo-container .thumb";

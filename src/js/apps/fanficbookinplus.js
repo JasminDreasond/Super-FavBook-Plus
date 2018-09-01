@@ -358,7 +358,7 @@ function startfavpage(folderid, detectagain) {
 
                 loadingset(true);
 
-                if (($(thishere).attr("urlclick").startsWith("https://fanfiction.com.br/historia/")) || ($(thishere).attr("urlclick").startsWith("https://www.fanfiction.net/s/")) || ($(thishere).attr("urlclick").startsWith("http://www.fimfiction.net/"))) {
+                if (($(thishere).attr("urlclick").startsWith("https://fanfiction.com.br/historia/")) || ($(thishere).attr("urlclick").startsWith("https://www.fanfiction.net/s/")) || ($(thishere).attr("urlclick").startsWith("http://www.fimfiction.net/")) || ($(thishere).attr("urlclick").startsWith("https://www.fimfiction.net/"))) {
 
                     idfolderclick = $(thishere).attr("folderid");
                     detectcapselected = Number($(thishere).attr("capsave"))
@@ -446,7 +446,7 @@ function startfavpage(folderid, detectagain) {
                                     $("#capdivpx" + numxsd3).remove();
                                 }
 
-                            } else if (this.url.startsWith("http://www.fimfiction.net/")) {
+                            } else if ((this.url.startsWith("http://www.fimfiction.net/")) || (this.url.startsWith("https://www.fimfiction.net/"))) {
 
                                 // Titulo
 
@@ -454,7 +454,7 @@ function startfavpage(folderid, detectagain) {
 
                                 // Autor
                                 $(fanfic).find(".title .author a").each(function() {
-                                    $(this).attr('href', "http://www.fimfiction.net" + $(this).attr('href'));
+                                    $(this).attr('href', "https://www.fimfiction.net" + $(this).attr('href'));
                                     $("#imgpreview #conteudo").append($("<div>", { class: "autor" }).append($("<span>").text(chrome.i18n.getMessage("by") + " "), $("<a>", { href: $(this).attr("href"), target: "_blank" }).text($(this).text())));
                                 })
 
@@ -472,7 +472,7 @@ function startfavpage(folderid, detectagain) {
                                 $(fanfic).find(".chapters .chapter_container a").each(function() {
                                     if ($(this).attr('href').startsWith("/download_chapter.php?")) {} else {
                                         pagenumbpxk = pagenumbpxk + 1
-                                        $(this).attr('href', "http://www.fimfiction.net" + $(this).attr('href'));
+                                        $(this).attr('href', "https://www.fimfiction.net" + $(this).attr('href'));
                                         $("#capselect").append($("<option>", { url: $(this).attr("href"), value: pagenumbpxk }).text($(this).text()));
                                     }
                                 })
@@ -687,13 +687,13 @@ function startfavpage(folderid, detectagain) {
                     else {
 
                         // Generator Validador URL
-                        if ((data[artcountpx].url.startsWith("https://fanfiction.com.br/historia/")) || (data[artcountpx].url.startsWith("https://www.fanfiction.net/s/")) || (data[artcountpx].url.startsWith("http://www.fimfiction.net/"))) {
+                        if ((data[artcountpx].url.startsWith("https://fanfiction.com.br/historia/")) || (data[artcountpx].url.startsWith("https://www.fanfiction.net/s/")) || (data[artcountpx].url.startsWith("http://www.fimfiction.net/")) || (data[artcountpx].url.startsWith("https://www.fimfiction.net/"))) {
 
                             if (artcountpx == maxitem) { finalcomplete = true } else { finalcomplete = false }
 
                             if ((start == true) || (start == "homepage")) {} else {
 
-                                if (data[artcountpx].url.startsWith("https://fanfiction.com.br/historia/")) { var urlprovidepx = "https://fanfiction.com.br/" } else if (data[artcountpx].url.startsWith("https://www.fanfiction.net/s/")) { var urlprovidepx = "https://www.fanfiction.net/" } else if (data[artcountpx].url.startsWith("http://www.fimfiction.net/")) { var urlprovidepx = "http://www.fimfiction.net/" }
+                                if (data[artcountpx].url.startsWith("https://fanfiction.com.br/historia/")) { var urlprovidepx = "https://fanfiction.com.br/" } else if (data[artcountpx].url.startsWith("https://www.fanfiction.net/s/")) { var urlprovidepx = "https://www.fanfiction.net/" } else if ((data[artcountpx].url.startsWith("http://www.fimfiction.net/")) || (data[artcountpx].url.startsWith("https://www.fimfiction.net/"))) { var urlprovidepx = "https://www.fimfiction.net/" }
 
                                 var titlefanficp = data[artcountpx].title.split(":CAPPLUSPX")[0]
                                 var idfanficp = data[artcountpx].title.replace(titlefanficp + ":CAPPLUSPX", "")

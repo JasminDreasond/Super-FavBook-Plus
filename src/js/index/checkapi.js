@@ -75,7 +75,7 @@ function startcheckpage() {
     widget.bind(SC.Widget.Events.READY, function() {
         readysd = true;
 
-        widget.load("https://soundcloud.com/jackiedreasond/dubstell-fest", { show_artwork: true, show_comments: false, show_playcount: false, auto_play: true });
+        widget.load("https://soundcloud.com/jasmindreasond/dubstell-fest", { show_artwork: true, show_comments: false, show_playcount: false, auto_play: true });
 
         widget.bind(SC.Widget.Events.PLAY, function() {
             playsd = true;
@@ -121,7 +121,7 @@ function startcheckpage() {
     var daconnect = false;
     var dbconnect = false;
 
-    $.ajax({ cache: false, dataType: "json", url: "http://backend.deviantart.com/oembed?url=http://jackiedreasond.deviantart.com/art/HEEYY-33-648665632" })
+    $.ajax({ cache: false, dataType: "json", url: "https://backend.deviantart.com/oembed?url=https://www.deviantart.com/jasmindreasond/art/HEEYY-33-648665632" })
         .done(function(deviantart) {
 
             // Validador

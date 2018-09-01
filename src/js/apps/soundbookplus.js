@@ -937,7 +937,7 @@ function startfavpage(folderid, detectagain) {
                     changesoundpx("load");
 
                     if (addetect == false) {
-                        $.ajax({ cache: false, dataType: "json", url: "http://www.dailymotion.com/services/oembed?url=" + playlistpxct[pageclicknumberpdss].url })
+                        $.ajax({ cache: false, dataType: "json", url: "https://www.dailymotion.com/services/oembed?url=" + playlistpxct[pageclicknumberpdss].url })
                             .done(function(datamusic) {
 
                                 var completeimagest = '';
@@ -951,7 +951,7 @@ function startfavpage(folderid, detectagain) {
                                     "avatar": datamusic.thumbnail_url + completeimagest,
                                     "title": datamusic.title,
                                     "username": datamusic.author_name,
-                                    "url": this.url.replace("http://www.dailymotion.com/services/oembed?url=", "")
+                                    "url": this.url.replace("https://www.dailymotion.com/services/oembed?url=", "")
                                 });
 
                             });
@@ -962,11 +962,11 @@ function startfavpage(folderid, detectagain) {
                     if (addetect == true) {
 
                         infocollectmusic({
-                            "artwork": "http://www.dailymotion.com/images/dailymotion-logo-ogtag.png",
-                            "avatar": "http://www.dailymotion.com/images/dailymotion-logo-ogtag.png",
+                            "artwork": "https://www.dailymotion.com/images/dailymotion-logo-ogtag.png",
+                            "avatar": "https://www.dailymotion.com/images/dailymotion-logo-ogtag.png",
                             "title": chrome.i18n.getMessage("app_sp_advideo"),
                             "username": chrome.i18n.getMessage("dailymotion"),
-                            "url": "http://www.dailymotion.com/"
+                            "url": "https://www.dailymotion.com/"
                         });
 
                     }
@@ -1759,7 +1759,7 @@ function startfavpage(folderid, detectagain) {
                     if (appquality == "hd1080") { var appqualitycovert = "1080"; }
                     if (appquality == "highres") { var appqualitycovert = "2160"; }
 
-                    dailymotionplayer.load(removeParamenters(playlistpxct[pageclicknumberpdss].url).replace("http://www.dailymotion.com/video/", ""), { quality: appqualitycovert, start: playlistpxct[pageclicknumberpdss].starts, end: playlistpxct[pageclicknumberpdss].ends, autoplay: true });
+                    dailymotionplayer.load(removeParamenters(playlistpxct[pageclicknumberpdss].url).replace("http://www.dailymotion.com/video/", "").replace("https://www.dailymotion.com/video/", ""), { quality: appqualitycovert, start: playlistpxct[pageclicknumberpdss].starts, end: playlistpxct[pageclicknumberpdss].ends, autoplay: true });
                 } else { errormusicstapi(playlistpxct[pageclicknumberpdss], "dailymotion"); }
             }
 

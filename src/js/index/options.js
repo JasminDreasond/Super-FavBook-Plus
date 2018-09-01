@@ -339,7 +339,7 @@ if ((chrome.i18n.getMessage("translator_text") == "") || (chrome.i18n.getMessage
 // Tumblr Page
 
 //$("#tumblrpost").tumblr(
-//{"id": "jackiedreasond"}, 
+//{"id": "jasmindreasond"}, 
 //{'limit': 2, 'scroll': false, 'pagination': 4, 'next_top': 2, 'window_mode': true, 'scroll_page': true, 'force_disable_tag': true,
 //'custom_description_blog': chrome.i18n.getMessage("options_tumblr_description")}
 //);
